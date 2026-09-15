@@ -84,7 +84,9 @@ Every recipe answers one of three ways, and ``moveatlas.recipe(id)`` says
 which before you start:
 
 - **library**: both steps run in Python from the package (``fog_star``,
-  ``fog_turning_filho`` today; more with each release);
+  ``daphnet``, ``hd_accel_jnet``, ``monipar`` and ``fog_turning_filho``
+  today, each rebuilt from its origin and compared record by record with
+  the corpus; more with each release);
 - **script**: the dataset was harmonized by a repository script that is
   not ported yet. ``fetch()`` and ``ingest()`` then raise
   ``RecipeIsScript`` with the exact commands to run from a clone of the

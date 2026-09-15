@@ -202,6 +202,13 @@
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
 <li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../troubleshooting.html">
+    Troubleshooting
+  </a>
+</li>
+
+
+<li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../../auto_examples/index.html">
     Examples
   </a>
@@ -361,6 +368,13 @@
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../user_guide.html">
     User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../troubleshooting.html">
+    Troubleshooting
   </a>
 </li>
 
@@ -675,6 +689,132 @@
     <span class="k">return</span> <span class="n">out</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">recs</span><span class="p">)</span>
 
 
+<span class="k">def</span><span class="w"> </span><span class="nf">_fetch_daphnet</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">moveatlas.recipes</span><span class="w"> </span><span class="kn">import</span> <span class="n">transports</span>
+    <span class="c1"># the UCI archive serves one zip for the whole dataset (CC BY 4.0)</span>
+    <span class="k">return</span> <span class="n">transports</span><span class="o">.</span><span class="n">urls</span><span class="p">(</span>
+        <span class="n">root</span><span class="p">,</span> <span class="s2">"datasets/imu/daphnet"</span><span class="p">,</span>
+        <span class="p">{</span><span class="s2">"daphnet.zip"</span><span class="p">:</span> <span class="s2">"https://archive.ics.uci.edu/static/public/245/"</span>
+                        <span class="s2">"daphnet+freezing+of+gait.zip"</span><span class="p">})</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_ingest_daphnet</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">glob</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">zipfile</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">moveatlas.recipes</span><span class="w"> </span><span class="kn">import</span> <span class="n">imu</span>
+    <span class="n">zips</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s2">"datasets"</span><span class="p">,</span> <span class="s2">"imu"</span><span class="p">,</span> <span class="s2">"daphnet"</span><span class="p">,</span> <span class="s2">"raw"</span><span class="p">,</span> <span class="s2">"*.zip"</span><span class="p">))</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">zips</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s2">"daphnet: no zip under raw/; run "</span>
+                                <span class="s2">"moveatlas.fetch('daphnet') first"</span><span class="p">)</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">zips</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">recs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">z</span><span class="o">.</span><span class="n">namelist</span><span class="p">()</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">".txt"</span><span class="p">)</span> <span class="ow">and</span> <span class="s2">"/S"</span> <span class="ow">in</span> <span class="s2">"/"</span> <span class="o">+</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">base</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">base</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"S"</span> <span class="ow">and</span> <span class="s2">"R"</span> <span class="ow">in</span> <span class="n">base</span><span class="p">):</span>
+            <span class="k">continue</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="nb">float</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">ln</span><span class="o">.</span><span class="n">split</span><span class="p">()]</span>
+                      <span class="k">for</span> <span class="n">ln</span> <span class="ow">in</span> <span class="n">z</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span> <span class="k">if</span> <span class="n">ln</span><span class="o">.</span><span class="n">strip</span><span class="p">()])</span>
+        <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">g</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span> <span class="o">/</span> <span class="mf">1000.0</span>                     <span class="c1"># mg -&gt; g; ankle, thigh, trunk</span>
+        <span class="n">loc</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"ankle_L"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"acc_x"</span><span class="p">:</span> <span class="n">g</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="s2">"acc_y"</span><span class="p">:</span> <span class="n">g</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="s2">"acc_z"</span><span class="p">:</span> <span class="n">g</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]},</span>
+               <span class="s2">"thigh_L"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"acc_x"</span><span class="p">:</span> <span class="n">g</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">],</span> <span class="s2">"acc_y"</span><span class="p">:</span> <span class="n">g</span><span class="p">[:,</span> <span class="mi">4</span><span class="p">],</span> <span class="s2">"acc_z"</span><span class="p">:</span> <span class="n">g</span><span class="p">[:,</span> <span class="mi">5</span><span class="p">]},</span>
+               <span class="s2">"trunk"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"acc_x"</span><span class="p">:</span> <span class="n">g</span><span class="p">[:,</span> <span class="mi">6</span><span class="p">],</span> <span class="s2">"acc_y"</span><span class="p">:</span> <span class="n">g</span><span class="p">[:,</span> <span class="mi">7</span><span class="p">],</span> <span class="s2">"acc_z"</span><span class="p">:</span> <span class="n">g</span><span class="p">[:,</span> <span class="mi">8</span><span class="p">]}}</span>
+        <span class="n">subj</span> <span class="o">=</span> <span class="n">base</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>                             <span class="c1"># S01</span>
+        <span class="n">recs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">imu</span><span class="o">.</span><span class="n">make_record</span><span class="p">(</span><span class="n">loc</span><span class="p">,</span> <span class="mf">64.0</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"daphnet:</span><span class="si">{</span><span class="n">subj</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">base</span><span class="p">[:</span><span class="o">-</span><span class="mi">4</span><span class="p">],</span>
+                                    <span class="s2">"daphnet"</span><span class="p">,</span> <span class="n">a</span><span class="p">[:,</span> <span class="mi">10</span><span class="p">]))</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">imu</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s2">"daphnet"</span><span class="p">,</span> <span class="n">recs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">out</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">recs</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_fetch_hd_accel</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">moveatlas.recipes</span><span class="w"> </span><span class="kn">import</span> <span class="n">transports</span>
+    <span class="c1"># Zenodo 14384260: one CSV per participant plus metadata.csv, CC BY 4.0</span>
+    <span class="k">return</span> <span class="n">transports</span><span class="o">.</span><span class="n">zenodo_record</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s2">"datasets/imu/hd_accel_jnet"</span><span class="p">,</span> <span class="mi">14384260</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_ingest_hd_accel</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">glob</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">moveatlas.recipes</span><span class="w"> </span><span class="kn">import</span> <span class="n">imu</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+    <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s2">"hd_accel_jnet ingestion reads CSV with pandas: "</span>
+                          <span class="s2">"pip install pandas"</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
+    <span class="n">files</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s2">"datasets"</span><span class="p">,</span> <span class="s2">"imu"</span><span class="p">,</span> <span class="s2">"hd_accel_jnet"</span><span class="p">,</span>
+                                          <span class="s2">"raw"</span><span class="p">,</span> <span class="s2">"*.csv"</span><span class="p">)))</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">files</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s2">"hd_accel_jnet: no CSV under raw/; run "</span>
+                                <span class="s2">"moveatlas.fetch('hd_accel_jnet') first"</span><span class="p">)</span>
+    <span class="n">recs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">b</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"._"</span><span class="p">)</span> <span class="ow">or</span> <span class="s2">"metadata"</span> <span class="ow">in</span> <span class="n">b</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">{</span><span class="s2">"x"</span><span class="p">,</span> <span class="s2">"y"</span><span class="p">,</span> <span class="s2">"z"</span><span class="p">}</span> <span class="o">&lt;=</span> <span class="nb">set</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
+            <span class="k">continue</span>
+        <span class="n">loc</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"wrist_L"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"acc_x"</span><span class="p">:</span> <span class="n">df</span><span class="p">[</span><span class="s2">"x"</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="s2">"acc_y"</span><span class="p">:</span> <span class="n">df</span><span class="p">[</span><span class="s2">"y"</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+                           <span class="s2">"acc_z"</span><span class="p">:</span> <span class="n">df</span><span class="p">[</span><span class="s2">"z"</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">}}</span>
+        <span class="n">lab</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"label"</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="k">if</span> <span class="s2">"label"</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="c1"># the source declares no sampling rate: fps stays None, as in the corpus</span>
+        <span class="n">recs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">imu</span><span class="o">.</span><span class="n">make_record</span><span class="p">(</span><span class="n">loc</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"hd_accel:</span><span class="si">{</span><span class="n">b</span><span class="p">[:</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">b</span><span class="p">[:</span><span class="o">-</span><span class="mi">4</span><span class="p">],</span>
+                                    <span class="s2">"hd_accel_jnet"</span><span class="p">,</span> <span class="n">lab</span><span class="p">))</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">imu</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s2">"hd_accel_jnet"</span><span class="p">,</span> <span class="n">recs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">out</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">recs</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_fetch_monipar</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">moveatlas.recipes</span><span class="w"> </span><span class="kn">import</span> <span class="n">transports</span>
+    <span class="c1"># Zenodo 8104853, CC BY 4.0: the supervised-session .mat the corpus</span>
+    <span class="c1"># ingests, its labels and the README; the remote and control sessions</span>
+    <span class="c1"># stay at the origin</span>
+    <span class="k">return</span> <span class="n">transports</span><span class="o">.</span><span class="n">zenodo_record</span><span class="p">(</span>
+        <span class="n">root</span><span class="p">,</span> <span class="s2">"datasets/imu/monipar"</span><span class="p">,</span> <span class="mi">8104853</span><span class="p">,</span>
+        <span class="n">only</span><span class="o">=</span><span class="p">[</span><span class="s2">"MONIPAR_PD_SUPERVISED.mat"</span><span class="p">,</span> <span class="s2">"MONIPAR_PD_SUPERVISED_TREMOR_LABEL.mat"</span><span class="p">,</span>
+              <span class="s2">"Monipar_README.txt"</span><span class="p">])</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_ingest_monipar</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">moveatlas.recipes</span><span class="w"> </span><span class="kn">import</span> <span class="n">imu</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">loadmat</span>
+    <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s2">"monipar ingestion reads MATLAB files with scipy: "</span>
+                          <span class="s2">"pip install scipy"</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s2">"datasets"</span><span class="p">,</span> <span class="s2">"imu"</span><span class="p">,</span> <span class="s2">"monipar"</span><span class="p">,</span> <span class="s2">"raw"</span><span class="p">,</span> <span class="s2">"MONIPAR_PD_SUPERVISED.mat"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s2">"monipar: no MONIPAR_PD_SUPERVISED.mat under raw/; "</span>
+                                <span class="s2">"run moveatlas.fetch('monipar') first"</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">loadmat</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">squeeze_me</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">struct_as_record</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">cells</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s2">"SUPERVISED_RAWDATA"</span><span class="p">]</span>          <span class="c1"># (6, 8) cell array of (T, 5)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">acc_to_g</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+        <span class="n">norm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">norm</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+            <span class="k">return</span> <span class="n">a</span>
+        <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">imu</span><span class="o">.</span><span class="n">G</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmedian</span><span class="p">(</span><span class="n">norm</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="k">else</span> <span class="n">a</span>
+
+    <span class="n">recs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">cells</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">cells</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+            <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">cells</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">ndim</span> <span class="o">!=</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">c</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">4</span> <span class="ow">or</span> <span class="n">c</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="n">c</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+            <span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>            <span class="c1"># time in ms</span>
+            <span class="n">fps</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="mf">1000.0</span> <span class="o">/</span> <span class="n">dt</span><span class="p">)</span> <span class="k">if</span> <span class="n">dt</span> <span class="o">&gt;</span> <span class="mf">1e-6</span> <span class="k">else</span> <span class="kc">None</span>
+            <span class="n">acc</span> <span class="o">=</span> <span class="n">acc_to_g</span><span class="p">(</span><span class="n">c</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span>
+            <span class="n">loc</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"wrist_L"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"acc_x"</span><span class="p">:</span> <span class="n">acc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="s2">"acc_y"</span><span class="p">:</span> <span class="n">acc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="s2">"acc_z"</span><span class="p">:</span> <span class="n">acc</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]}}</span>
+            <span class="n">lab</span> <span class="o">=</span> <span class="n">c</span><span class="p">[:,</span> <span class="mi">4</span><span class="p">]</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">5</span> <span class="k">else</span> <span class="kc">None</span>
+            <span class="n">recs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">imu</span><span class="o">.</span><span class="n">make_record</span><span class="p">(</span><span class="n">loc</span><span class="p">,</span> <span class="n">fps</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"monipar:sup_r</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">c</span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"r</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">c</span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+                                        <span class="s2">"monipar"</span><span class="p">,</span> <span class="n">lab</span><span class="p">))</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">imu</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s2">"monipar"</span><span class="p">,</span> <span class="n">recs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">out</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">recs</span><span class="p">)</span>
+
+
 <span class="c1"># -- the script recipes (not ported; the commands are the repository's) -------</span>
 
 <span class="n">_CLONE</span> <span class="o">=</span> <span class="s2">"git clone https://github.com/xaviervasques/moveatlas &amp;&amp; cd moveatlas"</span>
@@ -760,6 +900,18 @@
         <span class="s2">"fog_star"</span><span class="p">,</span> <span class="n">fetch_fn</span><span class="o">=</span><span class="n">_fetch_fog_star</span><span class="p">,</span> <span class="n">ingest_fn</span><span class="o">=</span><span class="n">_ingest_fog_star</span><span class="p">,</span>
         <span class="n">notes</span><span class="o">=</span><span class="s2">"Zenodo 17838806 (CC BY 4.0): sensor_data.csv 120 MB; also "</span>
               <span class="s2">"served from its MoveAtlas record, so get_data() alone works"</span><span class="p">),</span>
+    <span class="s2">"daphnet"</span><span class="p">:</span> <span class="n">Recipe</span><span class="p">(</span>
+        <span class="s2">"daphnet"</span><span class="p">,</span> <span class="n">fetch_fn</span><span class="o">=</span><span class="n">_fetch_daphnet</span><span class="p">,</span> <span class="n">ingest_fn</span><span class="o">=</span><span class="n">_ingest_daphnet</span><span class="p">,</span>
+        <span class="n">notes</span><span class="o">=</span><span class="s2">"UCI archive 245 (CC BY 4.0): one 21 MB zip; also served from "</span>
+              <span class="s2">"its MoveAtlas record"</span><span class="p">),</span>
+    <span class="s2">"hd_accel_jnet"</span><span class="p">:</span> <span class="n">Recipe</span><span class="p">(</span>
+        <span class="s2">"hd_accel_jnet"</span><span class="p">,</span> <span class="n">fetch_fn</span><span class="o">=</span><span class="n">_fetch_hd_accel</span><span class="p">,</span> <span class="n">ingest_fn</span><span class="o">=</span><span class="n">_ingest_hd_accel</span><span class="p">,</span>
+        <span class="n">notes</span><span class="o">=</span><span class="s2">"Zenodo 14384260 (CC BY 4.0): 35 per-participant CSVs, 124 MB; "</span>
+              <span class="s2">"also served from its MoveAtlas record"</span><span class="p">),</span>
+    <span class="s2">"monipar"</span><span class="p">:</span> <span class="n">Recipe</span><span class="p">(</span>
+        <span class="s2">"monipar"</span><span class="p">,</span> <span class="n">fetch_fn</span><span class="o">=</span><span class="n">_fetch_monipar</span><span class="p">,</span> <span class="n">ingest_fn</span><span class="o">=</span><span class="n">_ingest_monipar</span><span class="p">,</span>
+        <span class="n">notes</span><span class="o">=</span><span class="s2">"Zenodo 8104853 (CC BY 4.0): the supervised-session MATLAB file, "</span>
+              <span class="s2">"9 MB, read with scipy; also served from its MoveAtlas record"</span><span class="p">),</span>
 <span class="p">}</span>
 
 
