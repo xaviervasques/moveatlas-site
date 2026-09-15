@@ -56,7 +56,7 @@
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Examples" href="auto_examples/index.html" />
+    <link rel="next" title="Troubleshooting" href="troubleshooting.html" />
     <link rel="prev" title="Getting started" href="getting_started.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -204,6 +204,13 @@
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="troubleshooting.html">
+    Troubleshooting
+  </a>
+</li>
+
+
 <li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="auto_examples/index.html">
     Examples
@@ -371,6 +378,13 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="troubleshooting.html">
+    Troubleshooting
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="auto_examples/index.html">
     Examples
   </a>
@@ -529,6 +543,22 @@ verification is refused, not repaired.</p>
 <p><code class="docutils literal notranslate"><span class="pre">moveatlas</span> <span class="pre">info</span> <span class="pre">modys_video</span></code> prints the record’s DOI; cite the source
 paper named on the data card, and the record when you redistribute
 derived work.</p>
+<section id="records-that-hold-tables-not-records">
+<h3>Records that hold tables, not records<a class="headerlink" href="#records-that-hold-tables-not-records" title="Link to this heading">#</a></h3>
+<p>Nineteen of the 53 published records carry what their dataset is: a
+clinical table, a feature CSV, an archive, polygraphy PDFs, an ontology.
+There is no canonical record to return, and <code class="docutils literal notranslate"><span class="pre">get_data()</span></code> says so and
+lists the files. Every dataset exposes its files:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">moveatlas</span><span class="o">.</span><span class="n">dataset</span><span class="p">(</span><span class="s2">"alameda_tremor"</span><span class="p">)</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">files</span><span class="p">()</span>                                   <span class="c1"># ['datasets/imu/alameda_tremor/raw/ALAMEDA_PD_tremor_dataset.csv']</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">path</span><span class="p">(</span><span class="s2">"ALAMEDA_PD_tremor_dataset.csv"</span><span class="p">)</span>  <span class="c1"># downloaded from the record, sha256-verified</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>                               <span class="c1"># (rows, columns) of the source's features</span>
+</pre></div>
+</div>
+<p>The same on the command line: <code class="docutils literal notranslate"><span class="pre">moveatlas</span> <span class="pre">files</span> <span class="pre">&lt;id&gt;</span></code> and
+<code class="docutils literal notranslate"><span class="pre">moveatlas</span> <span class="pre">get</span> <span class="pre">&lt;id&gt;</span> <span class="pre">&lt;name&gt;</span></code>. Read a table with pandas, an archive with
+<code class="docutils literal notranslate"><span class="pre">zipfile</span></code>, an <code class="docutils literal notranslate"><span class="pre">.npz</span></code> container with <code class="docutils literal notranslate"><span class="pre">moveatlas.records.load()</span></code>.</p>
+</section>
 </section>
 <section id="walk-2-a-recipe-dataset">
 <h2>Walk 2: a recipe dataset<a class="headerlink" href="#walk-2-a-recipe-dataset" title="Link to this heading">#</a></h2>
@@ -693,7 +723,8 @@ end to end on real records.</p>
 <h2>Errors are documentation<a class="headerlink" href="#errors-are-documentation" title="Link to this heading">#</a></h2>
 <p>Every error a researcher can hit names the next thing to do: the access
 route, the recipe to run, the environment variable to set, the file to
-save. If one does not, it is a bug: open an issue with the message.</p>
+save. <a class="reference internal" href="troubleshooting.html"><span class="doc">Troubleshooting</span></a> lists them all by situation. If one does not
+tell you what to do next, it is a bug: open an issue with the message.</p>
 </section>
 </section>
 
@@ -717,11 +748,11 @@ save. If one does not, it is a bug: open an issue with the message.</p>
       </div>
     </a>
     <a class="right-next"
-       href="auto_examples/index.html"
+       href="troubleshooting.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Examples</p>
+        <p class="prev-next-title">Troubleshooting</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -744,7 +775,10 @@ save. If one does not, it is a bug: open an issue with the message.</p>
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#walk-1-a-hosted-dataset">Walk 1: a hosted dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#walk-1-a-hosted-dataset">Walk 1: a hosted dataset</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#records-that-hold-tables-not-records">Records that hold tables, not records</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#walk-2-a-recipe-dataset">Walk 2: a recipe dataset</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#walk-3-a-barrier-dataset">Walk 3: a barrier dataset</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-record-format">The record format</a></li>

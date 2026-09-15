@@ -215,6 +215,7 @@ until then.
    datasets/index
    getting_started
    user_guide
+   troubleshooting
    auto_examples/index
    submit_dataset
    api

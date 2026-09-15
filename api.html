@@ -205,6 +205,13 @@
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
 <li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="troubleshooting.html">
+    Troubleshooting
+  </a>
+</li>
+
+
+<li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="auto_examples/index.html">
     Examples
   </a>
@@ -366,6 +373,13 @@
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="user_guide.html">
     User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="troubleshooting.html">
+    Troubleshooting
   </a>
 </li>
 
@@ -586,6 +600,26 @@ with the evaluation layer.</p>
 <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">moveatlas.datasets.base.</span></span><span class="sig-name descname"><span class="pre">BaseDataset</span></span><a class="reference internal" href="_modules/moveatlas/datasets/base.html#BaseDataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.datasets.base.BaseDataset" title="Link to this definition">#</a></dt>
 <dd><p>Subclasses set <cite>code</cite> and implement <cite>_load(store, subjects,
 modality)</cite> returning (records, metadata_rows).</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="moveatlas.datasets.base.BaseDataset.files">
+<span class="sig-name descname"><span class="pre">files</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/datasets/base.html#BaseDataset.files"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.datasets.base.BaseDataset.files" title="Link to this definition">#</a></dt>
+<dd><p>Store-relative paths of every file this dataset holds: what is
+on this machine under its registry path, plus, for a hosted
+dataset, what its published record lists (nothing is downloaded
+to list). Many hosted records hold tables, archives or documents
+rather than canonical records; this is how you see them.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="moveatlas.datasets.base.BaseDataset.path">
+<span class="sig-name descname"><span class="pre">path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/datasets/base.html#BaseDataset.path"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.datasets.base.BaseDataset.path" title="Link to this definition">#</a></dt>
+<dd><p>A local path to one of the dataset’s files, by file name or
+store-relative path: served from this machine when it is there,
+else downloaded from the published record and sha256-verified.
+Read a table with pandas, an archive with zipfile, an .npz
+container with moveatlas.records.load().</p>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="moveatlas.datasets.base.BaseDataset.get_data">
 <span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subjects</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modality</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/datasets/base.html#BaseDataset.get_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.datasets.base.BaseDataset.get_data" title="Link to this definition">#</a></dt>
@@ -884,6 +918,8 @@ path.</p>
 moveatlas info &lt;id&gt;
 moveatlas fetch &lt;id&gt;
 moveatlas ingest &lt;id&gt;
+moveatlas files &lt;id&gt;
+moveatlas get &lt;id&gt; &lt;file name&gt;
 moveatlas where</p>
 </section>
 <section id="module-moveatlas.frames">
@@ -1195,6 +1231,8 @@ release ships a records table), else the public Zenodo record store
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-moveatlas.datasets.base">Datasets</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.datasets.base.AccessError"><code class="docutils literal notranslate"><span class="pre">AccessError</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.datasets.base.BaseDataset"><code class="docutils literal notranslate"><span class="pre">BaseDataset</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.datasets.base.BaseDataset.files"><code class="docutils literal notranslate"><span class="pre">BaseDataset.files()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.datasets.base.BaseDataset.path"><code class="docutils literal notranslate"><span class="pre">BaseDataset.path()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.datasets.base.BaseDataset.get_data"><code class="docutils literal notranslate"><span class="pre">BaseDataset.get_data()</span></code></a></li>
 </ul>
 </li>

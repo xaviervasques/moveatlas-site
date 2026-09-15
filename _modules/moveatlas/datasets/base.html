@@ -181,15 +181,15 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../../install.html">
-    Installation
+  <a class="nav-link nav-internal" href="../../../getting_started.html">
+    Getting started
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../../auto_examples/index.html">
-    Examples
+  <a class="nav-link nav-internal" href="../../../user_guide.html">
+    User guide
   </a>
 </li>
 
@@ -201,6 +201,20 @@
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../troubleshooting.html">
+    Troubleshooting
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../auto_examples/index.html">
+    Examples
+  </a>
+</li>
+
+
 <li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../../../submit_dataset.html">
     Submit a new dataset
@@ -345,8 +359,22 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../../install.html">
-    Installation
+  <a class="nav-link nav-internal" href="../../../getting_started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../user_guide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../troubleshooting.html">
+    Troubleshooting
   </a>
 </li>
 
@@ -480,6 +508,7 @@
 <span class="sd">least [dataset, subject_ns, task, modality, n_frames, fps], the contract</span>
 <span class="sd">with the evaluation layer.</span>
 <span class="sd">"""</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -526,6 +555,56 @@
     <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">(</span><span class="sa">f</span><span class="s2">"&lt;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> '</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">code</span><span class="si">}</span><span class="s2">' "</span>
                 <span class="sa">f</span><span class="s2">"[</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">access_case</span><span class="si">}</span><span class="s2">] </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="si">!r}</span><span class="s2">&gt;"</span><span class="p">)</span>
+
+    <span class="c1"># -- the dataset's files, canonical or not ---------------------------</span>
+<div class="viewcode-block" id="BaseDataset.files">
+<a class="viewcode-back" href="../../../api.html#moveatlas.datasets.base.BaseDataset.files">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">files</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Store-relative paths of every file this dataset holds: what is</span>
+<span class="sd">        on this machine under its registry path, plus, for a hosted</span>
+<span class="sd">        dataset, what its published record lists (nothing is downloaded</span>
+<span class="sd">        to list). Many hosted records hold tables, archives or documents</span>
+<span class="sd">        rather than canonical records; this is how you see them."""</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">access_case</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"barrier"</span><span class="p">,</span> <span class="s2">"local_only"</span><span class="p">):</span>
+            <span class="k">return</span> <span class="p">[]</span>
+        <span class="n">store</span> <span class="o">=</span> <span class="n">open_store</span><span class="p">()</span>
+        <span class="n">base</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s2">"path"</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"</span><span class="se">\\</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"/"</span><span class="p">)</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span>
+        <span class="n">out</span><span class="p">,</span> <span class="n">stack</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[</span><span class="n">base</span><span class="p">]</span>
+        <span class="k">while</span> <span class="n">stack</span><span class="p">:</span>
+            <span class="n">d</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">children</span> <span class="o">=</span> <span class="n">store</span><span class="o">.</span><span class="n">list_dir</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+                <span class="n">children</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">children</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">"/"</span><span class="p">):</span>
+                    <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">"/"</span><span class="p">))</span>
+                <span class="k">elif</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"._"</span><span class="p">):</span>
+                    <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">out</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="BaseDataset.path">
+<a class="viewcode-back" href="../../../api.html#moveatlas.datasets.base.BaseDataset.path">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""A local path to one of the dataset's files, by file name or</span>
+<span class="sd">        store-relative path: served from this machine when it is there,</span>
+<span class="sd">        else downloaded from the published record and sha256-verified.</span>
+<span class="sd">        Read a table with pandas, an archive with zipfile, an .npz</span>
+<span class="sd">        container with moveatlas.records.load()."""</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"</span><span class="se">\\</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"/"</span><span class="p">)</span>
+        <span class="n">files</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">files</span><span class="p">()</span>
+        <span class="n">hits</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span> <span class="k">if</span> <span class="n">f</span> <span class="o">==</span> <span class="n">name</span> <span class="ow">or</span> <span class="n">f</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">"/"</span> <span class="o">+</span> <span class="n">name</span><span class="p">)]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">hits</span><span class="p">:</span>
+            <span class="n">known</span> <span class="o">=</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span><span class="p">[:</span><span class="mi">12</span><span class="p">])</span>
+            <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"'</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">code</span><span class="si">}</span><span class="s2">' has no file named </span><span class="si">{</span><span class="n">name</span><span class="si">!r}</span><span class="s2">; it holds: "</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">known</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s1">'nothing on this machine or in a record'</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">hits</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">!r}</span><span class="s2"> is ambiguous in '</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">code</span><span class="si">}</span><span class="s2">': "</span>
+                             <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">hits</span><span class="si">}</span><span class="s2">; give the store-relative path"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">open_store</span><span class="p">()</span><span class="o">.</span><span class="n">path</span><span class="p">(</span><span class="n">hits</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span></div>
+
 
     <span class="c1"># -- data --------------------------------------------------------</span>
 <div class="viewcode-block" id="BaseDataset.get_data">
@@ -604,6 +683,24 @@
                 <span class="sa">f</span><span class="s2">"'</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">code</span><span class="si">}</span><span class="s2">' is not ingested on this machine: run "</span>
                 <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">recipe</span><span class="si">}</span><span class="s2">. Access: </span><span class="si">{</span><span class="n">i</span><span class="p">[</span><span class="s1">'access'</span><span class="p">]</span><span class="si">}</span><span class="s2">. Status: </span><span class="si">{</span><span class="n">i</span><span class="p">[</span><span class="s1">'status'</span><span class="p">]</span><span class="si">}</span><span class="s2">. "</span>
                 <span class="sa">f</span><span class="s2">"Card: </span><span class="si">{</span><span class="n">card</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="c1"># hosted, but the record holds no canonical container. Nineteen</span>
+        <span class="c1"># of the 53 published records are like that (tables, archives,</span>
+        <span class="c1"># documents, a non-canonical .npz): say what is there and how to</span>
+        <span class="c1"># read it, instead of sending a stranger to an ingestion script</span>
+        <span class="c1"># (finding of 2026-09-15, LAUNCH_PLAN 1.1)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">files</span><span class="p">()</span>
+                     <span class="k">if</span> <span class="ow">not</span> <span class="n">f</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">"downloads.sha256"</span><span class="p">)]</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>      <span class="c1"># listing must never mask the real message</span>
+            <span class="n">names</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="n">names</span><span class="p">:</span>
+            <span class="n">shown</span> <span class="o">=</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">names</span><span class="p">[:</span><span class="mi">8</span><span class="p">])</span> <span class="o">+</span> <span class="p">(</span><span class="s2">" ..."</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">8</span> <span class="k">else</span> <span class="s2">""</span><span class="p">)</span>
+            <span class="k">return</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"'</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">code</span><span class="si">}</span><span class="s2">' holds files, not canonical records: </span><span class="si">{</span><span class="n">shown</span><span class="si">}</span><span class="s2">. "</span>
+                <span class="sa">f</span><span class="s2">"ds.path('&lt;name&gt;') returns a local, verified path to one "</span>
+                <span class="sa">f</span><span class="s2">"(downloaded from the record when needed); read a table with "</span>
+                <span class="sa">f</span><span class="s2">"pandas, an archive with zipfile, an .npz container with "</span>
+                <span class="sa">f</span><span class="s2">"moveatlas.records.load(). Card: </span><span class="si">{</span><span class="n">card</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
         <span class="k">return</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
             <span class="sa">f</span><span class="s2">"'</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">code</span><span class="si">}</span><span class="s2">' is hosted but no canonical container is under "</span>
             <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">i</span><span class="p">[</span><span class="s1">'path'</span><span class="p">]</span><span class="si">}</span><span class="s2">/processed/ in this store</span><span class="si">{</span><span class="n">reason</span><span class="si">}</span><span class="s2">. If this machine "</span>

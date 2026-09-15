@@ -32,6 +32,25 @@ verification is refused, not repaired.
 paper named on the data card, and the record when you redistribute
 derived work.
 
+Records that hold tables, not records
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Nineteen of the 53 published records carry what their dataset is: a
+clinical table, a feature CSV, an archive, polygraphy PDFs, an ontology.
+There is no canonical record to return, and ``get_data()`` says so and
+lists the files. Every dataset exposes its files:
+
+.. code-block:: python
+
+   ds = moveatlas.dataset("alameda_tremor")
+   ds.files()                                   # ['datasets/imu/alameda_tremor/raw/ALAMEDA_PD_tremor_dataset.csv']
+   p = ds.path("ALAMEDA_PD_tremor_dataset.csv")  # downloaded from the record, sha256-verified
+   pd.read_csv(p)                               # (rows, columns) of the source's features
+
+The same on the command line: ``moveatlas files <id>`` and
+``moveatlas get <id> <name>``. Read a table with pandas, an archive with
+``zipfile``, an ``.npz`` container with ``moveatlas.records.load()``.
+
 Walk 2: a recipe dataset
 ------------------------
 
@@ -199,4 +218,5 @@ Errors are documentation
 
 Every error a researcher can hit names the next thing to do: the access
 route, the recipe to run, the environment variable to set, the file to
-save. If one does not, it is a bug: open an issue with the message.
+save. :doc:`troubleshooting` lists them all by situation. If one does not
+tell you what to do next, it is a bug: open an issue with the message.
