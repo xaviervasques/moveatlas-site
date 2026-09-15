@@ -45,6 +45,14 @@ How to read these numbers
   The full catalogue holds |n_catalogued|: the remainder splits into
   pointer-tier sets used through their original access routes, aux
   tables, and documented barriers; see :doc:`dataset_summary`.
+- **What is downloadable**: |n_served_records| of the |n_records| records
+  (|n_served_datasets| datasets) are served from the |n_published_records|
+  published MoveAtlas records; |n_recipe_records| (|n_recipe_datasets|
+  datasets, chiefly the large healthy 3D pose bases and the licence-held
+  clinical sets) are harmonized on the ingestion machine only and are
+  reproducible from the original host with ``moveatlas.fetch`` and
+  ``moveatlas.ingest`` where the origin allows; |n_unstaged_records|
+  (|n_unstaged_datasets| datasets) are redistributable and await a record.
 - Every number on this page is HUMAN data. The animal lane (|n_animal|
   catalogued datasets: mouse, rat and macaque models) is deliberately
   absent from every table here: animal entries map to symptom analogs

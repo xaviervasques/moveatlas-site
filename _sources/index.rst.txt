@@ -6,7 +6,13 @@ movement-disorders corpus. |n_catalogued| catalogued datasets
 (|n_human| human, |n_animal| animal); |n_records| harmonized records
 from |n_subjects| subjects and |n_hours| hours of signal across six
 canonical families (pose, IMU, EMG, force plates, silhouette, EEG),
-with patient-level evaluation splits. Every count on this page is
+with patient-level evaluation splits. Of those records, |n_served_records|
+from |n_served_datasets| datasets are served from MoveAtlas's own
+|n_published_records| Zenodo records and download in one call; the
+|n_recipe_records| from |n_recipe_datasets| datasets whose licences
+forbid redistribution are reproducible from their original host with the
+documented recipe, and |n_unstaged_records| from |n_unstaged_datasets|
+redistributable datasets await their record. Every count on this page is
 computed from the registry at build time.
 MoveAtlas exists because the **hyperkinetic disorders - dystonia,
 tremor, chorea, myoclonus, tics, athetosis, ballismus, stereotypies -**
