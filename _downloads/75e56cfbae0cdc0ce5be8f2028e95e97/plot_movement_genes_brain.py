@@ -1,0 +1,125 @@
+# -*- coding: utf-8 -*-
+"""
+Where movement-disorder genes live in the brain
+===============================================
+
+The bio lane holds the Allen Human Brain Atlas microarray survey (six
+donors, all on disk). Here one donor's 946 sampled brain sites answer a
+movement question: where are the canonical movement-disorder genes
+expressed? Every value is streamed from the raw Allen archive; the
+brain map at the bottom uses the donor's own MNI sample coordinates,
+so no MRI is needed to see anatomy.
+"""
+import io
+import zipfile
+
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+
+from moveatlas.store import LocalStore
+
+BLUE, INK, INK2 = "#2a78d6", "#0b0b0b", "#52514e"
+
+GENES = ["SNCA", "GBA", "TOR1A", "HTT", "TH", "LRRK2", "PARK7", "PINK1",
+         "FXN"]
+
+z = zipfile.ZipFile(LocalStore().path(
+    "datasets/bio/allen_human_brain/raw/allen_microarray_H0351.2001.zip"))
+probes = pd.read_csv(z.open("Probes.csv"))
+annot = pd.read_csv(z.open("SampleAnnot.csv"))
+sel = probes[probes["gene_symbol"].isin(GENES)]
+print(f"donor H0351.2001: {len(annot)} sampled sites; "
+      f"{len(sel)} probes cover {sel['gene_symbol'].nunique()} genes")
+
+# stream only the selected probe rows out of the 966 MB expression table
+want = {str(p).encode(): g for p, g in
+        zip(sel["probe_id"], sel["gene_symbol"])}
+expr = {}
+with z.open("MicroarrayExpression.csv") as f:
+    for line in io.BufferedReader(f, 1 << 20):
+        pid = line.split(b",", 1)[0]
+        if pid in want:
+            vals = np.array(line.decode().rstrip("\n").split(",")[1:],
+                            dtype=float)
+            expr.setdefault(want[pid], []).append(vals)
+gene_expr = pd.DataFrame({g: np.mean(v, axis=0) for g, v in expr.items()})
+
+# %%
+# Mean expression by brain region (probes averaged per gene, samples
+# grouped by structure name, z-scored per gene so each row shows WHERE
+# a gene peaks rather than its absolute level).
+
+REGIONS = [
+    ("substantia nigra", ["substantia nigra"]),
+    ("striatum", ["putamen", "caudate", "accumbens"]),
+    ("pallidum + STN", ["globus pallidus", "subthalamic"]),
+    ("thalamus", ["thalamus"]),
+    ("motor cortex", ["precentral"]),
+    ("other cortex", ["gyrus", "cortex", "cuneus", "operculum"]),
+    ("hippocampus", ["hippocamp", "dentate"]),
+    ("cerebellum", ["cerebell"]),
+    ("brainstem", ["pons", "medulla", "midbrain", "raphe", "locus"]),
+]
+
+
+def region_of(name):
+    low = str(name).lower()
+    for label, keys in REGIONS:
+        if any(k in low for k in keys):
+            return label
+    return None
+
+
+annot["region"] = annot["structure_name"].map(region_of)
+rows = []
+for label, _ in REGIONS:
+    mask = (annot["region"] == label).to_numpy()
+    if mask.sum() >= 3:
+        rows.append(gene_expr[mask].mean().rename(label))
+byregion = pd.DataFrame(rows)
+zs = (byregion - byregion.mean()) / byregion.std()
+
+fig, ax = plt.subplots(figsize=(7.5, 3.8))
+im = ax.imshow(zs.T, aspect="auto", cmap="Blues")
+ax.set_xticks(range(len(zs.index)))
+ax.set_xticklabels(zs.index, rotation=30, ha="right", fontsize=8)
+ax.set_yticks(range(len(zs.columns)))
+ax.set_yticklabels(zs.columns, fontsize=8)
+fig.colorbar(im, ax=ax, label="expression (z per gene)", shrink=0.85)
+ax.set_title("Movement-disorder genes across one donor's brain",
+             loc="left", fontsize=10)
+fig.tight_layout()
+
+# %%
+# TH (tyrosine hydroxylase, the dopamine-synthesis enzyme) drawn on the
+# donor's own MNI sample coordinates: the nigrostriatal system lights
+# up out of pure expression data. Each dot is a real microarray sample.
+
+fig, axes = plt.subplots(1, 2, figsize=(8.5, 3.9))
+th = gene_expr["TH"]
+for ax, (a, b, la, lb) in zip(axes, [
+        ("mni_y", "mni_z", "MNI y (mm)", "MNI z (mm)"),
+        ("mni_x", "mni_y", "MNI x (mm)", "MNI y (mm)")]):
+    sc = ax.scatter(annot[a], annot[b], c=th, cmap="Blues", s=14,
+                    vmin=th.quantile(0.02), vmax=th.quantile(0.98))
+    ax.set_xlabel(la)
+    ax.set_ylabel(lb)
+    ax.set_aspect("equal")
+    ax.spines[["top", "right"]].set_visible(False)
+fig.colorbar(sc, ax=axes, label="TH expression", shrink=0.8)
+fig.suptitle("946 sampled sites colored by TH expression "
+             "(sagittal and axial views)", fontsize=10, x=0.02, ha="left")
+
+# %%
+# The genetics lane closes the loop: how much of the signed-off
+# dystonia/chorea gene panel does this array actually measure?
+
+panel = pd.read_csv(LocalStore().path(
+    "datasets/bio/panelapp/raw/panel_540_dystonia_chorea_adult_onset.tsv"),
+    sep="\t")
+genes540 = set(panel.loc[panel["Entity type"] == "gene", "Gene Symbol"])
+measured = genes540 & set(probes["gene_symbol"])
+print(f"panel 540 (dystonia/chorea, adult onset): {len(genes540)} genes, "
+      f"{len(measured)} measured on the Allen array "
+      f"({len(measured) / len(genes540):.0%})")

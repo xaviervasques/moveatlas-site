@@ -1,0 +1,68 @@
+
+
+.. _sphx_glr_auto_examples_03_data_hygiene:
+
+Data hygiene
+============
+
+Masks, channel tables, native rates, stores: consume records correctly.
+
+
+.. raw:: html
+
+  <div id='sg-tag-list' class='sphx-glr-tag-list'></div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+.. thumbnail-parent-div-open
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Where does the data come from? The hosted tier is served by the MoveAtlas record store. Today that store is LOCAL (nothing is published yet); after the public launch the same interface fronts MoveAtlas&#x27;s Zenodo records and Hugging Face datasets, and this example will not change.">
+
+.. only:: html
+
+  .. image:: /auto_examples/03_data_hygiene/images/thumb/sphx_glr_plot_data_management_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/03_data_hygiene/plot_data_management`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Data management: the record store</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="The canonical contracts never guess: what a sensor did not capture is masked, not invented. This example is the safety briefing every analysis should follow, on three real records from three families.">
+
+.. only:: html
+
+  .. image:: /auto_examples/03_data_hygiene/images/thumb/sphx_glr_plot_masks_and_contracts_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/03_data_hygiene/plot_masks_and_contracts`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Consuming records correctly: masks, channel tables, native rates</div>
+    </div>
+
+
+.. thumbnail-parent-div-close
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/03_data_hygiene/plot_data_management
+   /auto_examples/03_data_hygiene/plot_masks_and_contracts
+

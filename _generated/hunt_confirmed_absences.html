@@ -1,0 +1,738 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" data-theme="auto">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Signal-level absences (phenomenology cells) &#8212; MoveAtlas</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "auto";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "auto";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=fd6457a4" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/moveatlas.css?v=0760cefd" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
+
+    <script src="../_static/documentation_options.js?v=965fac30"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/sg-tags.js?v=d80f6fa4"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=4ea706d9"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_generated/hunt_confirmed_absences';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="auto">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo_light.svg" class="logo__image only-light" alt="MoveAtlas"/>
+    <img src="../_static/logo_dark.svg" class="logo__image only-dark pst-js-only" alt="MoveAtlas"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../statistics.html">
+    Corpus statistics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../dataset_summary.html">
+    Datasets
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../modalities.html">
+    Modalities
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../taxonomy.html">
+    Taxonomy
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../datasets/index.html">
+    Dataset pages
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../install.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../auto_examples/index.html">
+    Examples
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../submit_dataset.html">
+    Submit a new dataset
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../api.html">
+    API
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../cite.html">
+    Citation
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../whats_new.html">
+    Release notes
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../statistics.html">
+    Corpus statistics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../dataset_summary.html">
+    Datasets
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../modalities.html">
+    Modalities
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../taxonomy.html">
+    Taxonomy
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../datasets/index.html">
+    Dataset pages
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../install.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../auto_examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../submit_dataset.html">
+    Submit a new dataset
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api.html">
+    API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../cite.html">
+    Citation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../whats_new.html">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Signal-level absences (phenomenology cells)</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p>Negative results of the two dated hunts (P1 morning + second hunt afternoon,
+2026-08-22; four parallel web sweeps: imaging/genetics, electrophysiology,
+video/pose/pediatric/aging, comorbidities/histology/scales). “Absent” means: no
+public dataset found by systematic search of Zenodo, Figshare, PhysioNet,
+OpenNeuro, IEEE DataPort, OSF, Dryad, institutional repositories and the
+2023-2026 literature, at the stated date. These absences justify the internal
+production protocols and are themselves a publishable finding of the resource
+paper.</p>
+<section id="signal-level-absences-phenomenology-cells">
+<h1>Signal-level absences (phenomenology cells)<a class="headerlink" href="#signal-level-absences-phenomenology-cells" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>A2 Myoclonus EMG at capture grade (&gt;= 1000 Hz surface EMG): NOTHING public.
+Polymyography stays in clinical archives; only case-report figures exist.
+Consequence: internal high-rate protocol is the only route.</p></li>
+<li><p>A3 Tics video: REVISION PENDING VERIFICATION (2026-09-04 closing
+sweep). Two candidates surfaced on generalist repositories: MindTS-MMD
+(Mendeley 10.17632/kswgcms346.1: 60 children with Tourette, &gt;120 h of
+video+audio+text sessions, expert tic-frequency annotations, CC BY 4.0
+claimed, “de-identified” claimed) and OSF 46vxm (video-derived tic
+detection data). NEITHER is verified: for both, the de-identification
+claim and actual signal content must be checked BEFORE the paper
+claims refutation (video of minors - the SSBD ethics precedent).
+Until then the paper wording is: “one annotated pediatric corpus
+appeared in 2026 and is catalogued pending verification”. The
+pre-sweep statement (all 2021-2026 tic-detection papers use private
+clinical video) still described the field accurately at its date.</p></li>
+<li><p>A5 Stereotypies (clinical): REVISED 2026-09-04 (closing sweep). The
+absence is REFUTED at the skeleton level: ASDPose (Dinstein lab, JAMA
+Netw Open 2024; github.com/Dinstein-Lab/ASDMotion) distributes 7,352
+manually annotated SMM segments from 241 children as OpenPose skeleton
+time-series, freely downloadable (licence verification pending; see
+datasets/pose/asdpose/datacard.md). The claim SURVIVES for raw video:
+still nothing public beyond ethics-gated sets (SSBD/SSBD+, AV-ASD:
+identifiable minors) and MMASD derivatives (licence unspecified).
+Paper wording: “no open stereotypy VIDEO corpus; an annotated skeleton
+corpus appeared in 2024 and is catalogued”.</p></li>
+<li><p>A6 Athetosis / A8 Ballismus: zero public movement recordings anywhere; only
+the (private) CODY cohorts and feature tables from the cody-pipeline release.</p></li>
+<li><p>A7 Chorea video/pose: no public HD video corpus (TRACK-HD/IMAGE-HD never
+released; 2026 chorea-wearable study keeps data private). Wrist accelerometry
+(hd_accel_jnet) and gait force (gaitndd) remain the only open signals.</p></li>
+<li><p>B1 Rigidity, instrumented: no public dataset (MJFF refused); T8 internal
+protocol stands.</p></li>
+<li><p>D7 Functional movement disorders: NO public video or sensor dataset at all
+(2025 MDS review of video-based models lists none). Only proxy: TIM-TREMOR’s
+functional-tremor arm (labels unverified; G0 re-admission decision pending).</p></li>
+</ul>
+</section>
+<section id="comorbidity-systemic-absences">
+<h1>Comorbidity / systemic absences<a class="headerlink" href="#comorbidity-systemic-absences" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>RBD polysomnography beyond CAP: zero open PSG with RSWA/atonia scoring
+(Mayo, Montreal, Innsbruck cohorts private). D6 stays CAP-only until the
+Beijing sleep-LFP application (121 patients, PSG+LFP, not public) succeeds.</p></li>
+<li><p>Wilson disease (E2), thyroid tremor (E1), tardive dyskinesia (E6), catatonia
+(E7): zero public movement datasets; only copyrighted teaching clips in
+journals.</p></li>
+<li><p>Diabetic neuropathy gait (E3/D4): nothing open today; Sacco-lab data never
+deposited; DFN-DS (135 diabetic subjects, in-shoe pressure) announced as
+“will be available”: WATCH LIST. Chemo-induced neuropathy arm of
+clinical_gait_signals_2025 is the current best neuropathic-gait source (ND
+license flag).</p></li>
+</ul>
+</section>
+<section id="imaging-genetics-absences">
+<h1>Imaging / genetics absences<a class="headerlink" href="#imaging-genetics-absences" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Open DAT-SPECT: none outside PPMI (application-gated). No open neuromelanin
+MRI PD set on OpenNeuro or Sci Data.</p></li>
+<li><p>Open Huntington MRI: none (Enroll-HD imaging application-only). Essential
+tremor and dystonia MRI on OpenNeuro: essentially absent beyond small DBS
+case series.</p></li>
+<li><p>Genotype-phenotype bulk: MDSGene has no export and a no-redistribution
+license; the only redistributable substrate is HPO + ClinVar + PanelApp
+(all queued).</p></li>
+</ul>
+</section>
+<section id="standing-consequences">
+<h1>Standing consequences<a class="headerlink" href="#standing-consequences" title="Link to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p>Internal production protocols (T8 rigidity, high-rate myoclonus, GMA
+neonatal cohort, DBS archive) have NO public substitute: they stay on the
+critical path (plan v2, phase 0/1).</p></li>
+<li><p>CODY is confirmed as a globally unique asset for A2/A3/A5/A6/A8.</p></li>
+<li><p>The resource paper can claim these absences with dated, documented searches.</p></li>
+</ol>
+</section>
+<section id="phenotype-level-absences-2026-09-05-deep-dive-sweep">
+<h1>Phenotype-level absences (2026-09-05 deep-dive sweep)<a class="headerlink" href="#phenotype-level-absences-2026-09-05-deep-dive-sweep" title="Link to this heading">#</a></h1>
+<p>Finer-grained than the A-cell absences above; each verified by a
+dedicated sub-agent against Zenodo/figshare/Mendeley/OSF/PhysioNet/
+OpenNeuro/IEEE DataPort + the papers’ own availability statements:</p>
+<ul class="simple">
+<li><p>BLEPHAROSPASM: no openly downloadable patient EMG/video/blink
+dataset anywhere; the npj Digit Med 2025 paper (847+179 videos,
+closed) itself states “No publicly available blepharospasm dataset
+currently exists”. Nearest open item: 5 healthy-control orbicularis
+EMG sessions (Mendeley nm535v73jj).</p></li>
+<li><p>WRITER’S CRAMP / focal hand dystonia: no open handwriting-
+kinematics, sEMG, or mocap deposit; the Duke MovAlyzer set (21 WC)
+is corresponding-author-request only.</p></li>
+<li><p>OCULOMOTOR (all movement disorders): zero open eye-tracking
+recordings - PD antisaccade, PSP vertical gaze, HD saccades all
+live in papers or gated cohorts only.</p></li>
+<li><p>RAW FACIAL VIDEO (hypomimia, tardive orofacial): structurally
+absent (identifiable faces); the Harvard OpenFace-features CSV set
+is the only open derivative.</p></li>
+<li><p>UNGATED levodopa-induced-dyskinesia sensor data: none exists;
+cis_pd/real_pd (Synapse-gated) are the only dyskinesia-labeled
+sensor corpora found.
+Counterpoint the same sweep produced: cervical dystonia now HAS one
+open multimodal signal deposit (mrc_lfp_dystonia, CC BY-SA, login
+tier) - the A1 desert has one oasis.</p></li>
+<li><p>WILSON’S DISEASE: no downloadable movement/speech signal anywhere
+(tremor accelerometry, gait, handwriting, oculography all searched);
+the Anhui 52-subject wearable-tremor and 110-subject speech corpora
+exist in papers only. The E2 absence above is re-confirmed at
+phenotype depth.</p></li>
+<li><p>PSP/MSA/CBD: one open sensor deposit now exists (mobilityapp_atypical,
+20 PSP + 23 MSA - catalogued 2026-09-05); CBD specifically remains at
+zero signal datasets; atypical-parkinsonism OCULOMOTOR remains zero.</p></li>
+<li><p>PREMANIFEST HD KINEMATICS: nothing open beyond the wrist accelerometry
+we hold (hd_accel_jnet); TRACK-HD/PREDICT-HD/Enroll-HD raw Q-Motor and
+eye traces are application-tier (enroll_hd_family).</p></li>
+<li><p>RLS ACTIGRAPHY / patient SIT: no open dataset; PLM-scored PSG exists
+open only in cap_sleep (10 patients), at scale only behind the NSRR
+DAUA (nsrr_plm_psg).</p></li>
+<li><p>ORTHOSTATIC TREMOR: zero deposited leg-sEMG/accelerometry (the
+13-18 Hz signature lives only in papers and one case-report video);
+PALATAL TREMOR and HEMIFACIAL SPASM likewise at zero deposits.
+Counterpoint: SPASMODIC DYSPHONIA is now the best-served focal
+dystonia - the Saarbruecken Voice Database SD subset (voice+EGG,
+CC BY, catalogued svd_spasmodic_dysphonia) is fully open.</p></li>
+<li><p>BROKEN AVAILABILITY STATEMENT sighting (case-11 family): the LSR
+hemifacial-spasm CNN paper (PLOS ONE 2022) declares “all data on
+GitHub”; the repo holds two notebooks and no EMG.</p></li>
+<li><p>TARDIVE DYSKINESIA and AKATHISIA (E6 depth): both at zero deposited
+signal; every AIMS-scored video corpus (TDtect, iRxReminder) is
+proprietary, the classic akathisia actometry predates data sharing;
+only scale-score IPD exists behind Vivli/NIMH-NDA DUAs. Open
+adjacent context: OBF-Psychiatric and PSYKOSE actigraphy
+(antipsychotic-exposed, unlabeled).</p></li>
+<li><p>D7 FUNCTIONAL revised 2026-09-05: two genuine open deposits exist
+(osf_fmd_eeg processed EEG; osf_fmd_kinematics limb velocity
+traces, both licence-pending) - and TIM-TREMOR, the old functional-
+tremor proxy, is now CONFIRMED WITHDRAWN at 4TU (HTTP 410): a
+catalogued dataset died at the source between our July attempt and
+today.</p></li>
+<li><p>PEDIATRIC/GENETIC RARE (2026-09-05 paediatric pass): SYDENHAM CHOREA
+is the cleanest absolute gap found (zero datasets, zero deposited
+recordings, zero registries with video). Also at zero open signal:
+SGCE myoclonus-dystonia, PRRT2 attack recordings, NBIA/PKAN, Rett
+hand stereotypies, Angelman gait, ataxia-telangiectasia, DYT1
+generalized dystonia. A NEW ACCESS-MODEL CLASS surfaced: the
+FAMILY-MEDIATED REGISTRY (GNAO1.org, ADCY5.org, A-T RARE-X) where
+patients/families control researcher access. CODY is independently
+confirmed (arXiv 2602.00163) as covering ADCY5- and SGCE-type
+phenotypes - the corpus’s own deposit services two of these gaps.</p></li>
+<li><p>CROSS-REPOSITORY VERDICT (2026-09-05 cross-repository pass, seven
+repositories swept systematically): Huntington/chorea SIGNAL data is
+absent from ALL of EBRAINS/DABI/OpenNeuro/PhysioNet/Dryad/GIN/
+Synapse; myoclonus absent everywhere; Tourette signal exists in
+EXACTLY ONE place on earth (DABI 1UH3NS119844, gated); invasive
+movement-disorder ephys lives in DABI and Dryad, NOT in OpenNeuro/
+EBRAINS/GIN.</p></li>
+</ul>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Signal-level absences (phenomenology cells)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#comorbidity-systemic-absences">Comorbidity / systemic absences</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#imaging-genetics-absences">Imaging / genetics absences</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#standing-consequences">Standing consequences</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#phenotype-level-absences-2026-09-05-deep-dive-sweep">Phenotype-level absences (2026-09-05 deep-dive sweep)</a></li>
+</ul>
+
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/_generated/hunt_confirmed_absences.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, MoveAtlas contributors.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

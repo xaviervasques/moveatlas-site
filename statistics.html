@@ -1,0 +1,902 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" data-theme="auto">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Corpus statistics &#8212; MoveAtlas</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "auto";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "auto";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css?v=fd6457a4" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/moveatlas.css?v=0760cefd" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
+
+    <script src="_static/documentation_options.js?v=965fac30"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/sg-tags.js?v=d80f6fa4"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=4ea706d9"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'statistics';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Datasets" href="dataset_summary.html" />
+    <link rel="prev" title="MoveAtlas" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="auto">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo_light.svg" class="logo__image only-light" alt="MoveAtlas"/>
+    <img src="_static/logo_dark.svg" class="logo__image only-dark pst-js-only" alt="MoveAtlas"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Corpus statistics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="dataset_summary.html">
+    Datasets
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="modalities.html">
+    Modalities
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="taxonomy.html">
+    Taxonomy
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="datasets/index.html">
+    Dataset pages
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="install.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="auto_examples/index.html">
+    Examples
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="submit_dataset.html">
+    Submit a new dataset
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="api.html">
+    API
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="cite.html">
+    Citation
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="whats_new.html">
+    Release notes
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Corpus statistics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="dataset_summary.html">
+    Datasets
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="modalities.html">
+    Modalities
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="taxonomy.html">
+    Taxonomy
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="datasets/index.html">
+    Dataset pages
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="install.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="auto_examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="submit_dataset.html">
+    Submit a new dataset
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api.html">
+    API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="cite.html">
+    Citation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="whats_new.html">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Corpus statistics</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="corpus-statistics">
+<h1>Corpus statistics<a class="headerlink" href="#corpus-statistics" title="Link to this heading">#</a></h1>
+<p>Everything on this page is computed from the canonical manifests (the
+files <code class="docutils literal notranslate"><span class="pre">datasets/_canonical_*_manifest*.csv</span></code> that every ingestion
+maintains); nothing is estimated or copied from papers. Counting rule:
+one record = one canonical file entry (a trial, a night, a wear-block,
+depending on the family); hours = sum of n_frames / native rate.
+Regenerate with <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">site/gen_figures.py</span></code>.</p>
+<section id="the-harmonized-corpus-at-a-glance">
+<h2>The harmonized corpus at a glance<a class="headerlink" href="#the-harmonized-corpus-at-a-glance" title="Link to this heading">#</a></h2>
+<table class="table"><thead><tr><th>Family</th><th>Datasets ingested</th><th>Subjects</th><th>Records</th><th>Hours</th></tr></thead><tbody>
+<tr><td><b>pose</b></td><td>12</td><td>27,702</td><td>178,455</td><td>204</td></tr>
+<tr><td><b>imu</b></td><td>20</td><td>1,695</td><td>33,703</td><td>16,715</td></tr>
+<tr><td><b>emg</b></td><td>11</td><td>622</td><td>8,251</td><td>11,382</td></tr>
+<tr><td><b>eeg</b></td><td>8</td><td>566</td><td>3,634</td><td>11,996</td></tr>
+<tr><td><b>force</b></td><td>6</td><td>2,943</td><td>78,194</td><td>55</td></tr>
+<tr><td><b>silhouette</b></td><td>2</td><td>130</td><td>226</td><td>5</td></tr>
+<tr><td><b>total</b></td><td>59</td><td>33,658</td><td>302,463</td><td>40,357</td></tr>
+</tbody></table><a class="only-light reference internal image-reference" href="_images/corpus_overview.png"><img alt="Hours and records per family" class="only-light" src="_images/corpus_overview.png" style="width: 100%;" />
+</a>
+<a class="only-dark reference internal image-reference" href="_images/corpus_overview_dark.png"><img alt="Hours and records per family" class="only-dark" src="_images/corpus_overview_dark.png" style="width: 100%;" />
+</a>
+</section>
+<section id="how-to-read-these-numbers">
+<h2>How to read these numbers<a class="headerlink" href="#how-to-read-these-numbers" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>pose</strong> is record-rich but hour-light: mocap and video-derived trials
+are short (seconds to minutes) and there are many of them, across
+27,000+ subjects (large-scale action corpora dominate the subject
+count).</p></li>
+<li><p><strong>imu</strong> dominates the hours: wearable studies record days of free
+living per subject (weeks-long accelerometry in the ageing and
+Parkinson cohorts).</p></li>
+<li><p><strong>emg</strong> and <strong>eeg</strong> hours are driven by long recordings (whole-night
+polysomnography, hours-long freezing-of-gait protocols) rather than by
+record counts.</p></li>
+<li><p><strong>force</strong> is trial-shaped (a footstep pair per record), hence many
+records, few hours; <strong>silhouette</strong> is the smallest family today.</p></li>
+<li><p>These figures cover the INGESTED harmonized corpus: 46
+distinct datasets with measured records (a multimodal set counts in
+each family it feeds, so the per-family dataset counts sum higher).
+The full catalogue holds 170: the remainder splits into
+pointer-tier sets used through their original access routes, aux
+tables, and documented barriers; see <a class="reference internal" href="dataset_summary.html"><span class="doc">Datasets</span></a>.</p></li>
+<li><p>Every number on this page is HUMAN data. The animal lane (11
+catalogued datasets: mouse, rat and macaque models) is deliberately
+absent from every table here: animal entries map to symptom analogs
+in free text on their own cards and never enter the human clinical
+cells, so each matrix stays single-species.</p></li>
+</ul>
+</section>
+<section id="what-a-record-looks-like">
+<h2>What a record looks like<a class="headerlink" href="#what-a-record-looks-like" title="Link to this heading">#</a></h2>
+<a class="only-light reference internal image-reference" href="_images/sample_pose.png"><img alt="Real canonical gait skeletons" class="only-light" src="_images/sample_pose.png" style="width: 100%;" />
+</a>
+<a class="only-dark reference internal image-reference" href="_images/sample_pose_dark.png"><img alt="Real canonical gait skeletons" class="only-dark" src="_images/sample_pose_dark.png" style="width: 100%;" />
+</a>
+<a class="only-light reference internal image-reference" href="_images/sample_signals.png"><img alt="Real EMG and IMU snippets" class="only-light" src="_images/sample_signals.png" style="width: 100%;" />
+</a>
+<a class="only-dark reference internal image-reference" href="_images/sample_signals_dark.png"><img alt="Real EMG and IMU snippets" class="only-dark" src="_images/sample_signals_dark.png" style="width: 100%;" />
+</a>
+</section>
+<section id="record-durations">
+<h2>Record durations<a class="headerlink" href="#record-durations" title="Link to this heading">#</a></h2>
+<a class="only-light reference internal image-reference" href="_images/duration_distributions.png"><img alt="Record-duration histograms per family" class="only-light" src="_images/duration_distributions.png" style="width: 100%;" />
+</a>
+<a class="only-dark reference internal image-reference" href="_images/duration_distributions_dark.png"><img alt="Record-duration histograms per family" class="only-dark" src="_images/duration_distributions_dark.png" style="width: 100%;" />
+</a>
+<p>Each family has its own shape and the histograms show it honestly: pose
+records live in the seconds range (trials); IMU is bimodal (short
+protocol trials against multi-hour free-living wear blocks); EMG and EEG
+mix short trials with whole-session and whole-night recordings; force
+records are sub-second footstep pairs.</p>
+</section>
+<section id="modalities-by-symptom">
+<h2>Modalities by symptom<a class="headerlink" href="#modalities-by-symptom" title="Link to this heading">#</a></h2>
+<p>Which modality lanes carry data for each target symptom cell of the
+taxonomy (hyperkinetic A1-A8, hypokinetic B1-B5; every code is defined
+on the <a class="reference internal" href="taxonomy.html"><span class="doc">Taxonomy</span></a> page). A dataset counts in
+every cell and lane it covers; the parenthesized number is the
+open-access subset. Empty rows are findings, not omissions: no open
+data exists there. Human datasets only; animal models never enter
+these cells.</p>
+<p class="ma-count-note">Target symptoms: datasets per cell and modality lane; the parenthesized number is the open-access subset (hosted or recipe). Computed from the registry at build time.</p>
+<div style="overflow-x:auto">
+<table class="table"><thead><tr><th></th>
+<th>Pose & video</th>
+<th>Wearable IMU</th>
+<th>EMG</th>
+<th>EEG</th>
+<th>Force & pressure</th>
+<th>Silhouette</th>
+<th>LFP / ECoG (invasive)</th>
+<th>MRI & imaging</th>
+<th>Genetics</th>
+<th>Histology & transcriptomics</th>
+<th>Voice, writing & typing</th>
+<th>Clinical scales</th>
+<th>any lane</th></tr></thead><tbody>
+<tr><td><b>A1 Tremor</b></td><td><b>5</b> <span class="ma-count-note">(3)</span></td><td><b>6</b></td><td><b>2</b></td><td><b>1</b></td><td></td><td><b>2</b></td><td><b>3</b></td><td><b>4</b> <span class="ma-count-note">(1)</span></td><td><b>3</b> <span class="ma-count-note">(1)</span></td><td></td><td><b>1</b></td><td><b>1</b> <span class="ma-count-note">(0)</span></td><td>21</td></tr>
+<tr><td><b>A2 Myoclonus</b></td><td></td><td><b>6</b></td><td><b>3</b></td><td><b>3</b> <span class="ma-count-note">(2)</span></td><td></td><td><b>2</b></td><td><b>2</b></td><td></td><td></td><td></td><td></td><td></td><td>11</td></tr>
+<tr><td><b>A3 Tics</b></td><td><b>3</b></td><td></td><td></td><td></td><td></td><td></td><td><b>1</b></td><td><b>1</b></td><td></td><td></td><td></td><td></td><td>4</td></tr>
+<tr><td><b>A4 Dystonia</b></td><td><b>2</b></td><td><b>1</b></td><td><b>1</b></td><td><b>1</b></td><td></td><td></td><td><b>2</b></td><td><b>1</b></td><td><b>2</b></td><td></td><td></td><td><b>2</b></td><td>9</td></tr>
+<tr><td><b>A5 Stereotypies</b></td><td><b>3</b></td><td><b>1</b></td><td></td><td></td><td></td><td><b>1</b></td><td></td><td></td><td></td><td></td><td></td><td></td><td>4</td></tr>
+<tr><td><b>A6 Athetosis</b></td><td><b>2</b></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>2</td></tr>
+<tr><td><b>A7 Chorea</b></td><td><b>3</b> <span class="ma-count-note">(2)</span></td><td><b>3</b> <span class="ma-count-note">(1)</span></td><td><b>1</b></td><td><b>1</b></td><td><b>1</b></td><td></td><td></td><td><b>2</b> <span class="ma-count-note">(1)</span></td><td></td><td><b>1</b></td><td></td><td></td><td>10</td></tr>
+<tr><td><b>A8 Ballismus</b></td><td><b>3</b></td><td></td><td></td><td></td><td></td><td><b>1</b></td><td></td><td></td><td><b>1</b></td><td></td><td></td><td></td><td>4</td></tr>
+<tr><td><b>B1 Rigidity</b></td><td></td><td><b>15</b> <span class="ma-count-note">(7)</span></td><td><b>4</b> <span class="ma-count-note">(2)</span></td><td><b>5</b> <span class="ma-count-note">(3)</span></td><td></td><td><b>3</b> <span class="ma-count-note">(2)</span></td><td><b>6</b></td><td><b>5</b> <span class="ma-count-note">(3)</span></td><td><b>1</b> <span class="ma-count-note">(0)</span></td><td><b>1</b></td><td></td><td><b>1</b> <span class="ma-count-note">(0)</span></td><td>29</td></tr>
+<tr><td><b>B2 Bradykinesia</b></td><td><b>5</b></td><td><b>13</b> <span class="ma-count-note">(10)</span></td><td><b>1</b></td><td><b>5</b></td><td><b>4</b></td><td><b>2</b></td><td><b>4</b></td><td><b>4</b> <span class="ma-count-note">(2)</span></td><td><b>2</b> <span class="ma-count-note">(0)</span></td><td></td><td><b>4</b></td><td><b>2</b> <span class="ma-count-note">(0)</span></td><td>36</td></tr>
+<tr><td><b>B3 Hypokinesia</b></td><td><b>2</b></td><td><b>9</b> <span class="ma-count-note">(7)</span></td><td></td><td></td><td><b>2</b></td><td><b>1</b></td><td></td><td><b>1</b></td><td></td><td><b>1</b></td><td></td><td></td><td>14</td></tr>
+<tr><td><b>B4 Akinesia</b></td><td></td><td><b>8</b> <span class="ma-count-note">(1)</span></td><td><b>3</b> <span class="ma-count-note">(1)</span></td><td><b>3</b> <span class="ma-count-note">(1)</span></td><td></td><td><b>1</b> <span class="ma-count-note">(0)</span></td><td></td><td></td><td></td><td></td><td></td><td></td><td>12</td></tr>
+<tr><td><b>B5 Freezing of gait</b></td><td><b>1</b></td><td><b>8</b> <span class="ma-count-note">(7)</span></td><td><b>1</b></td><td><b>3</b></td><td></td><td></td><td><b>2</b></td><td></td><td></td><td></td><td></td><td></td><td>11</td></tr>
+</tbody></table></div></section>
+<section id="modalities-by-healthy-context-and-comorbidity">
+<h2>Modalities by healthy context and comorbidity<a class="headerlink" href="#modalities-by-healthy-context-and-comorbidity" title="Link to this heading">#</a></h2>
+<p>The same crossing for the age-conditioned normal axis (C) and the
+neurological and systemic comorbidity axes (D, E).</p>
+<p class="ma-count-note">Healthy context and comorbidities: datasets per cell and modality lane; the parenthesized number is the open-access subset (hosted or recipe). Computed from the registry at build time.</p>
+<div style="overflow-x:auto">
+<table class="table"><thead><tr><th></th>
+<th>Pose & video</th>
+<th>Wearable IMU</th>
+<th>EMG</th>
+<th>EEG</th>
+<th>Force & pressure</th>
+<th>Silhouette</th>
+<th>LFP / ECoG (invasive)</th>
+<th>MRI & imaging</th>
+<th>any lane</th></tr></thead><tbody>
+<tr><td><b>C1 Normal adult movement</b></td><td><b>6</b></td><td><b>9</b> <span class="ma-count-note">(8)</span></td><td><b>3</b></td><td><b>1</b></td><td><b>3</b></td><td><b>3</b> <span class="ma-count-note">(2)</span></td><td></td><td><b>2</b> <span class="ma-count-note">(1)</span></td><td>22</td></tr>
+<tr><td><b>C2 Infant development</b></td><td><b>5</b> <span class="ma-count-note">(3)</span></td><td><b>1</b></td><td></td><td></td><td></td><td><b>2</b> <span class="ma-count-note">(1)</span></td><td></td><td></td><td>7</td></tr>
+<tr><td><b>C3 Aging</b></td><td></td><td><b>7</b></td><td></td><td></td><td></td><td><b>1</b> <span class="ma-count-note">(0)</span></td><td></td><td><b>2</b> <span class="ma-count-note">(1)</span></td><td>10</td></tr>
+<tr><td><b>D1 Epilepsy</b></td><td><b>1</b> <span class="ma-count-note">(0)</span></td><td><b>2</b> <span class="ma-count-note">(1)</span></td><td><b>1</b></td><td><b>2</b> <span class="ma-count-note">(1)</span></td><td></td><td></td><td></td><td></td><td>5</td></tr>
+<tr><td><b>D2 Ataxia</b></td><td><b>1</b></td><td><b>1</b></td><td></td><td></td><td><b>1</b></td><td></td><td></td><td></td><td>3</td></tr>
+<tr><td><b>D3 Pyramidal syndromes</b></td><td><b>3</b> <span class="ma-count-note">(2)</span></td><td><b>3</b></td><td><b>1</b></td><td></td><td><b>2</b></td><td></td><td></td><td></td><td>7</td></tr>
+<tr><td><b>D4 Neuropathies</b></td><td></td><td><b>2</b></td><td></td><td></td><td></td><td></td><td></td><td></td><td>2</td></tr>
+<tr><td><b>D5 Neurodevelopmental</b></td><td><b>1</b></td><td></td><td></td><td></td><td></td><td><b>1</b></td><td></td><td></td><td>1</td></tr>
+<tr><td><b>D6 Sleep disorders</b></td><td></td><td></td><td><b>1</b></td><td><b>1</b></td><td></td><td></td><td><b>1</b> <span class="ma-count-note">(0)</span></td><td></td><td>2</td></tr>
+<tr><td><b>D7 Functional movement disorders</b></td><td></td><td><b>1</b></td><td><b>1</b></td><td></td><td></td><td><b>1</b></td><td></td><td></td><td>2</td></tr>
+<tr><td><b>E1 Endocrine</b></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0</td></tr>
+<tr><td><b>E2 Metabolic</b></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0</td></tr>
+<tr><td><b>E3 Diabetes-related</b></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0</td></tr>
+<tr><td><b>E4 Musculoskeletal</b></td><td></td><td><b>2</b></td><td></td><td></td><td><b>1</b></td><td><b>1</b></td><td></td><td></td><td>4</td></tr>
+<tr><td><b>E5 Dermatologic</b></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0</td></tr>
+<tr><td><b>E6 Iatrogenic</b></td><td><b>1</b></td><td><b>2</b></td><td></td><td></td><td></td><td></td><td></td><td></td><td>3</td></tr>
+<tr><td><b>E7 Psychiatric</b></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0</td></tr>
+</tbody></table></div></section>
+<section id="subjects-with-several-modalities">
+<h2>Subjects with several modalities<a class="headerlink" href="#subjects-with-several-modalities" title="Link to this heading">#</a></h2>
+<p>Datasets whose HARMONIZED records pair two or more families on the
+same subjects (matched by subject namespace inside each dataset).
+These are the subjects a multimodal model can actually align today;
+stroke_gait_vancriekinge (EMG + force plates recorded, awaiting their
+ingestion pass) and gait120 (joint angles pending) will join.</p>
+<table class="table"><thead><tr><th>Dataset</th><th>Families</th><th>Subjects per family</th><th>Subjects with 2+ modalities</th></tr></thead><tbody>
+<tr><td><b>physionet_multimodal_gait</b></td><td>eeg + emg + force + imu</td><td>eeg 59, emg 58, force 59, imu 57</td><td><b>56</b></td></tr>
+<tr><td><b>stroke_gait_vancriekinge</b></td><td>emg + force + pose</td><td>emg 163, force 185, pose 188</td><td><b>160</b></td></tr>
+<tr><td><b>multimodal_fog</b></td><td>eeg + emg + imu</td><td>eeg 12, emg 12, imu 12</td><td><b>12</b></td></tr>
+<tr><td><b>sensefog</b></td><td>eeg + emg + imu</td><td>eeg 11, emg 11, imu 12</td><td><b>11</b></td></tr>
+<tr><td><b>gait120</b></td><td>emg + pose</td><td>emg 120, pose 120</td><td><b>120</b></td></tr>
+<tr><td><b>weargait_pd</b></td><td>force + imu</td><td>force 175, imu 185</td><td><b>175</b></td></tr>
+<tr><td><b>seizeit2</b></td><td>eeg + emg</td><td>eeg 125, emg 124</td><td><b>124</b></td></tr>
+<tr><td><b>cap_sleep</b></td><td>eeg + emg</td><td>eeg 35, emg 3</td><td><b>3</b></td></tr>
+<tr><td><b>total</b></td><td></td><td></td><td><b>661</b></td></tr>
+</tbody></table></section>
+<section id="interventions-and-state-labels">
+<h2>Interventions and state labels<a class="headerlink" href="#interventions-and-state-labels" title="Link to this heading">#</a></h2>
+<p>Datasets carrying an intervention axis (a drug, deep brain
+stimulation, or a treatment trial) with machine-usable state labels:
+the raw material for “what does a molecule or a stimulator do to the
+movement” questions. Curated in <code class="docutils literal notranslate"><span class="pre">docs/interventions.csv</span></code> with the
+evidence for each claim.</p>
+<table class="table"><thead><tr><th>Dataset</th><th>Intervention</th><th>State labels available</th><th>Evidence</th></tr></thead><tbody>
+<tr><td><b>li_taati</b></td><td>levodopa (chronic PD treatment; dyskinesias are the outcome)</td><td>UDysRS dyskinesia scores per clip; communication/drinking/leg_agility tasks</td><td class="ma-count-note">data card and source paper (Li & Taati); scores ride as eval-only labels [2026-08 ingestion]</td></tr>
+<tr><td><b>cdystonia</b></td><td>botulinum toxin B randomized trial (placebo / 5000U / 10000U)</td><td>TWSTRS total score at weeks 0-2-4-8-12-16 per patient</td><td class="ma-count-note">status 2026-08-28: 631 rows / 109 patients / 9 sites / three arms (hbiostat table) [2026-08-28 read with pyreadr]</td></tr>
+<tr><td><b>pd_biostamprc21</b></td><td>levodopa</td><td>medication ON/OFF windows and MDS-UPDRS-III assessment windows per subject (eval-only)</td><td class="ma-count-note">status 2026-08-26: UPDRS windows and medication ON/OFF kept per subject under processed/annotations/ [2026-08-26 ingestion]</td></tr>
+<tr><td><b>pd_meg_stn_lfp_ds004998</b></td><td>levodopa</td><td>med ON vs med OFF recording sessions (MEG + STN-LFP)</td><td class="ma-count-note">dataset title and OpenNeuro ds004998 description; raw on disk (161.8 GB); invasive lane awaits its contract [2026-08-24 download]</td></tr>
+<tr><td><b>kaggle_fog</b></td><td>levodopa</td><td>Medication on/off per recording in defog_metadata.csv and tdcsfog_metadata.csv</td><td class="ma-count-note">column verified inside the raw competition zip [2026-09-01 verified in zip]</td></tr>
+<tr><td><b>tremordb</b></td><td>deep brain stimulation</td><td>tremor VELOCITY (laser Doppler) under DBS on/off and washout timepoints per target (GPi/Vim/STN)</td><td class="ma-count-note">RESOLVED 2026-09-01: ingested AS AUX by design (processed/tremordb_velocity.pkl; velocity sits outside the acc/gyro IMU contract so no canonical manifest rows are expected) [2026-08-22 aux ingestion; clarified 2026-09-01]</td></tr>
+<tr><td><b>oxford_dystonia_lfp</b></td><td>DBS-implanted cohort (STN/thalamic electrodes; recordings)</td><td>per-hemisphere LFP + EEG + neck EMG + ACC; stimulation-state structure to be established at ingestion</td><td class="ma-count-note">card + MRC deposit structure (P1..P7 zips on disk) [2026-08-25 download]</td></tr>
+<tr><td><b>beijing_sleep_lfp</b></td><td>DBS-implanted cohort (pallidal/thalamic electrodes)</td><td>polysomnography with LFP across 5 sleep disorders</td><td class="ma-count-note">card; application-gated (documented barrier) [not held]</td></tr>
+<tr><td><b>accel_fluctuations</b></td><td>levodopa response study (MJFF)</td><td>motor-fluctuation accelerometry around dosing</td><td class="ma-count-note">recovered into the registry 2026-09-01 (adjudication item 21); access REFUSED (ACT) - documented barrier [not held]</td></tr>
+<tr><td><b>oxford_stn_onoff_dbs</b></td><td>levodopa AND 130 Hz DBS</td><td>rest recordings in three therapy states: med ON / med OFF / DBS ON (LFP + EEG + accelerometer)</td><td class="ma-count-note">MRC BNDU page verified 2026-09-01 (CC BY-SA 4.0); queued for the owner's portal login [not yet held]</td></tr>
+<tr><td><b>dystonia_alcohol_bfm</b></td><td>ethanol (alcohol responsiveness)</td><td>BFM ratings with alcohol-responsiveness phenotype across 1258 isolated-dystonia patients</td><td class="ma-count-note">Dryad CC0 confirmed via API at fetch [2026-09-01 downloaded]</td></tr>
+<tr><td><b>pd_rest_eeg_onoff_ds002778</b></td><td>levodopa</td><td>within-subject rest EEG sessions ON and OFF medication</td><td class="ma-count-note">OpenNeuro ds002778; full S3 sync [2026-09-01 downloaded]</td></tr>
+</tbody></table></section>
+<section id="taxonomy-coverage">
+<h2>Taxonomy coverage<a class="headerlink" href="#taxonomy-coverage" title="Link to this heading">#</a></h2>
+<a class="only-light reference internal image-reference" href="_images/taxonomy_coverage.png"><img alt="Datasets per taxonomy cell" class="only-light" src="_images/taxonomy_coverage.png" style="width: 100%;" />
+</a>
+<a class="only-dark reference internal image-reference" href="_images/taxonomy_coverage_dark.png"><img alt="Datasets per taxonomy cell" class="only-dark" src="_images/taxonomy_coverage_dark.png" style="width: 100%;" />
+</a>
+<p>The rich cells (pose/video and wearable IMU among modalities,
+bradykinesia and normal adult movement among the clinical axes) and the
+sparse ones (tics, stereotypies, athetosis) are both visible at a
+glance; the sparse cells are precisely where the CODY cohorts are the
+only data in existence, which is why their derived release matters
+(shipped: Zenodo, CC BY 4.0, 2026-09-01).</p>
+</section>
+<section id="signal-usability-validity-masks">
+<h2>Signal usability (validity masks)<a class="headerlink" href="#signal-usability-validity-masks" title="Link to this heading">#</a></h2>
+<p>How much of each record is USABLE signal, measured through each
+family’s own honesty mechanism: per-frame/per-joint validity masks
+(pose), detection masks (silhouette), sample-validity and channel
+masks (IMU), sensor masks (force), declared-bad channels and finite
+fractions (EEG), finite fractions (EMG, a family without masks by
+design). Datasets larger than the sampling cap are measured on a
+fixed-seed sample and say so in the Sampled column; regenerate
+exhaustively with <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">mask_statistics.py</span> <span class="pre">--cap</span> <span class="pre">0</span></code>.</p>
+<div style="overflow-x:auto">
+<table class="table"><thead><tr><th>Family</th><th>Dataset</th><th>Records seen</th><th>Measured</th><th>Sampled</th><th>Usable mean</th><th>median</th><th>p10</th><th>fully usable</th></tr></thead><tbody>
+<tr><td><span class="ma-fam ma-eeg">eeg</span></td><td><b>cap_sleep</b></td><td>35</td><td>35</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-eeg">eeg</span></td><td><b>multimodal_fog</b></td><td>56</td><td>56</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-eeg">eeg</span></td><td><b>pd_rest_eeg_ds004584</b></td><td>149</td><td>149</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-eeg">eeg</span></td><td><b>pd_rest_eeg_onoff_ds002778</b></td><td>46</td><td>46</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-eeg">eeg</span></td><td><b>pd_walking_eeg_ds007526</b></td><td>277</td><td>277</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-eeg">eeg</span></td><td><b>physionet_multimodal_gait</b></td><td>176</td><td>176</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-eeg">eeg</span></td><td><b>seizeit2</b></td><td>2,850</td><td>2,850</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-eeg">eeg</span></td><td><b>sensefog</b></td><td>45</td><td>45</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-emg">emg</span></td><td><b>cap_sleep</b></td><td>3</td><td>3</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-emg">emg</span></td><td><b>cervical_motion_multiplanar</b></td><td>127</td><td>127</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-emg">emg</span></td><td><b>drummer_tremor_model</b></td><td>131</td><td>131</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-emg">emg</span></td><td><b>gait120</b></td><td>4,125</td><td>4,125</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-emg">emg</span></td><td><b>multimodal_fog</b></td><td>56</td><td>56</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-emg">emg</span></td><td><b>ninapro</b></td><td>201</td><td>201</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-emg">emg</span></td><td><b>physionet_multimodal_gait</b></td><td>169</td><td>169</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-emg">emg</span></td><td><b>physionet_semg_walking</b></td><td>31</td><td>31</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-emg">emg</span></td><td><b>seizeit2</b></td><td>2,804</td><td>2,804</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-emg">emg</span></td><td><b>sensefog</b></td><td>45</td><td>45</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-emg">emg</span></td><td><b>stroke_gait_vancriekinge</b></td><td>559</td><td>559</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-force">force</span></td><td><b>gaitndd</b></td><td>64</td><td>64</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-force">force</span></td><td><b>gaitrec</b></td><td>75,732</td><td>75,732</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-force">force</span></td><td><b>physionet_gaitpdb</b></td><td>306</td><td>306</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-force">force</span></td><td><b>physionet_multimodal_gait</b></td><td>173</td><td>173</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-force">force</span></td><td><b>stroke_gait_vancriekinge</b></td><td>557</td><td>557</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-force">force</span></td><td><b>weargait_pd</b></td><td>1,362</td><td>1,362</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-imu">imu</span></td><td><b>capture24</b></td><td>3,941</td><td>3,941</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-imu">imu</span></td><td><b>clinical_gait_multipatho</b></td><td>1,356</td><td>1,356</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-imu">imu</span></td><td><b>daphnet</b></td><td>17</td><td>17</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-imu">imu</span></td><td><b>fog_star</b></td><td>106</td><td>106</td><td>no</td><td><b>99.2%</b></td><td>100.0%</td><td>100.0%</td><td>95.3%</td></tr>
+<tr><td><span class="ma-fam ma-imu">imu</span></td><td><b>fog_turning_filho</b></td><td>106</td><td>106</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-imu">imu</span></td><td><b>goodwin_smm</b></td><td>67</td><td>67</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-imu">imu</span></td><td><b>hd_accel_jnet</b></td><td>35</td><td>35</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-imu">imu</span></td><td><b>imu_inthewild_iprognosis</b></td><td>1,017</td><td>1,017</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-imu">imu</span></td><td><b>kaggle_fog</b></td><td>926</td><td>926</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-imu">imu</span></td><td><b>ltmm</b></td><td>4,963</td><td>4,963</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-imu">imu</span></td><td><b>monipar</b></td><td>46</td><td>46</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-imu">imu</span></td><td><b>multimodal_fog</b></td><td>56</td><td>56</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-imu">imu</span></td><td><b>nonan_gaitprint</b></td><td>719</td><td>719</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-imu">imu</span></td><td><b>nonan_gaitprint_young</b></td><td>620</td><td>620</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-imu">imu</span></td><td><b>pads</b></td><td>10,318</td><td>10,318</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-imu">imu</span></td><td><b>pd_biostamprc21</b></td><td>7,682</td><td>7,682</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-imu">imu</span></td><td><b>physionet_multimodal_gait</b></td><td>167</td><td>167</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-imu">imu</span></td><td><b>sensefog</b></td><td>43</td><td>43</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-imu">imu</span></td><td><b>sixmwt_lifespan</b></td><td>60</td><td>60</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-imu">imu</span></td><td><b>weargait_pd</b></td><td>1,458</td><td>1,458</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-pose">pose</span></td><td><b>amass</b></td><td>17,154</td><td>17,154</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-pose">pose</span></td><td><b>care_pd</b></td><td>8,476</td><td>8,476</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-pose">pose</span></td><td><b>cody_1</b></td><td>51</td><td>51</td><td>no</td><td><b>99.8%</b></td><td>100.0%</td><td>99.3%</td><td>76.5%</td></tr>
+<tr><td><span class="ma-fam ma-pose">pose</span></td><td><b>gait120</b></td><td>6,882</td><td>6,882</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-pose">pose</span></td><td><b>infant_pose_chambers</b></td><td>116</td><td>116</td><td>no</td><td><b>86.8%</b></td><td>90.6%</td><td>66.1%</td><td>0.0%</td></tr>
+<tr><td><span class="ma-fam ma-pose">pose</span></td><td><b>li_taati</b></td><td>511</td><td>511</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-pose">pose</span></td><td><b>modys_video</b></td><td>94</td><td>94</td><td>no</td><td><b>62.0%</b></td><td>86.7%</td><td>0.0%</td><td>0.0%</td></tr>
+<tr><td><span class="ma-fam ma-pose">pose</span></td><td><b>motion_x</b></td><td>25,865</td><td>25,865</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-pose">pose</span></td><td><b>ntu_rgbd</b></td><td>113,945</td><td>113,945</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-pose">pose</span></td><td><b>remap_open</b></td><td>3,901</td><td>3,901</td><td>no</td><td><b>99.5%</b></td><td>100.0%</td><td>100.0%</td><td>91.7%</td></tr>
+<tr><td><span class="ma-fam ma-pose">pose</span></td><td><b>stroke_gait_vancriekinge</b></td><td>737</td><td>737</td><td>no</td><td><b>98.6%</b></td><td>100.0%</td><td>98.7%</td><td>83.3%</td></tr>
+<tr><td><span class="ma-fam ma-pose">pose</span></td><td><b>vidimu</b></td><td>723</td><td>723</td><td>no</td><td><b>100.0%</b></td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr>
+<tr><td><span class="ma-fam ma-silhouette">silhouette</span></td><td><b>cody_3</b></td><td>36</td><td>36</td><td>no</td><td><b>99.9%</b></td><td>100.0%</td><td>99.7%</td><td>80.6%</td></tr>
+<tr><td><span class="ma-fam ma-silhouette">silhouette</span></td><td><b>koa_pd_nm</b></td><td>190</td><td>190</td><td>no</td><td><b>96.8%</b></td><td>100.0%</td><td>89.2%</td><td>62.1%</td></tr>
+</tbody></table></div></section>
+<section id="demographics-coverage">
+<h2>Demographics coverage<a class="headerlink" href="#demographics-coverage" title="Link to this heading">#</a></h2>
+<p class="ma-count-note">23 of 170 catalogued datasets document ages in the registry (verbatim below); per-record demographics (sex, anthropometrics, clinical scores) ride inside the records where the source provides them.</p>
+<table class="table"><thead><tr><th>Dataset</th><th>Status</th><th>Ages (verbatim)</th></tr></thead><tbody>
+<tr><td><b>aihub_path_gait</b></td><td><span class="ma-badge ma-catalogued">catalogued</span></td><td>elderly</td></tr>
+<tr><td><b>asdpose</b></td><td><span class="ma-badge ma-catalogued">catalogued</span></td><td>children (ASD assessments)</td></tr>
+<tr><td><b>babypose</b></td><td><span class="ma-badge ma-catalogued">catalogued</span></td><td>preterm neonates</td></tr>
+<tr><td><b>camcan</b></td><td><span class="ma-badge ma-catalogued">catalogued</span></td><td>18-88 y</td></tr>
+<tr><td><b>cervical_motion_multiplanar</b></td><td><span class="ma-badge ma-harmonized">harmonized</span></td><td>38 +/- 13 y</td></tr>
+<tr><td><b>chop_gma_features</b></td><td><span class="ma-badge ma-catalogued">catalogued</span></td><td>10-20 weeks post-term</td></tr>
+<tr><td><b>gait120</b></td><td><span class="ma-badge ma-harmonized">harmonized</span></td><td>20-59 y (35.4 +/- 12.8)</td></tr>
+<tr><td><b>haspa_spasticity</b></td><td><span class="ma-badge ma-catalogued">catalogued</span></td><td>adults</td></tr>
+<tr><td><b>ixi_mri</b></td><td><span class="ma-badge ma-catalogued">catalogued</span></td><td>20-86 y</td></tr>
+<tr><td><b>ltmm</b></td><td><span class="ma-badge ma-harmonized">harmonized</span></td><td>65-87 y (mean 78.4)</td></tr>
+<tr><td><b>mindts_tourette</b></td><td><span class="ma-badge ma-catalogued">catalogued</span></td><td>6-12 y</td></tr>
+<tr><td><b>mini_rgbd</b></td><td><span class="ma-badge ma-catalogued">catalogued</span></td><td>synthetic infants</td></tr>
+<tr><td><b>mmasd</b></td><td><span class="ma-badge ma-catalogued">catalogued</span></td><td>school-age children</td></tr>
+<tr><td><b>mobile_gaitlab</b></td><td><span class="ma-badge ma-catalogued">catalogued</span></td><td>children (1994-2015 visits)</td></tr>
+<tr><td><b>nonan_gaitprint</b></td><td><span class="ma-badge ma-harmonized">harmonized</span></td><td>56+ y (64.7 +/- 7.5)</td></tr>
+<tr><td><b>nonan_gaitprint_young</b></td><td><span class="ma-badge ma-harmonized">harmonized</span></td><td>young adults (exact range: read the descriptor at ingestion)</td></tr>
+<tr><td><b>nordic_walking_pd</b></td><td><span class="ma-badge ma-catalogued">catalogued</span></td><td>H&Y 1-3</td></tr>
+<tr><td><b>oulp_age</b></td><td><span class="ma-badge ma-catalogued">catalogued</span></td><td>2-90 y</td></tr>
+<tr><td><b>physionet_multimodal_gait</b></td><td><span class="ma-badge ma-harmonized">harmonized</span></td><td>24 +/- 5 y</td></tr>
+<tr><td><b>shanghai_child_gait3d</b></td><td><span class="ma-badge ma-catalogued">catalogued</span></td><td>3-13 y</td></tr>
+<tr><td><b>sixmwt_lifespan</b></td><td><span class="ma-badge ma-harmonized">harmonized</span></td><td>21-75 y, decade bins</td></tr>
+<tr><td><b>stroke_gait_vancriekinge</b></td><td><span class="ma-badge ma-harmonized">harmonized</span></td><td>19-85 y</td></tr>
+<tr><td><b>syrip</b></td><td><span class="ma-badge ma-catalogued">catalogued</span></td><td>infants</td></tr>
+</tbody></table></section>
+<section id="planned-next">
+<h2>Planned next<a class="headerlink" href="#planned-next" title="Link to this heading">#</a></h2>
+<p>With the same nothing-invented rule: per-dataset age and sex pyramids
+computed from record attributes where the sources carry them (the
+coverage table above says where), and exact full-corpus usability for
+the sampled giants.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">MoveAtlas</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="dataset_summary.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Datasets</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-harmonized-corpus-at-a-glance">The harmonized corpus at a glance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-read-these-numbers">How to read these numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-a-record-looks-like">What a record looks like</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#record-durations">Record durations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modalities-by-symptom">Modalities by symptom</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modalities-by-healthy-context-and-comorbidity">Modalities by healthy context and comorbidity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subjects-with-several-modalities">Subjects with several modalities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interventions-and-state-labels">Interventions and state labels</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#taxonomy-coverage">Taxonomy coverage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signal-usability-validity-masks">Signal usability (validity masks)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demographics-coverage">Demographics coverage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#planned-next">Planned next</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/statistics.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, MoveAtlas contributors.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

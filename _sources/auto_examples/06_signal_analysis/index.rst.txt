@@ -1,0 +1,122 @@
+
+
+.. _sphx_glr_auto_examples_06_signal_analysis:
+
+Signal analysis
+===============
+
+Spectra, joint angles, gait events, activity maps, distributions.
+
+
+.. raw:: html
+
+  <div id='sg-tag-list' class='sphx-glr-tag-list'></div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+.. thumbnail-parent-div-open
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="The same subject of the Parkinson walking-protocol study (OpenNeuro ds007526), at rest and walking, seen as spectrograms of one channel. Movement writes itself into the spectrum: gait-locked low-frequency power and broadband motion artifacts appear the moment walking starts, which is exactly why movement EEG needs its own preprocessing care.">
+
+.. only:: html
+
+  .. image:: /auto_examples/06_signal_analysis/images/thumb/sphx_glr_plot_eeg_spectrogram_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/06_signal_analysis/plot_eeg_spectrogram`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Time-frequency views: a walking EEG spectrogram</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Gait120 records 12 named right-leg muscles across 7 locomotion tasks. One matrix answers &quot;which muscle works in which task&quot;: median RMS activity per (muscle, task), computed over subjects. This is also the template for any channels-by-conditions map (EEG bands by task, IMU locations by activity).">
+
+.. only:: html
+
+  .. image:: /auto_examples/06_signal_analysis/images/thumb/sphx_glr_plot_emg_task_heatmap_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/06_signal_analysis/plot_emg_task_heatmap`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Muscle-by-task activity maps from a multimodal dataset</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Raw sEMG amplitudes are heavy-tailed: histograms of the rectified signal look nothing like a Gaussian, and become tractable in log space. Seeing the distribution BEFORE modeling is the cheapest protection against mis-specified features.">
+
+.. only:: html
+
+  .. image:: /auto_examples/06_signal_analysis/images/thumb/sphx_glr_plot_emg_distributions_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/06_signal_analysis/plot_emg_distributions`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Amplitude distributions and when to log them</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Clinical gait analysis speaks in joint angles. The canonical 15-joint skeleton supports them directly: the knee flexion angle is the angle at the knee between the thigh (hip-&gt;knee) and shank (knee-&gt;ankle) vectors. This example computes it for every trial and compares the distribution of knee range-of-motion between cohorts, one of the most robust hemiparesis markers.">
+
+.. only:: html
+
+  .. image:: /auto_examples/06_signal_analysis/images/thumb/sphx_glr_plot_knee_angle_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/06_signal_analysis/plot_knee_angle`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Joint angles from canonical skeletons: the knee, stroke vs able-bodied</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Heel strikes are visible in insole forces as load onsets; the series of stride times they define is one of the most replicated Parkinson markers: patients walk with MORE VARIABLE stride times. This example detects events with a plain threshold, builds the stride-time series, and compares the variability across the two gaitpdb cohorts.">
+
+.. only:: html
+
+  .. image:: /auto_examples/06_signal_analysis/images/thumb/sphx_glr_plot_gait_events_variability_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/06_signal_analysis/plot_gait_events_variability`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Gait events and stride-time variability: the classic Parkinson marker</div>
+    </div>
+
+
+.. thumbnail-parent-div-close
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/06_signal_analysis/plot_eeg_spectrogram
+   /auto_examples/06_signal_analysis/plot_emg_task_heatmap
+   /auto_examples/06_signal_analysis/plot_emg_distributions
+   /auto_examples/06_signal_analysis/plot_knee_angle
+   /auto_examples/06_signal_analysis/plot_gait_events_variability
+

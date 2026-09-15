@@ -1,0 +1,69 @@
+
+
+.. _sphx_glr_auto_examples_01_catalogue:
+
+The catalogue
+=============
+
+Browse the whole catalogue by family, pathology, healthy cohort and
+access case; the live count sits on the registry, never in this text.
+
+
+.. raw:: html
+
+  <div id='sg-tag-list' class='sphx-glr-tag-list'></div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+.. thumbnail-parent-div-open
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="&quot;Show me everything on disease X&quot; is the first question a clinical researcher asks. Cell B2 is the Parkinson/hypokinetic axis: this example lists every B2 dataset with its access case, then opens REAL records from two different modalities of the same disease.">
+
+.. only:: html
+
+  .. image:: /auto_examples/01_catalogue/images/thumb/sphx_glr_plot_pathology_tour_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/01_catalogue/plot_pathology_tour`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">All the data for one pathology: a Parkinson tour</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="The registry catalogues the movement datasets. This example shows every way to slice it without downloading a byte: by modality family, by access case, by clinical taxonomy cell (pathological axes A/B/D/E against the healthy lifespan axis C), and what an honest failure looks like when a dataset cannot be downloaded.">
+
+.. only:: html
+
+  .. image:: /auto_examples/01_catalogue/images/thumb/sphx_glr_plot_registry_access_cases_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/01_catalogue/plot_registry_access_cases`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Explore the catalogue: families, pathologies, healthy cohorts, access</div>
+    </div>
+
+
+.. thumbnail-parent-div-close
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/01_catalogue/plot_pathology_tour
+   /auto_examples/01_catalogue/plot_registry_access_cases
+

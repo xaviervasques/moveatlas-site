@@ -1,0 +1,122 @@
+
+
+.. _sphx_glr_auto_examples_07_science:
+
+Ready-to-run science
+====================
+
+Descriptive studies across cohorts, pathologies, scales and vocabularies.
+
+
+.. raw:: html
+
+  <div id='sg-tag-list' class='sphx-glr-tag-list'></div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+.. thumbnail-parent-div-open
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="MoveAtlas anchors its labels to the Human Phenotype Ontology: every movement-abnormality term under HP:0100022, with its depth, parents and the taxonomy cells it maps to. This is the vocabulary of rule R2 (weak supervision) and it is data anyone can browse.">
+
+.. only:: html
+
+  .. image:: /auto_examples/07_science/images/thumb/sphx_glr_plot_hpo_vocabulary_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/07_science/plot_hpo_vocabulary`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">The label vocabulary: HPO movement terms mapped to the taxonomy</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Movement science is not only signals: the auxdata tier carries clinical scale tables. The cdystonia table is a classic randomized trial of botulinum toxin in cervical dystonia (TWSTRS severity scores over 16 weeks, three arms). Longitudinal spaghetti + group means in a few pandas lines.">
+
+.. only:: html
+
+  .. image:: /auto_examples/07_science/images/thumb/sphx_glr_plot_clinical_scales_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/07_science/plot_clinical_scales`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Clinical scales are data too: a botulinum-toxin trial in dystonia</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Two NONAN GaitPrint cohorts share one protocol (16-IMU overground walking at 200 Hz): 35 young adults and 41 older adults. This example computes each walker&#x27;s dominant step frequency from the lower-back vertical acceleration and compares the cohorts, the kind of one-figure descriptive result a study starts from.">
+
+.. only:: html
+
+  .. image:: /auto_examples/07_science/images/thumb/sphx_glr_plot_gait_aging_nonan_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/07_science/plot_gait_aging_nonan`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Descriptive science, ready to run: step frequency across the lifespan</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="MoveAtlas exists because open hyperkinetic data is scarce - and CODY is the project&#x27;s own contribution: the public, dystonia-centred release of adult and pediatric hyperkinetic pose data (CC BY 4.0, concept DOI 10.5281/zenodo.22232609, v1.1.0). This example loads the canonical records of one dystonic patient and one control, compares their right-wrist kinematics, and shows the per-frame expert phenomenology ratings that ride on every patient record (eval-only by standing rule R1: never pretraining).">
+
+.. only:: html
+
+  .. image:: /auto_examples/07_science/images/thumb/sphx_glr_plot_cody_dystonia_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/07_science/plot_cody_dystonia`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">CODY: dystonia in the atlas's own cohort</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="One walking-rate measure computed on four cohorts from THREE datasets and two modalities: young and older healthy adults (NONAN, lower-back accelerometry), Parkinson patients and their controls (gaitpdb, insole forces). The point is methodological as much as clinical: MoveAtlas lets you line cohorts up in minutes, and the caveat at the end is part of the lesson.">
+
+.. only:: html
+
+  .. image:: /auto_examples/07_science/images/thumb/sphx_glr_plot_multi_cohort_cadence_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/07_science/plot_multi_cohort_cadence`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Four cohorts, one measure: cadence across health, aging and disease</div>
+    </div>
+
+
+.. thumbnail-parent-div-close
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/07_science/plot_hpo_vocabulary
+   /auto_examples/07_science/plot_clinical_scales
+   /auto_examples/07_science/plot_gait_aging_nonan
+   /auto_examples/07_science/plot_cody_dystonia
+   /auto_examples/07_science/plot_multi_cohort_cadence
+

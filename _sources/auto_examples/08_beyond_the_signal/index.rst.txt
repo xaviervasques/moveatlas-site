@@ -1,0 +1,107 @@
+
+
+.. _sphx_glr_auto_examples_08_beyond_the_signal:
+
+Beyond the signal
+=================
+
+The catalogue's other lanes on real data: invasive ECoG and deep-brain
+LFP, gene expression across the brain, and the genetics of movement
+disorders. No MRI appears here because none is on disk yet; everything
+shown is measured.
+
+
+.. raw:: html
+
+  <div id='sg-tag-list' class='sphx-glr-tag-list'></div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+.. thumbnail-parent-div-open
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="The invasive lane is real and on disk: the Merk and Neumann decoding testbed holds 73 BIDS iEEG recordings of Parkinson patients performing a grip-force task, with sensorimotor ECoG strips AND subthalamic LFP recorded together, plus the measured force trace. This is the signal a movement foundation model eventually meets at the electrode end of the loop. Nothing here is harmonized yet (rule R1 keeps invasive data out of the movement-pretraining contracts); the lane enters the EEG family&#x27;s contract at its own ingestion pass.">
+
+.. only:: html
+
+  .. image:: /auto_examples/08_beyond_the_signal/images/thumb/sphx_glr_plot_invasive_ecog_lfp_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/08_beyond_the_signal/plot_invasive_ecog_lfp`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Inside the loop: ECoG and STN-LFP during a grip-force task</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="The bio lane holds the Allen Human Brain Atlas microarray survey (six donors, all on disk). Here one donor&#x27;s 946 sampled brain sites answer a movement question: where are the canonical movement-disorder genes expressed? Every value is streamed from the raw Allen archive; the brain map at the bottom uses the donor&#x27;s own MNI sample coordinates, so no MRI is needed to see anatomy.">
+
+.. only:: html
+
+  .. image:: /auto_examples/08_beyond_the_signal/images/thumb/sphx_glr_plot_movement_genes_brain_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/08_beyond_the_signal/plot_movement_genes_brain`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Where movement-disorder genes live in the brain</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Five signed-off Genomics England PanelApp panels sit in the bio lane as machine-readable TSVs: dystonia/chorea (adult and childhood onset), early-onset dystonia, hereditary ataxia, and adult-onset neurodegenerative disease. Together they define the review-grade gene vocabulary a movement atlas can anchor genetic labels to.">
+
+.. only:: html
+
+  .. image:: /auto_examples/08_beyond_the_signal/images/thumb/sphx_glr_plot_genetics_landscape_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/08_beyond_the_signal/plot_genetics_landscape`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">The genetic landscape of movement disorders</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="The atlas&#x27;s animal lane holds 7,567 striatal neuron reconstructions bulk-fetched from NeuroMorpho.Org (CC BY 4.0). One archive (Luebke) contains a method-matched comparison: medium spiny neurons from control mice and from the Q175 Huntington&#x27;s-disease knock-in model, reconstructed by the same lab. Chorea&#x27;s cellular substrate, drawn from real morphology files - with the honest caveat that the symptom link is via the ANIMAL MODEL, not measured movement.">
+
+.. only:: html
+
+  .. image:: /auto_examples/08_beyond_the_signal/images/thumb/sphx_glr_plot_hd_neuron_morphology_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/08_beyond_the_signal/plot_hd_neuron_morphology`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">The diseased striatum in single neurons: Q175 Huntington model vs control</div>
+    </div>
+
+
+.. thumbnail-parent-div-close
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/08_beyond_the_signal/plot_invasive_ecog_lfp
+   /auto_examples/08_beyond_the_signal/plot_movement_genes_brain
+   /auto_examples/08_beyond_the_signal/plot_genetics_landscape
+   /auto_examples/08_beyond_the_signal/plot_hd_neuron_morphology
+

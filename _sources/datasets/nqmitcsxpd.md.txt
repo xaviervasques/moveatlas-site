@@ -1,0 +1,102 @@
+# neuroQWERTY MIT-CSXPD (keystroke)
+
+```{raw} html
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Dataset",
+ "name": "neuroQWERTY MIT-CSXPD (keystroke)",
+ "description": "neuroQWERTY MIT-CSXPD (keystroke). MoveAtlas auxdata family. licence PhysioNet open.",
+ "identifier": "https://physionet.org/content/nqmitcsxpd/",
+ "license": "PhysioNet open",
+ "sdPublisher": {
+  "@type": "Organization",
+  "name": "MoveAtlas"
+ },
+ "keywords": [
+  "auxdata",
+  "B2 Bradykinesia",
+  "M11 Voice / writing"
+ ],
+ "url": "https://physionet.org/content/nqmitcsxpd/",
+ "isAccessibleForFree": true,
+ "measurementTechnique": "auxdata",
+ "includedInDataCatalog": {
+  "@type": "DataCatalog",
+  "name": "MoveAtlas"
+ },
+ "creator": [
+  {
+   "@type": "Person",
+   "name": "Giancardo, Luca"
+  }
+ ]
+}
+</script>
+```
+
+<span class="ma-fam ma-auxdata">auxdata</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-hosted">hosted</span>&nbsp; <code>nqmitcsxpd</code>
+
+<span class="ma-tag">Bradykinesia</span><span class="ma-tag">Voice / writing</span>
+
+| | |
+|---|---|
+| **Taxonomy cells** | B2 proxy; M11 |
+| **Subjects** | ~85 published; on-disk count TBD |
+| **Status** | raw on disk |
+| **License** | PhysioNet open |
+
+Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
+
+## How to load
+
+```python
+import moveatlas
+ds = moveatlas.dataset("nqmitcsxpd")
+records, meta = ds.get_data()
+```
+
+## License and access
+
+- **License**: PhysioNet open
+- **Redistribution**: yes
+- **Access route**: downloaded
+- **Source**: <https://physionet.org/content/nqmitcsxpd/>
+
+## Publications
+
+- Giancardo, Luca (2022). *neuroQWERTY MIT-CSXPD Dataset*. PhysioNet. DOI: [10.13026/c2859q](https://doi.org/10.13026/c2859q)
+- Giancardo, L.; Sánchez-Ferro, A.; Arroyo-Gallego, T.; Butterworth, I.; Mendoza, C. S.; Montero, P.; Matarazzo, M.; Obeso, J. A.; Gray, M. L.; Estépar, R. San José (2016). *Computer keyboard interaction as an indicator of early Parkinson’s disease*. Scientific Reports. DOI: [10.1038/srep34468](https://doi.org/10.1038/srep34468)
+
+```bibtex
+@misc{nqmitcsxpd_data_2022,
+  title = {neuroQWERTY MIT-CSXPD Dataset},
+  author = {Giancardo, Luca},
+  year = {2022},
+  doi = {10.13026/c2859q},
+  howpublished = {PhysioNet},
+  note = {dataset}
+}
+@article{nqmitcsxpd_paper_2016,
+  title = {Computer keyboard interaction as an indicator of early Parkinson’s disease},
+  author = {Giancardo, L. and Sánchez-Ferro, A. and Arroyo-Gallego, T. and Butterworth, I. and Mendoza, C. S. and Montero, P. and Matarazzo, M. and Obeso, J. A. and Gray, M. L. and Estépar, R. San José},
+  year = {2016},
+  doi = {10.1038/srep34468},
+  journal = {Scientific Reports}
+}
+```
+
+## Data card (verbatim, with its evidence trail)
+
+
+- dataset: nqmitcsxpd
+- family: auxdata  (physical path: datasets/auxdata/nqmitcsxpd)
+- MoveAtlas cells: B2 proxy; M11
+- population: PD + controls, natural typing
+- n_subjects: ~85 published; on-disk count TBD
+- signal: keystroke hold/flight time series (CSV)
+- license: PhysioNet open ; redistribution: yes
+- access: downloaded
+- status (2026-08-22): raw on disk
+- link: https://physionet.org/content/nqmitcsxpd/
+- notes: two GT_DataPD CSVs (CS1PD/CS2PD)

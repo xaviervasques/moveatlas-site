@@ -1,0 +1,731 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" data-theme="auto">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Modalities &#8212; MoveAtlas</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "auto";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "auto";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css?v=fd6457a4" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/moveatlas.css?v=0760cefd" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
+
+    <script src="_static/documentation_options.js?v=965fac30"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/sg-tags.js?v=d80f6fa4"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=4ea706d9"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'modalities';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Taxonomy" href="taxonomy.html" />
+    <link rel="prev" title="Datasets" href="dataset_summary.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="auto">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo_light.svg" class="logo__image only-light" alt="MoveAtlas"/>
+    <img src="_static/logo_dark.svg" class="logo__image only-dark pst-js-only" alt="MoveAtlas"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="statistics.html">
+    Corpus statistics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="dataset_summary.html">
+    Datasets
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Modalities
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="taxonomy.html">
+    Taxonomy
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="datasets/index.html">
+    Dataset pages
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="install.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="auto_examples/index.html">
+    Examples
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="submit_dataset.html">
+    Submit a new dataset
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="api.html">
+    API
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="cite.html">
+    Citation
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="whats_new.html">
+    Release notes
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="statistics.html">
+    Corpus statistics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="dataset_summary.html">
+    Datasets
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Modalities
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="taxonomy.html">
+    Taxonomy
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="datasets/index.html">
+    Dataset pages
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="install.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="auto_examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="submit_dataset.html">
+    Submit a new dataset
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api.html">
+    API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="cite.html">
+    Citation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="whats_new.html">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Modalities</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="modalities">
+<h1>Modalities<a class="headerlink" href="#modalities" title="Link to this heading">#</a></h1>
+<p>What movement looks like in each family, shown on REAL records from the
+corpus (regenerate with <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">site/gen_figures.py</span></code>). The six
+harmonized families carry a canonical contract each
+(<code class="docutils literal notranslate"><span class="pre">configs/canonical_*.yaml</span></code>): native sampling rates, honest validity
+masks, no silent unit guesses. Beyond them, the catalogue documents six
+more lanes (invasive electrophysiology, imaging, genetics, histology
+and transcriptomics, digital proxies and clinical scales) with cards
+and access routes; they get their own sections at the bottom of this
+page.</p>
+<section id="pose">
+<h2>Pose<a class="headerlink" href="#pose" title="Link to this heading">#</a></h2>
+<p>3D optical mocap and video-derived 2D keypoints, mapped to a 15-joint
+canonical skeleton with per-frame, per-joint validity masks. 10 datasets
+ingested; the live per-family figures are on the
+<a class="reference internal" href="statistics.html"><span class="doc">Corpus statistics</span></a> page, which is generated from the manifests.</p>
+<a class="only-light reference internal image-reference" href="_images/sample_pose.png"><img alt="Real canonical gait skeletons" class="only-light" src="_images/sample_pose.png" style="width: 100%;" />
+</a>
+<a class="only-dark reference internal image-reference" href="_images/sample_pose_dark.png"><img alt="Real canonical gait skeletons" class="only-dark" src="_images/sample_pose_dark.png" style="width: 100%;" />
+</a>
+</section>
+<section id="imu">
+<h2>IMU<a class="headerlink" href="#imu" title="Link to this heading">#</a></h2>
+<p>Wearable inertial sensing on a 14-location body grid (acc/gyro/mag
+slots, per-channel masks): protocol trials and multi-day free living.
+see the <a class="reference internal" href="statistics.html"><span class="doc">Corpus statistics</span></a> page for the live figures.</p>
+<a class="only-light reference internal image-reference" href="_images/modality_imu.png"><img alt="Real lower-back acceleration during walking" class="only-light" src="_images/modality_imu.png" style="width: 100%;" />
+</a>
+<a class="only-dark reference internal image-reference" href="_images/modality_imu_dark.png"><img alt="Real lower-back acceleration during walking" class="only-dark" src="_images/modality_imu_dark.png" style="width: 100%;" />
+</a>
+</section>
+<section id="emg">
+<h2>EMG<a class="headerlink" href="#emg" title="Link to this heading">#</a></h2>
+<p>Surface electromyography with a variable channel table naming each
+muscle and side (identity resolved or explicitly unknown, never
+guessed). 7 datasets; raw 2 kHz recordings like this one:</p>
+<a class="only-light reference internal image-reference" href="_images/modality_emg.png"><img alt="Real tibialis anterior EMG during walking" class="only-light" src="_images/modality_emg.png" style="width: 100%;" />
+</a>
+<a class="only-dark reference internal image-reference" href="_images/modality_emg_dark.png"><img alt="Real tibialis anterior EMG during walking" class="only-dark" src="_images/modality_emg_dark.png" style="width: 100%;" />
+</a>
+</section>
+<section id="eeg">
+<h2>EEG<a class="headerlink" href="#eeg" title="Link to this heading">#</a></h2>
+<p>Scalp EEG during movement protocols and sleep, harmonized with channel
+sites and units from the source headers. 5 datasets ingested.</p>
+<a class="only-light reference internal image-reference" href="_images/modality_eeg.png"><img alt="Real scalp EEG channels" class="only-light" src="_images/modality_eeg.png" style="width: 100%;" />
+</a>
+<a class="only-dark reference internal image-reference" href="_images/modality_eeg_dark.png"><img alt="Real scalp EEG channels" class="only-dark" src="_images/modality_eeg_dark.png" style="width: 100%;" />
+</a>
+</section>
+<section id="force">
+<h2>Force<a class="headerlink" href="#force" title="Link to this heading">#</a></h2>
+<p>Ground-reaction forces: instrumented insoles (8 sensors + total per
+foot) and lab force plates. 4 datasets, 77,464 records.</p>
+<a class="only-light reference internal image-reference" href="_images/modality_force.png"><img alt="Real vertical ground-reaction forces, both feet" class="only-light" src="_images/modality_force.png" style="width: 100%;" />
+</a>
+<a class="only-dark reference internal image-reference" href="_images/modality_force_dark.png"><img alt="Real vertical ground-reaction forces, both feet" class="only-dark" src="_images/modality_force_dark.png" style="width: 100%;" />
+</a>
+</section>
+<section id="silhouette">
+<h2>Silhouette<a class="headerlink" href="#silhouette" title="Link to this heading">#</a></h2>
+<p>Privacy-preserving body contours (64 boundary points per frame) with
+per-frame detection masks: the publishable face of clinical video.</p>
+<a class="only-light reference internal image-reference" href="_images/modality_silhouette.png"><img alt="Real walking silhouette contours" class="only-light" src="_images/modality_silhouette.png" style="width: 100%;" />
+</a>
+<a class="only-dark reference internal image-reference" href="_images/modality_silhouette_dark.png"><img alt="Real walking silhouette contours" class="only-dark" src="_images/modality_silhouette_dark.png" style="width: 100%;" />
+</a>
+</section>
+<section id="the-catalogue-beyond-the-signal-families">
+<h2>The catalogue beyond the signal families<a class="headerlink" href="#the-catalogue-beyond-the-signal-families" title="Link to this heading">#</a></h2>
+<p>The six lanes below are catalogued with data cards, licences and access
+routes, not harmonized signal (yet). They exist because a movement
+foundation model eventually meets deep-brain electrophysiology,
+anatomy, genetics and clinical scores; each card says exactly what may
+be used and how. Three of these lanes can be explored on real data
+today in the gallery’s “Beyond the signal” section: invasive ECoG and
+STN-LFP during a grip-force task, movement-gene expression across the
+brain, and the PanelApp genetic landscape.</p>
+<section id="invasive-electrophysiology-lfp-ecog">
+<h3>Invasive electrophysiology (LFP / ECoG)<a class="headerlink" href="#invasive-electrophysiology-lfp-ecog" title="Link to this heading">#</a></h3>
+<p>Real and partly on disk, not yet harmonized: deep-brain LFP from
+dystonia patients (<a class="reference internal" href="datasets/oxford_dystonia_lfp.html"><span class="doc">Oxford BNDU cervical dystonia STN/thalamic LFP + EEG + neck EMG + ACC</span></a>, the only open
+dystonia LFP in existence, 14.7 GB held), subthalamic LFP with MEG in
+Parkinson (<a class="reference internal" href="datasets/pd_meg_stn_lfp_ds004998.html"><span class="doc">MEG + STN-LFP + EMG in Parkinson’s (OpenNeuro ds004998)</span></a>, 162 GB held), and
+polysomnography with pallidal/thalamic LFP across five sleep disorders
+(<a class="reference internal" href="datasets/beijing_sleep_lfp.html"><span class="doc">Beijing basal-ganglia sleep LFP (121 patients, NOT public)</span></a>, application-gated). The Merk and
+Neumann ECoG+LFP decoding testbed completes the lane as tooling. Each
+enters the EEG family’s contract at its own ingestion pass.</p>
+</section>
+<section id="mri-and-imaging">
+<h3>MRI and imaging<a class="headerlink" href="#mri-and-imaging" title="Link to this heading">#</a></h3>
+<p>Structural MRI cohorts as anatomical references:
+<a class="reference internal" href="datasets/ixi_mri.html"><span class="doc">IXI (healthy adult/aging brain MRI)</span></a> (600 healthy adults 20-86),
+<a class="reference internal" href="datasets/camcan.html"><span class="doc">Cam-CAN (healthy aging 18-88, MRI + MEG)</span></a> (700 subjects 18-88, MRI+MEG, documented
+barrier) and the deep NINDS cohort <a class="reference internal" href="datasets/pdbp.html"><span class="doc">NINDS PDBP Data Management Resource</span></a> (documented
+barrier).</p>
+</section>
+<section id="genetics">
+<h3>Genetics<a class="headerlink" href="#genetics" title="Link to this heading">#</a></h3>
+<p>Movement-disorder gene panels and genotype-phenotype references:
+<a class="reference internal" href="datasets/panelapp.html"><span class="doc">Genomics England PanelApp movement panels</span></a> (two signed-off panels, 207 + 986 genes),
+<a class="reference internal" href="datasets/clinvar.html"><span class="doc">ClinVar bulk (movement-disorder gene subset)</span></a> (variant summaries for movement genes),
+<a class="reference internal" href="datasets/hpo.html"><span class="doc">Human Phenotype Ontology (movement pivot)</span></a> (the phenotype ontology, on disk and verified),
+<a class="reference internal" href="datasets/mdsgene.html"><span class="doc">MDSGene (genotype-phenotype knowledge base)</span></a> (reference only) and the questionnaire+genetics
+cohort <a class="reference internal" href="datasets/foxinsight.html"><span class="doc">Fox Insight / Fox DEN (PD mega-cohort)</span></a> (documented barrier).</p>
+</section>
+<section id="histology-and-transcriptomics">
+<h3>Histology and transcriptomics<a class="headerlink" href="#histology-and-transcriptomics" title="Link to this heading">#</a></h3>
+<p>The cellular substrate of movement disorders:
+<a class="reference internal" href="datasets/allen_human_brain.html"><span class="doc">Allen Human Brain Atlas (microarray + ISH histology)</span></a> (six-donor microarray + histology,
+1.65 GB on disk), <a class="reference internal" href="datasets/kamath_snpc_geo.html"><span class="doc">Kamath 2022 human SNpc snRNA-seq (GEO GSE178265)</span></a> (single-nucleus
+substantia nigra, PD vs controls, 5.1 GB on disk) and
+<a class="reference internal" href="datasets/cellxgene_pd_multiregion.html"><span class="doc">Multi-region PD single-nucleus atlas (2.1M nuclei)</span></a> (2.1M-nucleus PD atlas).</p>
+</section>
+<section id="digital-proxies-voice-writing-typing">
+<h3>Digital proxies (voice, writing, typing)<a class="headerlink" href="#digital-proxies-voice-writing-typing" title="Link to this heading">#</a></h3>
+<p>Movement signal through everyday instruments:
+<a class="reference internal" href="datasets/uci_parkinson_voix.html"><span class="doc">UCI Parkinson’s voice</span></a> (voice),
+<a class="reference internal" href="datasets/kaggle_spiral.html"><span class="doc">NIATS spiral + wave drawings</span></a> (Archimedes spirals),
+<a class="reference internal" href="datasets/nqmitcsxpd.html"><span class="doc">neuroQWERTY MIT-CSXPD (keystroke)</span></a> and <a class="reference internal" href="datasets/tappy_keystroke.html"><span class="doc">Tappy keystroke (PhysioNet)</span></a>
+(keystroke dynamics, including prodromal cohorts).</p>
+</section>
+<section id="clinical-scales">
+<h3>Clinical scales<a class="headerlink" href="#clinical-scales" title="Link to this heading">#</a></h3>
+<p>Machine-readable clinical scores that anchor every evaluation:
+<a class="reference internal" href="datasets/clinical_scales.html"><span class="doc">NINDS Common Data Elements, motor scales (machine-readable)</span></a> (NINDS common data elements),
+<a class="reference internal" href="datasets/cdystonia.html"><span class="doc">cdystonia (TWSTRS trial scores, hbiostat)</span></a> (TWSTRS over 16 weeks, three trial arms),
+plus the scale tables riding inside <a class="reference internal" href="datasets/hpo.html"><span class="doc">Human Phenotype Ontology (movement pivot)</span></a>,
+<a class="reference internal" href="datasets/foxinsight.html"><span class="doc">Fox Insight / Fox DEN (PD mega-cohort)</span></a> and <a class="reference internal" href="datasets/pdbp.html"><span class="doc">NINDS PDBP Data Management Resource</span></a>.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="dataset_summary.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Datasets</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="taxonomy.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Taxonomy</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pose">Pose</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imu">IMU</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#emg">EMG</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eeg">EEG</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#force">Force</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#silhouette">Silhouette</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-catalogue-beyond-the-signal-families">The catalogue beyond the signal families</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#invasive-electrophysiology-lfp-ecog">Invasive electrophysiology (LFP / ECoG)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mri-and-imaging">MRI and imaging</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#genetics">Genetics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histology-and-transcriptomics">Histology and transcriptomics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#digital-proxies-voice-writing-typing">Digital proxies (voice, writing, typing)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clinical-scales">Clinical scales</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/modalities.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, MoveAtlas contributors.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

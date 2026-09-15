@@ -1,0 +1,122 @@
+
+
+.. _sphx_glr_auto_examples_02_first_look:
+
+First look at the data
+======================
+
+Load real records, see them as DataFrames, plot every family's raw signal.
+
+
+.. raw:: html
+
+  <div id='sg-tag-list' class='sphx-glr-tag-list'></div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+.. thumbnail-parent-div-open
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Load one subject of Gait120 (120 healthy adults, 7 locomotion tasks, surface EMG of 12 named right-leg muscles at 2000 Hz) and look at one level-walking trial. Gait120 is a hosted dataset: one call returns canonical records.">
+
+.. only:: html
+
+  .. image:: /auto_examples/02_first_look/images/thumb/sphx_glr_plot_getting_started_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/02_first_look/plot_getting_started`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Getting started: load a hosted dataset</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Vertical ground-reaction forces from the PhysioNet gait-in-Parkinson database (gaitpdb): 8 insole sensors plus the per-foot total at 100 Hz. The alternating left/right pattern IS the gait cycle; its timing irregularity is one of the oldest quantitative Parkinson markers.">
+
+.. only:: html
+
+  .. image:: /auto_examples/02_first_look/images/thumb/sphx_glr_plot_force_gait_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/02_first_look/plot_force_gait`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Force plates and insoles: the gait cycle in newtons</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="64-point body contours from the KOA-PD-NM gait dataset. A contour keeps the movement and drops the identity, which is exactly why silhouettes are the publishable form of patient video in MoveAtlas (see the privacy gate). Detection masks say honestly when the walker was not found.">
+
+.. only:: html
+
+  .. image:: /auto_examples/02_first_look/images/thumb/sphx_glr_plot_silhouette_contours_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/02_first_look/plot_silhouette_contours`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Silhouettes: the privacy-preserving face of clinical video</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Scalp EEG from a Parkinson walking-protocol study (OpenNeuro ds007526), harmonized to the canonical EEG contract: signal in microvolts at the native 250 Hz, channel sites from the source headers, bad channels carried explicitly.">
+
+.. only:: html
+
+  .. image:: /auto_examples/02_first_look/images/thumb/sphx_glr_plot_eeg_channels_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/02_first_look/plot_eeg_channels`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">EEG during movement protocols</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="moveatlas.to_frame(record) turns any canonical record into a tidy, time-indexed pandas DataFrame with named columns, and the masks become NaN (never silent zeros). From there the whole pandas toolbox applies: head(), describe(), resampling, rolling statistics, joins.">
+
+.. only:: html
+
+  .. image:: /auto_examples/02_first_look/images/thumb/sphx_glr_plot_dataframes_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/02_first_look/plot_dataframes`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Every record is a DataFrame away</div>
+    </div>
+
+
+.. thumbnail-parent-div-close
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/02_first_look/plot_getting_started
+   /auto_examples/02_first_look/plot_force_gait
+   /auto_examples/02_first_look/plot_silhouette_contours
+   /auto_examples/02_first_look/plot_eeg_channels
+   /auto_examples/02_first_look/plot_dataframes
+

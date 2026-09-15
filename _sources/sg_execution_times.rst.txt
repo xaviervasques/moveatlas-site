@@ -1,0 +1,121 @@
+
+:orphan:
+
+.. _sphx_glr_sg_execution_times:
+
+
+Computation times
+=================
+**00:32.657** total execution time for 29 files **from all galleries**:
+
+.. container::
+
+  .. raw:: html
+
+    <style scoped>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <script type="text/javascript" class="init">
+    $(document).ready( function () {
+        $('table.sg-datatable').DataTable({order: [[1, 'desc']]});
+    } );
+    </script>
+
+  .. list-table::
+   :header-rows: 1
+   :class: table table-striped sg-datatable
+
+   * - Example
+     - Time
+     - Mem (MB)
+   * - :ref:`sphx_glr_auto_examples_05_classification_plot_pd_from_grf.py` (``../examples/05_classification/plot_pd_from_grf.py``)
+     - 00:21.185
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_05_classification_plot_cross_patient_benchmark.py` (``../examples/05_classification/plot_cross_patient_benchmark.py``)
+     - 00:09.022
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_01_catalogue_plot_pathology_tour.py` (``../examples/01_catalogue/plot_pathology_tour.py``)
+     - 00:00.852
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_02_first_look_plot_force_gait.py` (``../examples/02_first_look/plot_force_gait.py``)
+     - 00:00.674
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_06_signal_analysis_plot_eeg_spectrogram.py` (``../examples/06_signal_analysis/plot_eeg_spectrogram.py``)
+     - 00:00.399
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_02_first_look_plot_silhouette_contours.py` (``../examples/02_first_look/plot_silhouette_contours.py``)
+     - 00:00.367
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_02_first_look_plot_eeg_channels.py` (``../examples/02_first_look/plot_eeg_channels.py``)
+     - 00:00.159
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_01_catalogue_plot_registry_access_cases.py` (``../examples/01_catalogue/plot_registry_access_cases.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_02_first_look_plot_dataframes.py` (``../examples/02_first_look/plot_dataframes.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_02_first_look_plot_getting_started.py` (``../examples/02_first_look/plot_getting_started.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_03_data_hygiene_plot_data_management.py` (``../examples/03_data_hygiene/plot_data_management.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_03_data_hygiene_plot_masks_and_contracts.py` (``../examples/03_data_hygiene/plot_masks_and_contracts.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_04_cohorts_plot_patients_vs_controls.py` (``../examples/04_cohorts/plot_patients_vs_controls.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_04_cohorts_plot_single_subject.py` (``../examples/04_cohorts/plot_single_subject.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_05_classification_plot_cv_visualization.py` (``../examples/05_classification/plot_cv_visualization.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_05_classification_plot_patient_level_splits.py` (``../examples/05_classification/plot_patient_level_splits.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_06_signal_analysis_plot_emg_distributions.py` (``../examples/06_signal_analysis/plot_emg_distributions.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_06_signal_analysis_plot_emg_task_heatmap.py` (``../examples/06_signal_analysis/plot_emg_task_heatmap.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_06_signal_analysis_plot_gait_events_variability.py` (``../examples/06_signal_analysis/plot_gait_events_variability.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_06_signal_analysis_plot_knee_angle.py` (``../examples/06_signal_analysis/plot_knee_angle.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_07_science_plot_clinical_scales.py` (``../examples/07_science/plot_clinical_scales.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_07_science_plot_cody_dystonia.py` (``../examples/07_science/plot_cody_dystonia.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_07_science_plot_gait_aging_nonan.py` (``../examples/07_science/plot_gait_aging_nonan.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_07_science_plot_hpo_vocabulary.py` (``../examples/07_science/plot_hpo_vocabulary.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_07_science_plot_multi_cohort_cadence.py` (``../examples/07_science/plot_multi_cohort_cadence.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_08_beyond_the_signal_plot_genetics_landscape.py` (``../examples/08_beyond_the_signal/plot_genetics_landscape.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_08_beyond_the_signal_plot_hd_neuron_morphology.py` (``../examples/08_beyond_the_signal/plot_hd_neuron_morphology.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_08_beyond_the_signal_plot_invasive_ecog_lfp.py` (``../examples/08_beyond_the_signal/plot_invasive_ecog_lfp.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_08_beyond_the_signal_plot_movement_genes_brain.py` (``../examples/08_beyond_the_signal/plot_movement_genes_brain.py``)
+     - 00:00.000
+     - 0.0

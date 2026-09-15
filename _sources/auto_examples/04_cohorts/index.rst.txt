@@ -1,0 +1,68 @@
+
+
+.. _sphx_glr_auto_examples_04_cohorts:
+
+Cohorts and subjects
+====================
+
+Patients vs controls, single-subject deep dives, Table-1 numbers.
+
+
+.. raw:: html
+
+  <div id='sg-tag-list' class='sphx-glr-tag-list'></div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+.. thumbnail-parent-div-open
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Most clinical questions start with &quot;who is in the data&quot;. The Van Criekinge stroke-gait dataset carries an eval-only cohort label on every record (1 = stroke, 0 = able-bodied); this example builds the cohort table a paper&#x27;s Table 1 starts from, and two honest descriptive views.">
+
+.. only:: html
+
+  .. image:: /auto_examples/04_cohorts/images/thumb/sphx_glr_plot_patients_vs_controls_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/04_cohorts/plot_patients_vs_controls`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Patients and controls: cohorts, balance, and descriptive statistics</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="The complement of cohort statistics is the single-subject view every clinician starts from. One stroke survivor from the Van Criekinge dataset: all their walking trials, their knee trajectories, and the left-right asymmetry that hemiparesis produces.">
+
+.. only:: html
+
+  .. image:: /auto_examples/04_cohorts/images/thumb/sphx_glr_plot_single_subject_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/04_cohorts/plot_single_subject`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">One patient, in depth: trials, trajectories, asymmetry</div>
+    </div>
+
+
+.. thumbnail-parent-div-close
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/04_cohorts/plot_patients_vs_controls
+   /auto_examples/04_cohorts/plot_single_subject
+

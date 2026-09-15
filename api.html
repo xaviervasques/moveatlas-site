@@ -1,0 +1,1110 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" data-theme="auto">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>API &#8212; MoveAtlas</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "auto";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "auto";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css?v=fd6457a4" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/moveatlas.css?v=0760cefd" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
+
+    <script src="_static/documentation_options.js?v=965fac30"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/sg-tags.js?v=d80f6fa4"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=4ea706d9"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Citation" href="cite.html" />
+    <link rel="prev" title="Submit a new dataset" href="submit_dataset.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="auto">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo_light.svg" class="logo__image only-light" alt="MoveAtlas"/>
+    <img src="_static/logo_dark.svg" class="logo__image only-dark pst-js-only" alt="MoveAtlas"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="statistics.html">
+    Corpus statistics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="dataset_summary.html">
+    Datasets
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="modalities.html">
+    Modalities
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="taxonomy.html">
+    Taxonomy
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="datasets/index.html">
+    Dataset pages
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="install.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="auto_examples/index.html">
+    Examples
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="submit_dataset.html">
+    Submit a new dataset
+  </a>
+</li>
+
+
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="#">
+    API
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="cite.html">
+    Citation
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="whats_new.html">
+    Release notes
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="statistics.html">
+    Corpus statistics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="dataset_summary.html">
+    Datasets
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="modalities.html">
+    Modalities
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="taxonomy.html">
+    Taxonomy
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="datasets/index.html">
+    Dataset pages
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="install.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="auto_examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="submit_dataset.html">
+    Submit a new dataset
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="cite.html">
+    Citation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="whats_new.html">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">API</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="api">
+<h1>API<a class="headerlink" href="#api" title="Link to this heading">#</a></h1>
+<section id="module-moveatlas.registry">
+<span id="registry"></span><h2>Registry<a class="headerlink" href="#module-moveatlas.registry" title="Link to this heading">#</a></h2>
+<p>The dataset registry: one row per catalogued dataset.</p>
+<p>Single source of truth is the repository’s generated index
+(docs/datasets_index.csv + docs/license_matrix.csv, both emitted by
+gen_datacards.py). Resolution order for the CSVs:</p>
+<ol class="arabic simple">
+<li><p>$MOVEATLAS_REPO/docs/ when the env var is set;</p></li>
+<li><p>the repository docs/ next to an editable install (../docs from here);</p></li>
+<li><p>the snapshot bundled as package data (moveatlas/data/), refreshed by the
+release pipeline.</p></li>
+</ol>
+<p>The registry does not open any data file; it only serves metadata and the
+access-case classification that datasets/base.py enforces.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="moveatlas.registry.snapshot_info">
+<span class="sig-prename descclassname"><span class="pre">moveatlas.registry.</span></span><span class="sig-name descname"><span class="pre">snapshot_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/registry.html#snapshot_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.registry.snapshot_info" title="Link to this definition">#</a></dt>
+<dd><p>Provenance of the registry snapshot bundled as package data
+(moveatlas/data/SNAPSHOT.json: generated_at, datasets_index_rows,
+license_matrix_rows, source). Returns {} when the file is absent.
+This describes the bundled copy only; the registry itself may be
+reading docs/ instead (see _docs_dir).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="moveatlas.registry.access_case">
+<span class="sig-prename descclassname"><span class="pre">moveatlas.registry.</span></span><span class="sig-name descname"><span class="pre">access_case</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/registry.html#access_case"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.registry.access_case" title="Link to this definition">#</a></dt>
+<dd><p>Classify a registry row into the four access cases.</p>
+<ul class="simple">
+<li><p>hosted: redistribution allowed, our record store serves it.</p></li>
+<li><p>local_only: private-tier data on disk (empty since 2026-09-01: the
+CODY derived release went public on Zenodo and the cody ids
+classify as hosted; raw patient video stays in-house, outside
+the atlas).</p></li>
+<li><p>barrier: a documented access barrier (no automated route).</p></li>
+<li><p>recipe: everything else (fetch from origin + local ingestion).</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="moveatlas.registry.list_datasets">
+<span class="sig-prename descclassname"><span class="pre">moveatlas.registry.</span></span><span class="sig-name descname"><span class="pre">list_datasets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">family</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">case</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/registry.html#list_datasets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.registry.list_datasets" title="Link to this definition">#</a></dt>
+<dd><p>Return registry rows (dicts), optionally filtered by family or
+access case. Each row gains an ‘access_case’ key.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="moveatlas.registry.dataset_info">
+<span class="sig-prename descclassname"><span class="pre">moveatlas.registry.</span></span><span class="sig-name descname"><span class="pre">dataset_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/registry.html#dataset_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.registry.dataset_info" title="Link to this definition">#</a></dt>
+<dd><p>The registry row for one dataset id, or raise with the known ids.</p>
+</dd></dl>
+
+</section>
+<section id="module-moveatlas.datasets.base">
+<span id="datasets"></span><h2>Datasets<a class="headerlink" href="#module-moveatlas.datasets.base" title="Link to this heading">#</a></h2>
+<p>Base dataset classes: identity, access-case enforcement, data access.</p>
+<p>A MoveAtlas dataset is ONE identity (one code, one card, one DOI, one
+download) however many modality streams it carries. get_data() returns
+(records, metadata): records are dicts in the canonical contract of their
+family (configs/canonical_*.yaml); metadata is a pandas DataFrame with at
+least [dataset, subject_ns, task, modality, n_frames, fps], the contract
+with the evaluation layer.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="moveatlas.datasets.base.AccessError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">moveatlas.datasets.base.</span></span><span class="sig-name descname"><span class="pre">AccessError</span></span><a class="reference internal" href="_modules/moveatlas/datasets/base.html#AccessError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.datasets.base.AccessError" title="Link to this definition">#</a></dt>
+<dd><p>Raised when a dataset’s access case forbids automated download.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="moveatlas.datasets.base.BaseDataset">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">moveatlas.datasets.base.</span></span><span class="sig-name descname"><span class="pre">BaseDataset</span></span><a class="reference internal" href="_modules/moveatlas/datasets/base.html#BaseDataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.datasets.base.BaseDataset" title="Link to this definition">#</a></dt>
+<dd><p>Subclasses set <cite>code</cite> and implement <cite>_load(store, subjects,
+modality)</cite> returning (records, metadata_rows).</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="moveatlas.datasets.base.BaseDataset.get_data">
+<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subjects</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modality</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/datasets/base.html#BaseDataset.get_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.datasets.base.BaseDataset.get_data" title="Link to this definition">#</a></dt>
+<dd><p>Return (records, metadata). <cite>subjects</cite> filters on subject_ns;
+<cite>modality</cite> filters multimodal datasets to one stream.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="moveatlas.datasets.base.recipe_of">
+<span class="sig-prename descclassname"><span class="pre">moveatlas.datasets.base.</span></span><span class="sig-name descname"><span class="pre">recipe_of</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">info</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/datasets/base.html#recipe_of"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.datasets.base.recipe_of" title="Link to this definition">#</a></dt>
+<dd><p>The ingestion script the registry row names (access, then status),
+with its flags when they follow it; a pointer to the card otherwise.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="moveatlas.datasets.base.GenericDataset">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">moveatlas.datasets.base.</span></span><span class="sig-name descname"><span class="pre">GenericDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/datasets/base.html#GenericDataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.datasets.base.GenericDataset" title="Link to this definition">#</a></dt>
+<dd><p>Registry-backed adapter for every catalogued id without a dedicated
+class. Hosted and recipe ids load from whatever their ingestion left
+under &lt;path&gt;/processed/ (moveatlas.datasets.generic); asking a barrier
+id for bytes raises the documented route instead of pretending, and a
+recipe id nothing ingested says which script to run.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="moveatlas.datasets.base.GenericDataset.modalities">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">modalities</span></span><a class="headerlink" href="#moveatlas.datasets.base.GenericDataset.modalities" title="Link to this definition">#</a></dt>
+<dd><p>The modalities found on disk (or in the published record),
+computed once; () for barrier / local_only ids and when nothing
+is ingested.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="moveatlas.datasets.base.load_record">
+<span class="sig-prename descclassname"><span class="pre">moveatlas.datasets.base.</span></span><span class="sig-name descname"><span class="pre">load_record</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/datasets/base.html#load_record"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.datasets.base.load_record" title="Link to this definition">#</a></dt>
+<dd><p>Read a record container: the moveatlas-record/1 .npz natively; a
+legacy .pkl through the transition reader (DeprecationWarning). The
+.npz sibling of a .pkl path wins when it exists.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="moveatlas.datasets.base.load_pickle">
+<span class="sig-prename descclassname"><span class="pre">moveatlas.datasets.base.</span></span><span class="sig-name descname"><span class="pre">load_pickle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#moveatlas.datasets.base.load_pickle" title="Link to this definition">#</a></dt>
+<dd><p>Read a record container: the moveatlas-record/1 .npz natively; a
+legacy .pkl through the transition reader (DeprecationWarning). The
+.npz sibling of a .pkl path wins when it exists.</p>
+</dd></dl>
+
+<p id="module-moveatlas.datasets.nonan_gaitprint">NONAN GaitPrint adapters: two cohorts, two datasets, one protocol.</p>
+<p>Subject IDs collide across the cohorts (S009/S013/S019 exist in both with
+different content), which is exactly why they are SEPARATE datasets with
+separate namespaces (<code class="docutils literal notranslate"><span class="pre">nonan_gaitprint:</span></code> vs <code class="docutils literal notranslate"><span class="pre">nonan_gaitprint_young:</span></code>),
+per the 2026-08-28 acquisition decision.</p>
+<p>Records: canonical IMU contract (14-location grid), one pkl per subject
+holding that subject’s trial records, produced by ingest_nonan.py.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="moveatlas.datasets.nonan_gaitprint.NonanGaitprint">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">moveatlas.datasets.nonan_gaitprint.</span></span><span class="sig-name descname"><span class="pre">NonanGaitprint</span></span><a class="reference internal" href="_modules/moveatlas/datasets/nonan_gaitprint.html#NonanGaitprint"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.datasets.nonan_gaitprint.NonanGaitprint" title="Link to this definition">#</a></dt>
+<dd><p>Healthy older adults (41 subjects, 16-IMU Noraxon, 200 Hz).</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="moveatlas.datasets.nonan_gaitprint.NonanGaitprintYoung">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">moveatlas.datasets.nonan_gaitprint.</span></span><span class="sig-name descname"><span class="pre">NonanGaitprintYoung</span></span><a class="reference internal" href="_modules/moveatlas/datasets/nonan_gaitprint.html#NonanGaitprintYoung"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.datasets.nonan_gaitprint.NonanGaitprintYoung" title="Link to this definition">#</a></dt>
+<dd><p>Healthy young adults (35 subjects, same protocol, CC0).</p>
+</dd></dl>
+
+<p id="module-moveatlas.datasets.gait120">Gait120 adapter: the multimodal pilot (one dataset, several streams).</p>
+<p>Streams on disk today: EMG (canonical_emg records, 12 named right-leg
+muscles at 2000 Hz, stored in mV). The joint-angle .mot and MotionCapture
+trees await their own ingestion pass; when they land, this adapter gains
+modality ‘pose’ with NO new dataset identity (one dataset, one card, one
+DOI: docs/MoveAtlas_PLATFORM_DESIGN.md section 8).</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="moveatlas.datasets.gait120.Gait120">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">moveatlas.datasets.gait120.</span></span><span class="sig-name descname"><span class="pre">Gait120</span></span><a class="reference internal" href="_modules/moveatlas/datasets/gait120.html#Gait120"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.datasets.gait120.Gait120" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<p id="module-moveatlas.datasets.gaitpdb">PhysioNet gaitpdb adapter (gait in Parkinson, VGRF insoles).</p>
+<p>Vertical ground-reaction forces from 8 insole sensors + the per-foot
+total at 100 Hz, three studies pooled by PhysioNet (Ga/Ju/Si prefixes).
+The cohort is encoded in the subject id by the SOURCE itself: ‘Co’ =
+control, ‘Pt’ = Parkinson patient; the adapter exposes it as an
+eval-only ‘group’ the honest way (read from the id, documented, never
+guessed from the signal).</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="moveatlas.datasets.gaitpdb.cohort_of">
+<span class="sig-prename descclassname"><span class="pre">moveatlas.datasets.gaitpdb.</span></span><span class="sig-name descname"><span class="pre">cohort_of</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subject_ns</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/datasets/gaitpdb.html#cohort_of"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.datasets.gaitpdb.cohort_of" title="Link to this definition">#</a></dt>
+<dd><p>‘gaitpdb:GaPt07’ -&gt; ‘parkinson’; ‘gaitpdb:SiCo12’ -&gt; ‘control’.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="moveatlas.datasets.gaitpdb.PhysionetGaitpdb">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">moveatlas.datasets.gaitpdb.</span></span><span class="sig-name descname"><span class="pre">PhysionetGaitpdb</span></span><a class="reference internal" href="_modules/moveatlas/datasets/gaitpdb.html#PhysionetGaitpdb"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.datasets.gaitpdb.PhysionetGaitpdb" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<p id="module-moveatlas.datasets.stroke_gait">Van Criekinge stroke gait adapter (50 stroke + 138 able-bodied, CC0).</p>
+<p>Full-body Plug-in Gait mocap at native 100 Hz, mapped to the canonical
+15-joint skeleton by measured geometry (configs pig_vancriekinge). Every
+record carries the eval-only cohort label (1 stroke, 0 able-bodied) and
+its group attribute; 737 records / 188 subjects since the 2026-08-28
+prefixed-labels recovery.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="moveatlas.datasets.stroke_gait.StrokeGaitVanCriekinge">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">moveatlas.datasets.stroke_gait.</span></span><span class="sig-name descname"><span class="pre">StrokeGaitVanCriekinge</span></span><a class="reference internal" href="_modules/moveatlas/datasets/stroke_gait.html#StrokeGaitVanCriekinge"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.datasets.stroke_gait.StrokeGaitVanCriekinge" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<p id="module-moveatlas.datasets.cody">CODY adapter: the program’s own hyperkinetic cohort (hosted tier).</p>
+<p>Raw patient video NEVER leaves the machine (owner mandate,
+docs/PRIVACY_GATE.md); what this adapter reads is the canonical 2D-pose
+derivative already ingested from cody_3, the canonical source for the
+adult labeled cohort. Labels ride on the records and are EVAL-ONLY
+(standing rule R1: never pretraining).</p>
+<p>The publishable derived data is PUBLIC since 2026-09-01: the CODY Zenodo
+deposit (concept DOI 10.5281/zenodo.22232609, CC BY 4.0), fetched and
+md5-verified by fetch_cody_zenodo.py at the repo root. That flipped the
+cody ids from local_only to hosted. This class stays the local,
+full-cohort canonical view; a machine without the local records fetches
+the deposit and runs the ingestion recipe.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="moveatlas.datasets.cody.Cody">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">moveatlas.datasets.cody.</span></span><span class="sig-name descname"><span class="pre">Cody</span></span><a class="reference internal" href="_modules/moveatlas/datasets/cody.html#Cody"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.datasets.cody.Cody" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-moveatlas.frames">
+<span id="frames-and-visualization"></span><h2>Frames and visualization<a class="headerlink" href="#module-moveatlas.frames" title="Link to this heading">#</a></h2>
+<p>Records as pandas DataFrames.</p>
+<p><cite>to_frame(record)</cite> turns any canonical record into a tidy, time-indexed
+DataFrame with NAMED columns, so a researcher can <cite>.head()</cite>, <cite>.describe()</cite>,
+resample, merge and plot with the pandas they already know. The masks are
+honored the honest way: whatever a mask marks invalid becomes NaN in the
+frame, never a silent zero.</p>
+<p>Column layout per family:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pose</span>        <span class="n">MultiIndex</span> <span class="p">(</span><span class="n">joint</span><span class="p">,</span> <span class="n">axis</span><span class="p">[</span><span class="s1">'x'</span><span class="p">,</span><span class="s1">'y'</span><span class="p">,</span><span class="s1">'z'</span><span class="p">])</span>
+<span class="n">emg</span> <span class="o">/</span> <span class="n">eeg</span>   <span class="n">channel</span> <span class="n">names</span> <span class="p">(</span><span class="n">muscle_side</span> <span class="k">for</span> <span class="n">EMG</span><span class="p">,</span> <span class="n">site</span> <span class="k">for</span> <span class="n">EEG</span><span class="p">)</span>
+<span class="n">imu</span>         <span class="n">MultiIndex</span> <span class="p">(</span><span class="n">location</span><span class="p">,</span> <span class="n">channel</span><span class="p">)</span> <span class="k">for</span> <span class="n">instrumented</span> <span class="n">slots</span> <span class="n">only</span>
+<span class="n">force</span>       <span class="n">MultiIndex</span> <span class="p">(</span><span class="n">foot</span><span class="p">[</span><span class="s1">'left'</span><span class="p">,</span><span class="s1">'right'</span><span class="p">],</span> <span class="n">sensor</span><span class="p">[</span><span class="s1">'s1'</span><span class="o">..</span><span class="s1">'s8'</span><span class="p">,</span><span class="s1">'total'</span><span class="p">])</span>
+<span class="n">silhouette</span>  <span class="n">the</span> <span class="mi">8</span> <span class="n">per</span><span class="o">-</span><span class="n">frame</span> <span class="n">scalar</span> <span class="n">descriptors</span> <span class="p">(</span><span class="n">undetected</span> <span class="n">frames</span> <span class="n">NaN</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The index is time in seconds at the record’s native rate.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="moveatlas.frames.to_frame">
+<span class="sig-prename descclassname"><span class="pre">moveatlas.frames.</span></span><span class="sig-name descname"><span class="pre">to_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rec</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/frames.html#to_frame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.frames.to_frame" title="Link to this definition">#</a></dt>
+<dd><p>Canonical record -&gt; tidy time-indexed DataFrame (see module doc).</p>
+</dd></dl>
+
+<p id="module-moveatlas.viz">One-liner plotters for canonical objects (the nilearn pattern: each
+domain object gets a sensible-defaults visualizer):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plot_skeleton</span><span class="p">(</span><span class="n">rec</span><span class="p">,</span> <span class="n">frame</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>   <span class="n">one</span> <span class="n">pose</span> <span class="n">frame</span> <span class="k">as</span> <span class="n">a</span> <span class="n">stick</span> <span class="n">figure</span>
+<span class="n">plot_trace</span><span class="p">(</span><span class="n">rec</span><span class="p">,</span> <span class="n">n_channels</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>   <span class="nb">any</span> <span class="n">signal</span><span class="o">-</span><span class="n">bearing</span> <span class="n">record</span><span class="p">,</span> <span class="n">stacked</span>
+</pre></div>
+</div>
+<p>Both return the matplotlib Axes so callers can keep styling.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="moveatlas.viz.plot_skeleton">
+<span class="sig-prename descclassname"><span class="pre">moveatlas.viz.</span></span><span class="sig-name descname"><span class="pre">plot_skeleton</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'#2a78d6'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1,</span> <span class="pre">2)</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/viz.html#plot_skeleton"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.viz.plot_skeleton" title="Link to this definition">#</a></dt>
+<dd><p>Draw one frame of a canonical pose record; masked joints stay
+absent (never invented).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="moveatlas.viz.plot_trace">
+<span class="sig-prename descclassname"><span class="pre">moveatlas.viz.</span></span><span class="sig-name descname"><span class="pre">plot_trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_channels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'#2a78d6'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/viz.html#plot_trace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.viz.plot_trace" title="Link to this definition">#</a></dt>
+<dd><p>Stacked-trace view of any signal-bearing record (emg/eeg/imu/
+force), first n channels, mean-centered with per-channel offsets.</p>
+</dd></dl>
+
+</section>
+<section id="module-moveatlas.paradigms.windows">
+<span id="paradigms"></span><h2>Paradigms<a class="headerlink" href="#module-moveatlas.paradigms.windows" title="Link to this heading">#</a></h2>
+<p>FixedIntervalWindows: the first concrete paradigm.</p>
+<p>A paradigm defines what a valid SAMPLE is, independently of any dataset
+(the MOABB transposition). This one cuts continuous canonical records
+into fixed-duration windows at each record’s NATIVE rate (no resampling,
+per the contracts), and returns the (X, y, groups, meta) quadruple that
+evaluations consume. Windows inherit their record’s subject_ns as group,
+so patient-level splits stay leak-free by construction.</p>
+<p>Label sources are explicit, never guessed: <cite>label_from=”record”</cite> reads
+rec[“label”] (eval-only labels riding on the record, e.g. stroke vs
+able-bodied); <cite>label_from=”task_prefix”</cite> derives the class from the task
+name stripped of its trial suffix (e.g. gait120’s 7 locomotion tasks).</p>
+</section>
+<section id="module-moveatlas.evaluations.splits">
+<span id="evaluations"></span><h2>Evaluations<a class="headerlink" href="#module-moveatlas.evaluations.splits" title="Link to this heading">#</a></h2>
+<p>Patient-level split primitives (pure numpy, no sklearn dependency).</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="moveatlas.evaluations.splits.cross_patient_folds">
+<span class="sig-prename descclassname"><span class="pre">moveatlas.evaluations.splits.</span></span><span class="sig-name descname"><span class="pre">cross_patient_folds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metadata</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_splits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/evaluations/splits.html#cross_patient_folds"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.evaluations.splits.cross_patient_folds" title="Link to this definition">#</a></dt>
+<dd><p>Yield (train_idx, test_idx) over metadata rows, grouped by
+subject_ns so no subject straddles a fold. Deterministic under <cite>seed</cite>.</p>
+</dd></dl>
+
+<p id="module-moveatlas.evaluations.evaluation">CrossPatientEvaluation: the first concrete evaluation.</p>
+<p>Folds are patient-level (a subject never straddles a split); the score is
+balanced accuracy, robust to the class imbalance most clinical datasets
+carry (e.g. 50 stroke vs 138 able-bodied). Per-fold scores are returned
+so the analysis layer can meta-analyze; nothing is pooled across
+datasets here by design.</p>
+<p>scikit-learn is an optional dependency (the <code class="docutils literal notranslate"><span class="pre">bench</span></code> extra): it is
+imported when <code class="docutils literal notranslate"><span class="pre">evaluate</span></code> runs, not when the module loads.</p>
+</section>
+<section id="module-moveatlas.pipelines.features">
+<span id="pipelines"></span><h2>Pipelines<a class="headerlink" href="#module-moveatlas.pipelines.features" title="Link to this heading">#</a></h2>
+<p>Statistical feature baselines (the LogVariance+LDA tradition MOABB’s
+2024 study showed is still a hard floor to beat).</p>
+<p>scikit-learn is an optional dependency (the <code class="docutils literal notranslate"><span class="pre">bench</span></code> extra). The module
+imports without it: <code class="docutils literal notranslate"><span class="pre">StatFeatures</span></code> falls back to plain-object bases and
+<code class="docutils literal notranslate"><span class="pre">baseline_pipelines()</span></code> raises an informative ImportError.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="moveatlas.pipelines.features.StatFeatures">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">moveatlas.pipelines.features.</span></span><span class="sig-name descname"><span class="pre">StatFeatures</span></span><a class="reference internal" href="_modules/moveatlas/pipelines/features.html#StatFeatures"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.pipelines.features.StatFeatures" title="Link to this definition">#</a></dt>
+<dd><p>Per-channel summary statistics over each window: log-variance,
+RMS, mean absolute delta (a crude velocity), range. NaN-safe: the
+pose contract encodes missing joints as zeros with masks, and IMU
+dropouts as zeros, so plain stats stay finite.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="moveatlas.pipelines.features.baseline_pipelines">
+<span class="sig-prename descclassname"><span class="pre">moveatlas.pipelines.features.</span></span><span class="sig-name descname"><span class="pre">baseline_pipelines</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/pipelines/features.html#baseline_pipelines"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.pipelines.features.baseline_pipelines" title="Link to this definition">#</a></dt>
+<dd><p>The v0 pipeline set: a chance reference and two classic floors.</p>
+</dd></dl>
+
+</section>
+<section id="module-moveatlas.store">
+<span id="store"></span><h2>Store<a class="headerlink" href="#module-moveatlas.store" title="Link to this heading">#</a></h2>
+<p>The MoveAtlas record store: where harmonized canonical records live.</p>
+<p>Three stores, one interface (path / glob_dir / list_dir / verify_manifest):</p>
+<ul class="simple">
+<li><p>LocalStore: the repository’s datasets/ tree (the ingestion machine).</p></li>
+<li><p>RemoteStore: MoveAtlas’s own Zenodo records, downloaded on demand into a
+local cache (~/.moveatlas/records or MOVEATLAS_CACHE) and sha256-verified
+against each record’s files.csv manifest. Downloads resume from a .part
+file (Range requests), retry with backoff on transient errors, print a
+progress line for large files, and turn “no network” into OfflineError.</p></li>
+<li><p>HybridStore: local first, remote second, returned by open_store() when
+this machine has a repository AND the release ships a records table; a
+relpath absent locally is fetched from the dataset’s record when one
+exists (docs/MoveAtlas_PLATFORM_DESIGN.md section 8: one click, one pip).</p></li>
+</ul>
+<p>sha256 discipline: verify_manifest() checks record files against a
+manifest CSV (path,sha256). Manifests are produced at release-assembly
+time; local reads skip verification unless a manifest exists.</p>
+<p>Environment: MOVEATLAS_REPO (repository root), MOVEATLAS_CACHE (download
+cache), MOVEATLAS_QUIET=1 (no progress or retry lines on stderr).</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="moveatlas.store.OfflineError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">moveatlas.store.</span></span><span class="sig-name descname"><span class="pre">OfflineError</span></span><a class="reference internal" href="_modules/moveatlas/store.html#OfflineError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.store.OfflineError" title="Link to this definition">#</a></dt>
+<dd><p>A record is not in the local cache and the network is unreachable
+(urllib URLError after the retries). Subclasses FileNotFoundError so
+callers that already handle “not here” keep working.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="moveatlas.store.LocalStore">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">moveatlas.store.</span></span><span class="sig-name descname"><span class="pre">LocalStore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/store.html#LocalStore"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.store.LocalStore" title="Link to this definition">#</a></dt>
+<dd><p>Serve record files from the local repository tree.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="moveatlas.store.LocalStore.glob_dir">
+<span class="sig-name descname"><span class="pre">glob_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reldir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suffix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/store.html#LocalStore.glob_dir"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.store.LocalStore.glob_dir" title="Link to this definition">#</a></dt>
+<dd><p>Record files under reldir. Default: the .npz containers, falling
+back to legacy .pkl only when a directory holds no .npz at all.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="moveatlas.store.LocalStore.list_dir">
+<span class="sig-name descname"><span class="pre">list_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reldir</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/store.html#LocalStore.list_dir"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.store.LocalStore.list_dir" title="Link to this definition">#</a></dt>
+<dd><p>Immediate children of reldir as store-relative paths (forward
+slashes, sorted); sub-directories carry a trailing ‘/’. An absent
+directory answers [] (discovery, not access: nothing raises).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="moveatlas.store.LocalStore.verify_manifest">
+<span class="sig-name descname"><span class="pre">verify_manifest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">manifest_csv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/store.html#LocalStore.verify_manifest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.store.LocalStore.verify_manifest" title="Link to this definition">#</a></dt>
+<dd><p>Check every (path, sha256) row; return the list of failures.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="moveatlas.store.RemoteStore">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">moveatlas.store.</span></span><span class="sig-name descname"><span class="pre">RemoteStore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cache</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_base</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'https://zenodo.org/api'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/store.html#RemoteStore"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.store.RemoteStore" title="Link to this definition">#</a></dt>
+<dd><p>The Zenodo record store: downloads record files on demand into a
+local cache (~/.moveatlas/records or MOVEATLAS_CACHE) and verifies
+every byte against the record’s own files.csv manifest (sha256).</p>
+<p>Two record layouts, both produced by upload_zenodo.py:</p>
+<ul class="simple">
+<li><p>direct: one record file per store file, flat name = path with ‘/’
+replaced by ‘__’; manifest columns path,bytes,sha256,record_name.</p></li>
+<li><p>bundled (&gt;100-file datasets): ZIP parts; manifest columns
+path,bytes,sha256,zip_part[,zip_part_sha256]; members keep their
+true relpath. When zip_part_sha256 is present the part is verified
+before any extraction (once per process for cached parts).</p></li>
+</ul>
+<p>Transport: an interrupted download leaves &lt;dest&gt;.part and the next
+call resumes it with a Range header (a server that ignores the range
+restarts the file). Transient failures (URLError, HTTP 429 and 5xx)
+are retried RETRIES times with BACKOFF seconds between tries; 404 and
+other client errors raise at once. A URLError that survives the
+retries becomes OfflineError (a FileNotFoundError).</p>
+<p>An unpublished (still-draft) record answers 404 on the public API:
+the error says so honestly instead of guessing.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="moveatlas.store.RemoteStore.has_record">
+<span class="sig-name descname"><span class="pre">has_record</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">relpath_or_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/store.html#RemoteStore.has_record"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.store.RemoteStore.has_record" title="Link to this definition">#</a></dt>
+<dd><p>True when the release table lists a record for the dataset the
+relpath (or bare id) belongs to.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="moveatlas.store.RemoteStore.list_dir">
+<span class="sig-name descname"><span class="pre">list_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reldir</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/store.html#RemoteStore.list_dir"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.store.RemoteStore.list_dir" title="Link to this definition">#</a></dt>
+<dd><p>Immediate children of reldir according to the record manifest
+(nothing is downloaded): store-relative paths, sub-directories with
+a trailing ‘/’. [] when the manifest holds nothing there; a dataset
+without a published record raises FileNotFoundError.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="moveatlas.store.RemoteStore.resolve">
+<span class="sig-name descname"><span class="pre">resolve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">relpath</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/store.html#RemoteStore.resolve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.store.RemoteStore.resolve" title="Link to this definition">#</a></dt>
+<dd><p>A .pkl relpath maps to its .npz sibling when the record was
+published in the migrated format.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="moveatlas.store.HybridStore">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">moveatlas.store.</span></span><span class="sig-name descname"><span class="pre">HybridStore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remote</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/store.html#HybridStore"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.store.HybridStore" title="Link to this definition">#</a></dt>
+<dd><p>Local first, remote second, same interface. A relpath the local
+tree lacks is served from the dataset’s published record when the
+release table lists one; otherwise the local error (with its
+ingestion hint) stands. Being a LocalStore, <cite>.root</cite> and the local
+behaviour are unchanged for everything that exists on disk.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="moveatlas.store.HybridStore.glob_dir">
+<span class="sig-name descname"><span class="pre">glob_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reldir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suffix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/store.html#HybridStore.glob_dir"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.store.HybridStore.glob_dir" title="Link to this definition">#</a></dt>
+<dd><p>Record files under reldir. Default: the .npz containers, falling
+back to legacy .pkl only when a directory holds no .npz at all.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="moveatlas.store.HybridStore.list_dir">
+<span class="sig-name descname"><span class="pre">list_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reldir</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/store.html#HybridStore.list_dir"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.store.HybridStore.list_dir" title="Link to this definition">#</a></dt>
+<dd><p>Immediate children of reldir as store-relative paths (forward
+slashes, sorted); sub-directories carry a trailing ‘/’. An absent
+directory answers [] (discovery, not access: nothing raises).</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="moveatlas.store.open_store">
+<span class="sig-prename descclassname"><span class="pre">moveatlas.store.</span></span><span class="sig-name descname"><span class="pre">open_store</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/store.html#open_store"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.store.open_store" title="Link to this definition">#</a></dt>
+<dd><p>The hosted tier’s store: the local repository when this machine has
+it (fronted by the published records for whatever it lacks, when the
+release ships a records table), else the public Zenodo record store
+(download-on-demand cache).</p>
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="submit_dataset.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Submit a new dataset</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="cite.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Citation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-moveatlas.registry">Registry</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.registry.snapshot_info"><code class="docutils literal notranslate"><span class="pre">snapshot_info()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.registry.access_case"><code class="docutils literal notranslate"><span class="pre">access_case()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.registry.list_datasets"><code class="docutils literal notranslate"><span class="pre">list_datasets()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.registry.dataset_info"><code class="docutils literal notranslate"><span class="pre">dataset_info()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-moveatlas.datasets.base">Datasets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.datasets.base.AccessError"><code class="docutils literal notranslate"><span class="pre">AccessError</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.datasets.base.BaseDataset"><code class="docutils literal notranslate"><span class="pre">BaseDataset</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.datasets.base.BaseDataset.get_data"><code class="docutils literal notranslate"><span class="pre">BaseDataset.get_data()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.datasets.base.recipe_of"><code class="docutils literal notranslate"><span class="pre">recipe_of()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.datasets.base.GenericDataset"><code class="docutils literal notranslate"><span class="pre">GenericDataset</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.datasets.base.GenericDataset.modalities"><code class="docutils literal notranslate"><span class="pre">GenericDataset.modalities</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.datasets.base.load_record"><code class="docutils literal notranslate"><span class="pre">load_record()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.datasets.base.load_pickle"><code class="docutils literal notranslate"><span class="pre">load_pickle()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.datasets.nonan_gaitprint.NonanGaitprint"><code class="docutils literal notranslate"><span class="pre">NonanGaitprint</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.datasets.nonan_gaitprint.NonanGaitprintYoung"><code class="docutils literal notranslate"><span class="pre">NonanGaitprintYoung</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.datasets.gait120.Gait120"><code class="docutils literal notranslate"><span class="pre">Gait120</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.datasets.gaitpdb.cohort_of"><code class="docutils literal notranslate"><span class="pre">cohort_of()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.datasets.gaitpdb.PhysionetGaitpdb"><code class="docutils literal notranslate"><span class="pre">PhysionetGaitpdb</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.datasets.stroke_gait.StrokeGaitVanCriekinge"><code class="docutils literal notranslate"><span class="pre">StrokeGaitVanCriekinge</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.datasets.cody.Cody"><code class="docutils literal notranslate"><span class="pre">Cody</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-moveatlas.frames">Frames and visualization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.frames.to_frame"><code class="docutils literal notranslate"><span class="pre">to_frame()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.viz.plot_skeleton"><code class="docutils literal notranslate"><span class="pre">plot_skeleton()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.viz.plot_trace"><code class="docutils literal notranslate"><span class="pre">plot_trace()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-moveatlas.paradigms.windows">Paradigms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-moveatlas.evaluations.splits">Evaluations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.evaluations.splits.cross_patient_folds"><code class="docutils literal notranslate"><span class="pre">cross_patient_folds()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-moveatlas.pipelines.features">Pipelines</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.pipelines.features.StatFeatures"><code class="docutils literal notranslate"><span class="pre">StatFeatures</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.pipelines.features.baseline_pipelines"><code class="docutils literal notranslate"><span class="pre">baseline_pipelines()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-moveatlas.store">Store</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.store.OfflineError"><code class="docutils literal notranslate"><span class="pre">OfflineError</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.store.LocalStore"><code class="docutils literal notranslate"><span class="pre">LocalStore</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.store.LocalStore.glob_dir"><code class="docutils literal notranslate"><span class="pre">LocalStore.glob_dir()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.store.LocalStore.list_dir"><code class="docutils literal notranslate"><span class="pre">LocalStore.list_dir()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.store.LocalStore.verify_manifest"><code class="docutils literal notranslate"><span class="pre">LocalStore.verify_manifest()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.store.RemoteStore"><code class="docutils literal notranslate"><span class="pre">RemoteStore</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.store.RemoteStore.has_record"><code class="docutils literal notranslate"><span class="pre">RemoteStore.has_record()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.store.RemoteStore.list_dir"><code class="docutils literal notranslate"><span class="pre">RemoteStore.list_dir()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.store.RemoteStore.resolve"><code class="docutils literal notranslate"><span class="pre">RemoteStore.resolve()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.store.HybridStore"><code class="docutils literal notranslate"><span class="pre">HybridStore</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.store.HybridStore.glob_dir"><code class="docutils literal notranslate"><span class="pre">HybridStore.glob_dir()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.store.HybridStore.list_dir"><code class="docutils literal notranslate"><span class="pre">HybridStore.list_dir()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.store.open_store"><code class="docutils literal notranslate"><span class="pre">open_store()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/api.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, MoveAtlas contributors.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

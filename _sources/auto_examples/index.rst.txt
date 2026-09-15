@@ -1,0 +1,746 @@
+:orphan:
+
+Examples
+========
+
+Runnable examples over the MoveAtlas corpus, written as a researcher's
+toolkit: browse the catalogue by family, pathology or healthy cohort;
+load records correctly (masks, channel tables, native rates); run a
+complete cross-patient study with per-fold outputs and paired
+statistics; and start descriptive science (cohort tables, activity
+maps, lifespan comparisons) with one figure. Every page executes on the
+real corpus at build time and downloads as ``.py`` and ``.ipynb``.
+
+
+.. raw:: html
+
+  <div id='sg-tag-list' class='sphx-glr-tag-list'></div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+.. thumbnail-parent-div-open
+
+.. thumbnail-parent-div-close
+
+.. raw:: html
+
+    </div>
+
+The catalogue
+=============
+
+Browse the whole catalogue by family, pathology, healthy cohort and
+access case; the live count sits on the registry, never in this text.
+
+
+.. raw:: html
+
+  <div id='sg-tag-list' class='sphx-glr-tag-list'></div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+.. thumbnail-parent-div-open
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="&quot;Show me everything on disease X&quot; is the first question a clinical researcher asks. Cell B2 is the Parkinson/hypokinetic axis: this example lists every B2 dataset with its access case, then opens REAL records from two different modalities of the same disease.">
+
+.. only:: html
+
+  .. image:: /auto_examples/01_catalogue/images/thumb/sphx_glr_plot_pathology_tour_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/01_catalogue/plot_pathology_tour`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">All the data for one pathology: a Parkinson tour</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="The registry catalogues the movement datasets. This example shows every way to slice it without downloading a byte: by modality family, by access case, by clinical taxonomy cell (pathological axes A/B/D/E against the healthy lifespan axis C), and what an honest failure looks like when a dataset cannot be downloaded.">
+
+.. only:: html
+
+  .. image:: /auto_examples/01_catalogue/images/thumb/sphx_glr_plot_registry_access_cases_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/01_catalogue/plot_registry_access_cases`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Explore the catalogue: families, pathologies, healthy cohorts, access</div>
+    </div>
+
+
+.. thumbnail-parent-div-close
+
+.. raw:: html
+
+    </div>
+
+First look at the data
+======================
+
+Load real records, see them as DataFrames, plot every family's raw signal.
+
+
+.. raw:: html
+
+  <div id='sg-tag-list' class='sphx-glr-tag-list'></div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+.. thumbnail-parent-div-open
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Load one subject of Gait120 (120 healthy adults, 7 locomotion tasks, surface EMG of 12 named right-leg muscles at 2000 Hz) and look at one level-walking trial. Gait120 is a hosted dataset: one call returns canonical records.">
+
+.. only:: html
+
+  .. image:: /auto_examples/02_first_look/images/thumb/sphx_glr_plot_getting_started_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/02_first_look/plot_getting_started`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Getting started: load a hosted dataset</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Vertical ground-reaction forces from the PhysioNet gait-in-Parkinson database (gaitpdb): 8 insole sensors plus the per-foot total at 100 Hz. The alternating left/right pattern IS the gait cycle; its timing irregularity is one of the oldest quantitative Parkinson markers.">
+
+.. only:: html
+
+  .. image:: /auto_examples/02_first_look/images/thumb/sphx_glr_plot_force_gait_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/02_first_look/plot_force_gait`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Force plates and insoles: the gait cycle in newtons</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="64-point body contours from the KOA-PD-NM gait dataset. A contour keeps the movement and drops the identity, which is exactly why silhouettes are the publishable form of patient video in MoveAtlas (see the privacy gate). Detection masks say honestly when the walker was not found.">
+
+.. only:: html
+
+  .. image:: /auto_examples/02_first_look/images/thumb/sphx_glr_plot_silhouette_contours_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/02_first_look/plot_silhouette_contours`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Silhouettes: the privacy-preserving face of clinical video</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Scalp EEG from a Parkinson walking-protocol study (OpenNeuro ds007526), harmonized to the canonical EEG contract: signal in microvolts at the native 250 Hz, channel sites from the source headers, bad channels carried explicitly.">
+
+.. only:: html
+
+  .. image:: /auto_examples/02_first_look/images/thumb/sphx_glr_plot_eeg_channels_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/02_first_look/plot_eeg_channels`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">EEG during movement protocols</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="moveatlas.to_frame(record) turns any canonical record into a tidy, time-indexed pandas DataFrame with named columns, and the masks become NaN (never silent zeros). From there the whole pandas toolbox applies: head(), describe(), resampling, rolling statistics, joins.">
+
+.. only:: html
+
+  .. image:: /auto_examples/02_first_look/images/thumb/sphx_glr_plot_dataframes_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/02_first_look/plot_dataframes`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Every record is a DataFrame away</div>
+    </div>
+
+
+.. thumbnail-parent-div-close
+
+.. raw:: html
+
+    </div>
+
+Data hygiene
+============
+
+Masks, channel tables, native rates, stores: consume records correctly.
+
+
+.. raw:: html
+
+  <div id='sg-tag-list' class='sphx-glr-tag-list'></div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+.. thumbnail-parent-div-open
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Where does the data come from? The hosted tier is served by the MoveAtlas record store. Today that store is LOCAL (nothing is published yet); after the public launch the same interface fronts MoveAtlas&#x27;s Zenodo records and Hugging Face datasets, and this example will not change.">
+
+.. only:: html
+
+  .. image:: /auto_examples/03_data_hygiene/images/thumb/sphx_glr_plot_data_management_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/03_data_hygiene/plot_data_management`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Data management: the record store</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="The canonical contracts never guess: what a sensor did not capture is masked, not invented. This example is the safety briefing every analysis should follow, on three real records from three families.">
+
+.. only:: html
+
+  .. image:: /auto_examples/03_data_hygiene/images/thumb/sphx_glr_plot_masks_and_contracts_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/03_data_hygiene/plot_masks_and_contracts`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Consuming records correctly: masks, channel tables, native rates</div>
+    </div>
+
+
+.. thumbnail-parent-div-close
+
+.. raw:: html
+
+    </div>
+
+Cohorts and subjects
+====================
+
+Patients vs controls, single-subject deep dives, Table-1 numbers.
+
+
+.. raw:: html
+
+  <div id='sg-tag-list' class='sphx-glr-tag-list'></div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+.. thumbnail-parent-div-open
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Most clinical questions start with &quot;who is in the data&quot;. The Van Criekinge stroke-gait dataset carries an eval-only cohort label on every record (1 = stroke, 0 = able-bodied); this example builds the cohort table a paper&#x27;s Table 1 starts from, and two honest descriptive views.">
+
+.. only:: html
+
+  .. image:: /auto_examples/04_cohorts/images/thumb/sphx_glr_plot_patients_vs_controls_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/04_cohorts/plot_patients_vs_controls`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Patients and controls: cohorts, balance, and descriptive statistics</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="The complement of cohort statistics is the single-subject view every clinician starts from. One stroke survivor from the Van Criekinge dataset: all their walking trials, their knee trajectories, and the left-right asymmetry that hemiparesis produces.">
+
+.. only:: html
+
+  .. image:: /auto_examples/04_cohorts/images/thumb/sphx_glr_plot_single_subject_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/04_cohorts/plot_single_subject`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">One patient, in depth: trials, trajectories, asymmetry</div>
+    </div>
+
+
+.. thumbnail-parent-div-close
+
+.. raw:: html
+
+    </div>
+
+Cross-patient classification
+============================
+
+Standardized pipelines under leak-free patient-level evaluation.
+
+
+.. raw:: html
+
+  <div id='sg-tag-list' class='sphx-glr-tag-list'></div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+.. thumbnail-parent-div-open
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Evaluation splits in MoveAtlas are patient-level, always: a subject never appears on both sides of a split. This example builds 5 cross-patient folds over the CODY hyperkinetic cohort (private tier, local records) and verifies the folds are leak-free.">
+
+.. only:: html
+
+  .. image:: /auto_examples/05_classification/images/thumb/sphx_glr_plot_patient_level_splits_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/05_classification/plot_patient_level_splits`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Patient-level splits: the house rule</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="The full research loop on one dataset, end to end: cut canonical records into fixed windows, run pipelines under a patient-level evaluation, look at the per-fold outputs, and test a pipeline comparison properly. Every step is a tool a study can reuse as-is.">
+
+.. only:: html
+
+  .. image:: /auto_examples/05_classification/images/thumb/sphx_glr_plot_cross_patient_benchmark_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/05_classification/plot_cross_patient_benchmark`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">A complete cross-patient study: windows, pipelines, scores, statistics</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="The classic sin of clinical machine learning is subject leakage: windows of the same patient on both sides of a split. This example draws the split structure itself (the scikit-learn plot_cv_indices idea) for a naive KFold and for MoveAtlas&#x27; patient-level folds, on real stroke-gait windows, and counts the leaked subjects in each.">
+
+.. only:: html
+
+  .. image:: /auto_examples/05_classification/images/thumb/sphx_glr_plot_cv_visualization_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/05_classification/plot_cv_visualization`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">See your splits before you trust them</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="The cross-patient recipe generalizes across pathologies and modalities. Here: Parkinson vs control from insole vertical GRF (PhysioNet gaitpdb, 93 patients / 72 controls), with the standardization step explicit in the pipeline, a confusion matrix on held-out patients, and a permutation test so chance cannot fool us.">
+
+.. only:: html
+
+  .. image:: /auto_examples/05_classification/images/thumb/sphx_glr_plot_pd_from_grf_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/05_classification/plot_pd_from_grf`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">A second disease, the same recipe: Parkinson from ground-reaction forces</div>
+    </div>
+
+
+.. thumbnail-parent-div-close
+
+.. raw:: html
+
+    </div>
+
+Signal analysis
+===============
+
+Spectra, joint angles, gait events, activity maps, distributions.
+
+
+.. raw:: html
+
+  <div id='sg-tag-list' class='sphx-glr-tag-list'></div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+.. thumbnail-parent-div-open
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="The same subject of the Parkinson walking-protocol study (OpenNeuro ds007526), at rest and walking, seen as spectrograms of one channel. Movement writes itself into the spectrum: gait-locked low-frequency power and broadband motion artifacts appear the moment walking starts, which is exactly why movement EEG needs its own preprocessing care.">
+
+.. only:: html
+
+  .. image:: /auto_examples/06_signal_analysis/images/thumb/sphx_glr_plot_eeg_spectrogram_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/06_signal_analysis/plot_eeg_spectrogram`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Time-frequency views: a walking EEG spectrogram</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Gait120 records 12 named right-leg muscles across 7 locomotion tasks. One matrix answers &quot;which muscle works in which task&quot;: median RMS activity per (muscle, task), computed over subjects. This is also the template for any channels-by-conditions map (EEG bands by task, IMU locations by activity).">
+
+.. only:: html
+
+  .. image:: /auto_examples/06_signal_analysis/images/thumb/sphx_glr_plot_emg_task_heatmap_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/06_signal_analysis/plot_emg_task_heatmap`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Muscle-by-task activity maps from a multimodal dataset</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Raw sEMG amplitudes are heavy-tailed: histograms of the rectified signal look nothing like a Gaussian, and become tractable in log space. Seeing the distribution BEFORE modeling is the cheapest protection against mis-specified features.">
+
+.. only:: html
+
+  .. image:: /auto_examples/06_signal_analysis/images/thumb/sphx_glr_plot_emg_distributions_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/06_signal_analysis/plot_emg_distributions`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Amplitude distributions and when to log them</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Clinical gait analysis speaks in joint angles. The canonical 15-joint skeleton supports them directly: the knee flexion angle is the angle at the knee between the thigh (hip-&gt;knee) and shank (knee-&gt;ankle) vectors. This example computes it for every trial and compares the distribution of knee range-of-motion between cohorts, one of the most robust hemiparesis markers.">
+
+.. only:: html
+
+  .. image:: /auto_examples/06_signal_analysis/images/thumb/sphx_glr_plot_knee_angle_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/06_signal_analysis/plot_knee_angle`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Joint angles from canonical skeletons: the knee, stroke vs able-bodied</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Heel strikes are visible in insole forces as load onsets; the series of stride times they define is one of the most replicated Parkinson markers: patients walk with MORE VARIABLE stride times. This example detects events with a plain threshold, builds the stride-time series, and compares the variability across the two gaitpdb cohorts.">
+
+.. only:: html
+
+  .. image:: /auto_examples/06_signal_analysis/images/thumb/sphx_glr_plot_gait_events_variability_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/06_signal_analysis/plot_gait_events_variability`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Gait events and stride-time variability: the classic Parkinson marker</div>
+    </div>
+
+
+.. thumbnail-parent-div-close
+
+.. raw:: html
+
+    </div>
+
+Ready-to-run science
+====================
+
+Descriptive studies across cohorts, pathologies, scales and vocabularies.
+
+
+.. raw:: html
+
+  <div id='sg-tag-list' class='sphx-glr-tag-list'></div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+.. thumbnail-parent-div-open
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="MoveAtlas anchors its labels to the Human Phenotype Ontology: every movement-abnormality term under HP:0100022, with its depth, parents and the taxonomy cells it maps to. This is the vocabulary of rule R2 (weak supervision) and it is data anyone can browse.">
+
+.. only:: html
+
+  .. image:: /auto_examples/07_science/images/thumb/sphx_glr_plot_hpo_vocabulary_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/07_science/plot_hpo_vocabulary`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">The label vocabulary: HPO movement terms mapped to the taxonomy</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Movement science is not only signals: the auxdata tier carries clinical scale tables. The cdystonia table is a classic randomized trial of botulinum toxin in cervical dystonia (TWSTRS severity scores over 16 weeks, three arms). Longitudinal spaghetti + group means in a few pandas lines.">
+
+.. only:: html
+
+  .. image:: /auto_examples/07_science/images/thumb/sphx_glr_plot_clinical_scales_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/07_science/plot_clinical_scales`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Clinical scales are data too: a botulinum-toxin trial in dystonia</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Two NONAN GaitPrint cohorts share one protocol (16-IMU overground walking at 200 Hz): 35 young adults and 41 older adults. This example computes each walker&#x27;s dominant step frequency from the lower-back vertical acceleration and compares the cohorts, the kind of one-figure descriptive result a study starts from.">
+
+.. only:: html
+
+  .. image:: /auto_examples/07_science/images/thumb/sphx_glr_plot_gait_aging_nonan_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/07_science/plot_gait_aging_nonan`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Descriptive science, ready to run: step frequency across the lifespan</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="MoveAtlas exists because open hyperkinetic data is scarce - and CODY is the project&#x27;s own contribution: the public, dystonia-centred release of adult and pediatric hyperkinetic pose data (CC BY 4.0, concept DOI 10.5281/zenodo.22232609, v1.1.0). This example loads the canonical records of one dystonic patient and one control, compares their right-wrist kinematics, and shows the per-frame expert phenomenology ratings that ride on every patient record (eval-only by standing rule R1: never pretraining).">
+
+.. only:: html
+
+  .. image:: /auto_examples/07_science/images/thumb/sphx_glr_plot_cody_dystonia_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/07_science/plot_cody_dystonia`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">CODY: dystonia in the atlas's own cohort</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="One walking-rate measure computed on four cohorts from THREE datasets and two modalities: young and older healthy adults (NONAN, lower-back accelerometry), Parkinson patients and their controls (gaitpdb, insole forces). The point is methodological as much as clinical: MoveAtlas lets you line cohorts up in minutes, and the caveat at the end is part of the lesson.">
+
+.. only:: html
+
+  .. image:: /auto_examples/07_science/images/thumb/sphx_glr_plot_multi_cohort_cadence_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/07_science/plot_multi_cohort_cadence`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Four cohorts, one measure: cadence across health, aging and disease</div>
+    </div>
+
+
+.. thumbnail-parent-div-close
+
+.. raw:: html
+
+    </div>
+
+Beyond the signal
+=================
+
+The catalogue's other lanes on real data: invasive ECoG and deep-brain
+LFP, gene expression across the brain, and the genetics of movement
+disorders. No MRI appears here because none is on disk yet; everything
+shown is measured.
+
+
+.. raw:: html
+
+  <div id='sg-tag-list' class='sphx-glr-tag-list'></div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+.. thumbnail-parent-div-open
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="The invasive lane is real and on disk: the Merk and Neumann decoding testbed holds 73 BIDS iEEG recordings of Parkinson patients performing a grip-force task, with sensorimotor ECoG strips AND subthalamic LFP recorded together, plus the measured force trace. This is the signal a movement foundation model eventually meets at the electrode end of the loop. Nothing here is harmonized yet (rule R1 keeps invasive data out of the movement-pretraining contracts); the lane enters the EEG family&#x27;s contract at its own ingestion pass.">
+
+.. only:: html
+
+  .. image:: /auto_examples/08_beyond_the_signal/images/thumb/sphx_glr_plot_invasive_ecog_lfp_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/08_beyond_the_signal/plot_invasive_ecog_lfp`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Inside the loop: ECoG and STN-LFP during a grip-force task</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="The bio lane holds the Allen Human Brain Atlas microarray survey (six donors, all on disk). Here one donor&#x27;s 946 sampled brain sites answer a movement question: where are the canonical movement-disorder genes expressed? Every value is streamed from the raw Allen archive; the brain map at the bottom uses the donor&#x27;s own MNI sample coordinates, so no MRI is needed to see anatomy.">
+
+.. only:: html
+
+  .. image:: /auto_examples/08_beyond_the_signal/images/thumb/sphx_glr_plot_movement_genes_brain_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/08_beyond_the_signal/plot_movement_genes_brain`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Where movement-disorder genes live in the brain</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Five signed-off Genomics England PanelApp panels sit in the bio lane as machine-readable TSVs: dystonia/chorea (adult and childhood onset), early-onset dystonia, hereditary ataxia, and adult-onset neurodegenerative disease. Together they define the review-grade gene vocabulary a movement atlas can anchor genetic labels to.">
+
+.. only:: html
+
+  .. image:: /auto_examples/08_beyond_the_signal/images/thumb/sphx_glr_plot_genetics_landscape_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/08_beyond_the_signal/plot_genetics_landscape`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">The genetic landscape of movement disorders</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="The atlas&#x27;s animal lane holds 7,567 striatal neuron reconstructions bulk-fetched from NeuroMorpho.Org (CC BY 4.0). One archive (Luebke) contains a method-matched comparison: medium spiny neurons from control mice and from the Q175 Huntington&#x27;s-disease knock-in model, reconstructed by the same lab. Chorea&#x27;s cellular substrate, drawn from real morphology files - with the honest caveat that the symptom link is via the ANIMAL MODEL, not measured movement.">
+
+.. only:: html
+
+  .. image:: /auto_examples/08_beyond_the_signal/images/thumb/sphx_glr_plot_hd_neuron_morphology_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/08_beyond_the_signal/plot_hd_neuron_morphology`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">The diseased striatum in single neurons: Q175 Huntington model vs control</div>
+    </div>
+
+
+.. thumbnail-parent-div-close
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+   :includehidden:
+
+
+   /auto_examples/01_catalogue/index.rst
+   /auto_examples/02_first_look/index.rst
+   /auto_examples/03_data_hygiene/index.rst
+   /auto_examples/04_cohorts/index.rst
+   /auto_examples/05_classification/index.rst
+   /auto_examples/06_signal_analysis/index.rst
+   /auto_examples/07_science/index.rst
+   /auto_examples/08_beyond_the_signal/index.rst
+
+
+.. only:: html
+
+  .. container:: sphx-glr-footer sphx-glr-footer-gallery
+
+    .. container:: sphx-glr-download sphx-glr-download-python
+
+      :download:`Download all examples in Python source code: auto_examples_python.zip </auto_examples/auto_examples_python.zip>`
+
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
+
+      :download:`Download all examples in Jupyter notebooks: auto_examples_jupyter.zip </auto_examples/auto_examples_jupyter.zip>`
+
+
+.. only:: html
+
+ .. rst-class:: sphx-glr-signature
+
+    `Gallery generated by Sphinx-Gallery <https://sphinx-gallery.github.io>`_

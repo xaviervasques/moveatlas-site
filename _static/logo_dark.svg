@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 318 56" width="318" height="56">
+  <path d="M 14.0 34.0 L 27.2 25.8 L 40.4 20.7 L 53.6 20.7 L 66.8 25.8 L 80.0 34.0" fill="none" stroke="#ffffff" stroke-opacity="0.22" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="14.0" cy="34.0" r="4.6" fill="#3987e5"/><circle cx="27.2" cy="25.8" r="5.4" fill="#d95926"/><circle cx="40.4" cy="20.7" r="5.4" fill="#199e70"/><circle cx="53.6" cy="20.7" r="5.4" fill="#c98500"/><circle cx="66.8" cy="25.8" r="5.4" fill="#d55181"/><circle cx="80.0" cy="34.0" r="4.6" fill="#008300"/>
+  <text x="102" y="44" font-family="'Segoe UI', system-ui, sans-serif" font-size="31" font-weight="700" fill="#ffffff">Move<tspan fill="#3987e5">Atlas</tspan></text>
+</svg>

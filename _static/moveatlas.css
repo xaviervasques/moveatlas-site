@@ -1,0 +1,189 @@
+/* MoveAtlas design system: badges, chips, stat band, family cards.
+   Colors come from the validated dataviz palette (light / dark steps).
+   Family accents are FIXED forever: pose=blue, imu=orange, emg=aqua,
+   eeg=yellow, force=magenta, silhouette=green. */
+
+:root {
+  --ma-surface: #fcfcfb;
+  --ma-ink: #0b0b0b;
+  --ma-ink2: #52514e;
+  --ma-muted: #898781;
+  --ma-border: rgba(11, 11, 11, 0.10);
+  --ma-grid: #e1e0d9;
+  --ma-pose: #2a78d6;
+  --ma-imu: #eb6834;
+  --ma-emg: #1baf7a;
+  --ma-eeg: #eda100;
+  --ma-force: #e87ba4;
+  --ma-silhouette: #008300;
+}
+html[data-theme="dark"] {
+  --ma-surface: #1a1a19;
+  --ma-ink: #ffffff;
+  --ma-ink2: #c3c2b7;
+  --ma-muted: #898781;
+  --ma-border: rgba(255, 255, 255, 0.10);
+  --ma-grid: #2c2c2a;
+  --ma-pose: #3987e5;
+  --ma-imu: #d95926;
+  --ma-emg: #199e70;
+  --ma-eeg: #c98500;
+  --ma-force: #d55181;
+  --ma-silhouette: #008300;
+}
+
+/* ------------------------------------------------------------- badges */
+.ma-badge {
+  display: inline-block;
+  padding: 0.08rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid var(--ma-border);
+  background: var(--ma-surface);
+  color: var(--ma-ink2);
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.ma-badge::before {
+  content: "";
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  margin-right: 0.35rem;
+  vertical-align: 6%;
+  background: var(--ma-muted);
+}
+.ma-badge.ma-hosted::before { background: var(--ma-pose); }
+.ma-badge.ma-recipe::before { background: var(--ma-emg); }
+.ma-badge.ma-barrier::before { background: var(--ma-imu); }
+.ma-badge.ma-local_only::before { background: var(--ma-force); }
+.ma-badge.ma-harmonized::before { background: var(--ma-silhouette); }
+.ma-badge.ma-catalogued::before { background: var(--ma-muted); }
+
+/* family chips: colored dot + name, color follows the family forever */
+.ma-fam { font-weight: 600; white-space: nowrap; }
+.ma-fam::before {
+  content: "";
+  display: inline-block;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 2px;
+  margin-right: 0.35rem;
+  vertical-align: 4%;
+  background: var(--ma-muted);
+}
+.ma-fam.ma-pose::before { background: var(--ma-pose); }
+.ma-fam.ma-imu::before { background: var(--ma-imu); }
+.ma-fam.ma-emg::before { background: var(--ma-emg); }
+.ma-fam.ma-eeg::before { background: var(--ma-eeg); }
+.ma-fam.ma-force::before { background: var(--ma-force); }
+.ma-fam.ma-silhouette::before { background: var(--ma-silhouette); }
+.ma-fam.ma-aux::before,
+.ma-fam.ma-bio::before,
+.ma-fam.ma-socle::before,
+.ma-fam.ma-ontology::before { background: var(--ma-muted); }
+
+/* keyword tag chips (taxonomy cells on dataset pages) */
+.ma-tag {
+  display: inline-block;
+  padding: 0.05rem 0.5rem;
+  margin: 0 0.25rem 0.3rem 0;
+  border-radius: 4px;
+  border: 1px solid var(--ma-border);
+  color: var(--ma-ink2);
+  font-size: 0.74rem;
+}
+
+/* ---------------------------------------------------------- stat band */
+.ma-band {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.1rem 0 1.4rem;
+}
+.ma-tile {
+  flex: 1 1 140px;
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--ma-border);
+  background: var(--ma-surface);
+}
+.ma-n { font-size: 1.55rem; font-weight: 700; color: var(--ma-ink); line-height: 1.15; }
+.ma-l { font-size: 0.78rem; color: var(--ma-ink2); margin-top: 0.15rem; }
+
+/* ----------------------------------------------------- version chips */
+.ma-chips { margin: 0.6rem 0 0.4rem; }
+.ma-chip {
+  display: inline-block;
+  padding: 0.1rem 0.6rem;
+  margin: 0 0.35rem 0.35rem 0;
+  border-radius: 4px;
+  border: 1px solid var(--ma-border);
+  background: var(--ma-surface);
+  color: var(--ma-ink2);
+  font-size: 0.74rem;
+  font-weight: 600;
+}
+.ma-chip b { color: var(--ma-ink); font-weight: 700; }
+
+/* ------------------------------------------------------ family cards */
+.ma-fgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 0.9rem;
+  margin: 1.2rem 0 1.6rem;
+}
+.ma-fcard {
+  display: block;
+  border: 1px solid var(--ma-border);
+  border-radius: 8px;
+  background: var(--ma-surface);
+  overflow: hidden;
+  text-decoration: none !important;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.ma-fcard:hover {
+  border-color: var(--ma-muted);
+  transform: translateY(-2px);
+}
+.ma-fcard img { width: 100%; display: block; }
+.ma-fcard-body { padding: 0.6rem 0.85rem 0.75rem; }
+.ma-fcard-body p {
+  margin: 0.35rem 0 0;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--ma-ink2);
+}
+.ma-fcard .ma-count { color: var(--ma-muted); font-size: 0.74rem; margin-top: 0.1rem; }
+
+/* -------------------------------------------------------- master table */
+#dataset-table th { cursor: pointer; user-select: none; white-space: nowrap; }
+#dataset-table th .ma-sort { color: var(--ma-muted); font-size: 0.7rem; }
+#dataset-table td { vertical-align: top; }
+.ma-toolbar {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  margin: 0 0 10px;
+}
+.ma-toolbar input {
+  flex: 1;
+  padding: 6px 10px;
+  border: 1px solid var(--ma-grid);
+  border-radius: 4px;
+  background: var(--ma-surface);
+  color: var(--ma-ink);
+}
+.ma-toolbar button {
+  padding: 6px 12px;
+  border: 1px solid var(--ma-border);
+  border-radius: 4px;
+  background: var(--ma-surface);
+  color: var(--ma-ink2);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.ma-toolbar button:hover { border-color: var(--ma-muted); }
+.ma-count-note { color: var(--ma-muted); font-size: 0.78rem; white-space: nowrap; }

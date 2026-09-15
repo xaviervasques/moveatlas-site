@@ -1,0 +1,104 @@
+
+
+.. _sphx_glr_auto_examples_05_classification:
+
+Cross-patient classification
+============================
+
+Standardized pipelines under leak-free patient-level evaluation.
+
+
+.. raw:: html
+
+  <div id='sg-tag-list' class='sphx-glr-tag-list'></div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+.. thumbnail-parent-div-open
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Evaluation splits in MoveAtlas are patient-level, always: a subject never appears on both sides of a split. This example builds 5 cross-patient folds over the CODY hyperkinetic cohort (private tier, local records) and verifies the folds are leak-free.">
+
+.. only:: html
+
+  .. image:: /auto_examples/05_classification/images/thumb/sphx_glr_plot_patient_level_splits_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/05_classification/plot_patient_level_splits`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Patient-level splits: the house rule</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="The full research loop on one dataset, end to end: cut canonical records into fixed windows, run pipelines under a patient-level evaluation, look at the per-fold outputs, and test a pipeline comparison properly. Every step is a tool a study can reuse as-is.">
+
+.. only:: html
+
+  .. image:: /auto_examples/05_classification/images/thumb/sphx_glr_plot_cross_patient_benchmark_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/05_classification/plot_cross_patient_benchmark`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">A complete cross-patient study: windows, pipelines, scores, statistics</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="The classic sin of clinical machine learning is subject leakage: windows of the same patient on both sides of a split. This example draws the split structure itself (the scikit-learn plot_cv_indices idea) for a naive KFold and for MoveAtlas&#x27; patient-level folds, on real stroke-gait windows, and counts the leaked subjects in each.">
+
+.. only:: html
+
+  .. image:: /auto_examples/05_classification/images/thumb/sphx_glr_plot_cv_visualization_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/05_classification/plot_cv_visualization`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">See your splits before you trust them</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="The cross-patient recipe generalizes across pathologies and modalities. Here: Parkinson vs control from insole vertical GRF (PhysioNet gaitpdb, 93 patients / 72 controls), with the standardization step explicit in the pipeline, a confusion matrix on held-out patients, and a permutation test so chance cannot fool us.">
+
+.. only:: html
+
+  .. image:: /auto_examples/05_classification/images/thumb/sphx_glr_plot_pd_from_grf_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/05_classification/plot_pd_from_grf`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">A second disease, the same recipe: Parkinson from ground-reaction forces</div>
+    </div>
+
+
+.. thumbnail-parent-div-close
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/05_classification/plot_patient_level_splits
+   /auto_examples/05_classification/plot_cross_patient_benchmark
+   /auto_examples/05_classification/plot_cv_visualization
+   /auto_examples/05_classification/plot_pd_from_grf
+
