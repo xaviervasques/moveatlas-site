@@ -129,7 +129,17 @@ Quickstart
 
    moveatlas.list_datasets()                    # the catalogue + access cases
    ds = moveatlas.dataset("gait120")            # a hosted multimodal dataset
-   records, meta = ds.get_data(modality="emg")
+   records, meta = ds.get_data(modality="emg")  # downloaded from its record, verified
+
+   moveatlas.fetch("fog_star")                  # a recipe: fetched at the origin,
+   moveatlas.ingest("fog_star")                 # harmonized on your machine
+
+Two ways in, one catalogue: browse the data first (:doc:`statistics`,
+:doc:`dataset_summary`, :doc:`modalities`, :doc:`taxonomy`, the
+:doc:`dataset pages <datasets/index>`), or start from the library
+(:doc:`getting_started` in three lines, then the :doc:`user_guide` for
+one complete walk per access case, the record format and the
+subject-level evaluations).
 
 The problem
 -----------
@@ -203,7 +213,8 @@ until then.
    modalities
    taxonomy
    datasets/index
-   install
+   getting_started
+   user_guide
    auto_examples/index
    submit_dataset
    api

@@ -183,15 +183,15 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="install.html">
-    Installation
+  <a class="nav-link nav-internal" href="getting_started.html">
+    Getting started
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="auto_examples/index.html">
-    Examples
+  <a class="nav-link nav-internal" href="user_guide.html">
+    User guide
   </a>
 </li>
 
@@ -203,6 +203,13 @@
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="auto_examples/index.html">
+    Examples
+  </a>
+</li>
+
+
 <li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="submit_dataset.html">
     Submit a new dataset
@@ -351,8 +358,15 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="install.html">
-    Installation
+  <a class="nav-link nav-internal" href="getting_started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="user_guide.html">
+    User guide
   </a>
 </li>
 
@@ -608,9 +622,18 @@ gates: license triage and privacy.</p>
 
 <span class="n">moveatlas</span><span class="o">.</span><span class="n">list_datasets</span><span class="p">()</span>                    <span class="c1"># the catalogue + access cases</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">moveatlas</span><span class="o">.</span><span class="n">dataset</span><span class="p">(</span><span class="s2">"gait120"</span><span class="p">)</span>            <span class="c1"># a hosted multimodal dataset</span>
-<span class="n">records</span><span class="p">,</span> <span class="n">meta</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">modality</span><span class="o">=</span><span class="s2">"emg"</span><span class="p">)</span>
+<span class="n">records</span><span class="p">,</span> <span class="n">meta</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">modality</span><span class="o">=</span><span class="s2">"emg"</span><span class="p">)</span>  <span class="c1"># downloaded from its record, verified</span>
+
+<span class="n">moveatlas</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s2">"fog_star"</span><span class="p">)</span>                  <span class="c1"># a recipe: fetched at the origin,</span>
+<span class="n">moveatlas</span><span class="o">.</span><span class="n">ingest</span><span class="p">(</span><span class="s2">"fog_star"</span><span class="p">)</span>                 <span class="c1"># harmonized on your machine</span>
 </pre></div>
 </div>
+<p>Two ways in, one catalogue: browse the data first (<a class="reference internal" href="statistics.html"><span class="doc">Corpus statistics</span></a>,
+<a class="reference internal" href="dataset_summary.html"><span class="doc">Datasets</span></a>, <a class="reference internal" href="modalities.html"><span class="doc">Modalities</span></a>, <a class="reference internal" href="taxonomy.html"><span class="doc">Taxonomy</span></a>, the
+<a class="reference internal" href="datasets/index.html"><span class="doc">dataset pages</span></a>), or start from the library
+(<a class="reference internal" href="getting_started.html"><span class="doc">Getting started</span></a> in three lines, then the <a class="reference internal" href="user_guide.html"><span class="doc">User guide</span></a> for
+one complete walk per access case, the record format and the
+subject-level evaluations).</p>
 </section>
 <section id="the-problem">
 <h2>The problem<a class="headerlink" href="#the-problem" title="Link to this heading">#</a></h2>

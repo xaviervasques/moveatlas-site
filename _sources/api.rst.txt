@@ -28,6 +28,24 @@ Datasets
 .. automodule:: moveatlas.datasets.cody
    :members:
 
+Recipes: fetch and ingest
+-------------------------
+
+.. automodule:: moveatlas.recipes
+   :members: fetch, ingest, recipe, store_root, Recipe, RecipeIsScript, NoRecipe
+
+.. automodule:: moveatlas.recipes.transports
+   :members: figshare_article, zenodo_record, urls, download_url, FetchError, ManualDownload
+
+.. automodule:: moveatlas.recipes.imu
+   :members: make_record, save
+
+Command line
+------------
+
+.. automodule:: moveatlas.cli
+   :members: main
+
 Frames and visualization
 ------------------------
 

@@ -184,15 +184,15 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="install.html">
-    Installation
+  <a class="nav-link nav-internal" href="getting_started.html">
+    Getting started
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="auto_examples/index.html">
-    Examples
+  <a class="nav-link nav-internal" href="user_guide.html">
+    User guide
   </a>
 </li>
 
@@ -204,6 +204,13 @@
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="auto_examples/index.html">
+    Examples
+  </a>
+</li>
+
+
 <li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="submit_dataset.html">
     Submit a new dataset
@@ -350,8 +357,15 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="install.html">
-    Installation
+  <a class="nav-link nav-internal" href="getting_started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="user_guide.html">
+    User guide
   </a>
 </li>
 
@@ -512,6 +526,15 @@ access-case classification that datasets/base.py enforces.</p>
 license_matrix_rows, source). Returns {} when the file is absent.
 This describes the bundled copy only; the registry itself may be
 reading docs/ instead (see _docs_dir).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="moveatlas.registry.records_table">
+<span class="sig-prename descclassname"><span class="pre">moveatlas.registry.</span></span><span class="sig-name descname"><span class="pre">records_table</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/registry.html#records_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.registry.records_table" title="Link to this definition">#</a></dt>
+<dd><p>dataset id -&gt; {“record”: zenodo record id, “doi”: …}: the published
+MoveAtlas records, shipped with the package
+(moveatlas/data/zenodo_records.json, written by build_records_table.py).
+{} when the file is absent. Read once per process.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -690,6 +713,179 @@ the deposit and runs the ingestion recipe.</p>
 <dd></dd></dl>
 
 </section>
+<section id="module-moveatlas.recipes">
+<span id="recipes-fetch-and-ingest"></span><h2>Recipes: fetch and ingest<a class="headerlink" href="#module-moveatlas.recipes" title="Link to this heading">#</a></h2>
+<p>The recipe tier as library calls: fetch a dataset from its origin host,
+harmonize it into the store, then <cite>moveatlas.dataset(id).get_data()</cite>.</p>
+<blockquote>
+<div><p>import moveatlas
+moveatlas.fetch(“fog_turning_filho”)     # origin download, journaled
+moveatlas.ingest(“fog_turning_filho”)    # canonical records in the store
+recs, meta = moveatlas.dataset(“fog_turning_filho”).get_data()</p>
+</div></blockquote>
+<p>A recipe is one of three things, and <cite>moveatlas.recipe(id)</cite> says which:</p>
+<ul class="simple">
+<li><p>LIBRARY: both steps run in Python from this package (the transports in
+moveatlas.recipes.transports, the contract writers such as
+moveatlas.recipes.imu). What a stranger can do from a pip install.</p></li>
+<li><p>SCRIPT: the dataset was harmonized by a repository script that is not
+ported yet; fetch()/ingest() raise RecipeIsScript naming the exact
+commands to run from a clone of the repository. Honest, not silent.</p></li>
+<li><p>NONE: hosted datasets need no recipe (they download from their
+MoveAtlas record); barrier datasets have a documented route instead.</p></li>
+</ul>
+<p>The store both steps write to is moveatlas.store._repo_root(): the
+developer’s checkout when MOVEATLAS_REPO points at it, the source tree
+when the package sits in one, else ~/.moveatlas/store (MOVEATLAS_STORE).</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="moveatlas.recipes.fetch">
+<span class="sig-prename descclassname"><span class="pre">moveatlas.recipes.</span></span><span class="sig-name descname"><span class="pre">fetch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/recipes.html#fetch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.recipes.fetch" title="Link to this definition">#</a></dt>
+<dd><p>Download <cite>id</cite> from its origin host into the store’s raw/ directory
+(resumable, checksums journaled). Returns what the transport reports.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="moveatlas.recipes.ingest">
+<span class="sig-prename descclassname"><span class="pre">moveatlas.recipes.</span></span><span class="sig-name descname"><span class="pre">ingest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/recipes.html#ingest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.recipes.ingest" title="Link to this definition">#</a></dt>
+<dd><p>Harmonize the fetched raw files of <cite>id</cite> into canonical records in
+the store. Returns (output path, number of records).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="moveatlas.recipes.recipe">
+<span class="sig-prename descclassname"><span class="pre">moveatlas.recipes.</span></span><span class="sig-name descname"><span class="pre">recipe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/recipes.html#recipe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.recipes.recipe" title="Link to this definition">#</a></dt>
+<dd><p>The Recipe for <cite>id</cite>, or raise NoRecipe with the reason.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="moveatlas.recipes.store_root">
+<span class="sig-prename descclassname"><span class="pre">moveatlas.recipes.</span></span><span class="sig-name descname"><span class="pre">store_root</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/recipes.html#store_root"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.recipes.store_root" title="Link to this definition">#</a></dt>
+<dd><p>The directory whose datasets/ tree fetch() and ingest() fill and
+LocalStore serves (see the module doc).</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="moveatlas.recipes.RecipeIsScript">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">moveatlas.recipes.</span></span><span class="sig-name descname"><span class="pre">RecipeIsScript</span></span><a class="reference internal" href="_modules/moveatlas/recipes.html#RecipeIsScript"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.recipes.RecipeIsScript" title="Link to this definition">#</a></dt>
+<dd><p>The recipe exists only as repository scripts; the message names them.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="moveatlas.recipes.NoRecipe">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">moveatlas.recipes.</span></span><span class="sig-name descname"><span class="pre">NoRecipe</span></span><a class="reference internal" href="_modules/moveatlas/recipes.html#NoRecipe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.recipes.NoRecipe" title="Link to this definition">#</a></dt>
+<dd><p>The dataset needs no recipe (hosted or barrier) or is unknown.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="moveatlas.recipes.Recipe">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">moveatlas.recipes.</span></span><span class="sig-name descname"><span class="pre">Recipe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fetch_fn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ingest_fn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fetch_cmd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ingest_cmd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">notes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/recipes.html#Recipe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.recipes.Recipe" title="Link to this definition">#</a></dt>
+<dd><p>One dataset’s recipe. <cite>fetch_fn(root)</cite> and <cite>ingest_fn(root)</cite> are
+library implementations; <cite>fetch_cmd</cite> / <cite>ingest_cmd</cite> are the repository
+commands for a script recipe; <cite>notes</cite> is what a user must know first
+(an account, a licence condition, a size).</p>
+</dd></dl>
+
+<p id="module-moveatlas.recipes.transports">Origin-host transports for the recipe tier: download into the store’s
+raw/ directory, resumable, verified, journaled.</p>
+<p>Every transport writes under <cite>&lt;root&gt;/datasets/&lt;family&gt;/&lt;id&gt;/raw/</cite> and
+appends one line per completed file to <cite>downloads.sha256</cite> beside raw/
+(the format every dataset directory of the repository already uses:
+<cite>&lt;sha256&gt;  &lt;name&gt;  &lt;bytes&gt;</cite>). A file already present with the expected
+size and checksum is not downloaded again, so a fetch can be re-run.</p>
+<p>Nothing here needs more than the standard library, except the figshare
+transport which shells out to curl: ndownloader.figshare.com answers
+python’s TLS stack with empty 202 bodies and curl’s with the file
+(established 2026-08-26, see tools/fetch/fetch_figshare_curl.py in the
+public tree for the full account). curl ships with macOS and Windows 10+
+and is a package away on Linux.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="moveatlas.recipes.transports.FetchError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">moveatlas.recipes.transports.</span></span><span class="sig-name descname"><span class="pre">FetchError</span></span><a class="reference internal" href="_modules/moveatlas/recipes/transports.html#FetchError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.recipes.transports.FetchError" title="Link to this definition">#</a></dt>
+<dd><p>A transfer that could not be completed or verified.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="moveatlas.recipes.transports.ManualDownload">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">moveatlas.recipes.transports.</span></span><span class="sig-name descname"><span class="pre">ManualDownload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">md5</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/recipes/transports.html#ManualDownload"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.recipes.transports.ManualDownload" title="Link to this definition">#</a></dt>
+<dd><p>The host answers clients with a browser challenge: the file must be
+saved by hand. The message says which URL, into which path, and what
+size and checksum the file must have; fetch() then accepts the file
+it finds there (verified) and ingest() proceeds.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="moveatlas.recipes.transports.download_url">
+<span class="sig-prename descclassname"><span class="pre">moveatlas.recipes.transports.</span></span><span class="sig-name descname"><span class="pre">download_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">md5</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tries</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/recipes/transports.html#download_url"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.recipes.transports.download_url" title="Link to this definition">#</a></dt>
+<dd><p>Resumable urllib download to <cite>dest</cite> (via dest.part), verified
+against <cite>size</cite> and <cite>md5</cite> when given. Returns (bytes, sha256).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="moveatlas.recipes.transports.figshare_article">
+<span class="sig-prename descclassname"><span class="pre">moveatlas.recipes.transports.</span></span><span class="sig-name descname"><span class="pre">figshare_article</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">article_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/recipes/transports.html#figshare_article"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.recipes.transports.figshare_article" title="Link to this definition">#</a></dt>
+<dd><p>Fetch the files of a public figshare article into <cite>&lt;root&gt;/&lt;path&gt;/raw</cite>.
+<cite>only</cite> keeps the named files; <cite>skip</cite> drops the named ones (a way to
+leave a 5 GB video archive the atlas never ingests where it is).
+Returns the list of (name, bytes, sha256) fetched or already there.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="moveatlas.recipes.transports.zenodo_record">
+<span class="sig-prename descclassname"><span class="pre">moveatlas.recipes.transports.</span></span><span class="sig-name descname"><span class="pre">zenodo_record</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/recipes/transports.html#zenodo_record"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.recipes.transports.zenodo_record" title="Link to this definition">#</a></dt>
+<dd><p>Fetch the files of a public Zenodo record into <cite>&lt;root&gt;/&lt;path&gt;/raw</cite>,
+checksums verified against the record’s own manifest.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="moveatlas.recipes.transports.urls">
+<span class="sig-prename descclassname"><span class="pre">moveatlas.recipes.transports.</span></span><span class="sig-name descname"><span class="pre">urls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">named_urls</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/recipes/transports.html#urls"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.recipes.transports.urls" title="Link to this definition">#</a></dt>
+<dd><p>Fetch plain URLs into <cite>&lt;root&gt;/&lt;path&gt;/raw</cite>: <cite>named_urls</cite> is
+{file name: url}. No checksum is known in advance; the journal records
+what arrived.</p>
+</dd></dl>
+
+<p id="module-moveatlas.recipes.imu">The canonical IMU contract (configs/canonical_imu.yaml) as a library:
+the record maker and the writer, ported from the repository’s
+build_canonical_imu.py so a recipe can harmonize into a user store.</p>
+<p>Only what the library recipes need is here; the repository builder keeps
+every dataset mapping and stays the provenance record. The two must agree
+on the record shape: signal (T, L, 9) float32 in g / deg/s / uT,
+location_ids, channel_mask (L, 9), sample_valid (T, L), fps, subject_ns,
+task, source, n_frames, and dropout_fraction when a sample is invalid.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="moveatlas.recipes.imu.make_record">
+<span class="sig-prename descclassname"><span class="pre">moveatlas.recipes.imu.</span></span><span class="sig-name descname"><span class="pre">make_record</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loc_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subject_ns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/recipes/imu.html#make_record"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.recipes.imu.make_record" title="Link to this definition">#</a></dt>
+<dd><p>loc_data: {location_name: {channel_name: np.array(T,)}}, same T for
+all. Three validity rules hold for every source (2026-08-23): a
+channel with no finite sample anywhere is an ABSENT sensor, masked
+off and zeroed; a location left with no valid channel is dropped; a
+channel that drops out for a stretch stays present, its non-finite
+samples zeroed and the record gains sample_valid (T, L). The signal
+is therefore finite and nothing is inferred.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="moveatlas.recipes.imu.save">
+<span class="sig-prename descclassname"><span class="pre">moveatlas.recipes.imu.</span></span><span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/recipes/imu.html#save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.recipes.imu.save" title="Link to this definition">#</a></dt>
+<dd><p>Write the records as <cite>&lt;root&gt;/&lt;path&gt;/processed/canonical_imu.npz</cite>
+(moveatlas-record/1), <cite>path</cite> defaulting to datasets/imu/&lt;source&gt;, the
+dataset’s registry path, which is where the generic loader looks.
+Merge the per-record rows into <cite>&lt;root&gt;/datasets/_canonical_imu_manifest.csv</cite>
+when that central manifest exists (an ingestion machine); a user store
+gets the rows in <cite>processed/manifest.csv</cite> instead. Returns the output
+path.</p>
+</dd></dl>
+
+</section>
+<section id="module-moveatlas.cli">
+<span id="command-line"></span><h2>Command line<a class="headerlink" href="#module-moveatlas.cli" title="Link to this heading">#</a></h2>
+<p>The <cite>moveatlas</cite> command line: the same verbs as the library.</p>
+<p>moveatlas list [–family imu] [–case hosted|recipe|barrier]
+moveatlas info &lt;id&gt;
+moveatlas fetch &lt;id&gt;
+moveatlas ingest &lt;id&gt;
+moveatlas where</p>
+</section>
 <section id="module-moveatlas.frames">
 <span id="frames-and-visualization"></span><h2>Frames and visualization<a class="headerlink" href="#module-moveatlas.frames" title="Link to this heading">#</a></h2>
 <p>Records as pandas DataFrames.</p>
@@ -818,6 +1014,15 @@ cache), MOVEATLAS_QUIET=1 (no progress or retry lines on stderr).</p>
 <dd><p>A record is not in the local cache and the network is unreachable
 (urllib URLError after the retries). Subclasses FileNotFoundError so
 callers that already handle “not here” keep working.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="moveatlas.store.user_store_root">
+<span class="sig-prename descclassname"><span class="pre">moveatlas.store.</span></span><span class="sig-name descname"><span class="pre">user_store_root</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/store.html#user_store_root"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.store.user_store_root" title="Link to this definition">#</a></dt>
+<dd><p>The per-user store a pip-installed package writes to:
+$MOVEATLAS_STORE, else ~/.moveatlas/store. It holds a datasets/ tree
+laid out exactly like the repository’s, so every recipe writes to
+datasets/&lt;family&gt;/&lt;id&gt;/{raw,processed}/ there and LocalStore serves it.</p>
 </dd></dl>
 
 <dl class="py class">
@@ -981,6 +1186,7 @@ release ships a records table), else the public Zenodo record store
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-moveatlas.registry">Registry</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.registry.snapshot_info"><code class="docutils literal notranslate"><span class="pre">snapshot_info()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.registry.records_table"><code class="docutils literal notranslate"><span class="pre">records_table()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.registry.access_case"><code class="docutils literal notranslate"><span class="pre">access_case()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.registry.list_datasets"><code class="docutils literal notranslate"><span class="pre">list_datasets()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.registry.dataset_info"><code class="docutils literal notranslate"><span class="pre">dataset_info()</span></code></a></li>
@@ -1008,6 +1214,25 @@ release ships a records table), else the public Zenodo record store
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.datasets.cody.Cody"><code class="docutils literal notranslate"><span class="pre">Cody</span></code></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-moveatlas.recipes">Recipes: fetch and ingest</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.recipes.fetch"><code class="docutils literal notranslate"><span class="pre">fetch()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.recipes.ingest"><code class="docutils literal notranslate"><span class="pre">ingest()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.recipes.recipe"><code class="docutils literal notranslate"><span class="pre">recipe()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.recipes.store_root"><code class="docutils literal notranslate"><span class="pre">store_root()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.recipes.RecipeIsScript"><code class="docutils literal notranslate"><span class="pre">RecipeIsScript</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.recipes.NoRecipe"><code class="docutils literal notranslate"><span class="pre">NoRecipe</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.recipes.Recipe"><code class="docutils literal notranslate"><span class="pre">Recipe</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.recipes.transports.FetchError"><code class="docutils literal notranslate"><span class="pre">FetchError</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.recipes.transports.ManualDownload"><code class="docutils literal notranslate"><span class="pre">ManualDownload</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.recipes.transports.download_url"><code class="docutils literal notranslate"><span class="pre">download_url()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.recipes.transports.figshare_article"><code class="docutils literal notranslate"><span class="pre">figshare_article()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.recipes.transports.zenodo_record"><code class="docutils literal notranslate"><span class="pre">zenodo_record()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.recipes.transports.urls"><code class="docutils literal notranslate"><span class="pre">urls()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.recipes.imu.make_record"><code class="docutils literal notranslate"><span class="pre">make_record()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.recipes.imu.save"><code class="docutils literal notranslate"><span class="pre">save()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-moveatlas.cli">Command line</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-moveatlas.frames">Frames and visualization</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.frames.to_frame"><code class="docutils literal notranslate"><span class="pre">to_frame()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.viz.plot_skeleton"><code class="docutils literal notranslate"><span class="pre">plot_skeleton()</span></code></a></li>
@@ -1026,6 +1251,7 @@ release ships a records table), else the public Zenodo record store
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-moveatlas.store">Store</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.store.OfflineError"><code class="docutils literal notranslate"><span class="pre">OfflineError</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.store.user_store_root"><code class="docutils literal notranslate"><span class="pre">user_store_root()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.store.LocalStore"><code class="docutils literal notranslate"><span class="pre">LocalStore</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.store.LocalStore.glob_dir"><code class="docutils literal notranslate"><span class="pre">LocalStore.glob_dir()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#moveatlas.store.LocalStore.list_dir"><code class="docutils literal notranslate"><span class="pre">LocalStore.list_dir()</span></code></a></li>

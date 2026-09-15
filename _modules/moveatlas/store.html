@@ -181,15 +181,15 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../install.html">
-    Installation
+  <a class="nav-link nav-internal" href="../../getting_started.html">
+    Getting started
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../auto_examples/index.html">
-    Examples
+  <a class="nav-link nav-internal" href="../../user_guide.html">
+    User guide
   </a>
 </li>
 
@@ -201,6 +201,13 @@
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../auto_examples/index.html">
+    Examples
+  </a>
+</li>
+
+
 <li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../../submit_dataset.html">
     Submit a new dataset
@@ -345,8 +352,15 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../install.html">
-    Installation
+  <a class="nav-link nav-internal" href="../../getting_started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide.html">
+    User guide
   </a>
 </li>
 
@@ -513,7 +527,27 @@
 
 
 
-<span class="k">def</span><span class="w"> </span><span class="nf">_repo_root</span><span class="p">():</span>
+<div class="viewcode-block" id="user_store_root">
+<a class="viewcode-back" href="../../api.html#moveatlas.store.user_store_root">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">user_store_root</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">"""The per-user store a pip-installed package writes to:</span>
+<span class="sd">    $MOVEATLAS_STORE, else ~/.moveatlas/store. It holds a datasets/ tree</span>
+<span class="sd">    laid out exactly like the repository's, so every recipe writes to</span>
+<span class="sd">    datasets/&lt;family&gt;/&lt;id&gt;/{raw,processed}/ there and LocalStore serves it."""</span>
+    <span class="n">root</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"MOVEATLAS_STORE"</span><span class="p">)</span> <span class="ow">or</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s2">"~"</span><span class="p">),</span> <span class="s2">".moveatlas"</span><span class="p">,</span> <span class="s2">"store"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">root</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_repo_root</span><span class="p">(</span><span class="n">create</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Where records live, in order: $MOVEATLAS_REPO (the developer's</span>
+<span class="sd">    checkout), the source tree this package sits in when it holds</span>
+<span class="sd">    datasets/ (an ingestion machine), else the user store</span>
+<span class="sd">    (user_store_root(), created on first use). Since 2026-09-15 this</span>
+<span class="sd">    never raises: a fresh install has a store, empty, that fetch() and</span>
+<span class="sd">    ingest() fill and that the published records front for the hosted</span>
+<span class="sd">    tier."""</span>
     <span class="n">env</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"MOVEATLAS_REPO"</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">env</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">env</span>
@@ -521,10 +555,10 @@
     <span class="n">root</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">here</span><span class="p">,</span> <span class="s2">".."</span><span class="p">))</span>
     <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s2">"datasets"</span><span class="p">)):</span>
         <span class="k">return</span> <span class="n">root</span>
-    <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
-        <span class="s2">"MoveAtlas record store not found: set MOVEATLAS_REPO to the repository "</span>
-        <span class="s2">"root (the directory containing datasets/), or wait for the "</span>
-        <span class="s2">"public release which downloads records on demand"</span><span class="p">)</span>
+    <span class="n">root</span> <span class="o">=</span> <span class="n">user_store_root</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">create</span><span class="p">:</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s2">"datasets"</span><span class="p">),</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">root</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">sha256_of</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">chunk</span><span class="o">=</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">22</span><span class="p">):</span>

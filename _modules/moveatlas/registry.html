@@ -181,15 +181,15 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../install.html">
-    Installation
+  <a class="nav-link nav-internal" href="../../getting_started.html">
+    Getting started
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../auto_examples/index.html">
-    Examples
+  <a class="nav-link nav-internal" href="../../user_guide.html">
+    User guide
   </a>
 </li>
 
@@ -201,6 +201,13 @@
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../auto_examples/index.html">
+    Examples
+  </a>
+</li>
+
+
 <li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../../submit_dataset.html">
     Submit a new dataset
@@ -345,8 +352,15 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../install.html">
-    Installation
+  <a class="nav-link nav-internal" href="../../getting_started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide.html">
+    User guide
   </a>
 </li>
 
@@ -509,6 +523,28 @@
 
 
 
+<span class="n">_RECORDS</span> <span class="o">=</span> <span class="kc">None</span>
+
+
+<div class="viewcode-block" id="records_table">
+<a class="viewcode-back" href="../../api.html#moveatlas.registry.records_table">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">records_table</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">"""dataset id -&gt; {"record": zenodo record id, "doi": ...}: the published</span>
+<span class="sd">    MoveAtlas records, shipped with the package</span>
+<span class="sd">    (moveatlas/data/zenodo_records.json, written by build_records_table.py).</span>
+<span class="sd">    {} when the file is absent. Read once per process."""</span>
+    <span class="k">global</span> <span class="n">_RECORDS</span>
+    <span class="k">if</span> <span class="n">_RECORDS</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">_HERE</span><span class="p">,</span> <span class="s2">"data"</span><span class="p">,</span> <span class="s2">"zenodo_records.json"</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">_RECORDS</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+        <span class="k">except</span> <span class="p">(</span><span class="ne">OSError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+            <span class="n">_RECORDS</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">return</span> <span class="n">_RECORDS</span></div>
+
+
+
 <span class="k">def</span><span class="w"> </span><span class="nf">_docs_dir</span><span class="p">():</span>
     <span class="n">cand</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">env</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"MOVEATLAS_REPO"</span><span class="p">)</span>
@@ -549,7 +585,13 @@
     <span class="k">if</span> <span class="n">lic</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"private"</span><span class="p">):</span>
         <span class="k">return</span> <span class="s2">"local_only"</span>
     <span class="k">if</span> <span class="n">redist</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"yes"</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s2">"hosted"</span>
+        <span class="c1"># Since the 53 records went public (2026-09-15) "hosted" means</span>
+        <span class="c1"># exactly "served from a published MoveAtlas record". A</span>
+        <span class="c1"># redistributable dataset without a record is fetched at its</span>
+        <span class="c1"># origin like any recipe until it is staged and published.</span>
+        <span class="k">if</span> <span class="n">row</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"id"</span><span class="p">)</span> <span class="ow">in</span> <span class="n">records_table</span><span class="p">():</span>
+            <span class="k">return</span> <span class="s2">"hosted"</span>
+        <span class="k">return</span> <span class="s2">"recipe"</span>
     <span class="n">up</span> <span class="o">=</span> <span class="n">status</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
     <span class="k">if</span> <span class="p">(</span><span class="s2">"DOCUMENTED BARRIER"</span> <span class="ow">in</span> <span class="n">up</span> <span class="ow">or</span> <span class="s2">"WRITTEN OFF"</span> <span class="ow">in</span> <span class="n">up</span>
             <span class="ow">or</span> <span class="s2">"HUMAN QUEUE"</span> <span class="ow">in</span> <span class="n">up</span><span class="p">):</span>
