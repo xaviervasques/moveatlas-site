@@ -28,23 +28,23 @@
  "creator": [
   {
    "@type": "Person",
-   "name": "Arun Singh arun.singh@usd.edu"
+   "name": "Arun Singh"
   },
   {
    "@type": "Person",
-   "name": "Rachel Cole rachel-cole@uiowa.edu"
+   "name": "Rachel Cole"
   },
   {
    "@type": "Person",
-   "name": "Arturo Espinoza arturo-espinoza@uiowa.edu"
+   "name": "Arturo Espinoza"
   },
   {
    "@type": "Person",
-   "name": "Jim Cavanagh jcavanagh@unm.edu"
+   "name": "Jim Cavanagh"
   },
   {
    "@type": "Person",
-   "name": "Nandakumar Narayanan nandakumar-narayanan@uiowa.edu"
+   "name": "Nandakumar Narayanan"
   }
  ]
 }
@@ -81,12 +81,12 @@ records, meta = ds.get_data()
 
 ## Publications
 
-- Arun Singh arun.singh@usd.edu; Rachel Cole rachel-cole@uiowa.edu; Arturo Espinoza arturo-espinoza@uiowa.edu; Jim Cavanagh jcavanagh@unm.edu; Nandakumar Narayanan nandakumar-narayanan@uiowa.edu (2023). *Rest eyes open*. OpenNeuro. DOI: [10.18112/openneuro.ds004584.v1.0.0](https://doi.org/10.18112/openneuro.ds004584.v1.0.0)
+- Arun Singh; Rachel Cole; Arturo Espinoza; Jim Cavanagh; Nandakumar Narayanan (2023). *Rest eyes open*. OpenNeuro. DOI: [10.18112/openneuro.ds004584.v1.0.0](https://doi.org/10.18112/openneuro.ds004584.v1.0.0)
 
 ```bibtex
 @misc{pd_rest_eeg_ds004584_data_2023,
   title = {Rest eyes open},
-  author = {Arun Singh arun.singh@usd.edu and Rachel Cole rachel-cole@uiowa.edu and Arturo Espinoza arturo-espinoza@uiowa.edu and Jim Cavanagh jcavanagh@unm.edu and Nandakumar Narayanan nandakumar-narayanan@uiowa.edu},
+  author = {Arun Singh and Rachel Cole and Arturo Espinoza and Jim Cavanagh and Nandakumar Narayanan},
   year = {2023},
   doi = {10.18112/openneuro.ds004584.v1.0.0},
   howpublished = {OpenNeuro},
