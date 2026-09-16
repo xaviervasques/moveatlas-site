@@ -36,7 +36,7 @@
 | | |
 |---|---|
 | **Taxonomy cells** | B prodromal; M2 M8 |
-| **Status** | DOWNLOADED 2026-09-05: 51.8 MB zip via the VERSION-level endpoint (CC0 API-verified, sha256 journaled). CATALOGUED 2026-09-05: 51.7 MB smartphone sensor tests across the prodromal spectrum (iRBD) - small open prodromal asset. FETCH QUEUED |
+| **Status** | acquired (2026-09-05) |
 | **License** | CC0 (Dryad, re-verify at fetch) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -56,18 +56,8 @@ ds.info   # recipe: get_data() explains the route
 - **Access route**: dryad doi:10.5061/dryad.3qm0152
 - **Source**: <https://doi.org/10.5061/dryad.3qm0152>
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- Modality: family 'imu'
-- Source / URL: https://doi.org/10.5061/dryad.3qm0152
-- License / access: CC0 (Dryad, re-verify at fetch)
-- Version / retrieval date: catalogued 2026-09-05 (deep-dive sweep); NOT fetched
-- Status (2026-09-05): CATALOGUED 2026-09-05: 51.7 MB smartphone sensor tests across the prodromal spectrum (iRBD) - small open prodromal asset. FETCH QUEUED
-- MoveAtlas cells: B prodromal; M2 M8
-
-### Retrieval notes
-RE-VERIFY at fetch/request; no-emails policy for gated tiers.
-
-### Processing
-None. Catalogue-tier.
+- **MoveAtlas cells**: B prodromal; M2 M8

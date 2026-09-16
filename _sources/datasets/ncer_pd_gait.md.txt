@@ -6,9 +6,9 @@
  "@context": "https://schema.org",
  "@type": "Dataset",
  "name": "Luxembourg Parkinson's Study wearable gait (NCER-PD)",
- "description": "Luxembourg Parkinson's Study wearable gait (NCER-PD). MoveAtlas imu family. 162 PD + 129 controls subjects. licence documented request route: form to request.ncer-pd@uni.lu.",
+ "description": "Luxembourg Parkinson's Study wearable gait (NCER-PD). MoveAtlas imu family. 162 PD + 129 controls subjects. licence no cost published; no self-serve.",
  "identifier": "https://www.nature.com/articles/s41746-024-01236-z",
- "license": "documented request route: form to request.ncer-pd@uni.lu, internal review; no cost published; no self-serve",
+ "license": "no cost published; no self-serve",
  "sdPublisher": {
   "@type": "Organization",
   "name": "MoveAtlas"
@@ -37,8 +37,8 @@
 |---|---|
 | **Taxonomy cells** | B2; M2 |
 | **Subjects** | 162 PD + 129 controls |
-| **Status** | CATALOGUED 2026-09-05: DOCUMENTED BARRIER (form tier, low friction): eGaIT IMU gait on 291 subjects inside an ~800-PD national cohort. The cleanest request route of the sweep - a candidate if the owner ever opens the request lane (no-emails policy holds otherwise) |
-| **License** | documented request route: form to request.ncer-pd@uni.lu, internal review; no cost published; no self-serve |
+| **Status** | documented access barrier (2026-09-05) |
+| **License** | no cost published; no self-serve |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 
@@ -52,29 +52,13 @@ ds.info   # barrier: get_data() explains the route
 
 ## License and access
 
-- **License**: documented request route: form to request.ncer-pd@uni.lu, internal review; no cost published; no self-serve
+- **License**: no cost published; no self-serve
 - **Redistribution**: no
 - **Access route**: parkinson.lu
 - **Source**: <https://www.nature.com/articles/s41746-024-01236-z>
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- Modality: family 'imu'
-- Source / URL: https://www.nature.com/articles/s41746-024-01236-z
-- License / access regime: documented request route: form to request.ncer-pd@uni.lu, internal review; no cost published; no self-serve
-- Access route: parkinson.lu
-- Version / retrieval date: catalogued 2026-09-05 (deep-dive sweep); NOT fetched
-- Status (2026-09-05): CATALOGUED 2026-09-05: DOCUMENTED BARRIER (form tier, low friction): eGaIT IMU gait on 291 subjects inside an ~800-PD national cohort. The cleanest request route of the sweep - a candidate if the owner ever opens the request lane (no-emails policy holds otherwise)
-- Number of subjects: 162 PD + 129 controls
-- MoveAtlas cells: B2; M2
-
-### Retrieval notes
-Found/adjudicated by the 2026-09-05 deep-dive sweep (big-cohort
-platforms). Access regimes are a catalogue-time web reading, cross-checked
-where a page answered; RE-VERIFY AT REQUEST TIME. The no-emails house
-policy applies: request-tier routes are documented, not exercised,
-unless the owner decides otherwise.
-
-### Processing
-None. Catalogue-tier.
+- **MoveAtlas cells**: B2; M2

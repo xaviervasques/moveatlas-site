@@ -561,7 +561,7 @@
 <li class="toctree-l1"><a class="reference internal" href="gaitrec.html">GaitRec (bilateral GRF, 75k trials)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="goodwin_smm.html">Goodwin stereotypical motor movements accelerometry (UbiComp 2014)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hd_accel_jnet.html">Huntington wrist accelerometry (J-Net)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="iceberg_icm.html">ICEBERG cohort (Paris ICM: PSG + gait + eye movement + speech in early PD/iRBD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iceberg_icm.html">ICEBERG cohort</a></li>
 <li class="toctree-l1"><a class="reference internal" href="imu_inthewild_iprognosis.html">i-PROGNOSIS in-the-wild smartphone IMU</a></li>
 <li class="toctree-l1"><a class="reference internal" href="kaggle_fog.html">Kaggle tlVMC Freezing of Gait</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ltmm.html">Long-Term Movement Monitoring (PhysioNet)</a></li>
@@ -787,7 +787,7 @@
 <td><p>56+ y (64.7 +/- 7.5)</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>Status</strong></p></td>
-<td><p>DOWNLOADED (10/10 zips, md5-verified) AND INGESTED 2026-08-27: 180 canonical IMU records / 10 subjects / 12 h at native 200 Hz. Only the RAW sensors enter the grid (head, upper spine -&gt; trunk, pelvis -&gt; lower_back, mG -&gt; g measured ~1 g); the Lower spine sensor has no honest slot and rides in aux wi…</p></td>
+<td><p>harmonized (2026-08-27)</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>License</strong></p></td>
 <td><p>CC BY 4.0 (figshare item metadata, verified 2026-08-22)</p></td>
@@ -809,7 +809,7 @@
 <ul class="simple">
 <li><p><strong>License</strong>: CC BY 4.0 (figshare item metadata, verified 2026-08-22)</p></li>
 <li><p><strong>Redistribution</strong>: yes</p></li>
-<li><p><strong>Access route</strong>: direct_download (figshare; landed via the owner’s browser)</p></li>
+<li><p><strong>Access route</strong>: direct_download</p></li>
 <li><p><strong>Source</strong>: <a class="reference external" href="https://doi.org/10.6084/m9.figshare.27815034">https://doi.org/10.6084/m9.figshare.27815034</a></p></li>
 </ul>
 </section>
@@ -829,21 +829,20 @@
 </pre></div>
 </div>
 </section>
-<section id="data-card-verbatim-with-its-evidence-trail">
-<h2>Data card (verbatim, with its evidence trail)<a class="headerlink" href="#data-card-verbatim-with-its-evidence-trail" title="Link to this heading">#</a></h2>
+<section id="data-card">
+<h2>Data card<a class="headerlink" href="#data-card" title="Link to this heading">#</a></h2>
+<p>The dataset’s card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.</p>
 <ul class="simple">
-<li><p>dataset: nonan_gaitprint</p></li>
-<li><p>family: imu  (physical path: datasets/imu/nonan_gaitprint)</p></li>
-<li><p>MoveAtlas cells: C3; M2</p></li>
-<li><p>population: healthy older adults, 18 x 4-min overground trials over 2 days; SIBLING HUNT RESOLVED 2026-08-28: there are NO sibling articles, article 27815034 carries ALL 41 subjects (44 files, 57.8 GB); the first pass had fetched 10, and the figshare anti-bot penalty box forced the completion through the owner’s browser (Download-all bundle, every published md5 verified at extraction). COMPLETE AND RE-INGESTED 2026-08-28: 719 canonical IMU records / 41 subjects / 47.7 h. The true sibling is the separate YOUNG-adults collection (nonan_gaitprint_young, own card)</p></li>
-<li><p>n_subjects: 41 (complete)</p></li>
-<li><p>age: 56+ y (64.7 +/- 7.5)</p></li>
-<li><p>signal: full-body 16-IMU at 200 Hz, raw kinematics + spatiotemporal variables</p></li>
-<li><p>license: CC BY 4.0 (figshare item metadata, verified 2026-08-22) ; redistribution: yes</p></li>
-<li><p>access: direct_download (figshare; landed via the owner’s browser)</p></li>
-<li><p>status (2026-08-22): DOWNLOADED (10/10 zips, md5-verified) AND INGESTED 2026-08-27: 180 canonical IMU records / 10 subjects / 12 h at native 200 Hz. Only the RAW sensors enter the grid (head, upper spine -&gt; trunk, pelvis -&gt; lower_back, mG -&gt; g measured ~1 g); the Lower spine sensor has no honest slot and rides in aux with all 16 Noraxon segment streams (vendor fusion outputs). ingest_nonan.py. The young-adults sibling got the owner’s go 2026-08-28 and has its own card (nonan_gaitprint_young)</p></li>
-<li><p>link: https://doi.org/10.6084/m9.figshare.27815034</p></li>
-<li><p>notes: sibling middle-age paper s41597-025-05892-y extends the age axis</p></li>
+<li><p><strong>dataset</strong>: nonan_gaitprint</p></li>
+<li><p><strong>family</strong>: imu</p></li>
+<li><p><strong>MoveAtlas cells</strong>: C3; M2</p></li>
+<li><p><strong>population</strong>: healthy older adults, 18 x 4-min overground trials over 2 days; SIBLING HUNT there are NO sibling articles, article 27815034 carries ALL 41 subjects (44 files, 57.8 GB); COMPLETE AND RE-INGESTED 2026-08-28: 719 canonical IMU records / 41 subjects / 47.7 h. The true sibling is the separate YOUNG-adults collection (nonan_gaitprint_young, own card)</p></li>
+<li><p><strong>n_subjects</strong>: 41 (complete)</p></li>
+<li><p><strong>age</strong>: 56+ y (64.7 +/- 7.5)</p></li>
+<li><p><strong>signal</strong>: full-body 16-IMU at 200 Hz, raw kinematics + spatiotemporal variables</p></li>
+<li><p><strong>license</strong>: CC BY 4.0 (figshare item metadata, verified 2026-08-22); redistribution: yes</p></li>
+<li><p><strong>access</strong>: direct_download</p></li>
+<li><p><strong>link</strong>: https://doi.org/10.6084/m9.figshare.27815034</p></li>
 </ul>
 </section>
 </section>
@@ -898,7 +897,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-load">How to load</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license-and-access">License and access</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publications">Publications</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-card-verbatim-with-its-evidence-trail">Data card (verbatim, with its evidence trail)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-card">Data card</a></li>
 </ul>
   </nav></div>
 

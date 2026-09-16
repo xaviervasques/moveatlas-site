@@ -38,7 +38,7 @@
 |---|---|
 | **Taxonomy cells** | B2 self-report + genetics; M9, M12 |
 | **Subjects** | >50,000 |
-| **Status** | NEW 2026-08-22 (second hunt): HUMAN QUEUE (application). NEGATIVE 2026-09-05 (deep-dive): the smartwatch/wearable-arm SIGNAL was never released into Fox DEN (patient-reported outcomes + genetics only) - explicit negative, cite as such |
+| **Status** | documented access barrier (2026-08-22) |
 | **License** | DUA + publication policy |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -72,17 +72,16 @@ ds.info   # barrier: get_data() explains the route
 }
 ```
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- dataset: foxinsight
-- family: bio  (physical path: datasets/bio/foxinsight)
-- MoveAtlas cells: B2 self-report + genetics; M9, M12
-- population: >50,000 PD participants, longitudinal questionnaires + 23andMe genetics + microbiome
-- n_subjects: >50,000
-- signal: tabular questionnaire cuts + genetic data (institutional gating)
-- license: DUA + publication policy ; redistribution: no
-- access: application (Fox DEN)
-- status (2026-08-22): NEW 2026-08-22 (second hunt): HUMAN QUEUE (application)
-- link: https://foxinsight-info.michaeljfox.org/insight/explore/insight.jsp
-- notes: DOCUMENTED BARRIER (owner, 2026-08-28): the publication focuses on genuinely open data; the Fox DEN application is not pursued. Procedure kept as evidence: account + use proposal + DUA, committee review ~1-2 weeks; genetics adds an institutional signatory + security questionnaire. Mostly self-report questionnaires anyway
+- **dataset**: foxinsight
+- **family**: bio
+- **MoveAtlas cells**: B2 self-report + genetics; M9, M12
+- **population**: >50,000 PD participants, longitudinal questionnaires + 23andMe genetics + microbiome
+- **n_subjects**: >50,000
+- **signal**: tabular questionnaire cuts + genetic data (institutional gating)
+- **license**: DUA + publication policy; redistribution: no
+- **access**: application (Fox DEN)
+- **link**: https://foxinsight-info.michaeljfox.org/insight/explore/insight.jsp

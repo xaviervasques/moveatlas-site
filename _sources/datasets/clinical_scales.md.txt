@@ -36,7 +36,7 @@
 |---|---|
 | **Taxonomy cells** | M12 |
 | **Subjects** | n/a |
-| **Status** | NEW 2026-08-22 (second hunt): queued |
+| **Status** | catalogued (2026-08-22) |
 | **License** | US public resource; MDS-UPDRS/UHDRS full text remain MDS/HSG copyright |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -52,8 +52,8 @@ ds.info   # recipe: get_data() explains the route
 ## License and access
 
 - **License**: US public resource; MDS-UPDRS/UHDRS full text remain MDS/HSG copyright
-- **Redistribution**: no, DECIDED 2026-08-28: the copyrighted scale wording contaminates any bulk copy; pointer to NINDS
-- **Access route**: direct_download (tower queue)
+- **Redistribution**: no (fetch from NINDS)
+- **Access route**: direct_download
 - **Source**: <https://commondataelements.ninds.nih.gov/>
 
 ## Publications
@@ -70,17 +70,16 @@ ds.info   # recipe: get_data() explains the route
 }
 ```
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- dataset: clinical_scales
-- family: auxdata  (physical path: datasets/auxdata/clinical_scales)
-- MoveAtlas cells: M12
-- population: n/a (metadata resource: PD / HD / Friedreich CRF modules)
-- n_subjects: n/a
-- signal: CDE catalog Excel/Word exports of motor assessment item structures
-- license: US public resource; MDS-UPDRS/UHDRS full text remain MDS/HSG copyright ; redistribution: no, DECIDED 2026-08-28: the copyrighted scale wording contaminates any bulk copy; pointer to NINDS
-- access: direct_download (tower queue)
-- status (2026-08-22): NEW 2026-08-22 (second hunt): queued
-- link: https://commondataelements.ninds.nih.gov/
-- notes: label-ontology substrate for M12 harmonization (WBS 1.5)
+- **dataset**: clinical_scales
+- **family**: auxdata
+- **MoveAtlas cells**: M12
+- **population**: n/a (metadata resource: PD / HD / Friedreich CRF modules)
+- **n_subjects**: n/a
+- **signal**: CDE catalog Excel/Word exports of motor assessment item structures
+- **license**: US public resource; MDS-UPDRS/UHDRS full text remain MDS/HSG copyright; redistribution: no, the copyrighted scale wording contaminates any bulk copy; pointer to NINDS
+- **access**: direct_download
+- **link**: https://commondataelements.ninds.nih.gov/

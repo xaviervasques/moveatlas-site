@@ -1,6 +1,6 @@
 # Dataset pages
 
-One page per catalogued dataset: key facts, publications with BibTeX, and the data card verbatim (the card is the evidence trail: license verification dates, download journal, ingestion decisions). Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
+One page per catalogued dataset: key facts, publications with BibTeX, and the factual lines of the data card (the full card, with its verification dates and download journal, is in the repository). Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 
 ```{toctree}
 :maxdepth: 1

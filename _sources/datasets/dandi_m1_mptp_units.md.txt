@@ -30,7 +30,7 @@
 </script>
 ```
 
-<span class="ma-fam ma-bio">bio</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-hosted">hosted</span>&nbsp; <code>dandi_m1_mptp_units</code>
+<span class="ma-fam ma-bio">bio</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-recipe">recipe</span>&nbsp; <code>dandi_m1_mptp_units</code>
 
 <span class="ma-tag">Rigidity</span><span class="ma-tag">Bradykinesia</span><span class="ma-tag">LFP / ECoG</span>
 
@@ -38,7 +38,7 @@
 |---|---|
 | **Taxonomy cells** | B1, B2 (MPTP model); M7 (single units) |
 | **Subjects** | 2 macaques |
-| **Status** | DOWNLOADED 2026-09-01 (owner GO): published version 0.260518.1819 COMPLETE, 447/447 assets / 6.4 GB via the DANDI API, sha256 journaled per asset |
+| **Status** | acquired (2026-09-01) |
 | **License** | CC BY 4.0 (verified on page 2026-09-01) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -48,7 +48,7 @@ Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 ```python
 import moveatlas
 ds = moveatlas.dataset("dandi_m1_mptp_units")
-records, meta = ds.get_data()
+ds.info   # recipe: get_data() explains the route
 ```
 
 ## License and access
@@ -58,16 +58,16 @@ records, meta = ds.get_data()
 - **Access route**: DANDI open download (dandi CLI)
 - **Source**: <https://dandiarchive.org/dandiset/001636>
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- dataset: dandi_m1_mptp_units
-- family: bio  (physical path: datasets/bio/dandi_m1_mptp_units)
-- MoveAtlas cells: B1, B2 (MPTP model); M7 (single units)
-- population: 2 MPTP macaques, identified pyramidal-tract and corticostriatal neurons
-- n_subjects: 2 macaques
-- signal: single-unit recordings (NWB, 6.4 GB)
-- license: CC BY 4.0 (verified on page 2026-09-01) ; redistribution: yes
-- access: DANDI open download (dandi CLI)
-- status (2026-08-22): DOWNLOADED 2026-09-01 (owner GO): published version 0.260518.1819 COMPLETE, 447/447 assets / 6.4 GB via the DANDI API, sha256 journaled per asset
-- link: https://dandiarchive.org/dandiset/001636
+- **dataset**: dandi_m1_mptp_units
+- **family**: bio
+- **MoveAtlas cells**: B1, B2 (MPTP model); M7 (single units)
+- **population**: 2 MPTP macaques, identified pyramidal-tract and corticostriatal neurons
+- **n_subjects**: 2 macaques
+- **signal**: single-unit recordings (NWB, 6.4 GB)
+- **license**: CC BY 4.0 (verified on page 2026-09-01); redistribution: yes
+- **access**: DANDI open download (dandi CLI)
+- **link**: https://dandiarchive.org/dandiset/001636

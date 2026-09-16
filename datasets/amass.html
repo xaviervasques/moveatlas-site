@@ -561,7 +561,7 @@
 <li class="toctree-l1"><a class="reference internal" href="gaitrec.html">GaitRec (bilateral GRF, 75k trials)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="goodwin_smm.html">Goodwin stereotypical motor movements accelerometry (UbiComp 2014)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hd_accel_jnet.html">Huntington wrist accelerometry (J-Net)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="iceberg_icm.html">ICEBERG cohort (Paris ICM: PSG + gait + eye movement + speech in early PD/iRBD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iceberg_icm.html">ICEBERG cohort</a></li>
 <li class="toctree-l1"><a class="reference internal" href="imu_inthewild_iprognosis.html">i-PROGNOSIS in-the-wild smartphone IMU</a></li>
 <li class="toctree-l1"><a class="reference internal" href="kaggle_fog.html">Kaggle tlVMC Freezing of Gait</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ltmm.html">Long-Term Movement Monitoring (PhysioNet)</a></li>
@@ -734,7 +734,7 @@
 <td><p>~344</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>Status</strong></p></td>
-<td><p>downloaded + INGESTED v1: 17,154 canonical records</p></td>
+<td><p>harmonized</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>License</strong></p></td>
 <td><p>non-commercial research (per sub-dataset MPI EULA)</p></td>
@@ -774,45 +774,6 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="data-card-verbatim-with-its-evidence-trail">
-<h2>Data card (verbatim, with its evidence trail)<a class="headerlink" href="#data-card-verbatim-with-its-evidence-trail" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Modality: mocap (SMPL-X / SMPL+H body parameters, .npz per motion)</p></li>
-<li><p>Source / URL: https://amass.is.tue.mpg.de (Max Planck IS), per-sub-dataset EULA</p></li>
-<li><p>License: non-commercial research (per sub-dataset license, MPI)</p></li>
-<li><p>Access: account + EULA accepted by owner (2026-07-10)</p></li>
-<li><p>Status: raw_downloaded (24 sub-datasets as .tar.bz2, ~31 GB, integrity-checked)</p></li>
-<li><p>Number of subjects: ~344 (aggregate over the full AMASS corpus; per-sub-dataset
-counts vary, to be confirmed per sub-base after extraction)</p></li>
-<li><p>Disorders covered: HEALTHY movement only (pretraining base). No pathology.</p></li>
-<li><p>Frequency / resolution: mocap-derived, high frame rate; SMPL-X/SMPL+H params</p></li>
-<li><p>Sub-datasets present (24) : ACCAD, BMLhandball, BMLmovi, BMLrub, CMU, CNRS, DFaust,
-DanceDB, EKUT, EyesJapanDataset, GRAB, HDM05, HUMAN4D, HumanEva, KIT, MoSh, PosePrior,
-SFU, SOMA, SSM, TCDHands, TotalCapture, Transitions, WEIZMANN.</p></li>
-<li><p>Specifics:</p>
-<ul>
-<li><p>Postural / non-locomotor diversity: this is the priority-1 healthy base that the
-locomotor-only corpus was missing (Handoff 3). Conditions generalization to dystonia.</p></li>
-<li><p>GRAB (grab.is.tue.mpg.de) is stored here in AMASS SMPL-X format; it also feeds the
-Motion-X mocap pipeline (see socle/motion_x).</p></li>
-<li><p>To USE the data (not just store it) the SMPL+H and DMPL body models are required
-(mano.is.tue.mpg.de, smpl.is.tue.mpg.de). The project already has SMPL_NEUTRAL.</p></li>
-</ul>
-</li>
-</ul>
-<section id="retrieval-notes">
-<h3>Retrieval notes<a class="headerlink" href="#retrieval-notes" title="Link to this heading">#</a></h3>
-<p>Downloaded by the owner via the AMASS website (SMPL-X G per sub-dataset), staged in
-<code class="docutils literal notranslate"><span class="pre">temporary/</span></code>, filed into <code class="docutils literal notranslate"><span class="pre">raw/</span></code> on 2026-07-10. Integrity of all 24 archives verified
-with <code class="docutils literal notranslate"><span class="pre">tar</span> <span class="pre">-tjf</span></code> (see <code class="docutils literal notranslate"><span class="pre">datasets/_amass_integrity.log</span></code>).</p>
-</section>
-<section id="processing">
-<h3>Processing<a class="headerlink" href="#processing" title="Link to this heading">#</a></h3>
-<p>(pending) Extract each .tar.bz2, load SMPL-X/SMPL+H .npz, map to the canonical skeleton
-(<code class="docutils literal notranslate"><span class="pre">configs/canonical_skeleton.yaml</span></code>). Keep per-sub-dataset provenance for the site probe.
-Healthy base: pretraining only, no phenotype labels.</p>
-</section>
 </section>
 </section>
 
@@ -866,11 +827,6 @@ Healthy base: pretraining only, no phenotype labels.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-load">How to load</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license-and-access">License and access</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publications">Publications</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-card-verbatim-with-its-evidence-trail">Data card (verbatim, with its evidence trail)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieval-notes">Retrieval notes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing">Processing</a></li>
-</ul>
-</li>
 </ul>
   </nav></div>
 

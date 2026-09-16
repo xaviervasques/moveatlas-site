@@ -561,7 +561,7 @@
 <li class="toctree-l1"><a class="reference internal" href="gaitrec.html">GaitRec (bilateral GRF, 75k trials)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="goodwin_smm.html">Goodwin stereotypical motor movements accelerometry (UbiComp 2014)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hd_accel_jnet.html">Huntington wrist accelerometry (J-Net)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="iceberg_icm.html">ICEBERG cohort (Paris ICM: PSG + gait + eye movement + speech in early PD/iRBD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iceberg_icm.html">ICEBERG cohort</a></li>
 <li class="toctree-l1"><a class="reference internal" href="imu_inthewild_iprognosis.html">i-PROGNOSIS in-the-wild smartphone IMU</a></li>
 <li class="toctree-l1"><a class="reference internal" href="kaggle_fog.html">Kaggle tlVMC Freezing of Gait</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ltmm.html">Long-Term Movement Monitoring (PhysioNet)</a></li>
@@ -732,7 +732,7 @@
   }
  ]
 }
-</script><p><span class="ma-fam ma-pose">pose</span>  <span class="ma-badge ma-catalogued">catalogued</span>  <span class="ma-badge ma-hosted">hosted</span>  <code>hubu_fis_fingertap</code></p>
+</script><p><span class="ma-fam ma-pose">pose</span>  <span class="ma-badge ma-catalogued">catalogued</span>  <span class="ma-badge ma-recipe">recipe</span>  <code>hubu_fis_fingertap</code></p>
 <p><span class="ma-tag">Bradykinesia</span><span class="ma-tag">Pose / video</span></p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -748,7 +748,7 @@
 <td><p>not stated (234 videos)</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>Status</strong></p></td>
-<td><p>DOWNLOADED 2026-08-22: 10.81 GB, sha256 verified, zip opens cleanly: 234 clips (226 mp4 + 8 MOV) plus fis_diagnostic.csv. Cohort read from that file: 118 subjects, 43 CONTROL and 75 patients, filmed one clip per hand (DCHA right, IZDA left; 116 subjects have both, 2 have one), each clip carrying an…</p></td>
+<td><p>acquired (2026-08-22)</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>License</strong></p></td>
 <td><p>CC BY 4.0</p></td>
@@ -761,7 +761,7 @@
 <h2>How to load<a class="headerlink" href="#how-to-load" title="Link to this heading">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">moveatlas</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">moveatlas</span><span class="o">.</span><span class="n">dataset</span><span class="p">(</span><span class="s2">"hubu_fis_fingertap"</span><span class="p">)</span>
-<span class="n">records</span><span class="p">,</span> <span class="n">meta</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">info</span>   <span class="c1"># recipe: get_data() explains the route</span>
 </pre></div>
 </div>
 </section>
@@ -790,20 +790,19 @@
 </pre></div>
 </div>
 </section>
-<section id="data-card-verbatim-with-its-evidence-trail">
-<h2>Data card (verbatim, with its evidence trail)<a class="headerlink" href="#data-card-verbatim-with-its-evidence-trail" title="Link to this heading">#</a></h2>
+<section id="data-card">
+<h2>Data card<a class="headerlink" href="#data-card" title="Link to this heading">#</a></h2>
+<p>The dataset’s card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.</p>
 <ul class="simple">
-<li><p>dataset: hubu_fis_fingertap</p></li>
-<li><p>family: pose  (physical path: datasets/pose/hubu_fis_fingertap)</p></li>
-<li><p>MoveAtlas cells: B2; M1 (video)</p></li>
-<li><p>population: PD patients + controls, both hands, standardized MDS-UPDRS finger-tapping; per-clip ratings in fis_diagnostic.csv</p></li>
-<li><p>n_subjects: not stated (234 videos)</p></li>
-<li><p>signal: 234 videos, 10.8 GB single zip</p></li>
-<li><p>license: CC BY 4.0 ; redistribution: yes</p></li>
-<li><p>access: direct_download (Zenodo)</p></li>
-<li><p>status (2026-08-22): DOWNLOADED 2026-08-22: 10.81 GB, sha256 verified, zip opens cleanly: 234 clips (226 mp4 + 8 MOV) plus fis_diagnostic.csv. Cohort read from that file: 118 subjects, 43 CONTROL and 75 patients, filmed one clip per hand (DCHA right, IZDA left; 116 subjects have both, 2 have one), each clip carrying an MDS-UPDRS finger-tapping score 0-3 (71/99/38/26). 40 of the 118 subjects score DIFFERENTLY on their two hands, which is the asymmetry the task is meant to capture, so the per-hand clips are not interchangeable. SPLIT SAFETY: both hands of a subject must share one subject_ns or the same person lands on both sides. Note 27 CONTROL clips are scored 1 rather than 0, so ‘control’ is not a synonym for score 0. Video of hands; ratings are labels: eval only (R1). Ingestion needs pose extraction and is not written yet</p></li>
-<li><p>link: https://zenodo.org/records/17738775</p></li>
-<li><p>notes: bradykinesia video cell; pose extraction pipeline needed after download</p></li>
+<li><p><strong>dataset</strong>: hubu_fis_fingertap</p></li>
+<li><p><strong>family</strong>: pose</p></li>
+<li><p><strong>MoveAtlas cells</strong>: B2; M1 (video)</p></li>
+<li><p><strong>population</strong>: PD patients + controls, both hands, standardized MDS-UPDRS finger-tapping; per-clip ratings in fis_diagnostic.csv</p></li>
+<li><p><strong>n_subjects</strong>: not stated (234 videos)</p></li>
+<li><p><strong>signal</strong>: 234 videos, 10.8 GB single zip</p></li>
+<li><p><strong>license</strong>: CC BY 4.0; redistribution: yes</p></li>
+<li><p><strong>access</strong>: direct_download (Zenodo)</p></li>
+<li><p><strong>link</strong>: https://zenodo.org/records/17738775</p></li>
 </ul>
 </section>
 </section>
@@ -858,7 +857,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-load">How to load</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license-and-access">License and access</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publications">Publications</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-card-verbatim-with-its-evidence-trail">Data card (verbatim, with its evidence trail)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-card">Data card</a></li>
 </ul>
   </nav></div>
 

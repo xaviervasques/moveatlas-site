@@ -38,7 +38,7 @@
 |---|---|
 | **Taxonomy cells** | M6 socle; D1; A2 (myoclonic events) |
 | **Subjects** | very large |
-| **Status** | HUMAN QUEUE: registration filed; awaiting approval |
+| **Status** | documented access barrier |
 | **License** | free with signed usage agreement |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -54,8 +54,8 @@ ds.info   # barrier: get_data() explains the route
 ## License and access
 
 - **License**: free with signed usage agreement
-- **Redistribution**: no (redistribution prohibited)
-- **Access route**: registration + signed form, then tower download (plan TB-scale storage)
+- **Redistribution**: no
+- **Access route**: registration + signed form, then download (plan TB-scale storage)
 - **Source**: <https://isip.piconepress.com/projects/nedc/>
 
 ## Publications
@@ -72,17 +72,16 @@ ds.info   # barrier: get_data() explains the route
 }
 ```
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- dataset: tuh_eeg
-- family: eeg  (physical path: datasets/eeg/tuh_eeg)
-- MoveAtlas cells: M6 socle; D1; A2 (myoclonic events)
-- population: hospital clinical corpus, >10,000 sessions
-- n_subjects: very large
-- signal: clinical EEG, many montages (EDF)
-- license: free with signed usage agreement ; redistribution: no (redistribution prohibited)
-- access: registration + signed form, then tower download (plan TB-scale storage)
-- status (2026-08-22): HUMAN QUEUE: registration filed; awaiting approval
-- link: https://isip.piconepress.com/projects/nedc/
-- notes: stage A EEG pretraining socle (spec section 5); referential-montage parser ready
+- **dataset**: tuh_eeg
+- **family**: eeg
+- **MoveAtlas cells**: M6 socle; D1; A2 (myoclonic events)
+- **population**: hospital clinical corpus, >10,000 sessions
+- **n_subjects**: very large
+- **signal**: clinical EEG, many montages (EDF)
+- **license**: free with signed usage agreement; redistribution: no (redistribution prohibited)
+- **access**: registration + signed form, then download (plan TB-scale storage)
+- **link**: https://isip.piconepress.com/projects/nedc/

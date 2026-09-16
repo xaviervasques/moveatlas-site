@@ -35,7 +35,7 @@
 | | |
 |---|---|
 | **Taxonomy cells** | D CP; M3 |
-| **Status** | DOWNLOADED 2026-09-06: 35.8 MB xlsx (stratified fold kinematic parameters + curves), CC0 API-verified, server-md5 verified. NOTE: parameters/curves workbook, not raw marker trajectories - card the content verdict. CATALOGUED 2026-09-05: Vicon Plug-In-Gait 3D kinematics, spastic uni/bilateral CP 3-18... |
+| **Status** | acquired (2026-09-06) |
 | **License** | open on figshare (licence on record, verify at fetch) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -55,19 +55,8 @@ ds.info   # recipe: get_data() explains the route
 - **Access route**: figshare 4877432
 - **Source**: <https://doi.org/10.6084/m9.figshare.4877432>
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- Modality: family 'pose'
-- Source / URL: https://doi.org/10.6084/m9.figshare.4877432
-- License / access: open on figshare (licence on record, verify at fetch)
-- Version / retrieval date: catalogued 2026-09-05 (deep-dive sweep,
-  pediatric/genetic-rare pass); NOT fetched
-- Status (2026-09-05): CATALOGUED 2026-09-05: Vicon Plug-In-Gait 3D kinematics, spastic uni/bilateral CP 3-18 y GMFCS I-III - mocap complement to mobile_gaitlab
-- MoveAtlas cells: D CP; M3
-
-### Retrieval notes
-RE-VERIFY at fetch. No-emails policy for application tiers.
-
-### Processing
-None. Catalogue-tier.
+- **MoveAtlas cells**: D CP; M3

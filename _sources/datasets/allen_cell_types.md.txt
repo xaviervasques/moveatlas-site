@@ -37,7 +37,7 @@
 |---|---|
 | **Taxonomy cells** | M7 (cellular ephys), M10 (morphology) |
 | **Subjects** | database |
-| **Status** | NEW 2026-09-01 (gap hunt, owner GO): POINTER/RECIPE TIER ONLY (redistribution restriction); local fetch allowed for internal use |
+| **Status** | catalogued (2026-09-01) |
 | **License** | Allen Institute terms: research/noncommercial use; NO commercial redistribution without written permission (verified 2026-09-01) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -57,16 +57,16 @@ ds.info   # recipe: get_data() explains the route
 - **Access route**: open download via portal / AllenSDK, no registration
 - **Source**: <https://celltypes.brain-map.org>
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- dataset: allen_cell_types
-- family: bio  (physical path: datasets/bio/allen_cell_types)
-- MoveAtlas cells: M7 (cellular ephys), M10 (morphology)
-- population: human and mouse single neurons: patch-clamp electrophysiology + reconstructed morphologies
-- n_subjects: database
-- signal: patch-clamp traces + .swc morphologies via AllenSDK
-- license: Allen Institute terms: research/noncommercial use; NO commercial redistribution without written permission (verified 2026-09-01) ; redistribution: no
-- access: open download via portal / AllenSDK, no registration
-- status (2026-08-22): NEW 2026-09-01 (gap hunt, owner GO): POINTER/RECIPE TIER ONLY (redistribution restriction); local fetch allowed for internal use
-- link: https://celltypes.brain-map.org
+- **dataset**: allen_cell_types
+- **family**: bio
+- **MoveAtlas cells**: M7 (cellular ephys), M10 (morphology)
+- **population**: human and mouse single neurons: patch-clamp electrophysiology + reconstructed morphologies
+- **n_subjects**: database
+- **signal**: patch-clamp traces +.swc morphologies via AllenSDK
+- **license**: Allen Institute terms: research/noncommercial use; NO commercial redistribution without written permission (verified 2026-09-01); redistribution: no
+- **access**: open download via portal / AllenSDK, no registration
+- **link**: https://celltypes.brain-map.org

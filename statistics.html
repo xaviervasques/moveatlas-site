@@ -549,8 +549,7 @@ published MoveAtlas records; 174,506 (9
 datasets, chiefly the large healthy 3D pose bases and the licence-held
 clinical sets) are harmonized on the ingestion machine only and are
 reproducible from the original host with <code class="docutils literal notranslate"><span class="pre">moveatlas.fetch</span></code> and
-<code class="docutils literal notranslate"><span class="pre">moveatlas.ingest</span></code> where the origin allows; 5,654
-(1 datasets) are redistributable and await a record.</p></li>
+<code class="docutils literal notranslate"><span class="pre">moveatlas.ingest</span></code> where the origin allows.</p></li>
 <li><p>Every number on this page is HUMAN data. The animal lane (11
 catalogued datasets: mouse, rat and macaque models) is deliberately
 absent from every table here: animal entries map to symptom analogs
@@ -587,8 +586,8 @@ records are sub-second footstep pairs.</p>
 taxonomy (hyperkinetic A1-A8, hypokinetic B1-B5; every code is defined
 on the <a class="reference internal" href="taxonomy.html"><span class="doc">Taxonomy</span></a> page). A dataset counts in
 every cell and lane it covers; the parenthesized number is the
-open-access subset. Empty rows are findings, not omissions: no open
-data exists there. Human datasets only; animal models never enter
+open-access subset. An empty row means no open data exists there
+today. Human datasets only; animal models never enter
 these cells.</p>
 <p class="ma-count-note">Target symptoms: datasets per cell and modality lane; the parenthesized number is the open-access subset (hosted or recipe). Computed from the registry at build time.</p>
 <div style="overflow-x:auto">
@@ -658,9 +657,7 @@ neurological and systemic comorbidity axes (D, E).</p>
 <h2>Subjects with several modalities<a class="headerlink" href="#subjects-with-several-modalities" title="Link to this heading">#</a></h2>
 <p>Datasets whose HARMONIZED records pair two or more families on the
 same subjects (matched by subject namespace inside each dataset).
-These are the subjects a multimodal model can actually align today;
-stroke_gait_vancriekinge (EMG + force plates recorded, awaiting their
-ingestion pass) and gait120 (joint angles pending) will join.</p>
+These are the subjects a multimodal model can actually align today.</p>
 <table class="table"><thead><tr><th>Dataset</th><th>Families</th><th>Subjects per family</th><th>Subjects with 2+ modalities</th></tr></thead><tbody>
 <tr><td><b>physionet_multimodal_gait</b></td><td>eeg + emg + force + imu</td><td>eeg 59, emg 58, force 59, imu 57</td><td><b>56</b></td></tr>
 <tr><td><b>stroke_gait_vancriekinge</b></td><td>emg + force + pose</td><td>emg 163, force 185, pose 188</td><td><b>160</b></td></tr>
@@ -806,12 +803,62 @@ exhaustively with <code class="docutils literal notranslate"><span class="pre">p
 <tr><td><b>stroke_gait_vancriekinge</b></td><td><span class="ma-badge ma-harmonized">harmonized</span></td><td>19-85 y</td></tr>
 <tr><td><b>syrip</b></td><td><span class="ma-badge ma-catalogued">catalogued</span></td><td>infants</td></tr>
 </tbody></table></section>
-<section id="planned-next">
-<h2>Planned next<a class="headerlink" href="#planned-next" title="Link to this heading">#</a></h2>
-<p>With the same nothing-invented rule: per-dataset age and sex pyramids
-computed from record attributes where the sources carry them (the
-coverage table above says where), and exact full-corpus usability for
-the sampled giants.</p>
+<section id="age-and-sex-per-harmonized-dataset">
+<h2>Age and sex per harmonized dataset<a class="headerlink" href="#age-and-sex-per-harmonized-dataset" title="Link to this heading">#</a></h2>
+<p>What each source states about its participants, quoted from the source
+publication or the repository’s own record (the reading date and the URL
+are kept with every quote); “not reported by source” is the source’s gap,
+never filled in. A per-subject age and sex pyramid is possible only for
+the datasets that ship a per-subject table, which the last column names.</p>
+<table class="table datatable"><thead><tr><th>Dataset</th><th>Subjects (canonical)</th><th>Age</th><th>Sex</th><th>Read from</th><th>Per-subject table</th></tr></thead><tbody>
+<tr><td><code>amass</code></td><td>503</td><td><span class="ma-count-note">not reported by source</span></td><td><span class="ma-count-note">not reported by source</span></td><td></td><td></td></tr>
+<tr><td><code>cap_sleep</code></td><td>35</td><td><span class="ma-count-note">not reported by source</span></td><td><span class="ma-count-note">not reported by source</span></td><td></td><td></td></tr>
+<tr><td><code>capture24</code></td><td>151</td><td>population: 151 healthy adults, ~24 h free living each | Activity annotations are now kept too (v1 discarded them), run-length encoded against the bundled 206-entry label dictionary, plus age band and sex from metadata.csv</td><td>Activity annotations are now kept too (v1 discarded them), run-length encoded against the bundled 206-entry label dictionary, plus age band and sex from metadata.csv</td><td>data card</td><td>Activity annotations are now kept too (v1 discarded them), run-length encoded ag</td></tr>
+<tr><td><code>care_pd</code></td><td>362</td><td>70.0 +/- 8.7 years (overall, mean +/- SD)</td><td>56.9% male (overall)</td><td><a href="https://arxiv.org/html/2510.04312">source publication or record</a></td><td></td></tr>
+<tr><td><code>cervical_motion_multiplanar</code></td><td>15</td><td>age 38 +/- 13 (range 22-63)</td><td>six males and eight females</td><td><a href="https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11698851/fullTextXML">source publication or record</a></td><td></td></tr>
+<tr><td><code>clinical_gait_multipatho</code></td><td>260</td><td>per group, mean (SD): healthy 40 (20); hip OA 70 (13); knee OA 70 (14); ACL 37 (12); CVA 59 (9); PD 74 (11); CIPN 63 (11); RIL 60 (14)</td><td>per group M/F: healthy 41/32; hip OA 7/8; knee OA 7/11; ACL 7/4; CVA 37/12; PD 17/7; CIPN 10/9; RIL 28/23</td><td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12546693/">source publication or record</a></td><td></td></tr>
+<tr><td><code>cody_1</code></td><td>25</td><td>range 17-75 years (patients)</td><td>12 females (patients)</td><td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13401409/">source publication or record</a></td><td>Namespaced subject registry: `datasets/pose/_cody_registry.csv` (adult:* ids).</td></tr>
+<tr><td><code>cody_3</code></td><td>34</td><td>adults 17-75 y; paediatric 7.0-15.5 y; 22-89 y (evaluation cohort)</td><td><span class="ma-count-note">not reported by source</span></td><td><a href="https://zenodo.org/records/22232609">source publication or record</a></td><td>Subject-level multi-rater diagnosis for the external cohorts: `dataset_inference</td></tr>
+<tr><td><code>daphnet</code></td><td>10</td><td><span class="ma-count-note">not reported by source</span></td><td><span class="ma-count-note">not reported by source</span></td><td></td><td></td></tr>
+<tr><td><code>drummer_tremor_model</code></td><td>18</td><td>age 34 +/- 8 years</td><td>eighteen male drummers</td><td><a href="https://www.biorxiv.org/content/10.1101/2025.06.18.660287v1.full">source publication or record</a></td><td></td></tr>
+<tr><td><code>fog_star</code></td><td>22</td><td>70.9 +/- 9.3 years</td><td>13 M, 9 F</td><td><a href="https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12946194/fullTextXML">source publication or record</a></td><td></td></tr>
+<tr><td><code>fog_turning_filho</code></td><td>35</td><td>ages varied from 44 to 84 years</td><td>16 females and 19 males</td><td><a href="https://www.frontiersin.org/articles/10.3389/fnins.2022.832463/full">source publication or record</a></td><td></td></tr>
+<tr><td><code>gait120</code></td><td>120</td><td>20-59 y (35.4 +/- 12.8)</td><td>population: 120 healthy adult males, 7 locomotion tasks, 6,882 movement cycles | notes: healthy EMG socle; males only (document the bias)</td><td>registry</td><td></td></tr>
+<tr><td><code>gaitndd</code></td><td>64</td><td><span class="ma-count-note">not reported by source</span></td><td><span class="ma-count-note">not reported by source</span></td><td></td><td></td></tr>
+<tr><td><code>gaitrec</code></td><td>2295</td><td>overall mean 41.5 +/- 12.1; HC 34.7 (13.9); hip 42.6 (12.8); knee 41.6 (12.0); ankle 41.6 (11.4); calcaneus 43.5 (10.4)</td><td>overall 1,740 m / 555 f; HC 104/107; hip 373/77; knee 426/199; ankle 498/129; calcaneus 339/43</td><td><a href="https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7217853/fullTextXML">source publication or record</a></td><td></td></tr>
+<tr><td><code>goodwin_smm</code></td><td>6</td><td>population: 6 children/adults with autism, 2 collections 3 years apart (MITes 60 Hz, Wockets 90 Hz), lab + classroom, annotated body-rocking / hand-flapping | Same six children in both studies: URI- stripped so one person = one subject_ns.</td><td><span class="ma-count-note">not reported by source</span></td><td>data card</td><td></td></tr>
+<tr><td><code>hd_accel_jnet</code></td><td>35</td><td>HD 56.7 +/- 11.2; HC 58.6 +/- 10.3 years</td><td>HD 44% women; HC 50% women</td><td><a href="https://arxiv.org/html/2412.11286v1">source publication or record</a></td><td></td></tr>
+<tr><td><code>imu_inthewild_iprognosis</code></td><td>45</td><td>HC 55.4 (11.7); PD 62.1 (7.3); total 60.0 (9.4) years, mean (SD)</td><td><span class="ma-count-note">not reported by source</span></td><td><a href="https://arxiv.org/pdf/2005.04185">source publication or record</a></td><td></td></tr>
+<tr><td><code>infant_pose_chambers</code></td><td>104</td><td>population: pose estimates for the 94-infant evaluation set + domain-adapted infant OpenPose model + normative YouTube metadata (85 infants) | ...INGESTED 2026-09-01 (owner GO): all 12 files md5 MATCHED, then 116 canonical pose records / 104 infants (85 YouTube normative with age_in_weeks + 31 clinical trials from 19 CHOP infants with sex,... | The first REAL (non-synthetic) open infant pose in the corpus</td><td>...infants (85 YouTube normative with age_in_weeks + 31 clinical trials from 19 CHOP infants with sex, ages and BINS risk as eval-only attributes).</td><td>data card</td><td></td></tr>
+<tr><td><code>kaggle_fog</code></td><td>101</td><td>tDCS 69.9 +/- 7.8 [51-94]; DeFOG 67.9 +/- 7.5 [51-86]; combined 69.0 +/- 7.7 [51-94]</td><td>tDCS 19.7% F; DeFOG 31.6% F; combined 25.2% F</td><td><a href="https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11156937/fullTextXML">source publication or record</a></td><td></td></tr>
+<tr><td><code>koa_pd_nm</code></td><td>96</td><td><span class="ma-count-note">not reported by source</span></td><td><span class="ma-count-note">not reported by source</span></td><td></td><td></td></tr>
+<tr><td><code>li_taati</code></td><td>258</td><td>median age 64 years</td><td>5 men</td><td><a href="https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6219082/fullTextXML">source publication or record</a></td><td></td></tr>
+<tr><td><code>ltmm</code></td><td>79</td><td>mean age 78.36 +/- 4.71 years; range 65-87 years</td><td><span class="ma-count-note">not reported by source</span></td><td><a href="https://physionet.org/content/ltmm/1.0.0/">source publication or record</a></td><td></td></tr>
+<tr><td><code>modys_video</code></td><td>94</td><td>mean age 14y2m (SD 4.0)</td><td>26 were male</td><td><a href="https://zenodo.org/api/records/5638470">source publication or record</a></td><td></td></tr>
+<tr><td><code>monipar</code></td><td>46</td><td>remote 63.6 (+/-7.5); supervised 64.2 (+/-8.2); controls 64.0 (+/-5.4) years</td><td>remote 8/7; supervised 3/3; controls 3/4 (M/F)</td><td><a href="https://www.frontiersin.org/journals/neurology/articles/10.3389/fneur.2023.1326640/full">source publication or record</a></td><td></td></tr>
+<tr><td><code>motion_x</code></td><td>25865</td><td><span class="ma-count-note">not reported by source</span></td><td><span class="ma-count-note">not reported by source</span></td><td></td><td></td></tr>
+<tr><td><code>multimodal_fog</code></td><td>12</td><td>aged between 57 and 81 years (average 69.1); 69.1 +/- 7.9</td><td>6 males and 6 females</td><td><a href="https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9546845/fullTextXML">source publication or record</a></td><td></td></tr>
+<tr><td><code>ninapro</code></td><td>67</td><td>DB1 28 +/- 3.4 years; DB2 29.9 +/- 3.9 years</td><td>DB1 20 males, 7 females; DB2 28 males, 12 females</td><td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4421935/">source publication or record</a></td><td></td></tr>
+<tr><td><code>nonan_gaitprint</code></td><td>41</td><td>56+ years; 64.7 +/- 7.5 years</td><td>20 men and 21 women</td><td><a href="https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11759707/fullTextXML">source publication or record</a></td><td></td></tr>
+<tr><td><code>nonan_gaitprint_young</code></td><td>35</td><td>24.6 +/- 2.7 years (19-35 years old)</td><td>18 men and 17 women</td><td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10698035/">source publication or record</a></td><td></td></tr>
+<tr><td><code>ntu_rgbd</code></td><td>106</td><td>ages between 10 and 57</td><td><span class="ma-count-note">not reported by source</span></td><td><a href="https://ar5iv.labs.arxiv.org/html/1905.04757">source publication or record</a></td><td></td></tr>
+<tr><td><code>pads</code></td><td>469</td><td>mean (SD): PD 65.4 (9.6); HC 62.9 (12.5); DD 62.4 (11.5)</td><td>n (male, female): PD 276 (195, 81); HC 79 (29, 50); DD 114 (57, 57)</td><td><a href="https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10770131/fullTextXML">source publication or record</a></td><td></td></tr>
+<tr><td><code>pd_biostamprc21</code></td><td>34</td><td>PD 66.4 [11.3] years; controls 64.0 [9.9] years (mean [SD])</td><td>PD 41.2% women; controls 76.5% women</td><td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8629990/">source publication or record</a></td><td></td></tr>
+<tr><td><code>pd_rest_eeg_ds004584</code></td><td>149</td><td>PD 68.53 +/- 8.06; controls 70.91 +/- 7.62 (mean +/- SD)</td><td>PD 68 M 32 F; controls 26 M 23 F</td><td><a href="https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10764756/fullTextXML">source publication or record</a></td><td></td></tr>
+<tr><td><code>pd_rest_eeg_onoff_ds002778</code></td><td>31</td><td>PD 63.2 +/- 8.2 years; controls 63.5 +/- 9.6 years</td><td>PD eight female of 15; controls nine female of 16</td><td><a href="https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6553574/fullTextXML">source publication or record</a></td><td></td></tr>
+<tr><td><code>pd_walking_eeg_ds007526</code></td><td>144</td><td>age 40-90 (PD inclusion criterion)</td><td><span class="ma-count-note">not reported by source</span></td><td><a href="https://raw.githubusercontent.com/OpenNeuroDatasets/ds007526/refs/heads/main/README.md">source publication or record</a></td><td></td></tr>
+<tr><td><code>physionet_gaitpdb</code></td><td>165</td><td>PD mean age 66.3 years; controls mean age 66.3 years</td><td>PD 63% men; controls 55% men</td><td><a href="https://physionet.org/content/gaitpdb/1.0.0/">source publication or record</a></td><td></td></tr>
+<tr><td><code>physionet_multimodal_gait</code></td><td>59</td><td>24 +/- 5 y</td><td>Cohort: 59 healthy adults (22 M / 37 F, 24 +/- 5 y) walking at 0.5 / 0.75 / 1.0 m/s with synchronized EEG (19 channels, 300 Hz; | raw/Dataset/subject-info.csv carries, per subject, GENDER, a full DOB (dd/mm/yyyy), Age, and 18 anthropometric measures, for 64 rows (the page says... | ...deposit (the CODY birthdate-prefix remediation of 2026-08 is the precedent) - keep Age and sex, drop DOB, and say so on the record.</td><td>registry</td><td>Layout raw/Dataset/{EEG_Data,EMG_Data,FP_Data, IMU_Data} + README.md + RELEASE_N</td></tr>
+<tr><td><code>physionet_semg_walking</code></td><td>31</td><td>20 years &lt; age &lt; 30 years</td><td><span class="ma-count-note">not reported by source</span></td><td><a href="https://physionet.org/content/semg/1.0.1/">source publication or record</a></td><td></td></tr>
+<tr><td><code>remap_open</code></td><td>24</td><td>PD mean age 61.25; controls mean age 59.25</td><td>PD 7 males, 5 females; controls 3 males, 9 females</td><td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10733419/">source publication or record</a></td><td></td></tr>
+<tr><td><code>seizeit2</code></td><td>125</td><td><span class="ma-count-note">not reported by source</span></td><td>51 female (41%)</td><td><a href="https://arxiv.org/pdf/2502.01224">source publication or record</a></td><td></td></tr>
+<tr><td><code>sensefog</code></td><td>12</td><td>age at onset 54.3 +/- 9.9 years; disease duration 12.8 +/- 5.4 years (age at recording not stated)</td><td>six female of 12</td><td><a href="https://academic.oup.com/brain/article/147/12/4056/7831184">source publication or record</a></td><td></td></tr>
+<tr><td><code>sixmwt_lifespan</code></td><td>60</td><td>21-75 y, decade bins</td><td>Sex is a MATLAB string object scipy cannot decode from a v5 struct, so it is reported unknown rather than guessed.</td><td>registry</td><td></td></tr>
+<tr><td><code>stroke_gait_vancriekinge</code></td><td>188</td><td>able-bodied 51 (20), 21-86; stroke 64 (14), 19-85 (mean (SD), min-max)</td><td>able-bodied 65 m / 73 f; stroke 34 m / 16 f</td><td><a href="https://www.nature.com/articles/s41597-023-02767-y/tables/1">source publication or record</a></td><td></td></tr>
+<tr><td><code>vidimu</code></td><td>53</td><td>age 25.0 +/- 5.4 years</td><td>36 males, 18 females</td><td><a href="https://www.nature.com/articles/s41597-023-02554-9">source publication or record</a></td><td></td></tr>
+<tr><td><code>weargait_pd</code></td><td>185</td><td>PD 67 +/- 8 years; controls 74 +/- 9 years</td><td>PD 35 F / 65 M; controls 48 F / 37 M</td><td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13009270/">source publication or record</a></td><td></td></tr>
+</tbody></table>
+<p class="ma-count-note">Age stated for 39 and sex for 33 of 46 harmonized datasets; the statements are quoted from the source publication or record (read 2026-09-15), the registry or the data card, in that order.</p>
 </section>
 </section>
 
@@ -873,7 +920,7 @@ the sampled giants.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#taxonomy-coverage">Taxonomy coverage</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signal-usability-validity-masks">Signal usability (validity masks)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demographics-coverage">Demographics coverage</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#planned-next">Planned next</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#age-and-sex-per-harmonized-dataset">Age and sex per harmonized dataset</a></li>
 </ul>
   </nav></div>
 

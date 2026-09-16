@@ -561,7 +561,7 @@
 <li class="toctree-l1"><a class="reference internal" href="gaitrec.html">GaitRec (bilateral GRF, 75k trials)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="goodwin_smm.html">Goodwin stereotypical motor movements accelerometry (UbiComp 2014)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hd_accel_jnet.html">Huntington wrist accelerometry (J-Net)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="iceberg_icm.html">ICEBERG cohort (Paris ICM: PSG + gait + eye movement + speech in early PD/iRBD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iceberg_icm.html">ICEBERG cohort</a></li>
 <li class="toctree-l1"><a class="reference internal" href="imu_inthewild_iprognosis.html">i-PROGNOSIS in-the-wild smartphone IMU</a></li>
 <li class="toctree-l1"><a class="reference internal" href="kaggle_fog.html">Kaggle tlVMC Freezing of Gait</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ltmm.html">Long-Term Movement Monitoring (PhysioNet)</a></li>
@@ -737,10 +737,10 @@
 <td><p>25</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>Status</strong></p></td>
-<td><p>INGESTED (cody source, 25 subjects); paper published (10.1002/acn3.70474); derived data PUBLIC on GitHub and Zenodo (2026-09-01)</p></td>
+<td><p>harmonized (2026-09-01)</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>License</strong></p></td>
-<td><p>derived data CC BY 4.0 (CODY Zenodo deposit, 2026-09-01); raw source private (in-house). PUBLICATION RULING (owner, 2026-08-28): all NON-VIDEO files (keypoints, labels, silhouettes) are publishable; CONTROL raw videos are publishable; PATIENT raw videos are NOT, ever</p></td>
+<td><p>derived data CC BY 4.0 (CODY Zenodo deposit, 2026-09-01); raw source private (in-house). CONTROL raw videos are publishable; PATIENT raw videos are NOT, ever</p></td>
 </tr>
 </tbody>
 </table>
@@ -757,9 +757,9 @@
 <section id="license-and-access">
 <h2>License and access<a class="headerlink" href="#license-and-access" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>License</strong>: derived data CC BY 4.0 (CODY Zenodo deposit, 2026-09-01); raw source private (in-house). PUBLICATION RULING (owner, 2026-08-28): all NON-VIDEO files (keypoints, labels, silhouettes) are publishable; CONTROL raw videos are publishable; PATIENT raw videos are NOT, ever</p></li>
-<li><p><strong>Redistribution</strong>: yes for the derived data the atlas serves (CC BY 4.0 on Zenodo); patient raw video never</p></li>
-<li><p><strong>Access route</strong>: PUBLIC: the derived data (keypoints + labels) is published on GitHub by the owner (github.com/xaviervasques/CODY, MIT, verified 2026-08-28) and, since 2026-09-01, in the CODY Zenodo deposit (10.5281/zenodo.22232609, CC BY 4.0, open access, verified 2026-09-02: the 25 adults are dataset_0 there, labels + merged kinematics + SAM3 timeseries); patient raw video stays in-house</p></li>
+<li><p><strong>License</strong>: derived data CC BY 4.0 (CODY Zenodo deposit, 2026-09-01); raw source private (in-house). CONTROL raw videos are publishable; PATIENT raw videos are NOT, ever</p></li>
+<li><p><strong>Redistribution</strong>: yes</p></li>
+<li><p><strong>Access route</strong>: patient raw video stays in-house</p></li>
 <li><p><strong>Source</strong>: <a class="reference external" href="https://doi.org/10.5281/zenodo.22232609">https://doi.org/10.5281/zenodo.22232609</a></p></li>
 </ul>
 </section>
@@ -777,59 +777,6 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="data-card-verbatim-with-its-evidence-trail">
-<h2>Data card (verbatim, with its evidence trail)<a class="headerlink" href="#data-card-verbatim-with-its-evidence-trail" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Modality: pose (COCO-17 keypoints 2D) + per-frame phenomenology labels</p></li>
-<li><p>Source / URL: non-public in-house data (owner). NOT a public dataset.</p></li>
-<li><p>License: private, not shareable in current form (identifiable source video)</p></li>
-<li><p>Access: local only; raw video never leaves the machine (sovereignty constraint)</p></li>
-<li><p>Version / retrieval date: provided 2026-07-10</p></li>
-<li><p>Status: processed (inventoried; canonical ingestion pending)</p></li>
-<li><p>UPDATE 2026-09-02: the derived release is PUBLIC on Zenodo since
-2026-09-01: CODY deposit, concept DOI 10.5281/zenodo.22232609
-(v1.0.0 = 10.5281/zenodo.22232610), CC BY 4.0, open access, verified
-on the record page 2026-09-02. The License/Access lines above
-describe the in-house SOURCE (raw patient video), which stays
-private; the deposit carries only de-identified derived data.</p></li>
-<li><p>UPDATE 2026-09-04 (v1.1.0 = 10.5281/zenodo.22275553, published,
-API-verified): archive names now carry study + extraction pipeline.
-What CODY-1 uses is dataset_0_labels_raw_cody_1_2_yolo.zip: the
-per-rater expert labels TOGETHER WITH the YOLOv8 COCO-17 keypoint
-time-series of the 25 adults (the earlier claim that the adult
-kinematics lived in the merged archives was wrong - those, and all
-*_cody_3_sam3 archives, are CODY-3 SAM3 products, a different
-extraction of the same subjects).</p></li>
-<li><p>Number of subjects: 25 (4 controls C1-C4 + 21 patients)</p></li>
-<li><p>Disorders covered: hyperkinetic (Dystonia, Tremor, Myoclonus, Chorea, Tics,
-Athetosis, Ballismus, Stereotypie), multi-label per frame</p></li>
-<li><p>Frequency / resolution: ~33 fps (dt=0.03s), keypoints in image PIXELS</p></li>
-<li><p>Specifics:</p>
-<ul>
-<li><p>125 real xlsx (134 AppleDouble ._* + 3 .DS_Store = macOS noise, excluded).</p></li>
-<li><p>Two raters (dataset_dd, dataset_lc). Exam conditions in rest_posture_action
-(Rest / Posture / Action), French labels (“Repos” = rest).</p></li>
-<li><p>Columns: time, 17 COCO keypoints x/y, per-keypoint *_distance, 8 ordinal
-phenomenology labels (e.g. Dystonia {0,1,2}).</p></li>
-<li><p>REDUNDANCY: these 25 adults are the SAME subjects as cody_2/training and
-cody_3/01-03. Canonical source for the adult labeled cohort = cody_3.
-cody_1 is a flattened legacy export; do NOT ingest it as independent samples.</p></li>
-</ul>
-</li>
-</ul>
-<section id="retrieval-notes">
-<h3>Retrieval notes<a class="headerlink" href="#retrieval-notes" title="Link to this heading">#</a></h3>
-<p>Provided directly by the owner on the external disk. Not downloaded. See
-<code class="docutils literal notranslate"><span class="pre">build_cody_manifest.py</span></code> and <code class="docutils literal notranslate"><span class="pre">datasets/pose/cody_1/processed/manifest.csv</span></code>.</p>
-</section>
-<section id="processing">
-<h3>Processing<a class="headerlink" href="#processing" title="Link to this heading">#</a></h3>
-<p>Inventoried by <code class="docutils literal notranslate"><span class="pre">build_cody_manifest.py</span></code> (2026-07-10). Namespaced subject registry:
-<code class="docutils literal notranslate"><span class="pre">datasets/pose/_cody_registry.csv</span></code> (adult:* ids). Canonical-skeleton ingestion pending
-(COCO-17 -&gt; canonical mapping, <code class="docutils literal notranslate"><span class="pre">configs/canonical_skeleton.yaml</span></code>). Labels are for
-fine-tuning and evaluation probes only, never for pretraining.</p>
-</section>
 </section>
 </section>
 
@@ -883,11 +830,6 @@ fine-tuning and evaluation probes only, never for pretraining.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-load">How to load</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license-and-access">License and access</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publications">Publications</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-card-verbatim-with-its-evidence-trail">Data card (verbatim, with its evidence trail)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieval-notes">Retrieval notes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing">Processing</a></li>
-</ul>
-</li>
 </ul>
   </nav></div>
 

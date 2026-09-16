@@ -51,8 +51,7 @@ How to read these numbers
   datasets, chiefly the large healthy 3D pose bases and the licence-held
   clinical sets) are harmonized on the ingestion machine only and are
   reproducible from the original host with ``moveatlas.fetch`` and
-  ``moveatlas.ingest`` where the origin allows; |n_unstaged_records|
-  (|n_unstaged_datasets| datasets) are redistributable and await a record.
+  ``moveatlas.ingest`` where the origin allows.
 - Every number on this page is HUMAN data. The animal lane (|n_animal|
   catalogued datasets: mouse, rat and macaque models) is deliberately
   absent from every table here: animal entries map to symptom analogs
@@ -108,8 +107,8 @@ Which modality lanes carry data for each target symptom cell of the
 taxonomy (hyperkinetic A1-A8, hypokinetic B1-B5; every code is defined
 on the :doc:`taxonomy` page). A dataset counts in
 every cell and lane it covers; the parenthesized number is the
-open-access subset. Empty rows are findings, not omissions: no open
-data exists there. Human datasets only; animal models never enter
+open-access subset. An empty row means no open data exists there
+today. Human datasets only; animal models never enter
 these cells.
 
 .. raw:: html
@@ -129,9 +128,7 @@ Subjects with several modalities
 
 Datasets whose HARMONIZED records pair two or more families on the
 same subjects (matched by subject namespace inside each dataset).
-These are the subjects a multimodal model can actually align today;
-stroke_gait_vancriekinge (EMG + force plates recorded, awaiting their
-ingestion pass) and gait120 (joint angles pending) will join.
+These are the subjects a multimodal model can actually align today.
 
 .. raw:: html
    :file: _generated/multimodal_subjects.html
@@ -189,10 +186,14 @@ Demographics coverage
 .. raw:: html
    :file: _generated/demographics.html
 
-Planned next
-------------
+Age and sex per harmonized dataset
+----------------------------------
 
-With the same nothing-invented rule: per-dataset age and sex pyramids
-computed from record attributes where the sources carry them (the
-coverage table above says where), and exact full-corpus usability for
-the sampled giants.
+What each source states about its participants, quoted from the source
+publication or the repository's own record (the reading date and the URL
+are kept with every quote); "not reported by source" is the source's gap,
+never filled in. A per-subject age and sex pyramid is possible only for
+the datasets that ship a per-subject table, which the last column names.
+
+.. raw:: html
+   :file: _generated/demographics_sources.html

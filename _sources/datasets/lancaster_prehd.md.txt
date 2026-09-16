@@ -38,7 +38,7 @@
 |---|---|
 | **Taxonomy cells** | A7 prodromal; M5 M6 |
 | **Subjects** | 69 |
-| **Status** | CATALOGUED 2026-09-05: EEG 1kHz + fNIRS + ECG/resp/skin-bloodflow, 20 min/subject, with a DEDICATED premanifest-HD group - the only downloadable-signal deposit found with preHD anywhere (not kinematic; the preHD KINEMATICS absence stands) |
+| **Status** | catalogued (2026-09-05) |
 | **License** | hosted on the Lancaster Pure portal; licence/access mode NOT stated on the page - likely request-mediated, verify |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -58,20 +58,8 @@ ds.info   # recipe: get_data() explains the route
 - **Access route**: lancaster researchdata/631
 - **Source**: <https://doi.org/10.17635/lancaster/researchdata/631>
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- Modality: family 'eeg'
-- Source / URL: https://doi.org/10.17635/lancaster/researchdata/631
-- License / access: hosted on the Lancaster Pure portal; licence/access mode NOT stated on the page - likely request-mediated, verify
-- Access route: lancaster researchdata/631
-- Version / retrieval date: catalogued 2026-09-05 (deep-dive sweep); not fetched at card creation
-- Status (2026-09-05): CATALOGUED 2026-09-05: EEG 1kHz + fNIRS + ECG/resp/skin-bloodflow, 20 min/subject, with a DEDICATED premanifest-HD group - the only downloadable-signal deposit found with preHD anywhere (not kinematic; the preHD KINEMATICS absence stands)
-- Number of subjects: 69
-- MoveAtlas cells: A7 prodromal; M5 M6
-
-### Retrieval notes
-RE-VERIFY at fetch/request. No-emails policy for request tiers.
-
-### Processing
-None. Catalogue-tier.
+- **MoveAtlas cells**: A7 prodromal; M5 M6

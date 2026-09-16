@@ -63,7 +63,7 @@
 |---|---|
 | **Taxonomy cells** | A7; M2 |
 | **Subjects** | 34 |
-| **Status** | INGESTED v1: 35 records |
+| **Status** | harmonized |
 | **License** | Zenodo open |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -98,17 +98,17 @@ records, meta = ds.get_data()
 }
 ```
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- dataset: hd_accel_jnet
-- family: imu  (physical path: datasets/imu/hd_accel_jnet)
-- MoveAtlas cells: A7; M2
-- population: 24 Huntington + 10 healthy; TMS, FA, TFC clinical scores
-- n_subjects: 34
-- signal: wrist accelerometer CSVs
-- license: Zenodo open ; redistribution: yes
-- access: downloaded
-- status (2026-08-22): INGESTED v1: 35 records
-- link: https://zenodo.org/records/14384260
-- ingestion: build_canonical_imu.py (hd_accel mapping)
+- **dataset**: hd_accel_jnet
+- **family**: imu
+- **MoveAtlas cells**: A7; M2
+- **population**: 24 Huntington + 10 healthy; TMS, FA, TFC clinical scores
+- **n_subjects**: 34
+- **signal**: wrist accelerometer CSVs
+- **license**: Zenodo open; redistribution: yes
+- **access**: downloaded
+- **link**: https://zenodo.org/records/14384260
+- **ingestion**: build_canonical_imu.py (hd_accel mapping)

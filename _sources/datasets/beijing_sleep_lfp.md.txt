@@ -37,7 +37,7 @@
 |---|---|
 | **Taxonomy cells** | D6; M7 |
 | **Subjects** | 121 |
-| **Status** | NEW 2026-08-22 (second hunt): HUMAN QUEUE (author contact letter) |
+| **Status** | documented access barrier (2026-08-22) |
 | **License** | no public repository |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -71,17 +71,16 @@ ds.info   # barrier: get_data() explains the route
 }
 ```
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- dataset: beijing_sleep_lfp
-- family: eeg  (physical path: datasets/eeg/beijing_sleep_lfp)
-- MoveAtlas cells: D6; M7
-- population: 121 patients (PD, dystonia, HD, Tourette, ET), PSG + LFP, 140 nights
-- n_subjects: 121
-- signal: sleep-stage-scored polysomnography + DBS-lead LFP
-- license: no public repository ; redistribution: no
-- access: application: contact the authors (Jianguo Zhang lab)
-- status (2026-08-22): NEW 2026-08-22 (second hunt): HUMAN QUEUE (author contact letter)
-- link: https://www.nature.com/articles/s41746-024-01115-7
-- notes: would single-handedly cover D6 sleep + M7 invasive across five disorders; high-value application
+- **dataset**: beijing_sleep_lfp
+- **family**: eeg
+- **MoveAtlas cells**: D6; M7
+- **population**: 121 patients (PD, dystonia, HD, Tourette, ET), PSG + LFP, 140 nights
+- **n_subjects**: 121
+- **signal**: sleep-stage-scored polysomnography + DBS-lead LFP
+- **license**: no public repository; redistribution: no
+- **access**: application: contact the authors (Jianguo Zhang lab)
+- **link**: https://www.nature.com/articles/s41746-024-01115-7

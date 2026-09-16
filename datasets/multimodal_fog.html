@@ -561,7 +561,7 @@
 <li class="toctree-l1"><a class="reference internal" href="gaitrec.html">GaitRec (bilateral GRF, 75k trials)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="goodwin_smm.html">Goodwin stereotypical motor movements accelerometry (UbiComp 2014)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hd_accel_jnet.html">Huntington wrist accelerometry (J-Net)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="iceberg_icm.html">ICEBERG cohort (Paris ICM: PSG + gait + eye movement + speech in early PD/iRBD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iceberg_icm.html">ICEBERG cohort</a></li>
 <li class="toctree-l1"><a class="reference internal" href="imu_inthewild_iprognosis.html">i-PROGNOSIS in-the-wild smartphone IMU</a></li>
 <li class="toctree-l1"><a class="reference internal" href="kaggle_fog.html">Kaggle tlVMC Freezing of Gait</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ltmm.html">Long-Term Movement Monitoring (PhysioNet)</a></li>
@@ -742,7 +742,7 @@
 <td><p>12</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>Status</strong></p></td>
-<td><p>FULLY INGESTED 2026-08-22 on the local machine: 56 canonical IMU records, 56 canonical EEG records, 56 canonical EMG records, 0 audit warnings. Patient identity, the EMG channel order (C-EMG-1) and the EEG reference are all RESOLVED, see below</p></td>
+<td><p>harmonized (2026-08-22)</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>License</strong></p></td>
 <td><p>CC BY 4.0 (confirmed on the Mendeley record and via DataCite)</p></td>
@@ -784,21 +784,20 @@
 </pre></div>
 </div>
 </section>
-<section id="data-card-verbatim-with-its-evidence-trail">
-<h2>Data card (verbatim, with its evidence trail)<a class="headerlink" href="#data-card-verbatim-with-its-evidence-trail" title="Link to this heading">#</a></h2>
+<section id="data-card">
+<h2>Data card<a class="headerlink" href="#data-card" title="Link to this heading">#</a></h2>
+<p>The dataset’s card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.</p>
 <ul class="simple">
-<li><p>dataset: multimodal_fog</p></li>
-<li><p>family: imu  (physical path: datasets/imu/multimodal_fog)</p></li>
-<li><p>MoveAtlas cells: B5; M2, M5, M6</p></li>
-<li><p>population: 12 PD patients (ID 008 recorded twice: OFF_1 and OFF_2), 13 experiments, 56 task files, ~3 h 42 total; dense expert FoG labels (2 physicians, video-based)</p></li>
-<li><p>n_subjects: 12</p></li>
-<li><p>signal: 500 Hz combined stream: 25 EEG (uV, 0.5-100 Hz), 5 EMG/ECG/EOG (per-patient order, block index 2 = EOG), 4 MPU6050 IMU blocks (acc self-calibrated +-4g, gyro counts/131, source low-pass 16 Hz), skin conductance, FoG 0/1 at 500 Hz</p></li>
-<li><p>license: CC BY 4.0 (confirmed on the Mendeley record and via DataCite) ; redistribution: yes</p></li>
-<li><p>access: ingested</p></li>
-<li><p>status (2026-08-22): FULLY INGESTED 2026-08-22 on the local machine: 56 canonical IMU records, 56 canonical EEG records, 56 canonical EMG records, 0 audit warnings. Patient identity, the EMG channel order (C-EMG-1) and the EEG reference are all RESOLVED, see below</p></li>
-<li><p>link: https://data.mendeley.com/datasets/r8gmbtv7w2</p></li>
-<li><p>ingestion: evidence: docs/multimodal_fog_mapping.md (D-ING-1..6). Patient identity RECOVERED from the Mendeley folder tree via the public API (configs/multimodal_fog_patient_index.csv, 56/56 files matched): subject_ns is the patient p001..p012, and 008’s two experiments share that subject so they cannot straddle a split. EMG channel order RESOLVED (C-EMG-1 closed) from the README per-patient table into configs/multimodal_fog_channel_order.csv, keyed by (patient, experiment) because 008-1 and 008-2 differ; 5/5 channels resolved on all 56 records, ECG now explicitly typed and therefore excludable from movement pretraining. An independent QRS-periodicity test on the raw signals agreed with the README table on 16/16 confidently-detected files</p></li>
-<li><p>notes: the program’s only EEG+EMG+IMU paired asset (stage B). EEG reference RESOLVED: TP9/TP10 mastoid average -&gt; ref LM (contract extended). The old wall-clock grouping is retired: audited against ground truth it split 12 of the 13 experiments across sessions, i.e. it would have leaked nearly every patient; it survives only as a flagged fallback</p></li>
+<li><p><strong>dataset</strong>: multimodal_fog</p></li>
+<li><p><strong>family</strong>: imu</p></li>
+<li><p><strong>MoveAtlas cells</strong>: B5; M2, M5, M6</p></li>
+<li><p><strong>population</strong>: 12 PD patients (ID 008 recorded twice: OFF_1 and OFF_2), 13 experiments, 56 task files, ~3 h 42 total; dense expert FoG labels (2 physicians, video-based)</p></li>
+<li><p><strong>n_subjects</strong>: 12</p></li>
+<li><p><strong>signal</strong>: 500 Hz combined stream: 25 EEG (uV, 0.5-100 Hz), 5 EMG/ECG/EOG (per-patient order, block index 2 = EOG), 4 MPU6050 IMU blocks (acc self-calibrated +-4g, gyro counts/131, source low-pass 16 Hz), skin conductance, FoG 0/1 at 500 Hz</p></li>
+<li><p><strong>license</strong>: CC BY 4.0 (confirmed on the Mendeley record and via DataCite); redistribution: yes</p></li>
+<li><p><strong>access</strong>: ingested</p></li>
+<li><p><strong>link</strong>: https://data.mendeley.com/datasets/r8gmbtv7w2</p></li>
+<li><p><strong>ingestion</strong>: evidence: docs/multimodal_fog_mapping.md (D-ING-1..6). Patient identity RECOVERED from the Mendeley folder tree via the public API (configs/multimodal_fog_patient_index.csv, 56/56 files matched): subject_ns is the patient p001..p012, and 008’s two experiments share that subject so they cannot straddle a split. EMG channel order RESOLVED (C-EMG-1 closed) from the README per-patient table into configs/multimodal_fog_channel_order.csv, keyed by (patient, experiment) because 008-1 and 008-2 differ; 5/5 channels resolved on all 56 records, ECG now explicitly typed and therefore excludable from movement pretraining. An independent QRS-periodicity test on the raw signals agreed with the README table on 16/16 confidently-detected files</p></li>
 </ul>
 </section>
 </section>
@@ -853,7 +852,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-load">How to load</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license-and-access">License and access</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publications">Publications</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-card-verbatim-with-its-evidence-trail">Data card (verbatim, with its evidence trail)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-card">Data card</a></li>
 </ul>
   </nav></div>
 

@@ -561,7 +561,7 @@
 <li class="toctree-l1"><a class="reference internal" href="gaitrec.html">GaitRec (bilateral GRF, 75k trials)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="goodwin_smm.html">Goodwin stereotypical motor movements accelerometry (UbiComp 2014)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hd_accel_jnet.html">Huntington wrist accelerometry (J-Net)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="iceberg_icm.html">ICEBERG cohort (Paris ICM: PSG + gait + eye movement + speech in early PD/iRBD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iceberg_icm.html">ICEBERG cohort</a></li>
 <li class="toctree-l1"><a class="reference internal" href="imu_inthewild_iprognosis.html">i-PROGNOSIS in-the-wild smartphone IMU</a></li>
 <li class="toctree-l1"><a class="reference internal" href="kaggle_fog.html">Kaggle tlVMC Freezing of Gait</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ltmm.html">Long-Term Movement Monitoring (PhysioNet)</a></li>
@@ -734,7 +734,7 @@
 <td><p>106</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>Status</strong></p></td>
-<td><p>downloaded + INGESTED v1: 113,945 records</p></td>
+<td><p>harmonized</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>License</strong></p></td>
 <td><p>academic research only</p></td>
@@ -774,52 +774,6 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="data-card-verbatim-with-its-evidence-trail">
-<h2>Data card (verbatim, with its evidence trail)<a class="headerlink" href="#data-card-verbatim-with-its-evidence-trail" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Modality: 3D skeleton (Kinect v2, 25 joints per body, up to 2 bodies)</p></li>
-<li><p>Source / URL: ROSE Lab, NTU (rose1.ntu.edu.sg/dataset/actionRecognition)</p></li>
-<li><p>License: academic research only, non-commercial (Release Agreement)</p></li>
-<li><p>Access: ROSE portal login, request approved 2026-07-12 (30-day window)</p></li>
-<li><p>Status: raw_downloaded (3D SKELETONS ONLY; RGB/depth/IR deliberately NOT downloaded)</p></li>
-<li><p>Number of subjects: 106 (full NTU RGB+D 120; the S001-S017 part on disk has 40)</p></li>
-<li><p>Disorders covered: HEALTHY movement only (120 daily/action classes). No pathology.</p></li>
-<li><p>Frequency / resolution: Kinect v2 ~30 fps, 3D joints in meters, y up</p></li>
-<li><p>Contenu present :</p>
-<ul>
-<li><p>raw/nturgbd_skeletons_s001_to_s017.zip  (56880 .skeleton, NTU-60 part, ~5.8 GB)</p></li>
-<li><p>raw/nturgbd_skeletons_s018_to_s032.zip  (57600 .skeleton, NTU-120 extra; re-zipped
-from the owner’s extracted download to reclaim disk, verified before deletion)</p></li>
-<li><p>raw/NTU_RGBD_samples_with_missing_skeletons.txt   (302 samples to exclude)</p></li>
-<li><p>raw/NTU_RGBD120_samples_with_missing_skeletons.txt (537 samples to exclude)</p></li>
-<li><p>docs/ : the two reference papers (CVPR2016, TPAMI2020)</p></li>
-<li><p>Total 114480 samples across 120 classes, 32 camera setups.</p></li>
-</ul>
-</li>
-<li><p>Specifics:</p>
-<ul>
-<li><p>Filename code SxxxCxxxPxxxRxxxAxxx = Setup, Camera, Person(subject), Replication,
-Action. Subject = P###; use it for subject-level splits.</p></li>
-<li><p>The two missing-skeleton lists MUST be applied to drop corrupt/empty samples.</p></li>
-<li><p>Postural + action diversity (non-locomotor); priority-1 healthy base of Handoff 3.</p></li>
-<li><p>RGB video / depth / IR (hundreds of GB) intentionally excluded: out of scope,
-identifiable, and disk-prohibitive. Skeletons are exactly what the FM needs.</p></li>
-</ul>
-</li>
-</ul>
-<section id="retrieval-notes">
-<h3>Retrieval notes<a class="headerlink" href="#retrieval-notes" title="Link to this heading">#</a></h3>
-<p>Downloaded by the owner via the ROSE portal (3D skeletons category), staged in
-temporary/, filed 2026-07-13. The S018-S032 part arrived extracted (113 GB of text);
-re-compressed to a zip in raw/ to reclaim ~108 GB, after verifying the archive.</p>
-</section>
-<section id="processing">
-<h3>Processing<a class="headerlink" href="#processing" title="Link to this heading">#</a></h3>
-<p>(pending) Ingest to the canonical skeleton via the ntu_kinect25 mapping in
-configs/canonical_skeleton.yaml (NTU 25 joints -&gt; canonical 15, all direct, 3D meters).
-Apply the missing-skeleton exclusion lists. Healthy base: pretraining only, no labels.</p>
-</section>
 </section>
 </section>
 
@@ -873,11 +827,6 @@ Apply the missing-skeleton exclusion lists. Healthy base: pretraining only, no l
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-load">How to load</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license-and-access">License and access</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publications">Publications</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-card-verbatim-with-its-evidence-trail">Data card (verbatim, with its evidence trail)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieval-notes">Retrieval notes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing">Processing</a></li>
-</ul>
-</li>
 </ul>
   </nav></div>
 

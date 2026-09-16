@@ -561,7 +561,7 @@
 <li class="toctree-l1"><a class="reference internal" href="gaitrec.html">GaitRec (bilateral GRF, 75k trials)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="goodwin_smm.html">Goodwin stereotypical motor movements accelerometry (UbiComp 2014)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hd_accel_jnet.html">Huntington wrist accelerometry (J-Net)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="iceberg_icm.html">ICEBERG cohort (Paris ICM: PSG + gait + eye movement + speech in early PD/iRBD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iceberg_icm.html">ICEBERG cohort</a></li>
 <li class="toctree-l1"><a class="reference internal" href="imu_inthewild_iprognosis.html">i-PROGNOSIS in-the-wild smartphone IMU</a></li>
 <li class="toctree-l1"><a class="reference internal" href="kaggle_fog.html">Kaggle tlVMC Freezing of Gait</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ltmm.html">Long-Term Movement Monitoring (PhysioNet)</a></li>
@@ -734,7 +734,7 @@
 <td><p>116</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>Status</strong></p></td>
-<td><p>REPO LOCATED 2026-08-22: github.com/LinaZhangUCLA/SeizureSemiologySuite (ICML 2026 spotlight, pushed 2026-05-26, ~57 MB, 801 csv + 36 json + 7 jsonl). It holds the benchmark/fine-tuning artefacts and split tables, NOT the videos; the paper’s Dataset link is still a placeholder. NOTHING FETCHED INTO…</p></td>
+<td><p>documented access barrier (2026-08-22)</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>License</strong></p></td>
 <td><p>repo has NO LICENSE FILE (checked 2026-08-22) = all rights reserved by default; videos under a DUA that is not open yet</p></td>
@@ -755,7 +755,7 @@
 <h2>License and access<a class="headerlink" href="#license-and-access" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>License</strong>: repo has NO LICENSE FILE (checked 2026-08-22) = all rights reserved by default; videos under a DUA that is not open yet</p></li>
-<li><p><strong>Redistribution</strong>: no (neither part)</p></li>
+<li><p><strong>Redistribution</strong>: no</p></li>
 <li><p><strong>Access route</strong>: application (DUA) for videos; repo artefacts unlicensed</p></li>
 <li><p><strong>Source</strong>: <a class="reference external" href="https://arxiv.org/abs/2605.21852">https://arxiv.org/abs/2605.21852</a></p></li>
 </ul>
@@ -775,20 +775,19 @@
 </pre></div>
 </div>
 </section>
-<section id="data-card-verbatim-with-its-evidence-trail">
-<h2>Data card (verbatim, with its evidence trail)<a class="headerlink" href="#data-card-verbatim-with-its-evidence-trail" title="Link to this heading">#</a></h2>
+<section id="data-card">
+<h2>Data card<a class="headerlink" href="#data-card" title="Link to this heading">#</a></h2>
+<p>The dataset’s card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.</p>
 <ul class="simple">
-<li><p>dataset: s3_semiology</p></li>
-<li><p>family: pose  (physical path: datasets/pose/s3_semiology)</p></li>
-<li><p>MoveAtlas cells: D1; M1 (video), labels</p></li>
-<li><p>population: 116 adult epilepsy patients, 438 seizure videos, &gt;35,000 dense labels on 20 ILAE semiology features</p></li>
-<li><p>n_subjects: 116</p></li>
-<li><p>signal: seizure videos (not yet released) + benchmark/annotation artefacts in the authors’ GitHub repo</p></li>
-<li><p>license: repo has NO LICENSE FILE (checked 2026-08-22) = all rights reserved by default; videos under a DUA that is not open yet ; redistribution: no (neither part)</p></li>
-<li><p>access: application (DUA) for videos; repo artefacts unlicensed</p></li>
-<li><p>status (2026-08-22): REPO LOCATED 2026-08-22: github.com/LinaZhangUCLA/SeizureSemiologySuite (ICML 2026 spotlight, pushed 2026-05-26, ~57 MB, 801 csv + 36 json + 7 jsonl). It holds the benchmark/fine-tuning artefacts and split tables, NOT the videos; the paper’s Dataset link is still a placeholder. NOTHING FETCHED INTO THIS REPO: no license means no redistribution right, and the DUA is still in the human queue. DOCUMENTED BARRIER (owner, 2026-08-28): the publication focuses on genuinely open data; the DUA route is not pursued. Evidence recorded 2026-08-28: the videos NEVER leave UCLA; authorized users analyze inside a UCLA-hosted secure enclave after an institutional DUA plus project IRB approval, so local training was off the table anyway; the repo’s annotation CSVs stay look-don’t-mirror (no licence file)</p></li>
-<li><p>link: https://arxiv.org/abs/2605.21852</p></li>
-<li><p>notes: exactly the D1 target: movement during seizures with ILAE feature labels. 438 videos / 116 adults (300 ES, 138 NES), ages 18-64, tertiary EMU 2019-2023, IRB-approved and de-identified; 20 ILAE features each with presence, MM:SS boundaries and free-text justification. Labels: eval only (R1), never pretraining</p></li>
+<li><p><strong>dataset</strong>: s3_semiology</p></li>
+<li><p><strong>family</strong>: pose</p></li>
+<li><p><strong>MoveAtlas cells</strong>: D1; M1 (video), labels</p></li>
+<li><p><strong>population</strong>: 116 adult epilepsy patients, 438 seizure videos, &gt;35,000 dense labels on 20 ILAE semiology features</p></li>
+<li><p><strong>n_subjects</strong>: 116</p></li>
+<li><p><strong>signal</strong>: seizure videos (not yet released) + benchmark/annotation artefacts in the authors’ GitHub repo</p></li>
+<li><p><strong>license</strong>: repo has NO LICENSE FILE (checked 2026-08-22) = all rights reserved by default; videos under a DUA that is not open yet; redistribution: no (neither part)</p></li>
+<li><p><strong>access</strong>: application (DUA) for videos; repo artefacts unlicensed</p></li>
+<li><p><strong>link</strong>: https://arxiv.org/abs/2605.21852</p></li>
 </ul>
 </section>
 </section>
@@ -843,7 +842,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-load">How to load</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license-and-access">License and access</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publications">Publications</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-card-verbatim-with-its-evidence-trail">Data card (verbatim, with its evidence trail)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-card">Data card</a></li>
 </ul>
   </nav></div>
 

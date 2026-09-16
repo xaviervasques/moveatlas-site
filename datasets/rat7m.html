@@ -561,7 +561,7 @@
 <li class="toctree-l1"><a class="reference internal" href="gaitrec.html">GaitRec (bilateral GRF, 75k trials)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="goodwin_smm.html">Goodwin stereotypical motor movements accelerometry (UbiComp 2014)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hd_accel_jnet.html">Huntington wrist accelerometry (J-Net)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="iceberg_icm.html">ICEBERG cohort (Paris ICM: PSG + gait + eye movement + speech in early PD/iRBD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iceberg_icm.html">ICEBERG cohort</a></li>
 <li class="toctree-l1"><a class="reference internal" href="imu_inthewild_iprognosis.html">i-PROGNOSIS in-the-wild smartphone IMU</a></li>
 <li class="toctree-l1"><a class="reference internal" href="kaggle_fog.html">Kaggle tlVMC Freezing of Gait</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ltmm.html">Long-Term Movement Monitoring (PhysioNet)</a></li>
@@ -716,7 +716,7 @@
   "name": "MoveAtlas"
  }
 }
-</script><p><span class="ma-fam ma-animal">animal</span>  <span class="ma-badge ma-catalogued">catalogued</span>  <span class="ma-badge ma-hosted">hosted</span>  <code>rat7m</code></p>
+</script><p><span class="ma-fam ma-animal">animal</span>  <span class="ma-badge ma-catalogued">catalogued</span>  <span class="ma-badge ma-recipe">recipe</span>  <code>rat7m</code></p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p></p></th>
@@ -731,7 +731,7 @@
 <td><p>several animals</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>Status</strong></p></td>
-<td><p>MOCAP CORE DOWNLOADED 2026-09-01 (7 .mat + camera parameters, 255 MB, sha256 journaled) - the kinematics essential. VIDEOS 403 2026-09-03: figshare answers 403 Forbidden to scripted clients on the video files (browser UA included; the mocap article had served from the same client) - the casebook cas…</p></td>
+<td><p>acquired (2026-09-01)</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>License</strong></p></td>
 <td><p>CC BY 4.0 (CONFIRMED via the figshare API on all 8 collection articles at fetch, 2026-09-01)</p></td>
@@ -744,7 +744,7 @@
 <h2>How to load<a class="headerlink" href="#how-to-load" title="Link to this heading">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">moveatlas</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">moveatlas</span><span class="o">.</span><span class="n">dataset</span><span class="p">(</span><span class="s2">"rat7m"</span><span class="p">)</span>
-<span class="n">records</span><span class="p">,</span> <span class="n">meta</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">info</span>   <span class="c1"># recipe: get_data() explains the route</span>
 </pre></div>
 </div>
 </section>
@@ -757,19 +757,19 @@
 <li><p><strong>Source</strong>: <a class="reference external" href="https://doi.org/10.6084/m9.figshare.c.5295370.v3">https://doi.org/10.6084/m9.figshare.c.5295370.v3</a></p></li>
 </ul>
 </section>
-<section id="data-card-verbatim-with-its-evidence-trail">
-<h2>Data card (verbatim, with its evidence trail)<a class="headerlink" href="#data-card-verbatim-with-its-evidence-trail" title="Link to this heading">#</a></h2>
+<section id="data-card">
+<h2>Data card<a class="headerlink" href="#data-card" title="Link to this heading">#</a></h2>
+<p>The dataset’s card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.</p>
 <ul class="simple">
-<li><p>dataset: rat7m</p></li>
-<li><p>family: animal  (physical path: datasets/animal/rat7m)</p></li>
-<li><p>MoveAtlas cells: animal: healthy rat 3D kinematics socle</p></li>
-<li><p>population: rat, ~7M frames / 10.8 h of 20-marker mocap with multi-camera video</p></li>
-<li><p>n_subjects: several animals</p></li>
-<li><p>signal: 3D mocap (20 markers) + synchronized multi-camera video</p></li>
-<li><p>license: CC BY 4.0 (CONFIRMED via the figshare API on all 8 collection articles at fetch, 2026-09-01) ; redistribution: yes</p></li>
-<li><p>access: figshare collection 10.6084/m9.figshare.c.5295370</p></li>
-<li><p>status (2026-09-04): COMPLETE. Mocap core downloaded 2026-09-01 (7 .mat + camera parameters, 255 MB); videos downloaded 2026-09-04 night (2028 .mp4, 15.35 GB, all 7 video articles, sha256 journaled, zero errors). The 2026-09-03 figshare 403 (case-5 pattern) cleared on its own: one spaced probe ~14 h later got HTTP 206 and the full pull ran clean - no retry storm needed, doctrine validated</p></li>
-<li><p>link: https://doi.org/10.6084/m9.figshare.c.5295370.v3</p></li>
+<li><p><strong>dataset</strong>: rat7m</p></li>
+<li><p><strong>family</strong>: animal</p></li>
+<li><p><strong>MoveAtlas cells</strong>: animal: healthy rat 3D kinematics socle</p></li>
+<li><p><strong>population</strong>: rat, ~7M frames / 10.8 h of 20-marker mocap with multi-camera video</p></li>
+<li><p><strong>n_subjects</strong>: several animals</p></li>
+<li><p><strong>signal</strong>: 3D mocap (20 markers) + synchronized multi-camera video</p></li>
+<li><p><strong>license</strong>: CC BY 4.0 (CONFIRMED via the figshare API on all 8 collection articles at fetch, 2026-09-01); redistribution: yes</p></li>
+<li><p><strong>access</strong>: figshare collection 10.6084/m9.figshare.c.5295370</p></li>
+<li><p><strong>link</strong>: https://doi.org/10.6084/m9.figshare.c.5295370.v3</p></li>
 </ul>
 </section>
 </section>
@@ -823,7 +823,7 @@
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-load">How to load</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license-and-access">License and access</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-card-verbatim-with-its-evidence-trail">Data card (verbatim, with its evidence trail)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-card">Data card</a></li>
 </ul>
   </nav></div>
 

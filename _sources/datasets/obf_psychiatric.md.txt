@@ -37,7 +37,7 @@
 |---|---|
 | **Taxonomy cells** | E6 drug-exposed context; M2 |
 | **Subjects** | 162 |
-| **Status** | DOWNLOADED 2026-09-05: 10.4 MB zip, cc-by-4.0 API-verified, md5-verified. CATALOGUED 2026-09-05: 1565 days of wrist actigraphy across psychiatric cohorts incl. antipsychotic-treated schizophrenia - context lane for the drug-induced axis (no akathisia/AIMS labels: the tardive/akathisia absences stand... |
+| **Status** | acquired (2026-09-05) |
 | **License** | CC BY 4.0 (Zenodo 13754984, re-verify at fetch) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -57,22 +57,8 @@ ds.info   # recipe: get_data() explains the route
 - **Access route**: zenodo 13754984
 - **Source**: <https://zenodo.org/records/13754984>
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- Modality: family 'imu'
-- Source / URL: https://zenodo.org/records/13754984
-- License / access: CC BY 4.0 (Zenodo 13754984, re-verify at fetch)
-- Version / retrieval date: catalogued 2026-09-05 (deep-dive sweep,
-  drug-induced/functional pass; records verified at file level
-  by the catalogue sweep)
-- Status (2026-09-05): CATALOGUED 2026-09-05: 1565 days of wrist actigraphy across psychiatric cohorts incl. antipsychotic-treated schizophrenia - context lane for the drug-induced axis (no akathisia/AIMS labels: the tardive/akathisia absences stand)
-- MoveAtlas cells: E6 drug-exposed context; M2
-
-### Retrieval notes
-RE-VERIFY at fetch. The two OSF FMD deposits carry NO licence:
-INTERNAL-ONLY after fetch until terms are adjudicated (goodwin_smm
-precedent).
-
-### Processing
-None. Catalogue-tier.
+- **MoveAtlas cells**: E6 drug-exposed context; M2

@@ -55,7 +55,7 @@
 |---|---|
 | **Taxonomy cells** | A1; M2 (derived) |
 | **Subjects** | 11 |
-| **Status** | raw on disk; EXCLUDED from raw-signal ingestion (derived features, docs/imu_reconnaissance.md) |
+| **Status** | acquired |
 | **License** | Zenodo open |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -90,16 +90,16 @@ records, meta = ds.get_data()
 }
 ```
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- dataset: alameda_tremor
-- family: imu  (physical path: datasets/imu/alameda_tremor)
-- MoveAtlas cells: A1; M2 (derived)
-- population: PD tremor, precomputed features
-- n_subjects: 11
-- signal: 99 precomputed features per window (CSV)
-- license: Zenodo open ; redistribution: yes
-- access: downloaded
-- status (2026-08-22): raw on disk; EXCLUDED from raw-signal ingestion (derived features, docs/imu_reconnaissance.md)
-- link: https://zenodo.org/records/10782573
+- **dataset**: alameda_tremor
+- **family**: imu
+- **MoveAtlas cells**: A1; M2 (derived)
+- **population**: PD tremor, precomputed features
+- **n_subjects**: 11
+- **signal**: 99 precomputed features per window (CSV)
+- **license**: Zenodo open; redistribution: yes
+- **access**: downloaded
+- **link**: https://zenodo.org/records/10782573

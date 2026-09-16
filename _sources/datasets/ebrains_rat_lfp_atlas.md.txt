@@ -36,7 +36,7 @@
 |---|---|
 | **Taxonomy cells** | animal PD models; M7 |
 | **Subjects** | 23 rats |
-| **Status** | CATALOGUED 2026-09-05: 29983 LFP recordings across >2000 sites in free behavior, healthy + hemiparkinsonian + levodopa/ketamine states, micro-CT registered (2026-04 release) - animal-lane candidate for the post-paper implementation |
+| **Status** | catalogued (2026-09-05) |
 | **License** | CC BY 4.0 (EBRAINS free access, re-verify at fetch) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -56,18 +56,8 @@ ds.info   # recipe: get_data() explains the route
 - **Access route**: ebrains DOI 10.25493/QNVD-9M2
 - **Source**: <https://search.kg.ebrains.eu/instances/41673110-f3eb-43cd-9d9c-c845c6f0573c>
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- Modality: family 'animal'
-- Source / URL: https://search.kg.ebrains.eu/instances/41673110-f3eb-43cd-9d9c-c845c6f0573c
-- License / access: CC BY 4.0 (EBRAINS free access, re-verify at fetch)
-- Version / retrieval date: catalogued 2026-09-05 (deep-dive sweep); NOT fetched
-- Status (2026-09-05): CATALOGUED 2026-09-05: 29983 LFP recordings across >2000 sites in free behavior, healthy + hemiparkinsonian + levodopa/ketamine states, micro-CT registered (2026-04 release) - animal-lane candidate for the post-paper implementation
-- MoveAtlas cells: animal PD models; M7
-
-### Retrieval notes
-RE-VERIFY at fetch/request; no-emails policy for gated tiers.
-
-### Processing
-None. Catalogue-tier.
+- **MoveAtlas cells**: animal PD models; M7

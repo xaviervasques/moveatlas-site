@@ -28,7 +28,7 @@
 </script>
 ```
 
-<span class="ma-fam ma-bio">bio</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-hosted">hosted</span>&nbsp; <code>cellxgene_pd_multiregion</code>
+<span class="ma-fam ma-bio">bio</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-recipe">recipe</span>&nbsp; <code>cellxgene_pd_multiregion</code>
 
 <span class="ma-tag">Histology / transcr.</span>
 
@@ -36,7 +36,7 @@
 |---|---|
 | **Taxonomy cells** | M10 |
 | **Subjects** | 100 |
-| **Status** | NEW 2026-08-22 (second hunt): HUMAN QUEUE (size decision before download) |
+| **Status** | documented access barrier (2026-08-22) |
 | **License** | CELLxGENE policy CC BY 4.0 (confirm on collection page) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -46,13 +46,13 @@ Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 ```python
 import moveatlas
 ds = moveatlas.dataset("cellxgene_pd_multiregion")
-records, meta = ds.get_data()
+ds.info   # recipe: get_data() explains the route
 ```
 
 ## License and access
 
 - **License**: CELLxGENE policy CC BY 4.0 (confirm on collection page)
-- **Redistribution**: yes if CC BY
+- **Redistribution**: yes
 - **Access route**: direct_download (30.5 GB, deliberate pull)
 - **Source**: <https://cellxgene.cziscience.com/collections/d5d0df8f-4eee-49d8-a221-a288f50a1590>
 
@@ -70,17 +70,17 @@ records, meta = ds.get_data()
 }
 ```
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- dataset: cellxgene_pd_multiregion
-- family: bio  (physical path: datasets/bio/cellxgene_pd_multiregion)
-- MoveAtlas cells: M10
-- population: 100 post-mortem PD cases + controls, 5 regions incl. GPm and dorsal motor vagus
-- n_subjects: 100
-- signal: single h5ad ~30.5 GB
-- license: CELLxGENE policy CC BY 4.0 (confirm on collection page) ; redistribution: yes if CC BY
-- access: direct_download (30.5 GB, deliberate pull)
-- status (2026-08-22): NEW 2026-08-22 (second hunt): HUMAN QUEUE (size decision before download)
-- link: https://cellxgene.cziscience.com/collections/d5d0df8f-4eee-49d8-a221-a288f50a1590
-- citation: Sci Data 2024, doi 10.1038/s41597-024-04117-y
+- **dataset**: cellxgene_pd_multiregion
+- **family**: bio
+- **MoveAtlas cells**: M10
+- **population**: 100 post-mortem PD cases + controls, 5 regions incl. GPm and dorsal motor vagus
+- **n_subjects**: 100
+- **signal**: single h5ad ~30.5 GB
+- **license**: CELLxGENE policy CC BY 4.0 (confirm on collection page); redistribution: yes if CC BY
+- **access**: direct_download (30.5 GB, deliberate pull)
+- **link**: https://cellxgene.cziscience.com/collections/d5d0df8f-4eee-49d8-a221-a288f50a1590
+- **citation**: Sci Data 2024, doi 10.1038/s41597-024-04117-y

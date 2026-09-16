@@ -561,7 +561,7 @@
 <li class="toctree-l1"><a class="reference internal" href="gaitrec.html">GaitRec (bilateral GRF, 75k trials)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="goodwin_smm.html">Goodwin stereotypical motor movements accelerometry (UbiComp 2014)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hd_accel_jnet.html">Huntington wrist accelerometry (J-Net)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="iceberg_icm.html">ICEBERG cohort (Paris ICM: PSG + gait + eye movement + speech in early PD/iRBD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iceberg_icm.html">ICEBERG cohort</a></li>
 <li class="toctree-l1"><a class="reference internal" href="imu_inthewild_iprognosis.html">i-PROGNOSIS in-the-wild smartphone IMU</a></li>
 <li class="toctree-l1"><a class="reference internal" href="kaggle_fog.html">Kaggle tlVMC Freezing of Gait</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ltmm.html">Long-Term Movement Monitoring (PhysioNet)</a></li>
@@ -719,7 +719,7 @@
   "name": "MoveAtlas"
  }
 }
-</script><p><span class="ma-fam ma-bio">bio</span>  <span class="ma-badge ma-catalogued">catalogued</span>  <span class="ma-badge ma-hosted">hosted</span>  <code>dandi_m1_mptp_units</code></p>
+</script><p><span class="ma-fam ma-bio">bio</span>  <span class="ma-badge ma-catalogued">catalogued</span>  <span class="ma-badge ma-recipe">recipe</span>  <code>dandi_m1_mptp_units</code></p>
 <p><span class="ma-tag">Rigidity</span><span class="ma-tag">Bradykinesia</span><span class="ma-tag">LFP / ECoG</span></p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -735,7 +735,7 @@
 <td><p>2 macaques</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>Status</strong></p></td>
-<td><p>DOWNLOADED 2026-09-01 (owner GO): published version 0.260518.1819 COMPLETE, 447/447 assets / 6.4 GB via the DANDI API, sha256 journaled per asset</p></td>
+<td><p>acquired (2026-09-01)</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>License</strong></p></td>
 <td><p>CC BY 4.0 (verified on page 2026-09-01)</p></td>
@@ -748,7 +748,7 @@
 <h2>How to load<a class="headerlink" href="#how-to-load" title="Link to this heading">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">moveatlas</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">moveatlas</span><span class="o">.</span><span class="n">dataset</span><span class="p">(</span><span class="s2">"dandi_m1_mptp_units"</span><span class="p">)</span>
-<span class="n">records</span><span class="p">,</span> <span class="n">meta</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">info</span>   <span class="c1"># recipe: get_data() explains the route</span>
 </pre></div>
 </div>
 </section>
@@ -761,19 +761,19 @@
 <li><p><strong>Source</strong>: <a class="reference external" href="https://dandiarchive.org/dandiset/001636">https://dandiarchive.org/dandiset/001636</a></p></li>
 </ul>
 </section>
-<section id="data-card-verbatim-with-its-evidence-trail">
-<h2>Data card (verbatim, with its evidence trail)<a class="headerlink" href="#data-card-verbatim-with-its-evidence-trail" title="Link to this heading">#</a></h2>
+<section id="data-card">
+<h2>Data card<a class="headerlink" href="#data-card" title="Link to this heading">#</a></h2>
+<p>The dataset’s card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.</p>
 <ul class="simple">
-<li><p>dataset: dandi_m1_mptp_units</p></li>
-<li><p>family: bio  (physical path: datasets/bio/dandi_m1_mptp_units)</p></li>
-<li><p>MoveAtlas cells: B1, B2 (MPTP model); M7 (single units)</p></li>
-<li><p>population: 2 MPTP macaques, identified pyramidal-tract and corticostriatal neurons</p></li>
-<li><p>n_subjects: 2 macaques</p></li>
-<li><p>signal: single-unit recordings (NWB, 6.4 GB)</p></li>
-<li><p>license: CC BY 4.0 (verified on page 2026-09-01) ; redistribution: yes</p></li>
-<li><p>access: DANDI open download (dandi CLI)</p></li>
-<li><p>status (2026-08-22): DOWNLOADED 2026-09-01 (owner GO): published version 0.260518.1819 COMPLETE, 447/447 assets / 6.4 GB via the DANDI API, sha256 journaled per asset</p></li>
-<li><p>link: https://dandiarchive.org/dandiset/001636</p></li>
+<li><p><strong>dataset</strong>: dandi_m1_mptp_units</p></li>
+<li><p><strong>family</strong>: bio</p></li>
+<li><p><strong>MoveAtlas cells</strong>: B1, B2 (MPTP model); M7 (single units)</p></li>
+<li><p><strong>population</strong>: 2 MPTP macaques, identified pyramidal-tract and corticostriatal neurons</p></li>
+<li><p><strong>n_subjects</strong>: 2 macaques</p></li>
+<li><p><strong>signal</strong>: single-unit recordings (NWB, 6.4 GB)</p></li>
+<li><p><strong>license</strong>: CC BY 4.0 (verified on page 2026-09-01); redistribution: yes</p></li>
+<li><p><strong>access</strong>: DANDI open download (dandi CLI)</p></li>
+<li><p><strong>link</strong>: https://dandiarchive.org/dandiset/001636</p></li>
 </ul>
 </section>
 </section>
@@ -827,7 +827,7 @@
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-load">How to load</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license-and-access">License and access</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-card-verbatim-with-its-evidence-trail">Data card (verbatim, with its evidence trail)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-card">Data card</a></li>
 </ul>
   </nav></div>
 

@@ -38,7 +38,7 @@
 |---|---|
 | **Taxonomy cells** | B1-B4 context; M5 |
 | **Subjects** | 14 |
-| **Status** | STILL PUBLIC 2026-09-07 (re-checked during the PIET withdrawal finding, case 13): no withdrawal statement, now V2 (updated 2025-12-19), page says 571.16 GB / 12413 files. CATALOGUED 2026-09-04: fMRI/sMRI under 7 DBS stimulation conditions x 5 timepoints + UPDRS, ~11.7 h fMRI per patient. TWO owner g... |
+| **Status** | catalogued (2026-09-07) |
 | **License** | CC0 (page re-verified 2026-09-07: PUBLIC banner + CC0 logo) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -58,23 +58,8 @@ ds.info   # recipe: get_data() explains the route
 - **Access route**: sciencedb doi:10.57760/sciencedb.26302
 - **Source**: <https://doi.org/10.57760/sciencedb.26302>
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- Modality: see registry family 'bio'
-- Source / URL: https://doi.org/10.57760/sciencedb.26302
-- License: CC0 (ScienceDB record, to re-verify at fetch)
-- Access: sciencedb doi:10.57760/sciencedb.26302
-- Version / retrieval date: catalogued 2026-09-04 (closing sweep); NOT fetched
-- Status (2026-09-04): CATALOGUED 2026-09-04 (closing sweep): fMRI/sMRI under 7 DBS stimulation conditions x 5 timepoints + UPDRS, 613 GB / 12413 files, ~11.7 h fMRI per patient. SIZE DECISION needed before any fetch (disk); anti-bot as PIET
-- Number of subjects: 14
-- MoveAtlas cells: B1-B4 context; M5
-
-### Retrieval notes
-Found by the 2026-09-04 closing sweep. Every licence/access statement
-above is a catalogue-time reading of the record page or the DataCite
-index - RE-VERIFY AT FETCH TIME per house rule (verification dates go
-in this card).
-
-### Processing
-None. Catalogue-tier until fetched and adjudicated.
+- **MoveAtlas cells**: B1-B4 context; M5

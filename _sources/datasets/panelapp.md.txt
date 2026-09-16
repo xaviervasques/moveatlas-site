@@ -36,7 +36,7 @@
 |---|---|
 | **Taxonomy cells** | M9 |
 | **Subjects** | n/a |
-| **Status** | DOWNLOADED 2026-08-22: both signed-off panels as TSV, panel 540 (adult onset, 207 genes, v6.8) and panel 847 (childhood onset, 986 genes, v8.14), fetched from the panel download endpoint. Gene panels, not movement data: aux/bio only |
+| **Status** | acquired (2026-08-22) |
 | **License** | NHS GMS governance; no explicit open license shown |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -52,7 +52,7 @@ ds.info   # recipe: get_data() explains the route
 ## License and access
 
 - **License**: NHS GMS governance; no explicit open license shown
-- **Redistribution**: no, DECIDED 2026-08-28: no written licence = pointer; the panels re-fetch freely from the PanelApp pages
+- **Redistribution**: no
 - **Access route**: direct_download (panel pages; API robots-blocked to our fetcher)
 - **Source**: <https://panelapp.genomicsengland.co.uk/panels/540/>
 
@@ -70,16 +70,16 @@ ds.info   # recipe: get_data() explains the route
 }
 ```
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- dataset: panelapp
-- family: bio  (physical path: datasets/bio/panelapp)
-- MoveAtlas cells: M9
-- population: curated diagnostic gene panels: 540 + 847 dystonia/chorea (adult + childhood), 192 early-onset dystonia, 477 childhood ataxia, 1669 adult neurology superpanel
-- n_subjects: n/a
-- signal: signed-off panel TSVs
-- license: NHS GMS governance; no explicit open license shown ; redistribution: no, DECIDED 2026-08-28: no written licence = pointer; the panels re-fetch freely from the PanelApp pages
-- access: direct_download (panel pages; API robots-blocked to our fetcher)
-- status (2026-08-22): DOWNLOADED 2026-08-22: both signed-off panels as TSV, panel 540 (adult onset, 207 genes, v6.8) and panel 847 (childhood onset, 986 genes, v8.14), fetched from the panel download endpoint. Gene panels, not movement data: aux/bio only
-- link: https://panelapp.genomicsengland.co.uk/panels/540/
+- **dataset**: panelapp
+- **family**: bio
+- **MoveAtlas cells**: M9
+- **population**: curated diagnostic gene panels: 540 + 847 dystonia/chorea (adult + childhood), 192 early-onset dystonia, 477 childhood ataxia, 1669 adult neurology superpanel
+- **n_subjects**: n/a
+- **signal**: signed-off panel TSVs
+- **license**: NHS GMS governance; no explicit open license shown; redistribution: no, no written licence = pointer; the panels re-fetch freely from the PanelApp pages
+- **access**: direct_download (panel pages; API robots-blocked to our fetcher)
+- **link**: https://panelapp.genomicsengland.co.uk/panels/540/

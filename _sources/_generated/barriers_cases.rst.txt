@@ -1,15 +1,15 @@
-13 documented cases (``docs/ACCESS_BARRIERS_CASES.md``, each with its evidence trail):
+13 documented cases, of these kinds:
 
-- Case 1: published but never deposited (beijing_sleep_lfp)
-- Case 2: data in hand, licence self-contradictory (care_pd)
-- Case 3: data public, values contradict their declaration (ds007526)
-- Case 4: open licence, closed format (gait120)
-- Case 5: the transport arms race (figshare, resolved by changing CLIENT)
-- Case 6: the open-data deserts, quantified (2026-09-01 sweep)
-- Case 7: published, benchmarked by a whole field, and licence-free
-- Case 8: "open data" that turns out to be figures (lance_adams)
-- Case 9: no human patient neuron morphology exists (neuromorpho_bg)
-- Case 10: the animal kingdom repeats the human asymmetry (2026-09-01)
-- Case 11: "the data are with this article", and they are not (2026-09-02)
-- Case 12: our own deposit, audited like a stranger's (2026-09-03/04)
-- Case 13: withdrawn after publication, badges still green (piet_essential_tremor, 2026-09-07)
+- Published but never deposited
+- Data in hand, licence self-contradictory
+- Data public, values contradict their declaration
+- Open licence, closed format
+- The transport arms race
+- The open-data deserts, quantified
+- Published, benchmarked by a whole field, and licence-free
+- "open data" that turns out to be figures
+- No human patient neuron morphology exists
+- The animal kingdom repeats the human asymmetry
+- "the data are with this article", and they are not
+- The atlas's own deposit, audited like a stranger's
+- Withdrawn after publication, badges still green

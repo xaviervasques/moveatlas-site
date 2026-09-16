@@ -40,7 +40,7 @@
 | **Taxonomy cells** | A5 proxy (stereotypies), D5; M1, M4 |
 | **Subjects** | 32 |
 | **Ages** | school-age children |
-| **Status** | DOWNLOADED 2026-08-28 (owner risk call: INTERNAL training only, never in any release tree): 7.1 GB via gdown from the README's Drive folder, all 5 zips integrity-tested (optical_flow 481,176 entries; 2D_openpose 256,379; ROMP 2D/3D/3D-71 312,773 each) + ADOS_rating.xlsx + README. Ingestion is its ow... |
+| **Status** | acquired (2026-08-28) |
 | **License** | not specified by the authors for the DATA (the GitHub repo carries an Apache-2.0 badge, which covers the repo, not necessarily the Drive payload) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -56,7 +56,7 @@ ds.info   # recipe: get_data() explains the route
 ## License and access
 
 - **License**: not specified by the authors for the DATA (the GitHub repo carries an Apache-2.0 badge, which covers the repo, not necessarily the Drive payload)
-- **Redistribution**: no, DECIDED 2026-08-28: unspecified licence = pointer; the never-sent licence email stays in the barriers file
+- **Redistribution**: no
 - **Access route**: direct download via Google Drive link (no form)
 - **Source**: <https://github.com/Li-Jicheng/MMASD-A-Multimodal-Dataset-for-Autism-Intervention-Analysis>
 
@@ -74,18 +74,17 @@ ds.info   # recipe: get_data() explains the route
 }
 ```
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- dataset: mmasd
-- family: pose  (physical path: datasets/pose/mmasd)
-- MoveAtlas cells: A5 proxy (stereotypies), D5; M1, M4
-- population: 32 children with ASD, >100 h therapy video as privacy-preserving derivatives; ADOS-2 scores
-- n_subjects: 32
-- age: school-age children
-- signal: optical flow JPGs + 2D skeleton (OpenPose 25) + 3D skeleton (ROMP 71), 1,315 samples, 11 activities
-- license: not specified by the authors for the DATA (the GitHub repo carries an Apache-2.0 badge, which covers the repo, not necessarily the Drive payload) ; redistribution: no, DECIDED 2026-08-28: unspecified licence = pointer; the never-sent licence email stays in the barriers file
-- access: direct download via Google Drive link (no form)
-- status (2026-08-22): DOWNLOADED 2026-08-28 (owner risk call: INTERNAL training only, never in any release tree): 7.1 GB via gdown from the README's Drive folder, all 5 zips integrity-tested (optical_flow 481,176 entries; 2D_openpose 256,379; ROMP 2D/3D/3D-71 312,773 each) + ADOS_rating.xlsx + README. Ingestion is its own future pass: needs OpenPose-25 and ROMP-71 joint maps in the skeleton contract
-- link: https://github.com/Li-Jicheng/MMASD-A-Multimodal-Dataset-for-Autism-Intervention-Analysis
-- notes: best available substitute for the empty stereotypies cell alongside ethics-gated SSBD/AV-ASD; derivatives only, no raw video
+- **dataset**: mmasd
+- **family**: pose
+- **MoveAtlas cells**: A5 proxy (stereotypies), D5; M1, M4
+- **population**: 32 children with ASD, >100 h therapy video as privacy-preserving derivatives; ADOS-2 scores
+- **n_subjects**: 32
+- **age**: school-age children
+- **signal**: optical flow JPGs + 2D skeleton (OpenPose 25) + 3D skeleton (ROMP 71), 1,315 samples, 11 activities
+- **license**: not specified by the authors for the DATA (the GitHub repo carries an Apache-2.0 badge, which covers the repo, not necessarily the Drive payload); redistribution: no, unspecified licence = pointer; the never-sent licence email stays in the barriers file
+- **access**: direct download via Google Drive link (no form)
+- **link**: https://github.com/Li-Jicheng/MMASD-A-Multimodal-Dataset-for-Autism-Intervention-Analysis

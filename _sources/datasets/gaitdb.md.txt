@@ -65,7 +65,7 @@
 |---|---|
 | **Taxonomy cells** | B2, B3, C3; M2 (derived) |
 | **Subjects** | 15 |
-| **Status** | raw on disk; EXCLUDED from raw-signal ingestion (derived) |
+| **Status** | acquired |
 | **License** | PhysioNet open |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -108,16 +108,16 @@ records, meta = ds.get_data()
 }
 ```
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- dataset: gaitdb
-- family: imu  (physical path: datasets/imu/gaitdb)
-- MoveAtlas cells: B2, B3, C3; M2 (derived)
-- population: 5 young + 5 old + 5 PD
-- n_subjects: 15
-- signal: stride-interval series (derived, not raw signal)
-- license: PhysioNet open ; redistribution: yes
-- access: downloaded
-- status (2026-08-22): raw on disk; EXCLUDED from raw-signal ingestion (derived)
-- link: https://physionet.org/content/gaitdb/
+- **dataset**: gaitdb
+- **family**: imu
+- **MoveAtlas cells**: B2, B3, C3; M2 (derived)
+- **population**: 5 young + 5 old + 5 PD
+- **n_subjects**: 15
+- **signal**: stride-interval series (derived, not raw signal)
+- **license**: PhysioNet open; redistribution: yes
+- **access**: downloaded
+- **link**: https://physionet.org/content/gaitdb/

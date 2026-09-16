@@ -38,7 +38,7 @@
 | **Taxonomy cells** | C2; M1 |
 | **Subjects** | not stated |
 | **Ages** | infants |
-| **Status** | DOCUMENTED BARRIER (owner, 2026-08-28): the password-by-email gate stays closed under the standing no-emails decision; not reopened |
+| **Status** | documented access barrier (2026-08-28) |
 | **License** | non-commercial; dataset password by email |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -72,18 +72,17 @@ ds.info   # barrier: get_data() explains the route
 }
 ```
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- dataset: syrip
-- family: pose  (physical path: datasets/pose/syrip)
-- MoveAtlas cells: C2; M1
-- population: real + synthetic infant images, COCO-format 2D keypoints
-- n_subjects: not stated
-- age: infants
-- signal: annotated infant images (2D keypoints)
-- license: non-commercial; dataset password by email ; redistribution: no
-- access: registration-like (password request)
-- status (2026-08-22): DOCUMENTED BARRIER (owner, 2026-08-28): the password-by-email gate stays closed under the standing no-emails decision; not reopened
-- link: https://github.com/ostadabbas/Infant-Pose-Estimation
-- notes: infant 2D pose pretraining aid for the infant-skeleton contract
+- **dataset**: syrip
+- **family**: pose
+- **MoveAtlas cells**: C2; M1
+- **population**: real + synthetic infant images, COCO-format 2D keypoints
+- **n_subjects**: not stated
+- **age**: infants
+- **signal**: annotated infant images (2D keypoints)
+- **license**: non-commercial; dataset password by email; redistribution: no
+- **access**: registration-like (password request)
+- **link**: https://github.com/ostadabbas/Infant-Pose-Estimation

@@ -38,7 +38,7 @@
 | **Taxonomy cells** | C2; M1 |
 | **Subjects** | 16 |
 | **Ages** | preterm neonates |
-| **Status** | DOCUMENTED BARRIER (owner, 2026-08-28): the email-gated access stays closed under the standing no-emails decision; not reopened |
+| **Status** | documented access barrier (2026-08-28) |
 | **License** | on request from the VRAI lab |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -54,7 +54,7 @@ ds.info   # barrier: get_data() explains the route
 ## License and access
 
 - **License**: on request from the VRAI lab
-- **Redistribution**: no (until granted)
+- **Redistribution**: no
 - **Access route**: application: email the lab
 - **Source**: <https://vrai.dii.univpm.it/content/babypose-dataset>
 
@@ -72,18 +72,17 @@ ds.info   # barrier: get_data() explains the route
 }
 ```
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- dataset: babypose
-- family: pose  (physical path: datasets/pose/babypose)
-- MoveAtlas cells: C2; M1
-- population: 16 preterm infants in incubator, limb-joint annotated depth video
-- n_subjects: 16
-- age: preterm neonates
-- signal: depth video, 16,000 annotated frames
-- license: on request from the VRAI lab ; redistribution: no (until granted)
-- access: application: email the lab
-- status (2026-08-22): DOCUMENTED BARRIER (owner, 2026-08-28): the email-gated access stays closed under the standing no-emails decision; not reopened
-- link: https://vrai.dii.univpm.it/content/babypose-dataset
-- notes: first C2 candidate; will require the infant-skeleton contract (WBS 1.3)
+- **dataset**: babypose
+- **family**: pose
+- **MoveAtlas cells**: C2; M1
+- **population**: 16 preterm infants in incubator, limb-joint annotated depth video
+- **n_subjects**: 16
+- **age**: preterm neonates
+- **signal**: depth video, 16,000 annotated frames
+- **license**: on request from the VRAI lab; redistribution: no (until granted)
+- **access**: application: email the lab
+- **link**: https://vrai.dii.univpm.it/content/babypose-dataset

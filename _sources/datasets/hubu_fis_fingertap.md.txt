@@ -43,7 +43,7 @@
 </script>
 ```
 
-<span class="ma-fam ma-pose">pose</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-hosted">hosted</span>&nbsp; <code>hubu_fis_fingertap</code>
+<span class="ma-fam ma-pose">pose</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-recipe">recipe</span>&nbsp; <code>hubu_fis_fingertap</code>
 
 <span class="ma-tag">Bradykinesia</span><span class="ma-tag">Pose / video</span>
 
@@ -51,7 +51,7 @@
 |---|---|
 | **Taxonomy cells** | B2; M1 (video) |
 | **Subjects** | not stated (234 videos) |
-| **Status** | DOWNLOADED 2026-08-22: 10.81 GB, sha256 verified, zip opens cleanly: 234 clips (226 mp4 + 8 MOV) plus fis_diagnostic.csv. Cohort read from that file: 118 subjects, 43 CONTROL and 75 patients, filmed one clip per hand (DCHA right, IZDA left; 116 subjects have both, 2 have one), each clip carrying an... |
+| **Status** | acquired (2026-08-22) |
 | **License** | CC BY 4.0 |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -61,7 +61,7 @@ Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 ```python
 import moveatlas
 ds = moveatlas.dataset("hubu_fis_fingertap")
-records, meta = ds.get_data()
+ds.info   # recipe: get_data() explains the route
 ```
 
 ## License and access
@@ -86,17 +86,16 @@ records, meta = ds.get_data()
 }
 ```
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- dataset: hubu_fis_fingertap
-- family: pose  (physical path: datasets/pose/hubu_fis_fingertap)
-- MoveAtlas cells: B2; M1 (video)
-- population: PD patients + controls, both hands, standardized MDS-UPDRS finger-tapping; per-clip ratings in fis_diagnostic.csv
-- n_subjects: not stated (234 videos)
-- signal: 234 videos, 10.8 GB single zip
-- license: CC BY 4.0 ; redistribution: yes
-- access: direct_download (Zenodo)
-- status (2026-08-22): DOWNLOADED 2026-08-22: 10.81 GB, sha256 verified, zip opens cleanly: 234 clips (226 mp4 + 8 MOV) plus fis_diagnostic.csv. Cohort read from that file: 118 subjects, 43 CONTROL and 75 patients, filmed one clip per hand (DCHA right, IZDA left; 116 subjects have both, 2 have one), each clip carrying an MDS-UPDRS finger-tapping score 0-3 (71/99/38/26). 40 of the 118 subjects score DIFFERENTLY on their two hands, which is the asymmetry the task is meant to capture, so the per-hand clips are not interchangeable. SPLIT SAFETY: both hands of a subject must share one subject_ns or the same person lands on both sides. Note 27 CONTROL clips are scored 1 rather than 0, so 'control' is not a synonym for score 0. Video of hands; ratings are labels: eval only (R1). Ingestion needs pose extraction and is not written yet
-- link: https://zenodo.org/records/17738775
-- notes: bradykinesia video cell; pose extraction pipeline needed after download
+- **dataset**: hubu_fis_fingertap
+- **family**: pose
+- **MoveAtlas cells**: B2; M1 (video)
+- **population**: PD patients + controls, both hands, standardized MDS-UPDRS finger-tapping; per-clip ratings in fis_diagnostic.csv
+- **n_subjects**: not stated (234 videos)
+- **signal**: 234 videos, 10.8 GB single zip
+- **license**: CC BY 4.0; redistribution: yes
+- **access**: direct_download (Zenodo)
+- **link**: https://zenodo.org/records/17738775

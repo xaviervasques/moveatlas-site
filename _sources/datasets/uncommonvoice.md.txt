@@ -37,7 +37,7 @@
 |---|---|
 | **Taxonomy cells** | A1 laryngeal; M8 |
 | **Subjects** | 57 (48 SD) |
-| **Status** | CATALOGUED 2026-09-05: DOCUMENTED BARRIER (email tier): 8.5 h - the largest SD-specific corpus; NC-SA + gate |
+| **Status** | documented access barrier (2026-09-05) |
 | **License** | CC BY-NC-SA 4.0; email request, restricted to university/company researchers |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -57,18 +57,8 @@ ds.info   # barrier: get_data() explains the route
 - **Access route**: merriekay.com/uncommonvoice
 - **Source**: <https://merriekay.com/uncommonvoice>
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- Modality: family 'auxdata' (speech-motor signal)
-- Source / URL: https://merriekay.com/uncommonvoice
-- License / access: CC BY-NC-SA 4.0; email request, restricted to university/company researchers
-- Version / retrieval date: catalogued 2026-09-05 (deep-dive sweep)
-- Status (2026-09-05): CATALOGUED 2026-09-05: DOCUMENTED BARRIER (email tier): 8.5 h - the largest SD-specific corpus; NC-SA + gate
-- MoveAtlas cells: A1 laryngeal; M8
-
-### Retrieval notes
-RE-VERIFY at fetch/request; no-emails policy for gated tiers.
-
-### Processing
-None. Catalogue-tier.
+- **MoveAtlas cells**: A1 laryngeal; M8

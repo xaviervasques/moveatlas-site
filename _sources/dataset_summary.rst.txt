@@ -18,7 +18,7 @@ Access cases
 - **hosted**: served from MoveAtlas's own verified records; one call
   downloads. (Today: the local record store; MoveAtlas's public Zenodo /
   Hugging Face records open with the public launch.)
-- **recipe**: fetched from the original host by our ingestion recipe.
+- **recipe**: fetched from the original host by the documented recipe.
 - **local_only**: private-tier data; nothing downloads, a local path
   is required. Empty since 2026-09-01: the CODY derived release is
   public on Zenodo (CC BY 4.0, 10.5281/zenodo.22232609) and the CODY

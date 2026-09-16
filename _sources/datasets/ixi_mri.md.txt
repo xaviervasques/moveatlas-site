@@ -30,7 +30,7 @@
 </script>
 ```
 
-<span class="ma-fam ma-bio">bio</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-hosted">hosted</span>&nbsp; <code>ixi_mri</code>
+<span class="ma-fam ma-bio">bio</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-recipe">recipe</span>&nbsp; <code>ixi_mri</code>
 
 <span class="ma-tag">Normal adult movement</span><span class="ma-tag">Aging</span><span class="ma-tag">Imaging</span>
 
@@ -39,7 +39,7 @@
 | **Taxonomy cells** | C1, C3; M8 |
 | **Subjects** | ~600 |
 | **Ages** | 20-86 y |
-| **Status** | RETESTED 2026-08-28: biomedic.doc.ic.ac.uk still 403s this IP over both schemes; retry from another network or write off |
+| **Status** | catalogued (2026-08-28) |
 | **License** | CC BY-SA 3.0 (stated) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -49,32 +49,31 @@ Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 ```python
 import moveatlas
 ds = moveatlas.dataset("ixi_mri")
-records, meta = ds.get_data()
+ds.info   # recipe: get_data() explains the route
 ```
 
 ## License and access
 
 - **License**: CC BY-SA 3.0 (stated)
 - **Redistribution**: yes (share-alike)
-- **Access route**: direct_download (fetch_p2_lot.py --only ixi_mri; T1+T2+demographics queued)
+- **Access route**: direct_download
 - **Source**: <https://brain-development.org/ixi-dataset/>
 
 ## Publications
 
 -  (). **. .
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- dataset: ixi_mri
-- family: bio  (physical path: datasets/bio/ixi_mri)
-- MoveAtlas cells: C1, C3; M8
-- population: ~600 healthy subjects, 3 London sites, T1/T2/PD + MRA + DTI + demographics
-- n_subjects: ~600
-- age: 20-86 y
-- signal: NIfTI tarballs (~10-15 GB total)
-- license: CC BY-SA 3.0 (stated) ; redistribution: yes (share-alike)
-- access: direct_download (fetch_p2_lot.py --only ixi_mri; T1+T2+demographics queued)
-- status (2026-08-22): RETESTED 2026-08-28: biomedic.doc.ic.ac.uk still 403s this IP over both schemes; retry from another network or write off
-- link: https://brain-development.org/ixi-dataset/
-- notes: healthy aging imaging reference for M8
+- **dataset**: ixi_mri
+- **family**: bio
+- **MoveAtlas cells**: C1, C3; M8
+- **population**: ~600 healthy subjects, 3 London sites, T1/T2/PD + MRA + DTI + demographics
+- **n_subjects**: ~600
+- **age**: 20-86 y
+- **signal**: NIfTI tarballs (~10-15 GB total)
+- **license**: CC BY-SA 3.0 (stated); redistribution: yes (share-alike)
+- **access**: direct_download
+- **link**: https://brain-development.org/ixi-dataset/

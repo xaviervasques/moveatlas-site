@@ -484,17 +484,15 @@ movement-disorders corpus. 170 catalogued datasets
 from 32,668 subjects and 40,357 hours of signal across six
 canonical families (pose, IMU, EMG, force plates, silhouette, EEG),
 with patient-level evaluation splits. Of those records, 122,303
-from 36 datasets are served from MoveAtlas’s own
-54 Zenodo records and download in one call; the
-174,506 from 9 datasets whose licences
-forbid redistribution are reproducible from their original host with the
-documented recipe, and 5,654 from 1
-redistributable datasets await their record. Every count on this page is
-computed from the registry at build time.
+from 36 datasets download in one call from MoveAtlas’s
+own 54 Zenodo records; the others are reproducible from
+their original host with the documented recipe, because their licences do
+not allow redistribution or because they exceed a record’s size. Every
+count on this page is computed from the registry at build time.
 MoveAtlas exists because the <strong>hyperkinetic disorders - dystonia,
 tremor, chorea, myoclonus, tics, athetosis, ballismus, stereotypies -</strong>
 are where open data is scarcest: the atlas documents every gap it could
-not fill (the coverage matrix’s empty cells are findings, not
+not fill (the coverage matrix’s empty cells are documented gaps, not
 omissions), and contributes its own: <strong>CODY</strong>, the public
 dystonia-centred release of adult and pediatric hyperkinetic pose data
 (<a class="reference external" href="https://doi.org/10.5281/zenodo.22232609">10.5281/zenodo.22232609</a>).
@@ -508,7 +506,7 @@ separate from the human clinical axes.</p>
 <span class="ma-chip">v0.1.0.dev0</span>
 <span class="ma-chip">BSD-3-Clause</span>
 <span class="ma-chip">PyPI name reserved</span>
-<span class="ma-chip">local pre-launch build</span>
+<span class="ma-chip">pre-release</span>
 <a class="ma-chip" href="whats_new.html"><b>What's new</b></a>
 </div><div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
@@ -618,7 +616,7 @@ defines every cell code and its HPO terms.</p>
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
 Analyze</div>
-<p class="sd-card-text">executed examples over real corpus data; every page downloads
+<p class="sd-card-text">Executed examples over real corpus data; every page downloads
 as <code class="docutils literal notranslate"><span class="pre">.py</span></code> and <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>. Full <a class="reference internal" href="api.html"><span class="doc">API reference</span></a>.</p>
 </div>
 <a class="sd-stretched-link sd-hide-link-text reference internal" href="auto_examples/index.html"><span class="doc">Examples</span></a></div>
@@ -661,7 +659,7 @@ subject-level evaluations).</p>
 incompatible formats, behind licenses ranging from CC0 to retracted
 tombstones; published pipelines are validated on single small cohorts
 with splits that leak patients between train and test. Nobody can say
-what generalizes. Our access-barriers casebook documents, with evidence,
+what generalizes. The access-barriers casebook documents, case by case,
 how often “open” data is not practically open.</p>
 </section>
 <section id="the-solution">
@@ -669,7 +667,7 @@ how often “open” data is not practically open.</p>
 <p>One package, one canonical contract per modality, fixed patient-level
 evaluations, and honest access machinery: hosted datasets download in one
 call from MoveAtlas’s own verified records; recipe datasets fetch from their
-original home through our ingestion code; barriers raise their documented
+original home through the documented recipe; barriers raise their documented
 route instead of pretending. Benchmarks combine evidence across datasets
 by meta-analysis.</p>
 </section>
@@ -680,7 +678,7 @@ catalogue draws from the open repositories of the field.</p>
 <div class="ma-chips"><span class="ma-count-note">Sources include </span><span class="ma-chip">Zenodo</span><span class="ma-chip">PhysioNet</span><span class="ma-chip">GitHub</span><span class="ma-chip">OpenNeuro</span><span class="ma-chip">OSF</span><span class="ma-chip">UCI ML</span><span class="ma-chip">Kaggle</span><span class="ma-chip">Mendeley Data</span><span class="ma-chip">4TU.ResearchData</span><span class="ma-chip">NCBI</span><span class="ma-chip">Dryad</span><span class="ma-chip">CDC NHANES</span><span class="ma-chip">Allen Atlas</span><span class="ma-chip">Genomics England</span><span class="ma-chip">CZ CELLxGENE</span><span class="ma-chip">HPO</span><span class="ma-chip">IEEE DataPort</span></div></section>
 <section id="core-team">
 <h2>Core team<a class="headerlink" href="#core-team" title="Link to this heading">#</a></h2>
-<p>MoveAtlas is founded and owned by Xavier Vasques. Contributions are
+<p>MoveAtlas is founded and owned by Institut du Neurone. Contributions are
 credited in the release notes and, from the public launch, in the
 versioned software citation.</p>
 </section>
@@ -688,11 +686,6 @@ versioned software citation.</p>
 <h2>Contributors<a class="headerlink" href="#contributors" title="Link to this heading">#</a></h2>
 <p>The contributor mosaic appears here at the public launch; until then,
 see the release notes for per-change credit.</p>
-</section>
-<section id="acknowledgements">
-<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Link to this heading">#</a></h2>
-<p>MoveAtlas’s design gratefully follows <a class="reference external" href="https://moabb.neurotechx.com">MOABB</a> (NeuroTechX), the reproducibility
-framework for BCI, as its explicit model.</p>
 </section>
 <section id="citation">
 <h2>Citation<a class="headerlink" href="#citation" title="Link to this heading">#</a></h2>
@@ -704,8 +697,8 @@ individual dataset papers listed on each data card; see <a class="reference inte
 <p>MoveAtlas is an open-science project that will evolve with the needs of
 its community. Nothing on this site redistributes data whose licence
 forbids it; access cases are enforced in the package itself. Contact:
-the repository’s issue tracker (public launch) or the owner directly
-until then.</p>
+the repository’s issue tracker (public launch) or the Institut du
+Neurone team until then.</p>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -757,7 +750,6 @@ until then.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-provenance">Data provenance</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#core-team">Core team</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributors">Contributors</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citation">Citation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#disclaimer-and-contact">Disclaimer and contact</a></li>
 </ul>

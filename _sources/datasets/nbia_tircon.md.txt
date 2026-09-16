@@ -37,7 +37,7 @@
 |---|---|
 | **Taxonomy cells** | A1 genetic context; M9 |
 | **Subjects** | 700+ |
-| **Status** | CATALOGUED 2026-09-05: DOCUMENTED BARRIER (application tier, Dystonia-Coalition family): 700+ entries / 12 countries of NBIA natural history - scales not signal; completes the rare-dystonia registry corner |
+| **Status** | documented access barrier (2026-09-05) |
 | **License** | researcher application to the registry (contact at LMU); clinical/natural-history scales, no signal |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -57,19 +57,8 @@ ds.info   # barrier: get_data() explains the route
 - **Access route**: nbiaalliance.org + NCT05522374
 - **Source**: <https://clinicaltrials.gov/study/NCT05522374>
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- Modality: family 'auxdata'
-- Source / URL: https://clinicaltrials.gov/study/NCT05522374
-- License / access: researcher application to the registry (contact at LMU); clinical/natural-history scales, no signal
-- Version / retrieval date: catalogued 2026-09-05 (deep-dive sweep,
-  pediatric/genetic-rare pass); NOT fetched
-- Status (2026-09-05): CATALOGUED 2026-09-05: DOCUMENTED BARRIER (application tier, Dystonia-Coalition family): 700+ entries / 12 countries of NBIA natural history - scales not signal; completes the rare-dystonia registry corner
-- MoveAtlas cells: A1 genetic context; M9
-
-### Retrieval notes
-RE-VERIFY at fetch. No-emails policy for application tiers.
-
-### Processing
-None. Catalogue-tier.
+- **MoveAtlas cells**: A1 genetic context; M9

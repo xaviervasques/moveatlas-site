@@ -30,8 +30,9 @@ Five classes, one modality axis
 A dataset counts in every cell and lane it covers. Animal entries
 (mouse, rat and macaque models) map to symptom analogs in free text on
 their own cards and never enter the human cells, so each coverage matrix
-stays single-species. Empty cells are findings, not omissions: the
-ledger further down records the dated searches behind each one.
+stays single-species. An empty cell means no open dataset was found by
+the dated searches recorded in the repository; the table further down
+lists them.
 
 Cell table
 ----------
@@ -39,24 +40,24 @@ Cell table
 .. raw:: html
    :file: _generated/taxonomy_cells.html
 
-Confirmed absences ledger
--------------------------
+Confirmed absences
+------------------
 
-The negative results of the dated data hunts, included verbatim from
-``docs/hunt_confirmed_absences.md`` (the file the resource paper cites).
-"Absent" means no public dataset was found by systematic search of the
-named repositories and the literature at the stated date.
+Cells where systematic, dated searches of the repositories and the
+literature found no open dataset. "Absent" is a result: the search
+protocol, the repositories covered and the dated search reports are
+versioned in the repository, and a cell leaves this list the day a
+dataset is found.
 
-.. include:: _generated/hunt_confirmed_absences.md
-   :parser: myst_parser.sphinx_
+.. raw:: html
+   :file: _generated/absences.html
 
 Access-barriers casebook
 ------------------------
 
 How often "open" data is not practically open, documented case by case
-with the evidence trail the paper cites. The casebook itself stays in
-the repository; its case titles are listed here from the file at build
-time.
+with its evidence in the repository. The kinds of case met so far, each
+a pattern a data user may meet again:
 
 .. include:: _generated/barriers_cases.rst
 

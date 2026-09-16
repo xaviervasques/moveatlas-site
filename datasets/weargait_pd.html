@@ -561,7 +561,7 @@
 <li class="toctree-l1"><a class="reference internal" href="gaitrec.html">GaitRec (bilateral GRF, 75k trials)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="goodwin_smm.html">Goodwin stereotypical motor movements accelerometry (UbiComp 2014)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hd_accel_jnet.html">Huntington wrist accelerometry (J-Net)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="iceberg_icm.html">ICEBERG cohort (Paris ICM: PSG + gait + eye movement + speech in early PD/iRBD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iceberg_icm.html">ICEBERG cohort</a></li>
 <li class="toctree-l1"><a class="reference internal" href="imu_inthewild_iprognosis.html">i-PROGNOSIS in-the-wild smartphone IMU</a></li>
 <li class="toctree-l1"><a class="reference internal" href="kaggle_fog.html">Kaggle tlVMC Freezing of Gait</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ltmm.html">Long-Term Movement Monitoring (PhysioNet)</a></li>
@@ -787,7 +787,7 @@
 <td><p>185</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>Status</strong></p></td>
-<td><p>downloaded + INGESTED v1: 1,458 IMU records + 1,362 per-foot force totals (insole cell-&gt;anatomy layout undocumented: 16-cell mapping deferred)</p></td>
+<td><p>harmonized</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>License</strong></p></td>
 <td><p>CC BY 4.0</p></td>
@@ -829,21 +829,20 @@
 </pre></div>
 </div>
 </section>
-<section id="data-card-verbatim-with-its-evidence-trail">
-<h2>Data card (verbatim, with its evidence trail)<a class="headerlink" href="#data-card-verbatim-with-its-evidence-trail" title="Link to this heading">#</a></h2>
+<section id="data-card">
+<h2>Data card<a class="headerlink" href="#data-card" title="Link to this heading">#</a></h2>
+<p>The dataset’s card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.</p>
 <ul class="simple">
-<li><p>dataset: weargait_pd</p></li>
-<li><p>family: imu  (physical path: datasets/imu/weargait_pd)</p></li>
-<li><p>MoveAtlas cells: B2, B3, C1 (age-matched controls); M2, M3</p></li>
-<li><p>population: 100 PD + 85 age-matched controls, 1,458 gait/balance trials</p></li>
-<li><p>n_subjects: 185</p></li>
-<li><p>signal: 13 Xsens IMUs (full 9-axis) + Moticon insoles (16 cells/foot) + walkway + video, all 100 Hz</p></li>
-<li><p>license: CC BY 4.0 ; redistribution: yes</p></li>
-<li><p>access: registration (free Synapse account + click-through)</p></li>
-<li><p>status (2026-08-22): downloaded + INGESTED v1: 1,458 IMU records + 1,362 per-foot force totals (insole cell-&gt;anatomy layout undocumented: 16-cell mapping deferred)</p></li>
-<li><p>link: https://www.synapse.org/Synapse:syn52540892</p></li>
-<li><p>ingestion: build_canonical_imu.py + build_canonical_force.py (totals-only)</p></li>
-<li><p>notes: richest inertial dataset of the corpus; also a video+IMU+force pair</p></li>
+<li><p><strong>dataset</strong>: weargait_pd</p></li>
+<li><p><strong>family</strong>: imu</p></li>
+<li><p><strong>MoveAtlas cells</strong>: B2, B3, C1 (age-matched controls); M2, M3</p></li>
+<li><p><strong>population</strong>: 100 PD + 85 age-matched controls, 1,458 gait/balance trials</p></li>
+<li><p><strong>n_subjects</strong>: 185</p></li>
+<li><p><strong>signal</strong>: 13 Xsens IMUs (full 9-axis) + Moticon insoles (16 cells/foot) + walkway + video, all 100 Hz</p></li>
+<li><p><strong>license</strong>: CC BY 4.0; redistribution: yes</p></li>
+<li><p><strong>access</strong>: registration (free Synapse account + click-through)</p></li>
+<li><p><strong>link</strong>: https://www.synapse.org/Synapse:syn52540892</p></li>
+<li><p><strong>ingestion</strong>: build_canonical_imu.py + build_canonical_force.py (totals-only)</p></li>
 </ul>
 </section>
 </section>
@@ -898,7 +897,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-load">How to load</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license-and-access">License and access</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publications">Publications</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-card-verbatim-with-its-evidence-trail">Data card (verbatim, with its evidence trail)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-card">Data card</a></li>
 </ul>
   </nav></div>
 

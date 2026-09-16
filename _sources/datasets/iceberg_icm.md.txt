@@ -1,12 +1,12 @@
-# ICEBERG cohort (Paris ICM: PSG + gait + eye movement + speech in early PD/iRBD)
+# ICEBERG cohort
 
 ```{raw} html
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
  "@type": "Dataset",
- "name": "ICEBERG cohort (Paris ICM: PSG + gait + eye movement + speech in early PD/iRBD)",
- "description": "ICEBERG cohort (Paris ICM: PSG + gait + eye movement + speech in early PD/iRBD). MoveAtlas imu family. licence 'available upon reasonable request from any qualified invest.",
+ "name": "ICEBERG cohort",
+ "description": "ICEBERG cohort. MoveAtlas imu family. licence 'available upon reasonable request from any qualified invest.",
  "identifier": "https://parisbraininstitute.org/news/iceberg-cohort-10-years-collective-scientific-and-medical-mobilization",
  "license": "'available upon reasonable request from any qualified investigator' (papers' statements); sponsor-controlled, no portal",
  "sdPublisher": {
@@ -39,7 +39,7 @@
 |---|---|
 | **Taxonomy cells** | B1-B4 prodromal; M2 M6 |
 | **Subjects** | ~300 |
-| **Status** | CATALOGUED 2026-09-05: DOCUMENTED BARRIER (reasonable-request tier): multi-signal early-PD/iRBD cohort incl. oculomotor and speech; no self-serve route exists - the availability-statement barrier at cohort scale |
+| **Status** | documented access barrier (2026-09-05) |
 | **License** | 'available upon reasonable request from any qualified investigator' (papers' statements); sponsor-controlled, no portal |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -59,24 +59,8 @@ ds.info   # barrier: get_data() explains the route
 - **Access route**: ICM / NCT02305147
 - **Source**: <https://parisbraininstitute.org/news/iceberg-cohort-10-years-collective-scientific-and-medical-mobilization>
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- Modality: family 'imu'
-- Source / URL: https://parisbraininstitute.org/news/iceberg-cohort-10-years-collective-scientific-and-medical-mobilization
-- License / access regime: 'available upon reasonable request from any qualified investigator' (papers' statements); sponsor-controlled, no portal
-- Access route: ICM / NCT02305147
-- Version / retrieval date: catalogued 2026-09-05 (deep-dive sweep); NOT fetched
-- Status (2026-09-05): CATALOGUED 2026-09-05: DOCUMENTED BARRIER (reasonable-request tier): multi-signal early-PD/iRBD cohort incl. oculomotor and speech; no self-serve route exists - the availability-statement barrier at cohort scale
-- Number of subjects: ~300
-- MoveAtlas cells: B1-B4 prodromal; M2 M6
-
-### Retrieval notes
-Found/adjudicated by the 2026-09-05 deep-dive sweep (big-cohort
-platforms). Access regimes are a catalogue-time web reading, cross-checked
-where a page answered; RE-VERIFY AT REQUEST TIME. The no-emails house
-policy applies: request-tier routes are documented, not exercised,
-unless the owner decides otherwise.
-
-### Processing
-None. Catalogue-tier.
+- **MoveAtlas cells**: B1-B4 prodromal; M2 M6

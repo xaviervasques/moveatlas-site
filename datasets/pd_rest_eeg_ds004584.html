@@ -561,7 +561,7 @@
 <li class="toctree-l1"><a class="reference internal" href="gaitrec.html">GaitRec (bilateral GRF, 75k trials)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="goodwin_smm.html">Goodwin stereotypical motor movements accelerometry (UbiComp 2014)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hd_accel_jnet.html">Huntington wrist accelerometry (J-Net)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="iceberg_icm.html">ICEBERG cohort (Paris ICM: PSG + gait + eye movement + speech in early PD/iRBD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iceberg_icm.html">ICEBERG cohort</a></li>
 <li class="toctree-l1"><a class="reference internal" href="imu_inthewild_iprognosis.html">i-PROGNOSIS in-the-wild smartphone IMU</a></li>
 <li class="toctree-l1"><a class="reference internal" href="kaggle_fog.html">Kaggle tlVMC Freezing of Gait</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ltmm.html">Long-Term Movement Monitoring (PhysioNet)</a></li>
@@ -756,7 +756,7 @@
 <td><p>149</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>Status</strong></p></td>
-<td><p>DOWNLOADED AND INGESTED 2026-08-22: 5.5 GB BIDS on disk -&gt; 149 canonical EEG records, one per subject, 63 channels at 500 Hz, ALL channels parsed onto the site vocabulary. 9 of the 149 records are flagged for artifact-level amplitude (p99 above 500 uV, up to ~1700), which in resting EEG is ordinary…</p></td>
+<td><p>harmonized (2026-08-22)</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>License</strong></p></td>
 <td><p>CC0 (OpenNeuro)</p></td>
@@ -798,19 +798,19 @@
 </pre></div>
 </div>
 </section>
-<section id="data-card-verbatim-with-its-evidence-trail">
-<h2>Data card (verbatim, with its evidence trail)<a class="headerlink" href="#data-card-verbatim-with-its-evidence-trail" title="Link to this heading">#</a></h2>
+<section id="data-card">
+<h2>Data card<a class="headerlink" href="#data-card" title="Link to this heading">#</a></h2>
+<p>The dataset’s card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.</p>
 <ul class="simple">
-<li><p>dataset: pd_rest_eeg_ds004584</p></li>
-<li><p>family: eeg  (physical path: datasets/eeg/pd_rest_eeg_ds004584)</p></li>
-<li><p>MoveAtlas cells: B2; M6</p></li>
-<li><p>population: 100 PD + 49 controls, 64-ch BrainVision, 2 min eyes-open rest</p></li>
-<li><p>n_subjects: 149</p></li>
-<li><p>signal: 64-ch resting EEG</p></li>
-<li><p>license: CC0 (OpenNeuro) ; redistribution: yes</p></li>
-<li><p>access: tool: aws s3 sync –no-sign-request s3://openneuro.org/ds004584</p></li>
-<li><p>status (2026-08-22): DOWNLOADED AND INGESTED 2026-08-22: 5.5 GB BIDS on disk -&gt; 149 canonical EEG records, one per subject, 63 channels at 500 Hz, ALL channels parsed onto the site vocabulary. 9 of the 149 records are flagged for artifact-level amplitude (p99 above 500 uV, up to ~1700), which in resting EEG is ordinary electrode and movement artifact rather than a scale error; the other 140 sit in a normal range. Reference PZ, read from eeg.json EEGReference, not assumed. One subject (sub-068) carries three extra traces named X/Y/Z with no type and no description: routed to aux and FLAGGED, not guessed as accelerometer</p></li>
-<li><p>link: https://openneuro.org/datasets/ds004584</p></li>
+<li><p><strong>dataset</strong>: pd_rest_eeg_ds004584</p></li>
+<li><p><strong>family</strong>: eeg</p></li>
+<li><p><strong>MoveAtlas cells</strong>: B2; M6</p></li>
+<li><p><strong>population</strong>: 100 PD + 49 controls, 64-ch BrainVision, 2 min eyes-open rest</p></li>
+<li><p><strong>n_subjects</strong>: 149</p></li>
+<li><p><strong>signal</strong>: 64-ch resting EEG</p></li>
+<li><p><strong>license</strong>: CC0 (OpenNeuro); redistribution: yes</p></li>
+<li><p><strong>access</strong>: tool: aws s3 sync –no-sign-request s3://openneuro.org/ds004584</p></li>
+<li><p><strong>link</strong>: https://openneuro.org/datasets/ds004584</p></li>
 </ul>
 </section>
 </section>
@@ -865,7 +865,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-load">How to load</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license-and-access">License and access</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publications">Publications</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-card-verbatim-with-its-evidence-trail">Data card (verbatim, with its evidence trail)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-card">Data card</a></li>
 </ul>
   </nav></div>
 

@@ -28,7 +28,7 @@
 </script>
 ```
 
-<span class="ma-fam ma-pose">pose</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-hosted">hosted</span>&nbsp; <code>gavd</code>
+<span class="ma-fam ma-pose">pose</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-recipe">recipe</span>&nbsp; <code>gavd</code>
 
 <span class="ma-tag">Pose / video</span>
 
@@ -36,7 +36,7 @@
 |---|---|
 | **Taxonomy cells** | multi-pathology labels; M1 (annotations only) |
 | **Subjects** | ~382 segments |
-| **Status** | raw annotations on disk; label/reference source, NOT a signal corpus (documented exclusion) |
+| **Status** | catalogued |
 | **License** | MIT (LICENSE file in the repo, read 2026-08-28); videos remain YouTube-hosted |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -46,7 +46,7 @@ Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 ```python
 import moveatlas
 ds = moveatlas.dataset("gavd")
-records, meta = ds.get_data()
+ds.info   # recipe: get_data() explains the route
 ```
 
 ## License and access
@@ -70,17 +70,16 @@ records, meta = ds.get_data()
 }
 ```
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- dataset: gavd
-- family: pose  (physical path: datasets/pose/gavd)
-- MoveAtlas cells: multi-pathology labels; M1 (annotations only)
-- population: ~382 annotated YouTube video segments (video-level, not subjects)
-- n_subjects: ~382 segments
-- signal: clinical annotation CSVs of YouTube gait videos; NO video redistributed
-- license: MIT (LICENSE file in the repo, read 2026-08-28); videos remain YouTube-hosted ; redistribution: yes (the annotation CSVs we hold are MIT; videos never distributed)
-- access: downloaded
-- status (2026-08-22): raw annotations on disk; label/reference source, NOT a signal corpus (documented exclusion)
-- link: https://github.com/Rahmyyy/GAVD
-- notes: usable as a taxonomy-cell label source and video-reference list. Link resolved 2026-08-23 from the clone's own .git/config
+- **dataset**: gavd
+- **family**: pose
+- **MoveAtlas cells**: multi-pathology labels; M1 (annotations only)
+- **population**: ~382 annotated YouTube video segments (video-level, not subjects)
+- **n_subjects**: ~382 segments
+- **signal**: clinical annotation CSVs of YouTube gait videos; NO video redistributed
+- **license**: MIT (LICENSE file in the repo, read 2026-08-28); videos remain YouTube-hosted; redistribution: yes (the annotation CSVs we hold are MIT; videos never distributed)
+- **access**: downloaded
+- **link**: https://github.com/Rahmyyy/GAVD

@@ -27,7 +27,7 @@ The catalogue grows from 83 to 99 datasets (the count at that date;
 the live count is |n_catalogued|) and the taxonomy gets one source of
 truth:
 
-- Taxonomy adjudication: 21 owner rulings applied (the standing B2/B3
+- Taxonomy adjudication: 21 rulings applied (the standing B2/B3
   rule for parkinsonian gait; modys_video recognized as
   choreoathetosis, giving athetosis its first open dataset; gaitndd's
   ALS arm corrected from ataxia to pyramidal; accel_fluctuations
@@ -44,7 +44,8 @@ truth:
   levodopa ON/OFF EEG, an alcohol-responsiveness dystonia table, and
   real (non-synthetic) infant pose. Five confirmed open-data deserts
   (tics, akinesia, rigidity-as-signal, kinematic Huntington chorea,
-  pharmacological-challenge kinematics) are recorded as findings.
+  pharmacological-challenge kinematics) are recorded as confirmed
+  absences.
 - Scientific Data groundwork: conformity check against the live
   journal policies, the descriptor outline, and a licence gate in the
   release lint.

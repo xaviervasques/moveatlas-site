@@ -561,7 +561,7 @@
 <li class="toctree-l1"><a class="reference internal" href="gaitrec.html">GaitRec (bilateral GRF, 75k trials)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="goodwin_smm.html">Goodwin stereotypical motor movements accelerometry (UbiComp 2014)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hd_accel_jnet.html">Huntington wrist accelerometry (J-Net)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="iceberg_icm.html">ICEBERG cohort (Paris ICM: PSG + gait + eye movement + speech in early PD/iRBD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iceberg_icm.html">ICEBERG cohort</a></li>
 <li class="toctree-l1"><a class="reference internal" href="imu_inthewild_iprognosis.html">i-PROGNOSIS in-the-wild smartphone IMU</a></li>
 <li class="toctree-l1"><a class="reference internal" href="kaggle_fog.html">Kaggle tlVMC Freezing of Gait</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ltmm.html">Long-Term Movement Monitoring (PhysioNet)</a></li>
@@ -771,7 +771,7 @@
   }
  ]
 }
-</script><p><span class="ma-fam ma-eeg">eeg</span>  <span class="ma-badge ma-harmonized">harmonized</span>  <span class="ma-badge ma-hosted">hosted</span>  <code>seizeit2</code></p>
+</script><p><span class="ma-fam ma-eeg">eeg</span>  <span class="ma-badge ma-harmonized">harmonized</span>  <span class="ma-badge ma-recipe">recipe</span>  <code>seizeit2</code></p>
 <p><span class="ma-tag">Epilepsy</span><span class="ma-tag">Myoclonus</span><span class="ma-tag">Inertial (IMU)</span><span class="ma-tag">EMG</span><span class="ma-tag">EEG</span></p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -787,7 +787,7 @@
 <td><p>125</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>Status</strong></p></td>
-<td><p>DOWNLOADED AND INGESTED 2026-08-24 (Paris night session): 117.6 GB raw (24,894 files), then 2,850 canonical EEG records / 125 subjects / 11,626 h, 0 refusals, 0 read failures. 883 seizure events landed in the per-frame labels vs 886 in the paper; SETTLED 2026-08-24 by a census of all 2,850 events.ts…</p></td>
+<td><p>harmonized (2026-08-24)</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>License</strong></p></td>
 <td><p>CC0 (verified in dataset_description.json)</p></td>
@@ -800,7 +800,7 @@
 <h2>How to load<a class="headerlink" href="#how-to-load" title="Link to this heading">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">moveatlas</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">moveatlas</span><span class="o">.</span><span class="n">dataset</span><span class="p">(</span><span class="s2">"seizeit2"</span><span class="p">)</span>
-<span class="n">records</span><span class="p">,</span> <span class="n">meta</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">info</span>   <span class="c1"># recipe: get_data() explains the route</span>
 </pre></div>
 </div>
 </section>
@@ -837,22 +837,21 @@
 </pre></div>
 </div>
 </section>
-<section id="data-card-verbatim-with-its-evidence-trail">
-<h2>Data card (verbatim, with its evidence trail)<a class="headerlink" href="#data-card-verbatim-with-its-evidence-trail" title="Link to this heading">#</a></h2>
+<section id="data-card">
+<h2>Data card<a class="headerlink" href="#data-card" title="Link to this heading">#</a></h2>
+<p>The dataset’s card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.</p>
 <ul class="simple">
-<li><p>dataset: seizeit2</p></li>
-<li><p>family: eeg  (physical path: datasets/eeg/seizeit2)</p></li>
-<li><p>MoveAtlas cells: D1; A2 proxy; M2, M5, M6</p></li>
-<li><p>population: 125 focal epilepsy patients, 5 European EMUs, 11,640 h, 886 annotated focal seizures</p></li>
-<li><p>n_subjects: 125</p></li>
-<li><p>signal: behind-the-ear EEG (2-3 ch) + ECG + deltoid EMG + IMU; 250 Hz (EEG/ECG/EMG), 25 Hz (IMU)</p></li>
-<li><p>license: CC0 (verified in dataset_description.json) ; redistribution: yes</p></li>
-<li><p>access: tool: aws s3 sync –no-sign-request s3://openneuro.org/ds005873 (fetch_p2_lot.py –only seizeit2 prints it)</p></li>
-<li><p>status (2026-08-22): DOWNLOADED AND INGESTED 2026-08-24 (Paris night session): 117.6 GB raw (24,894 files), then 2,850 canonical EEG records / 125 subjects / 11,626 h, 0 refusals, 0 read failures. 883 seizure events landed in the per-frame labels vs 886 in the paper; SETTLED 2026-08-24 by a census of all 2,850 events.tsv: the BIDS release itself carries 883 sz rows (FIA 391 vs paper 393, FA 316 vs 317, FBTC 55 = 55), so the delta is upstream between the paper and the OpenNeuro release, not an ingestion loss. Montages: 1,434 left / 906 right / 510 generalized, matching the README’s placement rules. 2,804 deltoid-EMG records went to canonical_emg (46 runs lack the ECG/EMG device, the ~3 percent technical-failure rate the README declares); ECG + acc/gyro kept as aux streams. D1 epilepsy is no longer an empty cell</p></li>
-<li><p>link: https://openneuro.org/datasets/ds005873</p></li>
-<li><p>citation: doi 10.1038/s41597-025-05580-x</p></li>
-<li><p>ingestion: build_canonical_eeg.py –only seizeit2 (BIDS-EDF builder, C-EEG-7 EAR_L/EAR_R bipolar encoding; seizure labels for evaluation only, never pretraining)</p></li>
-<li><p>notes: the best paired EEG+EMG+IMU pathology set found (stage B interest)</p></li>
+<li><p><strong>dataset</strong>: seizeit2</p></li>
+<li><p><strong>family</strong>: eeg</p></li>
+<li><p><strong>MoveAtlas cells</strong>: D1; A2 proxy; M2, M5, M6</p></li>
+<li><p><strong>population</strong>: 125 focal epilepsy patients, 5 European EMUs, 11,640 h, 886 annotated focal seizures</p></li>
+<li><p><strong>n_subjects</strong>: 125</p></li>
+<li><p><strong>signal</strong>: behind-the-ear EEG (2-3 ch) + ECG + deltoid EMG + IMU; 250 Hz (EEG/ECG/EMG), 25 Hz (IMU)</p></li>
+<li><p><strong>license</strong>: CC0 (verified in dataset_description.json); redistribution: yes</p></li>
+<li><p><strong>access</strong>: tool: aws s3 sync –no-sign-request s3://openneuro.org/ds005873 (fetch_p2_lot.py –only seizeit2 prints it)</p></li>
+<li><p><strong>link</strong>: https://openneuro.org/datasets/ds005873</p></li>
+<li><p><strong>citation</strong>: doi 10.1038/s41597-025-05580-x</p></li>
+<li><p><strong>ingestion</strong>: build_canonical_eeg.py –only seizeit2 (BIDS-EDF builder, C-EEG-7 EAR_L/EAR_R bipolar encoding; seizure labels for evaluation only, never pretraining)</p></li>
 </ul>
 </section>
 </section>
@@ -907,7 +906,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-load">How to load</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license-and-access">License and access</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publications">Publications</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-card-verbatim-with-its-evidence-trail">Data card (verbatim, with its evidence trail)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-card">Data card</a></li>
 </ul>
   </nav></div>
 

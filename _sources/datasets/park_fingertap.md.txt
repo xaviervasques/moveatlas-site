@@ -37,7 +37,7 @@
 |---|---|
 | **Taxonomy cells** | B2; M1 (features) |
 | **Subjects** | unknown |
-| **Status** | raw on disk; EXCLUDED from signal corpus (features only) |
+| **Status** | acquired |
 | **License** | MIT (LICENSE file in the repo, read 2026-08-28) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -71,17 +71,16 @@ records, meta = ds.get_data()
 }
 ```
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- dataset: park_fingertap
-- family: pose  (physical path: datasets/pose/park_fingertap)
-- MoveAtlas cells: B2; M1 (features)
-- population: 489 videos, subjects not individuated (features keyed by video filename)
-- n_subjects: unknown
-- signal: 488-row feature table, no raw pose
-- license: MIT (LICENSE file in the repo, read 2026-08-28) ; redistribution: yes (the feature tables are MIT)
-- access: downloaded
-- status (2026-08-22): raw on disk; EXCLUDED from signal corpus (features only)
-- link: https://github.com/ROC-HCI/finger-tapping-severity
-- notes: link resolved 2026-08-23 from the clone's own .git/config
+- **dataset**: park_fingertap
+- **family**: pose
+- **MoveAtlas cells**: B2; M1 (features)
+- **population**: 489 videos, subjects not individuated (features keyed by video filename)
+- **n_subjects**: unknown
+- **signal**: 488-row feature table, no raw pose
+- **license**: MIT (LICENSE file in the repo, read 2026-08-28); redistribution: yes (the feature tables are MIT)
+- **access**: downloaded
+- **link**: https://github.com/ROC-HCI/finger-tapping-severity

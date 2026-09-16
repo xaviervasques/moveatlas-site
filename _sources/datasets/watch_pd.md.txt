@@ -38,7 +38,7 @@
 |---|---|
 | **Taxonomy cells** | B1-B3; M2 |
 | **Subjects** | 132 |
-| **Status** | CATALOGUED 2026-09-05: DOCUMENTED BARRIER: 82 early untreated PD + 50 controls x 12 months of consumer+research wearables; access is consortium membership or a steering-committee proposal - the pay-to-play consortium model for the barriers taxonomy |
+| **Status** | documented access barrier (2026-09-05) |
 | **License** | consortium-only (C-Path 3DT Stage 2) or ad-hoc proposal to the steering committee via the corresponding author; NO public release (paper's own availability statement) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -58,24 +58,8 @@ ds.info   # barrier: get_data() explains the route
 - **Access route**: URMC / C-Path 3DT
 - **Source**: <https://pmc.ncbi.nlm.nih.gov/articles/PMC11169239/>
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- Modality: family 'imu'
-- Source / URL: https://pmc.ncbi.nlm.nih.gov/articles/PMC11169239/
-- License / access regime: consortium-only (C-Path 3DT Stage 2) or ad-hoc proposal to the steering committee via the corresponding author; NO public release (paper's own availability statement)
-- Access route: URMC / C-Path 3DT
-- Version / retrieval date: catalogued 2026-09-05 (deep-dive sweep); NOT fetched
-- Status (2026-09-05): CATALOGUED 2026-09-05: DOCUMENTED BARRIER: 82 early untreated PD + 50 controls x 12 months of consumer+research wearables; access is consortium membership or a steering-committee proposal - the pay-to-play consortium model for the barriers taxonomy
-- Number of subjects: 132
-- MoveAtlas cells: B1-B3; M2
-
-### Retrieval notes
-Found/adjudicated by the 2026-09-05 deep-dive sweep (big-cohort
-platforms). Access regimes are a catalogue-time web reading, cross-checked
-where a page answered; RE-VERIFY AT REQUEST TIME. The no-emails house
-policy applies: request-tier routes are documented, not exercised,
-unless the owner decides otherwise.
-
-### Processing
-None. Catalogue-tier.
+- **MoveAtlas cells**: B1-B3; M2

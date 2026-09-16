@@ -561,7 +561,7 @@
 <li class="toctree-l1"><a class="reference internal" href="gaitrec.html">GaitRec (bilateral GRF, 75k trials)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="goodwin_smm.html">Goodwin stereotypical motor movements accelerometry (UbiComp 2014)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hd_accel_jnet.html">Huntington wrist accelerometry (J-Net)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="iceberg_icm.html">ICEBERG cohort (Paris ICM: PSG + gait + eye movement + speech in early PD/iRBD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iceberg_icm.html">ICEBERG cohort</a></li>
 <li class="toctree-l1"><a class="reference internal" href="imu_inthewild_iprognosis.html">i-PROGNOSIS in-the-wild smartphone IMU</a></li>
 <li class="toctree-l1"><a class="reference internal" href="kaggle_fog.html">Kaggle tlVMC Freezing of Gait</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ltmm.html">Long-Term Movement Monitoring (PhysioNet)</a></li>
@@ -781,7 +781,7 @@
 <td><p>24</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>Status</strong></p></td>
-<td><p>DOWNLOADED AND INGESTED 2026-08-25 (Paris session): 189.4 MB zip (CRC clean, 19,711 entries), then 3,901 canonical pose records / 24 subjects, exactly the published cohort (12 PD + 12 controls), 0 refusals. Turning: 1,749 episodes as H36M-17 (identification evidence in configs/canonical_skeleton.yam…</p></td>
+<td><p>harmonized (2026-08-25)</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>License</strong></p></td>
 <td><p>CC BY 4.0 (warranty disclaimer)</p></td>
@@ -831,20 +831,20 @@
 </pre></div>
 </div>
 </section>
-<section id="data-card-verbatim-with-its-evidence-trail">
-<h2>Data card (verbatim, with its evidence trail)<a class="headerlink" href="#data-card-verbatim-with-its-evidence-trail" title="Link to this heading">#</a></h2>
+<section id="data-card">
+<h2>Data card<a class="headerlink" href="#data-card" title="Link to this heading">#</a></h2>
+<p>The dataset’s card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.</p>
 <ul class="simple">
-<li><p>dataset: remap_open</p></li>
-<li><p>family: pose  (physical path: datasets/pose/remap_open)</p></li>
-<li><p>MoveAtlas cells: B2, B3; M1</p></li>
-<li><p>population: 12 PD (mean 61.25 y) + 12 controls (mean 59.25 y); home free-living + clinical assessment; PD on/off labels</p></li>
-<li><p>n_subjects: 24</p></li>
-<li><p>signal: coarsened 2D skeletons (sit-to-stand + turns) and coarsened 3D (turns)</p></li>
-<li><p>license: CC BY 4.0 (warranty disclaimer) ; redistribution: yes</p></li>
-<li><p>access: direct_download (single 351.4 MiB zip; fetch_p2_lot.py –only remap_open)</p></li>
-<li><p>status (2026-08-22): DOWNLOADED AND INGESTED 2026-08-25 (Paris session): 189.4 MB zip (CRC clean, 19,711 entries), then 3,901 canonical pose records / 24 subjects, exactly the published cohort (12 PD + 12 controls), 0 refusals. Turning: 1,749 episodes as H36M-17 (identification evidence in configs/canonical_skeleton.yaml), both the coarsened 2D and the source-lifted 3D (lift_provenance=videopose3d_by_source, pool config decides use). Sit-to-stand: 403 episodes as OpenPose BODY_25 with per-file frame+timestamp columns, fps measured from the data’s own clock (30.0). PD/control rides as group attribute + eval-only label. Controlled sibling (full-res + 30 Hz wrist accel) stays application-gated (DOI 10.5523/bris.2o94rzjooyzf42w850dqg0spfh)</p></li>
-<li><p>link: https://data.bris.ac.uk/data/dataset/21h9f9e30v9cl2fapjggz4q1x7</p></li>
-<li><p>citation: Sci Data 2023, doi 10.1038/s41597-023-02663-5</p></li>
+<li><p><strong>dataset</strong>: remap_open</p></li>
+<li><p><strong>family</strong>: pose</p></li>
+<li><p><strong>MoveAtlas cells</strong>: B2, B3; M1</p></li>
+<li><p><strong>population</strong>: 12 PD (mean 61.25 y) + 12 controls (mean 59.25 y); home free-living + clinical assessment; PD on/off labels</p></li>
+<li><p><strong>n_subjects</strong>: 24</p></li>
+<li><p><strong>signal</strong>: coarsened 2D skeletons (sit-to-stand + turns) and coarsened 3D (turns)</p></li>
+<li><p><strong>license</strong>: CC BY 4.0 (warranty disclaimer); redistribution: yes</p></li>
+<li><p><strong>access</strong>: direct_download (single 351.4 MiB zip; fetch_p2_lot.py –only remap_open)</p></li>
+<li><p><strong>link</strong>: https://data.bris.ac.uk/data/dataset/21h9f9e30v9cl2fapjggz4q1x7</p></li>
+<li><p><strong>citation</strong>: Sci Data 2023, doi 10.1038/s41597-023-02663-5</p></li>
 </ul>
 </section>
 </section>
@@ -899,7 +899,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-load">How to load</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license-and-access">License and access</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publications">Publications</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-card-verbatim-with-its-evidence-trail">Data card (verbatim, with its evidence trail)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-card">Data card</a></li>
 </ul>
   </nav></div>
 

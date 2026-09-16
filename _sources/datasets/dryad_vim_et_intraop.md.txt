@@ -36,7 +36,7 @@
 | | |
 |---|---|
 | **Taxonomy cells** | A2; M7 |
-| **Status** | CATALOGUED 2026-09-05: 77.8 GB of open intraop thalamic LFP + stimulation in essential tremor - the largest OPEN invasive ET recording found anywhere. DISK DECISION before fetch (77.8 GB; queue with the 107/613 GB pair) |
+| **Status** | catalogued (2026-09-05) |
 | **License** | CC0 (Dryad, re-verify at fetch) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -56,18 +56,8 @@ ds.info   # recipe: get_data() explains the route
 - **Access route**: dryad doi:10.5061/dryad.cjsxksngp
 - **Source**: <https://doi.org/10.5061/dryad.cjsxksngp>
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- Modality: family 'eeg'
-- Source / URL: https://doi.org/10.5061/dryad.cjsxksngp
-- License / access: CC0 (Dryad, re-verify at fetch)
-- Version / retrieval date: catalogued 2026-09-05 (deep-dive sweep); NOT fetched
-- Status (2026-09-05): CATALOGUED 2026-09-05: 77.8 GB of open intraop thalamic LFP + stimulation in essential tremor - the largest OPEN invasive ET recording found anywhere. DISK DECISION before fetch (77.8 GB; queue with the 107/613 GB pair)
-- MoveAtlas cells: A2; M7
-
-### Retrieval notes
-RE-VERIFY at fetch/request; no-emails policy for gated tiers.
-
-### Processing
-None. Catalogue-tier.
+- **MoveAtlas cells**: A2; M7

@@ -561,7 +561,7 @@
 <li class="toctree-l1"><a class="reference internal" href="gaitrec.html">GaitRec (bilateral GRF, 75k trials)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="goodwin_smm.html">Goodwin stereotypical motor movements accelerometry (UbiComp 2014)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hd_accel_jnet.html">Huntington wrist accelerometry (J-Net)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="iceberg_icm.html">ICEBERG cohort (Paris ICM: PSG + gait + eye movement + speech in early PD/iRBD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iceberg_icm.html">ICEBERG cohort</a></li>
 <li class="toctree-l1"><a class="reference internal" href="imu_inthewild_iprognosis.html">i-PROGNOSIS in-the-wild smartphone IMU</a></li>
 <li class="toctree-l1"><a class="reference internal" href="kaggle_fog.html">Kaggle tlVMC Freezing of Gait</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ltmm.html">Long-Term Movement Monitoring (PhysioNet)</a></li>
@@ -785,7 +785,7 @@
 <td><p>151</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>Status</strong></p></td>
-<td><p>FULLY INGESTED 2026-08-22: 3,941 canonical records, 151 subjects, 3,883 HOURS. v1 had read only the first 60,000 lines of each subject (10 minutes) and kept 20 windows of 30 s: 3,020 records, 25 hours, i.e. 0.6 percent of a corpus already on disk. Per-subject shards under processed/canonical/, 1-hou…</p></td>
+<td><p>harmonized (2026-08-22)</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>License</strong></p></td>
 <td><p>CC BY 4.0 (ORA record licence, verified 2026-08-23)</p></td>
@@ -835,20 +835,20 @@
 </pre></div>
 </div>
 </section>
-<section id="data-card-verbatim-with-its-evidence-trail">
-<h2>Data card (verbatim, with its evidence trail)<a class="headerlink" href="#data-card-verbatim-with-its-evidence-trail" title="Link to this heading">#</a></h2>
+<section id="data-card">
+<h2>Data card<a class="headerlink" href="#data-card" title="Link to this heading">#</a></h2>
+<p>The dataset’s card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.</p>
 <ul class="simple">
-<li><p>dataset: capture24</p></li>
-<li><p>family: imu  (physical path: datasets/imu/capture24)</p></li>
-<li><p>MoveAtlas cells: C1, C3; M2</p></li>
-<li><p>population: 151 healthy adults, ~24 h free living each</p></li>
-<li><p>n_subjects: 151</p></li>
-<li><p>signal: wrist accelerometer 100 Hz + activity annotations</p></li>
-<li><p>license: CC BY 4.0 (ORA record licence, verified 2026-08-23) ; redistribution: yes</p></li>
-<li><p>access: downloaded</p></li>
-<li><p>status (2026-08-22): FULLY INGESTED 2026-08-22: 3,941 canonical records, 151 subjects, 3,883 HOURS. v1 had read only the first 60,000 lines of each subject (10 minutes) and kept 20 windows of 30 s: 3,020 records, 25 hours, i.e. 0.6 percent of a corpus already on disk. Per-subject shards under processed/canonical/, 1-hour records, 48 GB. Units verified per subject rather than assumed: median |acc| runs 0.888 to 1.051 across all 151, so the values are already in g and nothing is rescaled. 0 refusals. Activity annotations are now kept too (v1 discarded them), run-length encoded against the bundled 206-entry label dictionary, plus age band and sex from metadata.csv</p></li>
-<li><p>link: https://ora.ox.ac.uk/objects/uuid:99d7c092-d865-4a19-b096-cc16440cd001</p></li>
-<li><p>ingestion: ingest_capture24.py (full). LATERALITY IS UNRESOLVED ON PURPOSE: the device is worn on the DOMINANT wrist and handedness is not distributed, so no subject side is knowable. Records keep the wrist_L slot for continuity and carry laterality=unknown with worn_on=dominant_wrist; the slot is NOMINAL, so do not use this source for anything laterality-sensitive. Writing wrist_R instead would be right for the right-handed majority and wrong for the rest. SPLIT FOLDER, do not be fooled: the datacard and raw/ live under datasets/socle/capture24 while the 3,020 canonical records sit in datasets/imu/capture24/processed/. The v2 reorganization moved cards and raw into the new family folders but left processed/ alone on purpose, because manifest paths are load-bearing. Looking only at socle/ shows raw with no output and invites a re-ingestion that would duplicate every record</p></li>
+<li><p><strong>dataset</strong>: capture24</p></li>
+<li><p><strong>family</strong>: imu</p></li>
+<li><p><strong>MoveAtlas cells</strong>: C1, C3; M2</p></li>
+<li><p><strong>population</strong>: 151 healthy adults, ~24 h free living each</p></li>
+<li><p><strong>n_subjects</strong>: 151</p></li>
+<li><p><strong>signal</strong>: wrist accelerometer 100 Hz + activity annotations</p></li>
+<li><p><strong>license</strong>: CC BY 4.0 (ORA record licence, verified 2026-08-23); redistribution: yes</p></li>
+<li><p><strong>access</strong>: downloaded</p></li>
+<li><p><strong>link</strong>: https://ora.ox.ac.uk/objects/uuid:99d7c092-d865-4a19-b096-cc16440cd001</p></li>
+<li><p><strong>ingestion</strong>: ingest_capture24.py (full). LATERALITY IS UNRESOLVED ON PURPOSE: the device is worn on the DOMINANT wrist and handedness is not distributed, so no subject side is knowable. Records keep the wrist_L slot for continuity and carry laterality=unknown with worn_on=dominant_wrist; the slot is NOMINAL, so do not use this source for anything laterality-sensitive. Writing wrist_R instead would be right for the right-handed majority and wrong for the rest. SPLIT FOLDER, do not be fooled: the datacard and raw/ live under datasets/socle/capture24 while the 3,020 canonical records sit in datasets/imu/capture24/processed/. The v2 reorganization moved cards and raw into the new family folders but left processed/ alone on purpose, because manifest paths are load-bearing. Looking only at socle/ shows raw with no output and invites a re-ingestion that would duplicate every record</p></li>
 </ul>
 </section>
 </section>
@@ -903,7 +903,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-load">How to load</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license-and-access">License and access</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publications">Publications</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-card-verbatim-with-its-evidence-trail">Data card (verbatim, with its evidence trail)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-card">Data card</a></li>
 </ul>
   </nav></div>
 

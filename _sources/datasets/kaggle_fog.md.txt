@@ -37,7 +37,7 @@
 |---|---|
 | **Taxonomy cells** | B5; M2 |
 | **Subjects** | 136 |
-| **Status** | INGESTED v1: 926 records |
+| **Status** | harmonized |
 | **License** | Kaggle competition terms |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -53,7 +53,7 @@ ds.info   # recipe: get_data() explains the route
 ## License and access
 
 - **License**: Kaggle competition terms
-- **Redistribution**: NO (competition data, redistribution restricted)
+- **Redistribution**: no
 - **Access route**: Kaggle account download
 - **Source**: <https://www.kaggle.com/competitions/tlvmc-parkinsons-freezing-gait-prediction>
 
@@ -71,18 +71,17 @@ ds.info   # recipe: get_data() explains the route
 }
 ```
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- dataset: kaggle_fog
-- family: imu  (physical path: datasets/imu/kaggle_fog)
-- MoveAtlas cells: B5; M2
-- population: 136 unique PD subjects (173 subject-visits); UPDRS-III on/off, NFOGQ
-- n_subjects: 136
-- signal: lower-back accelerometer: tdcsfog 128 Hz, defog 100 Hz, daily
-- license: Kaggle competition terms ; redistribution: NO (competition data, redistribution restricted)
-- access: Kaggle account download
-- status (2026-08-22): INGESTED v1: 926 records
-- link: https://www.kaggle.com/competitions/tlvmc-parkinsons-freezing-gait-prediction
-- ingestion: build_canonical_imu.py (kaggle_fog mapping)
-- notes: license blocks portal redistribution; usable internally, cite the competition
+- **dataset**: kaggle_fog
+- **family**: imu
+- **MoveAtlas cells**: B5; M2
+- **population**: 136 unique PD subjects (173 subject-visits); UPDRS-III on/off, NFOGQ
+- **n_subjects**: 136
+- **signal**: lower-back accelerometer: tdcsfog 128 Hz, defog 100 Hz, daily
+- **license**: Kaggle competition terms; redistribution: NO (competition data, redistribution restricted)
+- **access**: Kaggle account download
+- **link**: https://www.kaggle.com/competitions/tlvmc-parkinsons-freezing-gait-prediction
+- **ingestion**: build_canonical_imu.py (kaggle_fog mapping)

@@ -37,7 +37,7 @@
 | | |
 |---|---|
 | **Taxonomy cells** | D7 functional; M2 M4 |
-| **Status** | DOWNLOADED 2026-09-05: 24 files 117.5 MB (FMD.mat + pipeline), OSF sha256-verified; INTERNAL-ONLY pending licence adjudication. CATALOGUED 2026-09-05: trial-level limb velocity traces (FMD.mat 110 MB) + full analysis pipeline - the second genuine open FMD deposit; with osf_fmd_eeg it revises D7 from... |
+| **Status** | acquired (2026-09-05) |
 | **License** | NO EXPLICIT LICENCE on the OSF project (same adjudication gate) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -57,22 +57,8 @@ ds.info   # recipe: get_data() explains the route
 - **Access route**: osf.io/78xun
 - **Source**: <https://osf.io/78xun>
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- Modality: family 'imu'
-- Source / URL: https://osf.io/78xun
-- License / access: NO EXPLICIT LICENCE on the OSF project (same adjudication gate)
-- Version / retrieval date: catalogued 2026-09-05 (deep-dive sweep,
-  drug-induced/functional pass; records verified at file level
-  by the catalogue sweep)
-- Status (2026-09-05): CATALOGUED 2026-09-05: trial-level limb velocity traces (FMD.mat 110 MB) + full analysis pipeline - the second genuine open FMD deposit; with osf_fmd_eeg it revises D7 from 'nothing at all' to 'two processed-signal deposits, licence-pending'
-- MoveAtlas cells: D7 functional; M2 M4
-
-### Retrieval notes
-RE-VERIFY at fetch. The two OSF FMD deposits carry NO licence:
-INTERNAL-ONLY after fetch until terms are adjudicated (goodwin_smm
-precedent).
-
-### Processing
-None. Catalogue-tier.
+- **MoveAtlas cells**: D7 functional; M2 M4

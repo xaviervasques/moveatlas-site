@@ -90,7 +90,7 @@
 |---|---|
 | **Taxonomy cells** | B2, B3, C1 (age-matched controls); M2, M3 |
 | **Subjects** | 185 |
-| **Status** | downloaded + INGESTED v1: 1,458 IMU records + 1,362 per-foot force totals (insole cell->anatomy layout undocumented: 16-cell mapping deferred) |
+| **Status** | harmonized |
 | **License** | CC BY 4.0 |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -125,18 +125,17 @@ records, meta = ds.get_data()
 }
 ```
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- dataset: weargait_pd
-- family: imu  (physical path: datasets/imu/weargait_pd)
-- MoveAtlas cells: B2, B3, C1 (age-matched controls); M2, M3
-- population: 100 PD + 85 age-matched controls, 1,458 gait/balance trials
-- n_subjects: 185
-- signal: 13 Xsens IMUs (full 9-axis) + Moticon insoles (16 cells/foot) + walkway + video, all 100 Hz
-- license: CC BY 4.0 ; redistribution: yes
-- access: registration (free Synapse account + click-through)
-- status (2026-08-22): downloaded + INGESTED v1: 1,458 IMU records + 1,362 per-foot force totals (insole cell->anatomy layout undocumented: 16-cell mapping deferred)
-- link: https://www.synapse.org/Synapse:syn52540892
-- ingestion: build_canonical_imu.py + build_canonical_force.py (totals-only)
-- notes: richest inertial dataset of the corpus; also a video+IMU+force pair
+- **dataset**: weargait_pd
+- **family**: imu
+- **MoveAtlas cells**: B2, B3, C1 (age-matched controls); M2, M3
+- **population**: 100 PD + 85 age-matched controls, 1,458 gait/balance trials
+- **n_subjects**: 185
+- **signal**: 13 Xsens IMUs (full 9-axis) + Moticon insoles (16 cells/foot) + walkway + video, all 100 Hz
+- **license**: CC BY 4.0; redistribution: yes
+- **access**: registration (free Synapse account + click-through)
+- **link**: https://www.synapse.org/Synapse:syn52540892
+- **ingestion**: build_canonical_imu.py + build_canonical_force.py (totals-only)

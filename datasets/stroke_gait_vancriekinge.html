@@ -561,7 +561,7 @@
 <li class="toctree-l1"><a class="reference internal" href="gaitrec.html">GaitRec (bilateral GRF, 75k trials)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="goodwin_smm.html">Goodwin stereotypical motor movements accelerometry (UbiComp 2014)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hd_accel_jnet.html">Huntington wrist accelerometry (J-Net)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="iceberg_icm.html">ICEBERG cohort (Paris ICM: PSG + gait + eye movement + speech in early PD/iRBD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iceberg_icm.html">ICEBERG cohort</a></li>
 <li class="toctree-l1"><a class="reference internal" href="imu_inthewild_iprognosis.html">i-PROGNOSIS in-the-wild smartphone IMU</a></li>
 <li class="toctree-l1"><a class="reference internal" href="kaggle_fog.html">Kaggle tlVMC Freezing of Gait</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ltmm.html">Long-Term Movement Monitoring (PhysioNet)</a></li>
@@ -765,7 +765,7 @@
 <td><p>19-85 y</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>Status</strong></p></td>
-<td><p>DOWNLOADED (13/13, md5-verified); RE-INGESTED 2026-08-28: 737 canonical 3D pose records / 188 subjects at native 100 Hz, PiG joint identities established by measured geometry (configs entry pig_vancriekinge). The 2026-08-27 pass had refused 199 C3Ds as marker-only; the census showed 192 of them carr…</p></td>
+<td><p>harmonized (2026-08-28)</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>License</strong></p></td>
 <td><p>CC0 (all 13 figshare collection items, verified 2026-08-22)</p></td>
@@ -787,7 +787,7 @@
 <ul class="simple">
 <li><p><strong>License</strong>: CC0 (all 13 figshare collection items, verified 2026-08-22)</p></li>
 <li><p><strong>Redistribution</strong>: yes</p></li>
-<li><p><strong>Access route</strong>: direct_download (figshare collection; landed via the owner’s browser)</p></li>
+<li><p><strong>Access route</strong>: direct_download</p></li>
 <li><p><strong>Source</strong>: <a class="reference external" href="https://doi.org/10.6084/m9.figshare.c.6503791">https://doi.org/10.6084/m9.figshare.c.6503791</a></p></li>
 </ul>
 </section>
@@ -807,22 +807,21 @@
 </pre></div>
 </div>
 </section>
-<section id="data-card-verbatim-with-its-evidence-trail">
-<h2>Data card (verbatim, with its evidence trail)<a class="headerlink" href="#data-card-verbatim-with-its-evidence-trail" title="Link to this heading">#</a></h2>
+<section id="data-card">
+<h2>Data card<a class="headerlink" href="#data-card" title="Link to this heading">#</a></h2>
+<p>The dataset’s card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.</p>
 <ul class="simple">
-<li><p>dataset: stroke_gait_vancriekinge</p></li>
-<li><p>family: pose  (physical path: datasets/pose/stroke_gait_vancriekinge)</p></li>
-<li><p>MoveAtlas cells: D3; M1, M3, M5 (pathological EMG)</p></li>
-<li><p>population: 50 stroke survivors + 138 able-bodied adults across the lifespan</p></li>
-<li><p>n_subjects: 188</p></li>
-<li><p>age: 19-85 y</p></li>
-<li><p>signal: 3D marker trajectories, joint angles, GRF, joint moments/powers + EMG of 14 back/lower-limb muscles (C3D + MAT/XLSX)</p></li>
-<li><p>license: CC0 (all 13 figshare collection items, verified 2026-08-22) ; redistribution: yes</p></li>
-<li><p>access: direct_download (figshare collection; landed via the owner’s browser)</p></li>
-<li><p>status (2026-08-22): DOWNLOADED (13/13, md5-verified); RE-INGESTED 2026-08-28: 737 canonical 3D pose records / 188 subjects at native 100 Hz, PiG joint identities established by measured geometry (configs entry pig_vancriekinge). The 2026-08-27 pass had refused 199 C3Ds as marker-only; the census showed 192 of them carry the FULL model outputs under a ‘SUBJECTID:’ label prefix (geometry re-verified on the prefixed files) and 5 more lack only head/elbow/wrist outputs (those joints NaN-filled, masked invalid). PRIVACY NOTE: the prefixes look like birthdate-based Vicon IDs; they are stripped at ingestion and never propagated, and any raw-zip redistribution must account for them. 2 truly unusable C3Ds stay refused, 49 calibration/unparseable skipped. The MAT/XLSX time-normalized files are derivatives and stay raw. ANALOG PASS 2026-09-03 (ingest_stroke_gait_analogs.py, per the scoping doc): 559 canonical EMG records / 163 subjects (14 named muscles L+R via the ERS/RF/VL/ST/BF/TA/GAS alias table; anonymous Voltage.NN channels REFUSED and audited; AMPLITUDE FLAG on the records: the declared V converts to ~476 mV p99, ~1000x surface-EMG range, i.e. amplifier-output volts with undeclared gain or mislabeled mV - NOT rescaled, electrode-referred scale UNRESOLVED) + 557 canonical force records / 185 subjects (plate-to-foot assignment by ankle proximity to FORCE_PLATFORM centers during the loaded window, ambiguous strikes refused: 179 trials; per-foot |Fz| totals at 1000 Hz; full 24-channel plate arrays under processed/aux_force/). 160 subjects are now POSE+EMG+FORCE tri-modal. Pose validation: no errors. ingest_stroke_gait.py</p></li>
-<li><p>link: https://doi.org/10.6084/m9.figshare.c.6503791</p></li>
-<li><p>citation: Sci Data 2023, doi 10.1038/s41597-023-02767-y</p></li>
-<li><p>notes: hemiparetic/spastic gait WITH pathological EMG: D3 anchor and an EMG contract pathology source</p></li>
+<li><p><strong>dataset</strong>: stroke_gait_vancriekinge</p></li>
+<li><p><strong>family</strong>: pose</p></li>
+<li><p><strong>MoveAtlas cells</strong>: D3; M1, M3, M5 (pathological EMG)</p></li>
+<li><p><strong>population</strong>: 50 stroke survivors + 138 able-bodied adults across the lifespan</p></li>
+<li><p><strong>n_subjects</strong>: 188</p></li>
+<li><p><strong>age</strong>: 19-85 y</p></li>
+<li><p><strong>signal</strong>: 3D marker trajectories, joint angles, GRF, joint moments/powers + EMG of 14 back/lower-limb muscles (C3D + MAT/XLSX)</p></li>
+<li><p><strong>license</strong>: CC0 (all 13 figshare collection items, verified 2026-08-22); redistribution: yes</p></li>
+<li><p><strong>access</strong>: direct_download</p></li>
+<li><p><strong>link</strong>: https://doi.org/10.6084/m9.figshare.c.6503791</p></li>
+<li><p><strong>citation</strong>: Sci Data 2023, doi 10.1038/s41597-023-02767-y</p></li>
 </ul>
 </section>
 </section>
@@ -877,7 +876,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-load">How to load</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license-and-access">License and access</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publications">Publications</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-card-verbatim-with-its-evidence-trail">Data card (verbatim, with its evidence trail)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-card">Data card</a></li>
 </ul>
   </nav></div>
 

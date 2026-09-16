@@ -32,20 +32,9 @@ APA style:
    Vasques, X. (2026). MoveAtlas: The open atlas of movement data,
    human and animal (Version 0.1.0.dev0) [Computer software].
 
-Design lineage
---------------
-
-MoveAtlas's design credits `MOABB <https://moabb.neurotechx.com>`_
-(NeuroTechX) as its explicit model:
-
-- Jayaram and Barachant (2018). *MOABB: trustworthy algorithm
-  benchmarking for BCIs*. J. Neural Eng. 15(6):066011.
-- Chevallier et al. (2024). *The largest EEG-based BCI reproducibility
-  study for open science*. arXiv:2404.15319.
-
 Published with MoveAtlas?
 -------------------------
 
 From the public launch, a "Papers using MoveAtlas" list lives on this
 page: open an issue on the repository to have your paper added. Until
-then, the owner collects references directly.
+then, send them to the Institut du Neurone team.

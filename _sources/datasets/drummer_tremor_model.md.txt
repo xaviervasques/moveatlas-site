@@ -39,7 +39,7 @@
 |---|---|
 | **Taxonomy cells** | A2 context; C2; M2 M4 |
 | **Subjects** | 18 |
-| **Status** | DOWNLOADED 2026-09-05: 136 files / 3.1 GB C3D, server-MD5 verified, sha256 journaled. CATALOGUED 2026-09-04 (closing sweep): raw kinematics + EMG of expert drummers at extreme movement frequencies - a healthy mechanistic model of physiological tremor, context lane for A2 |
+| **Status** | acquired (2026-09-05) |
 | **License** | etalab 2.0 (VERIFIED at fetch 2026-09-05 from the dataset version) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -59,24 +59,8 @@ records, meta = ds.get_data()
 - **Access route**: rdg doi:10.57745/thhwp2
 - **Source**: <https://doi.org/10.57745/thhwp2>
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- Modality: see registry family 'imu'
-- Source / URL: https://doi.org/10.57745/thhwp2
-- License (fetch-verified 2026-09-05): etalab 2.0 (VERIFIED at fetch 2026-09-05 from the dataset version)
-- Sweep's original licence guess: open per DataCite (re-verify when RDG returns)
-- Access: rdg doi:10.57745/thhwp2
-- Version / retrieval date: catalogued 2026-09-04 (closing sweep); fetch 2026-09-05 via fetch_dataverse.py (RDG back from maintenance)
-- Status (2026-09-04): CATALOGUED 2026-09-04 (closing sweep): raw kinematics + EMG of expert drummers at extreme movement frequencies - a healthy mechanistic model of physiological tremor, context lane for A2
-- Number of subjects: 18
-- MoveAtlas cells: A2 context; C2; M2 M4
-
-### Retrieval notes
-Found by the 2026-09-04 closing sweep. Every licence/access statement
-above is a catalogue-time reading of the record page or the DataCite
-index - RE-VERIFY AT FETCH TIME per house rule (verification dates go
-in this card).
-
-### Processing
-None. Catalogue-tier until fetched and adjudicated.
+- **MoveAtlas cells**: A2 context; C2; M2 M4

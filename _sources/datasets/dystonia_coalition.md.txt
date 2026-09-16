@@ -37,7 +37,7 @@
 |---|---|
 | **Taxonomy cells** | A1 all focal dystonias; M1 |
 | **Subjects** | >3000 participants |
-| **Status** | CATALOGUED 2026-09-05: DOCUMENTED BARRIER (application tier): standardized 2-min exam videos across ALL isolated dystonias - 38+68 blepharospasm, ~185 cervical (93 with head tremor), writing tasks - the source corpus behind published CV severity work. THE reference route if the owner ever wants dyst... |
+| **Status** | documented access barrier (2026-09-05) |
 | **License** | application: data-access form + 1-page proposal + committee review + DUA (~1 month); video requests historically via NINDS |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -57,24 +57,8 @@ ds.info   # barrier: get_data() explains the route
 - **Access route**: dc.rarediseasesnetwork.org
 - **Source**: <https://dc.rarediseasesnetwork.org/resources-researchers-and-clinicians>
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- Modality: family 'video'
-- Source / URL: https://dc.rarediseasesnetwork.org/resources-researchers-and-clinicians
-- License / access: application: data-access form + 1-page proposal + committee review + DUA (~1 month); video requests historically via NINDS
-- Access route: dc.rarediseasesnetwork.org
-- Version / retrieval date: catalogued 2026-09-05 (deep-dive sweep,
-  dystonia pass; record fetched and confirmed by the catalogue sweep)
-- Status (2026-09-05): CATALOGUED 2026-09-05: DOCUMENTED BARRIER (application tier): standardized 2-min exam videos across ALL isolated dystonias - 38+68 blepharospasm, ~185 cervical (93 with head tremor), writing tasks - the source corpus behind published CV severity work. THE reference route if the owner ever wants dystonia video mass; actively distributed to outside researchers
-- Number of subjects: >3000 participants
-- MoveAtlas cells: A1 all focal dystonias; M1
-
-### Retrieval notes
-RE-VERIFY at fetch. mrc_lfp_dystonia: needs the owner's MRC portal
-login (queue with oxford_stn_onoff_dbs - one session collects both).
-dystonia_coalition: application tier - owner decision (no-emails
-policy).
-
-### Processing
-None. Catalogue-tier.
+- **MoveAtlas cells**: A1 all focal dystonias; M1

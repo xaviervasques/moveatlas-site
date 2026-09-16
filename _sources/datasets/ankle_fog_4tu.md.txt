@@ -36,7 +36,7 @@
 | | |
 |---|---|
 | **Taxonomy cells** | B5; M2 |
-| **Status** | CATALOGUED 2026-09-05: semi-free-living ankle IMU FoG recordings on 4TU (the tim_tremor host - watch for the empty-folder trap of that precedent) |
+| **Status** | catalogued (2026-09-05) |
 | **License** | open on 4TU (version/licence to read on the record page at fetch) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -56,23 +56,8 @@ ds.info   # recipe: get_data() explains the route
 - **Access route**: 4tu doi record 40e06061-f441-43b5-9235-006829206509
 - **Source**: <https://data.4tu.nl/datasets/40e06061-f441-43b5-9235-006829206509>
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- Modality: family 'imu'
-- Source / URL: https://data.4tu.nl/datasets/40e06061-f441-43b5-9235-006829206509
-- License / access: open on 4TU (version/licence to read on the record page at fetch)
-- Access route: 4tu doi record 40e06061-f441-43b5-9235-006829206509
-- Version / retrieval date: catalogued 2026-09-05 (deep-dive sweep); NOT fetched
-- Status (2026-09-05): CATALOGUED 2026-09-05: semi-free-living ankle IMU FoG recordings on 4TU (the tim_tremor host - watch for the empty-folder trap of that precedent)
-- Number of subjects: see record
-- MoveAtlas cells: B5; M2
-
-### Retrieval notes
-Found by the 2026-09-05 deep-dive sweep. RE-VERIFY licence and access
-at fetch (this sweep's fetch-time reads corrected half the previous
-sweep's guesses). No-emails policy: request-tier routes are
-documented, not exercised, unless the owner decides.
-
-### Processing
-None. Catalogue-tier.
+- **MoveAtlas cells**: B5; M2

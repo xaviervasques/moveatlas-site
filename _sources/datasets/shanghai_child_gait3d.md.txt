@@ -37,7 +37,7 @@
 | **Taxonomy cells** | C1; D |
 | **Subjects** | 431 |
 | **Ages** | 3-13 y |
-| **Status** | REQUEST TIER (verified 2026-09-05, browser): restricted-access banner, DUA-gated. CATALOGUED 2026-09-04 (closing sweep): raw C3D optical mocap marker trajectories, 379 MB / 6 files - pediatric normative gait reference; anti-bot as PIET |
+| **Status** | catalogued (2026-09-05) |
 | **License** | controlled access: ScienceDB access-request form + DUA (page verified 2026-09-05); anonymized pediatric mocap |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -57,32 +57,8 @@ ds.info   # recipe: get_data() explains the route
 - **Access route**: sciencedb doi:10.57760/sciencedb.40305
 - **Source**: <https://doi.org/10.57760/sciencedb.40305>
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- Modality: see registry family 'pose'
-- Source / URL: https://doi.org/10.57760/sciencedb.40305
-- License: open (anonymized; conditions in record - read at fetch)
-- Access: sciencedb doi:10.57760/sciencedb.40305
-- Version / retrieval date: catalogued 2026-09-04 (closing sweep); NOT fetched
-- Status (2026-09-04): CATALOGUED 2026-09-04 (closing sweep): raw C3D optical mocap marker trajectories, 379 MB / 6 files - pediatric normative gait reference; anti-bot as PIET
-- Number of subjects: 431
-- MoveAtlas cells: C1; D
-
-- ACCESS VERDICT 2026-09-05 (browser check of the record page): the
-  page banner reads "Restricted Access Dataset" - controlled access
-  via a ScienceDB access-request form + Data Use Agreement (the only
-  self-serve file is Data_Use_Agreement.pdf; pediatric mocap,
-  anonymized but gated). The sweep's "open" was wrong. Per the
-  no-emails/no-DUA house policy this moves to the REQUEST tier: the
-  owner decides whether to submit the form (MJFF precedent). NOT
-  fetchable autonomously.
-
-### Retrieval notes
-Found by the 2026-09-04 closing sweep. Every licence/access statement
-above is a catalogue-time reading of the record page or the DataCite
-index - RE-VERIFY AT FETCH TIME per house rule (verification dates go
-in this card).
-
-### Processing
-None. Catalogue-tier until fetched and adjudicated.
+- **MoveAtlas cells**: C1; D

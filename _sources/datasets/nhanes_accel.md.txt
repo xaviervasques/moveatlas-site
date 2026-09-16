@@ -30,7 +30,7 @@
 </script>
 ```
 
-<span class="ma-fam ma-imu">imu</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-hosted">hosted</span>&nbsp; <code>nhanes_accel</code>
+<span class="ma-fam ma-imu">imu</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-recipe">recipe</span>&nbsp; <code>nhanes_accel</code>
 
 <span class="ma-tag">Normal adult movement</span><span class="ma-tag">Aging</span><span class="ma-tag">Inertial (IMU)</span>
 
@@ -38,7 +38,7 @@
 |---|---|
 | **Taxonomy cells** | C1, C3 (age-conditioned normative); M2 |
 | **Subjects** | thousands |
-| **Status** | DOWNLOADED 2026-08-26: the 4 summary files (139 MB) AND PAXMIN_G.xpt (8.1 GB, sha256 logged; the CDC link needed three resumes across two days, mid-stream timeouts are its normal weather). PAX80 raw 80 Hz deliberately not pulled. Aux/bio lane, no canonical ingestion |
+| **Status** | acquired (2026-08-26) |
 | **License** | US public domain |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -48,7 +48,7 @@ Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 ```python
 import moveatlas
 ds = moveatlas.dataset("nhanes_accel")
-records, meta = ds.get_data()
+ds.info   # recipe: get_data() explains the route
 ```
 
 ## License and access
@@ -62,17 +62,16 @@ records, meta = ds.get_data()
 
 -  (). **. .
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- dataset: nhanes_accel
-- family: imu  (physical path: datasets/imu/nhanes_accel)
-- MoveAtlas cells: C1, C3 (age-conditioned normative); M2
-- population: US general population incl. children and 80+; age via DEMO_G demographics
-- n_subjects: thousands
-- signal: wrist accelerometry: PAXHD/PAXDAY/PAXHR summaries (+ PAXMIN 7.6 GB, PAX80 raw 80 Hz as deliberate extras)
-- license: US public domain ; redistribution: yes
-- access: direct_download (fetch_p2_lot.py --only nhanes_accel; exact CDC URLs in registry)
-- status (2026-08-22): DOWNLOADED 2026-08-26: the 4 summary files (139 MB) AND PAXMIN_G.xpt (8.1 GB, sha256 logged; the CDC link needed three resumes across two days, mid-stream timeouts are its normal weather). PAX80 raw 80 Hz deliberately not pulled. Aux/bio lane, no canonical ingestion
-- link: https://wwwn.cdc.gov/nchs/nhanes/
-- notes: population age-normativity at low cost; take only needed variables
+- **dataset**: nhanes_accel
+- **family**: imu
+- **MoveAtlas cells**: C1, C3 (age-conditioned normative); M2
+- **population**: US general population incl. children and 80+; age via DEMO_G demographics
+- **n_subjects**: thousands
+- **signal**: wrist accelerometry: PAXHD/PAXDAY/PAXHR summaries (+ PAXMIN 7.6 GB, PAX80 raw 80 Hz as deliberate extras)
+- **license**: US public domain; redistribution: yes
+- **access**: direct_download (fetch_p2_lot.py --only nhanes_accel; exact CDC URLs in registry)
+- **link**: https://wwwn.cdc.gov/nchs/nhanes/

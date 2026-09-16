@@ -19,7 +19,6 @@
   "B2 Bradykinesia",
   "C1 Normal adult movement",
   "D3 Pyramidal syndromes",
-  "D2 Ataxia",
   "M3 Plantar force"
  ],
  "url": "https://physionet.org/content/gaitndd/",
@@ -61,13 +60,13 @@
 
 <span class="ma-fam ma-imu">imu</span>&nbsp; <span class="ma-badge ma-harmonized">harmonized</span>&nbsp; <span class="ma-badge ma-hosted">hosted</span>&nbsp; <code>gaitndd</code>
 
-<span class="ma-tag">Chorea</span><span class="ma-tag">Bradykinesia</span><span class="ma-tag">Normal adult movement</span><span class="ma-tag">Pyramidal syndromes</span><span class="ma-tag">Ataxia</span><span class="ma-tag">Plantar force</span>
+<span class="ma-tag">Chorea</span><span class="ma-tag">Bradykinesia</span><span class="ma-tag">Normal adult movement</span><span class="ma-tag">Pyramidal syndromes</span><span class="ma-tag">Plantar force</span>
 
 | | |
 |---|---|
-| **Taxonomy cells** | A7 (HD), B2 (PD), C1 (controls), D3 (ALS is pyramidal, not ataxic; D2 dropped, owner ruling 2026-09-01); M3 |
+| **Taxonomy cells** | A7 (HD), B2 (PD), C1 (controls), D3; M3 |
 | **Subjects** | 64 |
-| **Status** | INGESTED v1 (force contract): 64 records |
+| **Status** | harmonized |
 | **License** | PhysioNet open |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -110,17 +109,17 @@ records, meta = ds.get_data()
 }
 ```
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- dataset: gaitndd
-- family: imu  (physical path: datasets/imu/gaitndd)
-- MoveAtlas cells: A7 (HD), B2 (PD), C1 (controls), D3 (ALS is pyramidal, not ataxic; D2 dropped, owner ruling 2026-09-01); M3
-- population: 16 controls + 15 PD + 20 Huntington + 13 ALS
-- n_subjects: 64
-- signal: force-sensitive resistor gait series
-- license: PhysioNet open ; redistribution: yes
-- access: downloaded
-- status (2026-08-22): INGESTED v1 (force contract): 64 records
-- link: https://physionet.org/content/gaitndd/
-- ingestion: build_canonical_force.py
+- **dataset**: gaitndd
+- **family**: imu
+- **MoveAtlas cells**: A7 (HD), B2 (PD), C1 (controls), D3; M3
+- **population**: 16 controls + 15 PD + 20 Huntington + 13 ALS
+- **n_subjects**: 64
+- **signal**: force-sensitive resistor gait series
+- **license**: PhysioNet open; redistribution: yes
+- **access**: downloaded
+- **link**: https://physionet.org/content/gaitndd/
+- **ingestion**: build_canonical_force.py

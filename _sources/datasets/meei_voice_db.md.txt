@@ -37,7 +37,7 @@
 |---|---|
 | **Taxonomy cells** | A1 laryngeal context; M8 |
 | **Subjects** | ~700 |
-| **Status** | CATALOGUED 2026-09-05: DOCUMENTED BARRIER - the PAID-PRODUCT access model (with ukb_accelerometry's fee tier, completes the commercial corner of the taxonomy): ~1400 samples incl. confirmed adductor SD |
+| **Status** | documented access barrier (2026-09-05) |
 | **License** | COMMERCIAL: paid purchase licence from PENTAX Medical |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -57,18 +57,8 @@ ds.info   # barrier: get_data() explains the route
 - **Access route**: PENTAX Medical product
 - **Source**: <https://www.pentaxmedical.com/>
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- Modality: family 'auxdata' (speech-motor signal)
-- Source / URL: https://www.pentaxmedical.com/
-- License / access: COMMERCIAL: paid purchase licence from PENTAX Medical
-- Version / retrieval date: catalogued 2026-09-05 (deep-dive sweep)
-- Status (2026-09-05): CATALOGUED 2026-09-05: DOCUMENTED BARRIER - the PAID-PRODUCT access model (with ukb_accelerometry's fee tier, completes the commercial corner of the taxonomy): ~1400 samples incl. confirmed adductor SD
-- MoveAtlas cells: A1 laryngeal context; M8
-
-### Retrieval notes
-RE-VERIFY at fetch/request; no-emails policy for gated tiers.
-
-### Processing
-None. Catalogue-tier.
+- **MoveAtlas cells**: A1 laryngeal context; M8

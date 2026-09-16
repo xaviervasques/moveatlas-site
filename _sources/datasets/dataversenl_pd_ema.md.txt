@@ -38,7 +38,7 @@
 |---|---|
 | **Taxonomy cells** | B1-B5; M2 |
 | **Subjects** | 20 |
-| **Status** | CATALOGUED 2026-09-04 (closing sweep): 1129 EDF files of continuous free-living wearable movement recordings + ecological momentary assessment, 20 PD patients, 107 GB - the sweep's largest open find. DISK DECISION before fetch (107 GB) |
+| **Status** | catalogued (2026-09-04) |
 | **License** | CC0 (record page, re-verify at fetch) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -58,24 +58,8 @@ ds.info   # recipe: get_data() explains the route
 - **Access route**: dataverse doi:10.34894/5HHK8H
 - **Source**: <https://doi.org/10.34894/5HHK8H>
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- Modality: family 'imu'
-- Source / URL: https://doi.org/10.34894/5HHK8H
-- License: CC0 (record page, re-verify at fetch)
-- Access: dataverse doi:10.34894/5HHK8H
-- Version / retrieval date: catalogued 2026-09-04 (closing sweep); NOT fetched
-- Status (2026-09-04): CATALOGUED 2026-09-04 (closing sweep): 1129 EDF files of continuous free-living wearable movement recordings + ecological momentary assessment, 20 PD patients, 107 GB - the sweep's largest open find. DISK DECISION before fetch (107 GB)
-- Number of subjects: 20
-- MoveAtlas cells: B1-B5; M2
-
-### Retrieval notes
-Found by the 2026-09-04 closing sweep. All licence/access/content
-statements are a catalogue-time reading - RE-VERIFY AT FETCH per
-house rule; for the two A3 (tic) candidates the ethics/
-de-identification check comes FIRST (video of minors: the SSBD
-precedent).
-
-### Processing
-None. Catalogue-tier until fetched and adjudicated.
+- **MoveAtlas cells**: B1-B5; M2

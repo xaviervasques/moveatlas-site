@@ -27,13 +27,13 @@
 </script>
 ```
 
-<span class="ma-fam ma-animal">animal</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-hosted">hosted</span>&nbsp; <code>nlb_mc_maze</code>
+<span class="ma-fam ma-animal">animal</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-recipe">recipe</span>&nbsp; <code>nlb_mc_maze</code>
 
 | | |
 |---|---|
 | **Taxonomy cells** | animal: healthy macaque reach socle - continuous hand/cursor kinematics + spiking (complements the MPTP event-coded sets) |
-| **Subjects** | 1 (many sessions) |
-| **Status** | DOWNLOADED 2026-09-01 (animal hunt): both NWB assets of the published version via the DANDI API, sha256 journaled |
+| **Subjects** | 1 |
+| **Status** | acquired (2026-09-01) |
 | **License** | CC BY 4.0 (DANDI, verified 2026-09-01) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -43,7 +43,7 @@ Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 ```python
 import moveatlas
 ds = moveatlas.dataset("nlb_mc_maze")
-records, meta = ds.get_data()
+ds.info   # recipe: get_data() explains the route
 ```
 
 ## License and access
@@ -53,16 +53,16 @@ records, meta = ds.get_data()
 - **Access route**: DANDI open download
 - **Source**: <https://dandiarchive.org/dandiset/000128>
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- dataset: nlb_mc_maze
-- family: animal  (physical path: datasets/animal/nlb_mc_maze)
-- MoveAtlas cells: animal: healthy macaque reach socle - continuous hand/cursor kinematics + spiking (complements the MPTP event-coded sets)
-- population: macaque, delayed center-out reaching in mazes
-- n_subjects: 1 (many sessions)
-- signal: spiking + continuous behavioral kinematics (NWB, 694 MB)
-- license: CC BY 4.0 (DANDI, verified 2026-09-01) ; redistribution: yes
-- access: DANDI open download
-- status (2026-08-22): DOWNLOADED 2026-09-01 (animal hunt): both NWB assets of the published version via the DANDI API, sha256 journaled
-- link: https://dandiarchive.org/dandiset/000128
+- **dataset**: nlb_mc_maze
+- **family**: animal
+- **MoveAtlas cells**: animal: healthy macaque reach socle - continuous hand/cursor kinematics + spiking (complements the MPTP event-coded sets)
+- **population**: macaque, delayed center-out reaching in mazes
+- **n_subjects**: 1
+- **signal**: spiking + continuous behavioral kinematics (NWB, 694 MB)
+- **license**: CC BY 4.0 (DANDI, verified 2026-09-01); redistribution: yes
+- **access**: DANDI open download
+- **link**: https://dandiarchive.org/dandiset/000128

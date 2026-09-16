@@ -43,7 +43,7 @@
 |---|---|
 | **Taxonomy cells** | B5; M2 |
 | **Subjects** | 10 |
-| **Status** | INGESTED v1: 17 records |
+| **Status** | harmonized |
 | **License** | CC BY 4.0 |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -78,17 +78,17 @@ records, meta = ds.get_data()
 }
 ```
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- dataset: daphnet
-- family: imu  (physical path: datasets/imu/daphnet)
-- MoveAtlas cells: B5; M2
-- population: 10 PD with FoG, walking protocols
-- n_subjects: 10
-- signal: 3 triaxial accelerometers (ankle, thigh, trunk) at 64 Hz + FoG annotations
-- license: CC BY 4.0 ; redistribution: yes
-- access: direct_download (UCI)
-- status (2026-08-22): INGESTED v1: 17 records
-- link: https://archive.ics.uci.edu/dataset/245/daphnet+freezing+of+gait
-- ingestion: build_canonical_imu.py (daphnet mapping)
+- **dataset**: daphnet
+- **family**: imu
+- **MoveAtlas cells**: B5; M2
+- **population**: 10 PD with FoG, walking protocols
+- **n_subjects**: 10
+- **signal**: 3 triaxial accelerometers (ankle, thigh, trunk) at 64 Hz + FoG annotations
+- **license**: CC BY 4.0; redistribution: yes
+- **access**: direct_download (UCI)
+- **link**: https://archive.ics.uci.edu/dataset/245/daphnet+freezing+of+gait
+- **ingestion**: build_canonical_imu.py (daphnet mapping)

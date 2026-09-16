@@ -43,7 +43,7 @@
 |---|---|
 | **Taxonomy cells** | B2 proxy (hypokinetic dysarthria); M11 |
 | **Subjects** | 31 (195 recordings) |
-| **Status** | raw on disk |
+| **Status** | acquired |
 | **License** | UCI open |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -78,16 +78,16 @@ records, meta = ds.get_data()
 }
 ```
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- dataset: uci_parkinson_voix
-- family: auxdata  (physical path: datasets/auxdata/uci_parkinson_voix)
-- MoveAtlas cells: B2 proxy (hypokinetic dysarthria); M11
-- population: PD + controls, sustained phonation
-- n_subjects: 31 (195 recordings)
-- signal: voice feature table
-- license: UCI open ; redistribution: yes
-- access: downloaded
-- status (2026-08-22): raw on disk
-- link: https://archive.ics.uci.edu/dataset/174/parkinsons
+- **dataset**: uci_parkinson_voix
+- **family**: auxdata
+- **MoveAtlas cells**: B2 proxy (hypokinetic dysarthria); M11
+- **population**: PD + controls, sustained phonation
+- **n_subjects**: 31 (195 recordings)
+- **signal**: voice feature table
+- **license**: UCI open; redistribution: yes
+- **access**: downloaded
+- **link**: https://archive.ics.uci.edu/dataset/174/parkinsons

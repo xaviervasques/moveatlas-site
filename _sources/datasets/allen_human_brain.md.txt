@@ -36,7 +36,7 @@
 |---|---|
 | **Taxonomy cells** | M10 |
 | **Subjects** | 6 |
-| **Status** | DOWNLOADED 2026-08-24 (Paris night session): all 6 donor microarray zips, 1.65 GB, sha256 logged; one truncated transfer was caught by the content-length check and resumed cleanly. Bio lane, no canonical ingestion |
+| **Status** | acquired (2026-08-24) |
 | **License** | Allen Institute Terms of Use (non-commercial, cite) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -52,7 +52,7 @@ ds.info   # recipe: get_data() explains the route
 ## License and access
 
 - **License**: Allen Institute Terms of Use (non-commercial, cite)
-- **Redistribution**: no, DECIDED 2026-08-28: the ToU forbids redistribution; pointer to brain-map.org
+- **Redistribution**: no (fetch from brain-map)
 - **Access route**: direct_download (no registration)
 - **Source**: <https://human.brain-map.org/static/download>
 
@@ -70,17 +70,16 @@ ds.info   # recipe: get_data() explains the route
 }
 ```
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- dataset: allen_human_brain
-- family: bio  (physical path: datasets/bio/allen_human_brain)
-- MoveAtlas cells: M10
-- population: 6 donors, whole-brain microarray (basal ganglia sampled), RNA-seq for 2, Nissl/ISH images via API
-- n_subjects: 6
-- signal: per-donor normalized microarray zips; histology per-image API
-- license: Allen Institute Terms of Use (non-commercial, cite) ; redistribution: no, DECIDED 2026-08-28: the ToU forbids redistribution; pointer to brain-map.org
-- access: direct_download (no registration)
-- status (2026-08-22): DOWNLOADED 2026-08-24 (Paris night session): all 6 donor microarray zips, 1.65 GB, sha256 logged; one truncated transfer was caught by the content-length check and resumed cleanly. Bio lane, no canonical ingestion
-- link: https://human.brain-map.org/static/download
-- notes: anatomical/transcriptomic ground truth for basal ganglia circuits
+- **dataset**: allen_human_brain
+- **family**: bio
+- **MoveAtlas cells**: M10
+- **population**: 6 donors, whole-brain microarray (basal ganglia sampled), RNA-seq for 2, Nissl/ISH images via API
+- **n_subjects**: 6
+- **signal**: per-donor normalized microarray zips; histology per-image API
+- **license**: Allen Institute Terms of Use (non-commercial, cite); redistribution: no, the ToU forbids redistribution; pointer to brain-map.org
+- **access**: direct_download (no registration)
+- **link**: https://human.brain-map.org/static/download

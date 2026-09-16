@@ -37,7 +37,7 @@
 |---|---|
 | **Taxonomy cells** | D3 (ALS, stroke); M1 |
 | **Subjects** | 36 |
-| **Status** | DOCUMENTED BARRIER (owner, 2026-08-28): the publication focuses on genuinely open data; not pursued. Evidence: the canonical request page at slp.utoronto.ca 404s (site restructured) and the only live route is direct email to the Yunusova lab + licence agreement, which also falls under the standing n... |
+| **Status** | documented access barrier (2026-08-28) |
 | **License** | application form |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -71,17 +71,16 @@ ds.info   # barrier: get_data() explains the route
 }
 ```
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- dataset: toronto_neuroface
-- family: pose  (physical path: datasets/pose/toronto_neuroface)
-- MoveAtlas cells: D3 (ALS, stroke); M1
-- population: 36 subjects (ALS, stroke, controls), 68 facial landmarks, 30 fps
-- n_subjects: 36
-- signal: orofacial video landmark tracks + clinical scores
-- license: application form ; redistribution: no
-- access: application (request form)
-- status (2026-08-22): DOCUMENTED BARRIER (owner, 2026-08-28): the publication focuses on genuinely open data; not pursued. Evidence: the canonical request page at slp.utoronto.ca 404s (site restructured) and the only live route is direct email to the Yunusova lab + licence agreement, which also falls under the standing no-emails decision
-- link: https://slp.utoronto.ca/faculty/yana-yunusova/speech-production-lab/datasets/
-- notes: orofacial dystonia reference; small but unique. Link resolved 2026-08-23: the access page is the Yunusova speech production lab datasets page (U Toronto); paper Bandini et al. 2020
+- **dataset**: toronto_neuroface
+- **family**: pose
+- **MoveAtlas cells**: D3 (ALS, stroke); M1
+- **population**: 36 subjects (ALS, stroke, controls), 68 facial landmarks, 30 fps
+- **n_subjects**: 36
+- **signal**: orofacial video landmark tracks + clinical scores
+- **license**: application form; redistribution: no
+- **access**: application (request form)
+- **link**: https://slp.utoronto.ca/faculty/yana-yunusova/speech-production-lab/datasets/

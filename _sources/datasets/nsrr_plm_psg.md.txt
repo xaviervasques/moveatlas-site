@@ -36,7 +36,7 @@
 |---|---|
 | **Taxonomy cells** | RLS/PLM context; M6 |
 | **Subjects** | ~2907+1026 (MrOS) + ~2570 PSG (WSC) |
-| **Status** | CATALOGUED 2026-09-05: DOCUMENTED BARRIER (DAUA tier): the big PLM-scored raw PSG masses - MrOS (piezo leg sensors, centrally scored PLMs) and WSC (leg EMG channel, LM/LMA scoring). Our open PLM needs stay covered by cap_sleep (10 PLM patients, held); these document the scale behind the gate |
+| **Status** | documented access barrier (2026-09-05) |
 | **License** | free NSRR account + per-dataset Data Access and Use Agreement |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -56,20 +56,8 @@ ds.info   # barrier: get_data() explains the route
 - **Access route**: sleepdata.org (mros + wsc)
 - **Source**: <https://sleepdata.org/datasets/mros>
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- Modality: family 'eeg'
-- Source / URL: https://sleepdata.org/datasets/mros
-- License / access: free NSRR account + per-dataset Data Access and Use Agreement
-- Access route: sleepdata.org (mros + wsc)
-- Version / retrieval date: catalogued 2026-09-05 (deep-dive sweep); not fetched at card creation
-- Status (2026-09-05): CATALOGUED 2026-09-05: DOCUMENTED BARRIER (DAUA tier): the big PLM-scored raw PSG masses - MrOS (piezo leg sensors, centrally scored PLMs) and WSC (leg EMG channel, LM/LMA scoring). Our open PLM needs stay covered by cap_sleep (10 PLM patients, held); these document the scale behind the gate
-- Number of subjects: ~2907+1026 (MrOS) + ~2570 PSG (WSC)
-- MoveAtlas cells: RLS/PLM context; M6
-
-### Retrieval notes
-RE-VERIFY at fetch/request. No-emails policy for request tiers.
-
-### Processing
-None. Catalogue-tier.
+- **MoveAtlas cells**: RLS/PLM context; M6

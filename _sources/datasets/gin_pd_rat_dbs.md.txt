@@ -35,7 +35,7 @@
 | | |
 |---|---|
 | **Taxonomy cells** | animal PD models; M7 |
-| **Status** | CATALOGUED 2026-09-05: M1 LFP + behavior over 5 days in hemiparkinsonian rats under closed-loop DBS - the single movement hit of the entire GIN pass; animal-lane candidate |
+| **Status** | catalogued (2026-09-05) |
 | **License** | CC BY (GIN DOI record, re-verify at fetch) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -55,18 +55,8 @@ ds.info   # recipe: get_data() explains the route
 - **Access route**: gin DOI 10.12751/g-node.lzvqb5
 - **Source**: <https://gin.g-node.org/doi/Parkinson-Electrophysiology>
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- Modality: family 'animal'
-- Source / URL: https://gin.g-node.org/doi/Parkinson-Electrophysiology
-- License / access: CC BY (GIN DOI record, re-verify at fetch)
-- Version / retrieval date: catalogued 2026-09-05 (deep-dive sweep); NOT fetched
-- Status (2026-09-05): CATALOGUED 2026-09-05: M1 LFP + behavior over 5 days in hemiparkinsonian rats under closed-loop DBS - the single movement hit of the entire GIN pass; animal-lane candidate
-- MoveAtlas cells: animal PD models; M7
-
-### Retrieval notes
-RE-VERIFY at fetch/request; no-emails policy for gated tiers.
-
-### Processing
-None. Catalogue-tier.
+- **MoveAtlas cells**: animal PD models; M7

@@ -27,13 +27,13 @@
 </script>
 ```
 
-<span class="ma-fam ma-animal">animal</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-hosted">hosted</span>&nbsp; <code>striatal_gait_6ohda</code>
+<span class="ma-fam ma-animal">animal</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-recipe">recipe</span>&nbsp; <code>striatal_gait_6ohda</code>
 
 | | |
 |---|---|
 | **Taxonomy cells** | animal: 6-OHDA lesion -> hypokinetic gait analog, with opto-tagged striatal ephys |
 | **Subjects** | see record |
-| **Status** | DOWNLOADED 2026-09-01 (animal hunt): data.zip 2.21 GB, cc-by-4.0 confirmed via the API on the retry (Zenodo had been 50x-ing earlier the same day), sha256 journaled |
+| **Status** | acquired (2026-09-01) |
 | **License** | CC BY 4.0 (DataCite record; Zenodo page 50x-ing at verification) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -43,7 +43,7 @@ Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 ```python
 import moveatlas
 ds = moveatlas.dataset("striatal_gait_6ohda")
-records, meta = ds.get_data()
+ds.info   # recipe: get_data() explains the route
 ```
 
 ## License and access
@@ -53,16 +53,16 @@ records, meta = ds.get_data()
 - **Access route**: Zenodo direct download
 - **Source**: <https://zenodo.org/records/8303087>
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- dataset: striatal_gait_6ohda
-- family: animal  (physical path: datasets/animal/striatal_gait_6ohda)
-- MoveAtlas cells: animal: 6-OHDA lesion -> hypokinetic gait analog, with opto-tagged striatal ephys
-- population: mouse: unilateral 6-OHDA MFB lesion vs controls, open field
-- n_subjects: see record
-- signal: open-field gait/movement measures + striatal single-unit ephys
-- license: CC BY 4.0 (DataCite record; Zenodo page 50x-ing at verification) ; redistribution: yes
-- access: Zenodo direct download
-- status (2026-08-22): DOWNLOADED 2026-09-01 (animal hunt): data.zip 2.21 GB, cc-by-4.0 confirmed via the API on the retry (Zenodo had been 50x-ing earlier the same day), sha256 journaled
-- link: https://zenodo.org/records/8303087
+- **dataset**: striatal_gait_6ohda
+- **family**: animal
+- **MoveAtlas cells**: animal: 6-OHDA lesion -> hypokinetic gait analog, with opto-tagged striatal ephys
+- **population**: mouse: unilateral 6-OHDA MFB lesion vs controls, open field
+- **n_subjects**: see record
+- **signal**: open-field gait/movement measures + striatal single-unit ephys
+- **license**: CC BY 4.0 (DataCite record; Zenodo page 50x-ing at verification); redistribution: yes
+- **access**: Zenodo direct download
+- **link**: https://zenodo.org/records/8303087

@@ -561,7 +561,7 @@
 <li class="toctree-l1"><a class="reference internal" href="gaitrec.html">GaitRec (bilateral GRF, 75k trials)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="goodwin_smm.html">Goodwin stereotypical motor movements accelerometry (UbiComp 2014)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hd_accel_jnet.html">Huntington wrist accelerometry (J-Net)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="iceberg_icm.html">ICEBERG cohort (Paris ICM: PSG + gait + eye movement + speech in early PD/iRBD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iceberg_icm.html">ICEBERG cohort</a></li>
 <li class="toctree-l1"><a class="reference internal" href="imu_inthewild_iprognosis.html">i-PROGNOSIS in-the-wild smartphone IMU</a></li>
 <li class="toctree-l1"><a class="reference internal" href="kaggle_fog.html">Kaggle tlVMC Freezing of Gait</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ltmm.html">Long-Term Movement Monitoring (PhysioNet)</a></li>
@@ -734,7 +734,7 @@
 <td><p>per sub-database</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>Status</strong></p></td>
-<td><p>DOWNLOADED 2026-08-25: all 67 preprocessed zips, 17.6 GB, sha256 journaled, integrity sampled clean. DB1: 27 subjects, 10 Otto Bock electrodes + Cyberglove. DB2: 40 subjects, 12 Delsys electrodes at 2 kHz. INGESTED 2026-08-26: 201 canonical EMG records / 67 subjects / 64 h (build_canonical_emg.py –…</p></td>
+<td><p>harmonized (2026-08-25)</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>License</strong></p></td>
 <td><p>registration; per-database terms</p></td>
@@ -755,7 +755,7 @@
 <h2>License and access<a class="headerlink" href="#license-and-access" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>License</strong>: registration; per-database terms</p></li>
-<li><p><strong>Redistribution</strong>: no, DECIDED 2026-08-28: no written licence anywhere on the site; pointer to ninapro.hevs.ch</p></li>
+<li><p><strong>Redistribution</strong>: no (fetch from ninapro)</p></li>
 <li><p><strong>Access route</strong>: direct download (the registration wall is gone, verified 2026-08-25)</p></li>
 <li><p><strong>Source</strong>: <a class="reference external" href="https://ninapro.hevs.ch/">https://ninapro.hevs.ch/</a></p></li>
 </ul>
@@ -775,20 +775,19 @@
 </pre></div>
 </div>
 </section>
-<section id="data-card-verbatim-with-its-evidence-trail">
-<h2>Data card (verbatim, with its evidence trail)<a class="headerlink" href="#data-card-verbatim-with-its-evidence-trail" title="Link to this heading">#</a></h2>
+<section id="data-card">
+<h2>Data card<a class="headerlink" href="#data-card" title="Link to this heading">#</a></h2>
+<p>The dataset’s card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.</p>
 <ul class="simple">
-<li><p>dataset: ninapro</p></li>
-<li><p>family: emg  (physical path: datasets/emg/ninapro)</p></li>
-<li><p>MoveAtlas cells: C1; M5</p></li>
-<li><p>population: healthy and amputee subjects, hand movement batteries</p></li>
-<li><p>n_subjects: per sub-database</p></li>
-<li><p>signal: multi-channel forearm sEMG arrays + hand kinematics</p></li>
-<li><p>license: registration; per-database terms ; redistribution: no, DECIDED 2026-08-28: no written licence anywhere on the site; pointer to ninapro.hevs.ch</p></li>
-<li><p>access: direct download (the registration wall is gone, verified 2026-08-25)</p></li>
-<li><p>status (2026-08-22): DOWNLOADED 2026-08-25: all 67 preprocessed zips, 17.6 GB, sha256 journaled, integrity sampled clean. DB1: 27 subjects, 10 Otto Bock electrodes + Cyberglove. DB2: 40 subjects, 12 Delsys electrodes at 2 kHz. INGESTED 2026-08-26: 201 canonical EMG records / 67 subjects / 64 h (build_canonical_emg.py –only ninapro). DB1 kept as the RMS envelope it is (unit unknown, C-EMG-1); DB2 V converted to mV, p99 0.15-0.20 mV, physiological. restimulus rides as the eval-only label; glove, accelerometer and inclinometer streams in aux. No explicit licence text on the site: cite Atzori 2014, redistribution stays flagged</p></li>
-<li><p>link: https://ninapro.hevs.ch/</p></li>
-<li><p>notes: distal complement of the EMG socle; electrode arrays map to muscle forearm_array in the EMG contract</p></li>
+<li><p><strong>dataset</strong>: ninapro</p></li>
+<li><p><strong>family</strong>: emg</p></li>
+<li><p><strong>MoveAtlas cells</strong>: C1; M5</p></li>
+<li><p><strong>population</strong>: healthy and amputee subjects, hand movement batteries</p></li>
+<li><p><strong>n_subjects</strong>: per sub-database</p></li>
+<li><p><strong>signal</strong>: multi-channel forearm sEMG arrays + hand kinematics</p></li>
+<li><p><strong>license</strong>: registration; per-database terms; redistribution: no, no written licence anywhere on the site; pointer to ninapro.hevs.ch</p></li>
+<li><p><strong>access</strong>: direct download (the registration wall is gone, verified 2026-08-25)</p></li>
+<li><p><strong>link</strong>: https://ninapro.hevs.ch/</p></li>
 </ul>
 </section>
 </section>
@@ -843,7 +842,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-load">How to load</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license-and-access">License and access</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publications">Publications</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-card-verbatim-with-its-evidence-trail">Data card (verbatim, with its evidence trail)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-card">Data card</a></li>
 </ul>
   </nav></div>
 

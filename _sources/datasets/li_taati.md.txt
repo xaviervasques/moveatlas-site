@@ -40,7 +40,7 @@
 |---|---|
 | **Taxonomy cells** | B2 + L-DOPA dyskinesia (A7/A4 + E6); M1 |
 | **Subjects** | ~135 |
-| **Status** | INGESTED v1: 643 canonical records (communication + drinking + leg_agility) |
+| **Status** | harmonized |
 | **License** | CC BY 4.0 |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -74,18 +74,17 @@ records, meta = ds.get_data()
 }
 ```
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- dataset: li_taati
-- family: pose  (physical path: datasets/pose/li_taati)
-- MoveAtlas cells: B2 + L-DOPA dyskinesia (A7/A4 + E6); M1
-- population: ~135 PD patients; UDysRS, UPDRS, CAPSIT scores
-- n_subjects: ~135
-- signal: 2D joint trajectories (communication, drinking, leg agility) + optical flow (toe tapping); normalized 0-1 coordinates, no raw video
-- license: CC BY 4.0 ; redistribution: yes
-- access: free download (GitHub)
-- status (2026-08-22): INGESTED v1: 643 canonical records (communication + drinking + leg_agility)
-- link: https://github.com/limi44/Parkinson-s-Pose-Estimation-Dataset
-- ingestion: build_canonical.py (li_taati mapping) + ingest_li_taati.py (leg_agility state suffixes)
-- notes: toe-tapping optical flow deliberately not ingested (different modality)
+- **dataset**: li_taati
+- **family**: pose
+- **MoveAtlas cells**: B2 + L-DOPA dyskinesia (A7/A4 + E6); M1
+- **population**: ~135 PD patients; UDysRS, UPDRS, CAPSIT scores
+- **n_subjects**: ~135
+- **signal**: 2D joint trajectories (communication, drinking, leg agility) + optical flow (toe tapping); normalized 0-1 coordinates, no raw video
+- **license**: CC BY 4.0; redistribution: yes
+- **access**: free download (GitHub)
+- **link**: https://github.com/limi44/Parkinson-s-Pose-Estimation-Dataset
+- **ingestion**: build_canonical.py (li_taati mapping) + ingest_li_taati.py (leg_agility state suffixes)

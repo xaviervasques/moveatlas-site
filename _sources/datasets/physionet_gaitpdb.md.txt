@@ -44,7 +44,7 @@
 |---|---|
 | **Taxonomy cells** | B2, B3; M3 |
 | **Subjects** | 165 |
-| **Status** | INGESTED v1 (force contract): 306 records |
+| **Status** | harmonized |
 | **License** | PhysioNet open |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -87,17 +87,17 @@ records, meta = ds.get_data()
 }
 ```
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- dataset: physionet_gaitpdb
-- family: imu  (physical path: datasets/imu/physionet_gaitpdb)
-- MoveAtlas cells: B2, B3; M3
-- population: ~93 PD + ~73 controls (165 on-disk codes)
-- n_subjects: 165
-- signal: vertical ground-reaction force, 8 sensors per foot, 100 Hz
-- license: PhysioNet open ; redistribution: yes
-- access: downloaded
-- status (2026-08-22): INGESTED v1 (force contract): 306 records
-- link: https://physionet.org/content/gaitpdb/
-- ingestion: build_canonical_force.py
+- **dataset**: physionet_gaitpdb
+- **family**: imu
+- **MoveAtlas cells**: B2, B3; M3
+- **population**: ~93 PD + ~73 controls (165 on-disk codes)
+- **n_subjects**: 165
+- **signal**: vertical ground-reaction force, 8 sensors per foot, 100 Hz
+- **license**: PhysioNet open; redistribution: yes
+- **access**: downloaded
+- **link**: https://physionet.org/content/gaitpdb/
+- **ingestion**: build_canonical_force.py

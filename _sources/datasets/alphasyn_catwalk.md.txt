@@ -33,7 +33,7 @@
 |---|---|
 | **Taxonomy cells** | animal: synucleinopathy gait analog (parkinsonian lane) |
 | **Subjects** | 33 |
-| **Status** | INDEX-ONLY 2026-09-02, casebook case 11: the only supplementary that exists (PMC and Elsevier CDN, identical) is mmc1.xlsx 10.9 KB, three sheets listing 120 per-run spreadsheet FILENAMES, not the runs, despite 'The data are with this article'. CDN probed for mmc2-5 (xlsx/zip/docx): nothing; ScienceD... |
+| **Status** | catalogued (2026-09-02) |
 | **License** | CC BY (open-access article statement, verified on PMC) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
@@ -53,16 +53,16 @@ records, meta = ds.get_data()
 - **Access route**: article supplementary files (10.1016/j.dib.2017.12.067)
 - **Source**: <https://pmc.ncbi.nlm.nih.gov/articles/PMC5988224/>
 
-## Data card (verbatim, with its evidence trail)
+## Data card
 
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- dataset: alphasyn_catwalk
-- family: animal  (physical path: datasets/animal/alphasyn_catwalk)
-- MoveAtlas cells: animal: synucleinopathy gait analog (parkinsonian lane)
-- population: mouse C57BL/6N: 12 WT, 13 a-syn KO, 8 human-a-syn-on-KO double transgenic, 7 months
-- n_subjects: 33
-- signal: CatWalk paw positions/print sizes/intensities at 100 Hz, 90 run files
-- license: CC BY (open-access article statement, verified on PMC) ; redistribution: yes
-- access: article supplementary files (10.1016/j.dib.2017.12.067)
-- status (2026-08-22): INDEX-ONLY 2026-09-02, casebook case 11: the only supplementary that exists (PMC and Elsevier CDN, identical) is mmc1.xlsx 10.9 KB, three sheets listing 120 per-run spreadsheet FILENAMES, not the runs, despite 'The data are with this article'. CDN probed for mmc2-5 (xlsx/zip/docx): nothing; ScienceDirect 403s automation. One manual owner check of the publisher page remains before writing it off; effectively pointer-tier until the runs surface. sha256 journaled
-- link: https://pmc.ncbi.nlm.nih.gov/articles/PMC5988224/
+- **dataset**: alphasyn_catwalk
+- **family**: animal
+- **MoveAtlas cells**: animal: synucleinopathy gait analog (parkinsonian lane)
+- **population**: mouse C57BL/6N: 12 WT, 13 a-syn KO, 8 human-a-syn-on-KO double transgenic, 7 months
+- **n_subjects**: 33
+- **signal**: CatWalk paw positions/print sizes/intensities at 100 Hz, 90 run files
+- **license**: CC BY (open-access article statement, verified on PMC); redistribution: yes
+- **access**: article supplementary files (10.1016/j.dib.2017.12.067)
+- **link**: https://pmc.ncbi.nlm.nih.gov/articles/PMC5988224/
