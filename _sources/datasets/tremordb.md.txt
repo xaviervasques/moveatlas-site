@@ -6,9 +6,9 @@
  "@context": "https://schema.org",
  "@type": "Dataset",
  "name": "Effect of DBS on parkinsonian tremor (PhysioNet; laser Doppler velocity)",
- "description": "Effect of DBS on parkinsonian tremor (PhysioNet; laser Doppler velocity). MoveAtlas imu family. 15 (97 recordings) subjects. licence PhysioNet open.",
+ "description": "Effect of DBS on parkinsonian tremor (PhysioNet; laser Doppler velocity). MoveAtlas imu family. 15 (97 recordings) subjects. licence ODC-By 1.0.",
  "identifier": "https://physionet.org/content/tremordb/",
- "license": "PhysioNet open",
+ "license": "https://opendatacommons.org/licenses/by/1-0/",
  "sdPublisher": {
   "@type": "Organization",
   "name": "MoveAtlas"
@@ -60,7 +60,7 @@
 | **Taxonomy cells** | A1; M2-adjacent (velocity aux) |
 | **Subjects** | 15 (97 recordings) |
 | **Status** | harmonized (2026-08-22) |
-| **License** | PhysioNet open |
+| **License** | ODC-By 1.0 (Open Data Commons Attribution License v1.0, stated on the PhysioNet page, read 2026-09-16) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 
@@ -74,7 +74,7 @@ records, meta = ds.get_data()
 
 ## License and access
 
-- **License**: PhysioNet open
+- **License**: ODC-By 1.0 (Open Data Commons Attribution License v1.0, stated on the PhysioNet page, read 2026-09-16)
 - **Redistribution**: yes
 - **Access route**: downloaded
 - **Source**: <https://physionet.org/content/tremordb/>
@@ -112,7 +112,7 @@ The dataset's card, factual lines; the full card with its verification dates, do
 - **population**: 15 PD with DBS (GPi n=5? / Vim / STN per prefix g/v/s), high- and low-amplitude tremor cohorts, DBS/medication conditions + 15/30/45/60-min post-off washout
 - **n_subjects**: 15 (97 recordings)
 - **signal**: hand tremor VELOCITY by laser Doppler at 100 Hz, one text file per subject per condition (.rit right /.let left), physical units mm/s (m/s converted)
-- **license**: PhysioNet open; redistribution: yes
+- **license**: ODC-By 1.0 (Open Data Commons Attribution License v1.0, stated on the PhysioNet page, read 2026-09-16); redistribution: yes
 - **access**: downloaded
 - **link**: https://physionet.org/content/tremordb/
 - **ingestion**: ingest_tremordb.py: processed/tremordb_velocity.pkl + subject table + audit. NOT the 9-channel IMU contract (velocity, not acc/gyro): aux asset for A1 severity dynamics under DBS on/off per target

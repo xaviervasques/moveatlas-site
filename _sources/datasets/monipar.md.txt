@@ -6,9 +6,9 @@
  "@context": "https://schema.org",
  "@type": "Dataset",
  "name": "MoniPAR smartwatch PD",
- "description": "MoniPAR smartwatch PD. MoveAtlas imu family. 28 subjects. licence Zenodo open.",
+ "description": "MoniPAR smartwatch PD. MoveAtlas imu family. 28 subjects. licence CC BY 4.0.",
  "identifier": "https://zenodo.org/records/8104853",
- "license": "Zenodo open",
+ "license": "https://creativecommons.org/licenses/by/4.0/",
  "sdPublisher": {
   "@type": "Organization",
   "name": "MoveAtlas"
@@ -73,7 +73,7 @@
 | **Taxonomy cells** | A1, B2; M2 |
 | **Subjects** | 28 |
 | **Status** | harmonized |
-| **License** | Zenodo open |
+| **License** | CC BY 4.0 (stated on the source Zenodo record, read through DataCite 2026-09-16) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 
@@ -87,7 +87,7 @@ records, meta = ds.get_data()
 
 ## License and access
 
-- **License**: Zenodo open
+- **License**: CC BY 4.0 (stated on the source Zenodo record, read through DataCite 2026-09-16)
 - **Redistribution**: yes
 - **Access route**: downloaded
 - **Source**: <https://zenodo.org/records/8104853>
@@ -117,7 +117,7 @@ The dataset's card, factual lines; the full card with its verification dates, do
 - **population**: 28 PD; Hoehn & Yahr, symptom onset, weekly tests
 - **n_subjects**: 28
 - **signal**: smartwatch IMU (.mat) + tremor labels
-- **license**: Zenodo open; redistribution: yes
+- **license**: CC BY 4.0 (stated on the source Zenodo record, read through DataCite 2026-09-16); redistribution: yes
 - **access**: downloaded
 - **link**: https://zenodo.org/records/8104853
 - **ingestion**: build_canonical_imu.py (monipar mapping)

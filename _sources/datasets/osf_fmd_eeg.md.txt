@@ -16,7 +16,7 @@
  "keywords": [
   "eeg",
   "D7 Functional movement disorders",
-  "M5 EMG"
+  "M6 EEG"
  ],
  "url": "https://osf.io/7ke6r",
  "isAccessibleForFree": false,
@@ -31,11 +31,11 @@
 
 <span class="ma-fam ma-eeg">eeg</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-recipe">recipe</span>&nbsp; <code>osf_fmd_eeg</code>
 
-<span class="ma-tag">Functional movement disorders</span><span class="ma-tag">EMG</span>
+<span class="ma-tag">Functional movement disorders</span><span class="ma-tag">EEG</span>
 
 | | |
 |---|---|
-| **Taxonomy cells** | D7 functional; M5 |
+| **Taxonomy cells** | D7 (functional); M6 |
 | **Subjects** | ~56 |
 | **Status** | acquired (2026-09-05) |
 | **License** | NO EXPLICIT LICENCE on the OSF project |
@@ -61,4 +61,4 @@ ds.info   # recipe: get_data() explains the route
 
 The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- **MoveAtlas cells**: D7 functional; M5
+- **MoveAtlas cells**: D7 (functional); M6

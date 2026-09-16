@@ -6,9 +6,9 @@
  "@context": "https://schema.org",
  "@type": "Dataset",
  "name": "i-PROGNOSIS in-the-wild smartphone IMU",
- "description": "i-PROGNOSIS in-the-wild smartphone IMU. MoveAtlas imu family. 45 subjects. licence Zenodo open.",
+ "description": "i-PROGNOSIS in-the-wild smartphone IMU. MoveAtlas imu family. 45 subjects. licence CC BY 4.0.",
  "identifier": "https://zenodo.org/records/3519213",
- "license": "Zenodo open",
+ "license": "https://creativecommons.org/licenses/by/4.0/",
  "sdPublisher": {
   "@type": "Organization",
   "name": "MoveAtlas"
@@ -65,7 +65,7 @@
 | **Taxonomy cells** | A1, B2; M2 |
 | **Subjects** | 45 |
 | **Status** | harmonized |
-| **License** | Zenodo open |
+| **License** | CC BY 4.0 (stated on the source Zenodo record, read through DataCite 2026-09-16) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 
@@ -79,7 +79,7 @@ records, meta = ds.get_data()
 
 ## License and access
 
-- **License**: Zenodo open
+- **License**: CC BY 4.0 (stated on the source Zenodo record, read through DataCite 2026-09-16)
 - **Redistribution**: yes
 - **Access route**: downloaded
 - **Source**: <https://zenodo.org/records/3519213>
@@ -109,7 +109,8 @@ The dataset's card, factual lines; the full card with its verification dates, do
 - **population**: 31 PD + 14 controls, phone in pocket, daily life
 - **n_subjects**: 45
 - **signal**: smartphone accelerometry (pickle of 45 subjects)
-- **license**: Zenodo open; redistribution: yes
+- **license**: CC BY 4.0 (stated on the source Zenodo record, read through DataCite 2026-09-16); redistribution: yes
 - **access**: downloaded
 - **link**: https://zenodo.org/records/3519213
 - **ingestion**: build_canonical_imu.py (pocket location)
+- **known issues**: phones sample irregularly (99 to 1000 Hz across devices); the acceleration includes gravity

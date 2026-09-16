@@ -15,9 +15,9 @@
  },
  "keywords": [
   "eeg",
-  "A1 Tremor",
+  "A4 Dystonia",
   "M2 Inertial (IMU)",
-  "M4 Silhouette",
+  "M5 EMG",
   "M7 LFP / ECoG"
  ],
  "url": "https://data.mrc.ox.ac.uk/lfp-dystonia",
@@ -33,11 +33,11 @@
 
 <span class="ma-fam ma-eeg">eeg</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-recipe">recipe</span>&nbsp; <code>mrc_lfp_dystonia</code>
 
-<span class="ma-tag">Tremor</span><span class="ma-tag">Inertial (IMU)</span><span class="ma-tag">Silhouette</span><span class="ma-tag">LFP / ECoG</span>
+<span class="ma-tag">Dystonia</span><span class="ma-tag">Inertial (IMU)</span><span class="ma-tag">EMG</span><span class="ma-tag">LFP / ECoG</span>
 
 | | |
 |---|---|
-| **Taxonomy cells** | A1; M2 M4 M7 |
+| **Taxonomy cells** | A4 (cervical dystonia); M2 M5 M7 |
 | **Subjects** | 7 patients / 12 hemispheres |
 | **Status** | catalogued (2026-09-05) |
 | **License** | CC BY-SA 4.0 (verified on the portal record; SA clause: licence-matrix check before redistribution); free registration/login then direct download |
@@ -63,4 +63,4 @@ ds.info   # recipe: get_data() explains the route
 
 The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- **MoveAtlas cells**: A1; M2 M4 M7
+- **MoveAtlas cells**: A4 (cervical dystonia); M2 M5 M7

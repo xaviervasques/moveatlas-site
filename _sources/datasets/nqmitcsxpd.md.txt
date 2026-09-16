@@ -6,9 +6,9 @@
  "@context": "https://schema.org",
  "@type": "Dataset",
  "name": "neuroQWERTY MIT-CSXPD (keystroke)",
- "description": "neuroQWERTY MIT-CSXPD (keystroke). MoveAtlas auxdata family. licence PhysioNet open.",
+ "description": "neuroQWERTY MIT-CSXPD (keystroke). MoveAtlas auxdata family. licence ODC-By 1.0.",
  "identifier": "https://physionet.org/content/nqmitcsxpd/",
- "license": "PhysioNet open",
+ "license": "https://opendatacommons.org/licenses/by/1-0/",
  "sdPublisher": {
   "@type": "Organization",
   "name": "MoveAtlas"
@@ -44,7 +44,7 @@
 | **Taxonomy cells** | B2 proxy; M11 |
 | **Subjects** | ~85 published; on-disk count TBD |
 | **Status** | acquired |
-| **License** | PhysioNet open |
+| **License** | ODC-By 1.0 (Open Data Commons Attribution License v1.0, stated on the PhysioNet page, read 2026-09-16) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 
@@ -58,7 +58,7 @@ records, meta = ds.get_data()
 
 ## License and access
 
-- **License**: PhysioNet open
+- **License**: ODC-By 1.0 (Open Data Commons Attribution License v1.0, stated on the PhysioNet page, read 2026-09-16)
 - **Redistribution**: yes
 - **Access route**: downloaded
 - **Source**: <https://physionet.org/content/nqmitcsxpd/>
@@ -96,6 +96,6 @@ The dataset's card, factual lines; the full card with its verification dates, do
 - **population**: PD + controls, natural typing
 - **n_subjects**: ~85 published; on-disk count TBD
 - **signal**: keystroke hold/flight time series (CSV)
-- **license**: PhysioNet open; redistribution: yes
+- **license**: ODC-By 1.0 (Open Data Commons Attribution License v1.0, stated on the PhysioNet page, read 2026-09-16); redistribution: yes
 - **access**: downloaded
 - **link**: https://physionet.org/content/nqmitcsxpd/

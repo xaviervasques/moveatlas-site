@@ -6,9 +6,9 @@
  "@context": "https://schema.org",
  "@type": "Dataset",
  "name": "PhysioNet gaitpdb (Hausdorff)",
- "description": "PhysioNet gaitpdb (Hausdorff). MoveAtlas imu family. 165 subjects. licence PhysioNet open.",
+ "description": "PhysioNet gaitpdb (Hausdorff). MoveAtlas imu family. 165 subjects. licence ODC-By 1.0.",
  "identifier": "https://physionet.org/content/gaitpdb/",
- "license": "PhysioNet open",
+ "license": "https://opendatacommons.org/licenses/by/1-0/",
  "sdPublisher": {
   "@type": "Organization",
   "name": "MoveAtlas"
@@ -45,7 +45,7 @@
 | **Taxonomy cells** | B2, B3; M3 |
 | **Subjects** | 165 |
 | **Status** | harmonized |
-| **License** | PhysioNet open |
+| **License** | ODC-By 1.0 (Open Data Commons Attribution License v1.0, stated on the PhysioNet page, read 2026-09-16) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 
@@ -59,7 +59,7 @@ records, meta = ds.get_data()
 
 ## License and access
 
-- **License**: PhysioNet open
+- **License**: ODC-By 1.0 (Open Data Commons Attribution License v1.0, stated on the PhysioNet page, read 2026-09-16)
 - **Redistribution**: yes
 - **Access route**: downloaded
 - **Source**: <https://physionet.org/content/gaitpdb/>
@@ -97,7 +97,7 @@ The dataset's card, factual lines; the full card with its verification dates, do
 - **population**: ~93 PD + ~73 controls (165 on-disk codes)
 - **n_subjects**: 165
 - **signal**: vertical ground-reaction force, 8 sensors per foot, 100 Hz
-- **license**: PhysioNet open; redistribution: yes
+- **license**: ODC-By 1.0 (Open Data Commons Attribution License v1.0, stated on the PhysioNet page, read 2026-09-16); redistribution: yes
 - **access**: downloaded
 - **link**: https://physionet.org/content/gaitpdb/
 - **ingestion**: build_canonical_force.py

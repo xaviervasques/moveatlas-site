@@ -6,9 +6,9 @@
  "@context": "https://schema.org",
  "@type": "Dataset",
  "name": "Tappy keystroke (PhysioNet)",
- "description": "Tappy keystroke (PhysioNet). MoveAtlas auxdata family. 227 users subjects. licence PhysioNet open.",
+ "description": "Tappy keystroke (PhysioNet). MoveAtlas auxdata family. 227 users subjects. licence ODC-By 1.0.",
  "identifier": "https://physionet.org/content/tappy/",
- "license": "PhysioNet open",
+ "license": "https://opendatacommons.org/licenses/by/1-0/",
  "sdPublisher": {
   "@type": "Organization",
   "name": "MoveAtlas"
@@ -44,7 +44,7 @@
 | **Taxonomy cells** | B2 proxy; M11 |
 | **Subjects** | 227 users |
 | **Status** | acquired |
-| **License** | PhysioNet open |
+| **License** | ODC-By 1.0 (Open Data Commons Attribution License v1.0, stated on the PhysioNet page, read 2026-09-16) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 
@@ -58,7 +58,7 @@ records, meta = ds.get_data()
 
 ## License and access
 
-- **License**: PhysioNet open
+- **License**: ODC-By 1.0 (Open Data Commons Attribution License v1.0, stated on the PhysioNet page, read 2026-09-16)
 - **Redistribution**: yes
 - **Access route**: downloaded
 - **Source**: <https://physionet.org/content/tappy/>
@@ -96,6 +96,6 @@ The dataset's card, factual lines; the full card with its verification dates, do
 - **population**: PD + controls, home typing
 - **n_subjects**: 227 users
 - **signal**: keystroke logs (User_*.txt)
-- **license**: PhysioNet open; redistribution: yes
+- **license**: ODC-By 1.0 (Open Data Commons Attribution License v1.0, stated on the PhysioNet page, read 2026-09-16); redistribution: yes
 - **access**: downloaded
 - **link**: https://physionet.org/content/tappy/

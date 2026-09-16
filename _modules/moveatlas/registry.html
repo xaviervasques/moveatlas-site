@@ -202,6 +202,13 @@
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
 <li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../troubleshooting.html">
+    Troubleshooting
+  </a>
+</li>
+
+
+<li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../../auto_examples/index.html">
     Examples
   </a>
@@ -361,6 +368,13 @@
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../user_guide.html">
     User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../troubleshooting.html">
+    Troubleshooting
   </a>
 </li>
 
@@ -566,10 +580,19 @@
         <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">csv</span><span class="o">.</span><span class="n">DictReader</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
 
 
+<span class="c1"># Registry rows that describe software, not a subject corpus. They stay in</span>
+<span class="c1"># the registry (their card points at the code) but are not datasets: they</span>
+<span class="c1"># classify as "tool" and list_datasets() leaves them out unless asked, so</span>
+<span class="c1"># every catalogue count (library, site, descriptor) applies one rule.</span>
+<span class="n">TOOLS</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">({</span><span class="s2">"visionmd"</span><span class="p">})</span>
+
+
 <div class="viewcode-block" id="access_case">
 <a class="viewcode-back" href="../../api.html#moveatlas.registry.access_case">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">access_case</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Classify a registry row into the four access cases.</span>
+<span class="w">    </span><span class="sd">"""Classify a registry row into the access cases.</span>
+
+<span class="sd">    - tool: software catalogued for reference, not a dataset (TOOLS).</span>
 
 <span class="sd">    - hosted: redistribution allowed, our record store serves it.</span>
 <span class="sd">    - local_only: private-tier data on disk (empty since 2026-09-01: the</span>
@@ -579,6 +602,8 @@
 <span class="sd">    - barrier: a documented access barrier (no automated route).</span>
 <span class="sd">    - recipe: everything else (fetch from origin + local ingestion).</span>
 <span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">row</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"id"</span><span class="p">)</span> <span class="ow">in</span> <span class="n">TOOLS</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">"tool"</span>
     <span class="n">redist</span> <span class="o">=</span> <span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"redistribution"</span><span class="p">)</span> <span class="ow">or</span> <span class="s2">""</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
     <span class="n">status</span> <span class="o">=</span> <span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"status"</span><span class="p">)</span> <span class="ow">or</span> <span class="s2">""</span><span class="p">)</span>
     <span class="n">lic</span> <span class="o">=</span> <span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"license"</span><span class="p">)</span> <span class="ow">or</span> <span class="s2">""</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
@@ -602,9 +627,11 @@
 
 <div class="viewcode-block" id="list_datasets">
 <a class="viewcode-back" href="../../api.html#moveatlas.registry.list_datasets">[docs]</a>
-<span class="k">def</span><span class="w"> </span><span class="nf">list_datasets</span><span class="p">(</span><span class="n">family</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">list_datasets</span><span class="p">(</span><span class="n">family</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include_tools</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""Return registry rows (dicts), optionally filtered by family or</span>
-<span class="sd">    access case. Each row gains an 'access_case' key."""</span>
+<span class="sd">    access case. Each row gains an 'access_case' key. Rows describing</span>
+<span class="sd">    software rather than data (access case "tool") are left out unless</span>
+<span class="sd">    include_tools is true or case="tool" is asked."""</span>
     <span class="n">rows</span> <span class="o">=</span> <span class="n">_read</span><span class="p">(</span><span class="s2">"datasets_index.csv"</span><span class="p">)</span>
     <span class="n">lic</span> <span class="o">=</span> <span class="p">{</span><span class="n">r</span><span class="p">[</span><span class="s2">"id"</span><span class="p">]:</span> <span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">_read</span><span class="p">(</span><span class="s2">"license_matrix.csv"</span><span class="p">)}</span>
     <span class="n">out</span> <span class="o">=</span> <span class="p">[]</span>
@@ -617,6 +644,9 @@
             <span class="k">continue</span>
         <span class="k">if</span> <span class="n">case</span> <span class="ow">and</span> <span class="n">r</span><span class="p">[</span><span class="s2">"access_case"</span><span class="p">]</span> <span class="o">!=</span> <span class="n">case</span><span class="p">:</span>
             <span class="k">continue</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="s2">"access_case"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"tool"</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">include_tools</span>
+                <span class="ow">and</span> <span class="n">case</span> <span class="o">!=</span> <span class="s2">"tool"</span><span class="p">):</span>
+            <span class="k">continue</span>
         <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">out</span></div>
 
@@ -626,10 +656,10 @@
 <a class="viewcode-back" href="../../api.html#moveatlas.registry.dataset_info">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">dataset_info</span><span class="p">(</span><span class="n">code</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""The registry row for one dataset id, or raise with the known ids."""</span>
-    <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">list_datasets</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">list_datasets</span><span class="p">(</span><span class="n">include_tools</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">r</span><span class="p">[</span><span class="s2">"id"</span><span class="p">]</span> <span class="o">==</span> <span class="n">code</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">r</span>
-    <span class="n">known</span> <span class="o">=</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s2">"id"</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">list_datasets</span><span class="p">()))</span>
+    <span class="n">known</span> <span class="o">=</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s2">"id"</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">list_datasets</span><span class="p">(</span><span class="n">include_tools</span><span class="o">=</span><span class="kc">True</span><span class="p">)))</span>
     <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"unknown dataset '</span><span class="si">{</span><span class="n">code</span><span class="si">}</span><span class="s2">'; known: </span><span class="si">{</span><span class="n">known</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span></div>
 
 </pre></div>

@@ -6,9 +6,9 @@
  "@context": "https://schema.org",
  "@type": "Dataset",
  "name": "UCI Parkinson's voice",
- "description": "UCI Parkinson's voice. MoveAtlas auxdata family. 31 (195 recordings) subjects. licence UCI open.",
+ "description": "UCI Parkinson's voice. MoveAtlas auxdata family. 31 (195 recordings) subjects. licence CC BY 4.0.",
  "identifier": "https://archive.ics.uci.edu/dataset/174/parkinsons",
- "license": "UCI open",
+ "license": "https://creativecommons.org/licenses/by/4.0/",
  "sdPublisher": {
   "@type": "Organization",
   "name": "MoveAtlas"
@@ -44,7 +44,7 @@
 | **Taxonomy cells** | B2 proxy (hypokinetic dysarthria); M11 |
 | **Subjects** | 31 (195 recordings) |
 | **Status** | acquired |
-| **License** | UCI open |
+| **License** | CC BY 4.0 (stated on the UCI repository page, read 2026-09-16) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 
@@ -58,7 +58,7 @@ records, meta = ds.get_data()
 
 ## License and access
 
-- **License**: UCI open
+- **License**: CC BY 4.0 (stated on the UCI repository page, read 2026-09-16)
 - **Redistribution**: yes
 - **Access route**: downloaded
 - **Source**: <https://archive.ics.uci.edu/dataset/174/parkinsons>
@@ -88,6 +88,6 @@ The dataset's card, factual lines; the full card with its verification dates, do
 - **population**: PD + controls, sustained phonation
 - **n_subjects**: 31 (195 recordings)
 - **signal**: voice feature table
-- **license**: UCI open; redistribution: yes
+- **license**: CC BY 4.0 (stated on the UCI repository page, read 2026-09-16); redistribution: yes
 - **access**: downloaded
 - **link**: https://archive.ics.uci.edu/dataset/174/parkinsons

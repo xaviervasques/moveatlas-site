@@ -6,7 +6,7 @@
  "@context": "https://schema.org",
  "@type": "Dataset",
  "name": "VIDIMU (daily activities: video pose + IMU)",
- "description": "VIDIMU (daily activities: video pose + IMU). MoveAtlas socle family. 53 subjects. licence Zenodo open.",
+ "description": "VIDIMU (daily activities: video pose + IMU). MoveAtlas socle family. 53 subjects. licence CC BY 4.0.",
  "identifier": "https://zenodo.org/records/15075076",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "sdPublisher": {
@@ -65,7 +65,7 @@
 | **Taxonomy cells** | C1; M1, M2 (paired) |
 | **Subjects** | 53 |
 | **Status** | harmonized (2026-08-22) |
-| **License** | Zenodo open (CC BY 4.0 per record) |
+| **License** | CC BY 4.0 (every VIDIMU version on Zenodo, read through DataCite 2026-09-16) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 
@@ -79,7 +79,7 @@ records, meta = ds.get_data()
 
 ## License and access
 
-- **License**: Zenodo open (CC BY 4.0 per record)
+- **License**: CC BY 4.0 (every VIDIMU version on Zenodo, read through DataCite 2026-09-16)
 - **Redistribution**: yes
 - **Access route**: direct download (on disk)
 - **Source**: <https://zenodo.org/records/15075076>
@@ -109,7 +109,7 @@ The dataset's card, factual lines; the full card with its verification dates, do
 - **population**: 53 healthy subjects on disk (54 published); 13 daily activities (walks, sit-to-stand, arm tasks)
 - **n_subjects**: 53
 - **signal**: video-derived 3D keypoints (34 landmarks, ~30 fps measured 29.42) for all; 5 orientation-quaternion IMUs (dynamic lower-body or upper-body sets) for 16 subjects, ~208 same-trial pose+IMU pairs
-- **license**: Zenodo open (CC BY 4.0 per record); redistribution: yes
+- **license**: CC BY 4.0 (every VIDIMU version on Zenodo, read through DataCite 2026-09-16); redistribution: yes
 - **access**: direct download (on disk)
 - **link**: https://zenodo.org/records/15075076
 - **citation**: Sci Data 2023, doi 10.1038/s41597-023-02554-9

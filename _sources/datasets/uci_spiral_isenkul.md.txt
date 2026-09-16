@@ -15,9 +15,8 @@
  },
  "keywords": [
   "auxdata",
-  "B1 Rigidity",
   "B2 Bradykinesia",
-  "M8 Imaging"
+  "M11 Voice / writing"
  ],
  "url": "https://archive.ics.uci.edu/ml/datasets/Parkinson+Disease+Spiral+Drawings+Using+Digitized+Graphics+tablet",
  "isAccessibleForFree": false,
@@ -32,11 +31,11 @@
 
 <span class="ma-fam ma-auxdata">auxdata</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-recipe">recipe</span>&nbsp; <code>uci_spiral_isenkul</code>
 
-<span class="ma-tag">Rigidity</span><span class="ma-tag">Bradykinesia</span><span class="ma-tag">Imaging</span>
+<span class="ma-tag">Bradykinesia</span><span class="ma-tag">Voice / writing</span>
 
 | | |
 |---|---|
-| **Taxonomy cells** | B1 B2; M8 |
+| **Taxonomy cells** | B2 proxy (spiral drawing); M11 |
 | **Subjects** | 77 |
 | **Status** | catalogued (2026-09-05) |
 | **License** | open (UCI; CC BY 4.0 on the new portal - verify at fetch) |
@@ -62,4 +61,4 @@ ds.info   # recipe: get_data() explains the route
 
 The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- **MoveAtlas cells**: B1 B2; M8
+- **MoveAtlas cells**: B2 proxy (spiral drawing); M11

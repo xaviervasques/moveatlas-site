@@ -132,3 +132,4 @@ The dataset's card, factual lines; the full card with its verification dates, do
 - **access**: downloaded
 - **link**: https://doi.org/10.6084/m9.figshare.28806086
 - **ingestion**: build_canonical_imu.py (clinical_gait mapping)
+- **known issues**: magnetometer values are normalized to the local field, not in uT (declared in mag_unit from 2026-09-17); subject RIL_12's head sensor is written as zeros in five trials and is treated as absent in records built from 2026-09-17

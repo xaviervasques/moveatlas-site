@@ -15,6 +15,7 @@
  },
  "keywords": [
   "pose",
+  "D3 Pyramidal syndromes",
   "C1 Normal adult movement",
   "M1 Pose / video"
  ],
@@ -31,11 +32,11 @@
 
 <span class="ma-fam ma-pose">pose</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-recipe">recipe</span>&nbsp; <code>mobile_gaitlab</code>
 
-<span class="ma-tag">Normal adult movement</span><span class="ma-tag">Pose / video</span>
+<span class="ma-tag">Pyramidal syndromes</span><span class="ma-tag">Normal adult movement</span><span class="ma-tag">Pose / video</span>
 
 | | |
 |---|---|
-| **Taxonomy cells** | D CP; C1; M1 |
+| **Taxonomy cells** | D3 (cerebral palsy); C1; M1 |
 | **Subjects** | 1026 |
 | **Ages** | children (1994-2015 visits) |
 | **Status** | acquired (2026-09-06) |
@@ -62,4 +63,4 @@ ds.info   # recipe: get_data() explains the route
 
 The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- **MoveAtlas cells**: D CP; C1; M1
+- **MoveAtlas cells**: D3 (cerebral palsy); C1; M1

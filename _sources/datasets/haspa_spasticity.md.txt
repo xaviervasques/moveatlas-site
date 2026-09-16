@@ -15,6 +15,7 @@
  },
  "keywords": [
   "auxdata",
+  "D3 Pyramidal syndromes",
   "M2 Inertial (IMU)",
   "M3 Plantar force"
  ],
@@ -31,11 +32,11 @@
 
 <span class="ma-fam ma-auxdata">auxdata</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-recipe">recipe</span>&nbsp; <code>haspa_spasticity</code>
 
-<span class="ma-tag">Inertial (IMU)</span><span class="ma-tag">Plantar force</span>
+<span class="ma-tag">Pyramidal syndromes</span><span class="ma-tag">Inertial (IMU)</span><span class="ma-tag">Plantar force</span>
 
 | | |
 |---|---|
-| **Taxonomy cells** | E context; M2 M3 |
+| **Taxonomy cells** | D3 (spasticity); M2 M3 |
 | **Ages** | adults |
 | **Status** | acquired (2026-09-05) |
 | **License** | etalab 2.0 (VERIFIED at fetch 2026-09-05 from the dataset version) |
@@ -61,4 +62,4 @@ ds.info   # recipe: get_data() explains the route
 
 The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- **MoveAtlas cells**: E context; M2 M3
+- **MoveAtlas cells**: D3 (spasticity); M2 M3

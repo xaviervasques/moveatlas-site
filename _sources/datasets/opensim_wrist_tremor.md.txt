@@ -15,10 +15,10 @@
  },
  "keywords": [
   "emg",
-  "A2 Myoclonus",
-  "B1 Rigidity",
+  "A1 Tremor",
+  "B2 Bradykinesia",
   "M2 Inertial (IMU)",
-  "M4 Silhouette"
+  "M5 EMG"
  ],
  "url": "https://ieee-dataport.org/keywords/tremor",
  "isAccessibleForFree": false,
@@ -33,11 +33,11 @@
 
 <span class="ma-fam ma-emg">emg</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-recipe">recipe</span>&nbsp; <code>opensim_wrist_tremor</code>
 
-<span class="ma-tag">Myoclonus</span><span class="ma-tag">Rigidity</span><span class="ma-tag">Inertial (IMU)</span><span class="ma-tag">Silhouette</span>
+<span class="ma-tag">Tremor</span><span class="ma-tag">Bradykinesia</span><span class="ma-tag">Inertial (IMU)</span><span class="ma-tag">EMG</span>
 
 | | |
 |---|---|
-| **Taxonomy cells** | A2 B1; M2 M4 |
+| **Taxonomy cells** | A1; B2 context; M2 M5 |
 | **Subjects** | 5 |
 | **Status** | catalogued (2026-09-05) |
 | **License** | open access on IEEE DataPort (licence on record, verify at fetch) |
@@ -63,4 +63,4 @@ ds.info   # recipe: get_data() explains the route
 
 The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- **MoveAtlas cells**: A2 B1; M2 M4
+- **MoveAtlas cells**: A1; B2 context; M2 M5

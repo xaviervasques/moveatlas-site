@@ -139,3 +139,4 @@ The dataset's card, factual lines; the full card with its verification dates, do
 - **access**: registration (free Synapse account + click-through)
 - **link**: https://www.synapse.org/Synapse:syn52540892
 - **ingestion**: build_canonical_imu.py + build_canonical_force.py (totals-only)
+- **known issues**: the source exports gyroscope rates in rad/s and magnetometer values normalized to the local field; records built from 2026-09-17 carry the gyroscope in deg/s, keep the magnetometer as recorded (declared in mag_unit) and mark sensor dropouts in sample_valid instead of writing zeros (earlier records held 20 partly missing accelerometer traces in m/s2 under the unit g)

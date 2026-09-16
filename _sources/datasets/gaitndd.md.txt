@@ -6,9 +6,9 @@
  "@context": "https://schema.org",
  "@type": "Dataset",
  "name": "PhysioNet gait in neurodegenerative disease",
- "description": "PhysioNet gait in neurodegenerative disease. MoveAtlas imu family. 64 subjects. licence PhysioNet open.",
+ "description": "PhysioNet gait in neurodegenerative disease. MoveAtlas imu family. 64 subjects. licence ODC-By 1.0.",
  "identifier": "https://physionet.org/content/gaitndd/",
- "license": "PhysioNet open",
+ "license": "https://opendatacommons.org/licenses/by/1-0/",
  "sdPublisher": {
   "@type": "Organization",
   "name": "MoveAtlas"
@@ -67,7 +67,7 @@
 | **Taxonomy cells** | A7 (HD), B2 (PD), C1 (controls), D3; M3 |
 | **Subjects** | 64 |
 | **Status** | harmonized |
-| **License** | PhysioNet open |
+| **License** | ODC-By 1.0 (Open Data Commons Attribution License v1.0, stated on the PhysioNet page, read 2026-09-16) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 
@@ -81,7 +81,7 @@ records, meta = ds.get_data()
 
 ## License and access
 
-- **License**: PhysioNet open
+- **License**: ODC-By 1.0 (Open Data Commons Attribution License v1.0, stated on the PhysioNet page, read 2026-09-16)
 - **Redistribution**: yes
 - **Access route**: downloaded
 - **Source**: <https://physionet.org/content/gaitndd/>
@@ -119,7 +119,8 @@ The dataset's card, factual lines; the full card with its verification dates, do
 - **population**: 16 controls + 15 PD + 20 Huntington + 13 ALS
 - **n_subjects**: 64
 - **signal**: force-sensitive resistor gait series
-- **license**: PhysioNet open; redistribution: yes
+- **license**: ODC-By 1.0 (Open Data Commons Attribution License v1.0, stated on the PhysioNet page, read 2026-09-16); redistribution: yes
 - **access**: downloaded
 - **link**: https://physionet.org/content/gaitndd/
 - **ingestion**: build_canonical_force.py
+- **known issues**: the force values are the outputs of uncalibrated force-sensitive resistors (about -2 to 1.1), not newtons; records built from 2026-09-17 declare unit unknown and name the calibration, and the values are never rescaled

@@ -6,9 +6,9 @@
  "@context": "https://schema.org",
  "@type": "Dataset",
  "name": "CAP Sleep Database (PhysioNet)",
- "description": "CAP Sleep Database (PhysioNet). MoveAtlas eeg family. 108 subjects. licence PhysioNet open.",
+ "description": "CAP Sleep Database (PhysioNet). MoveAtlas eeg family. 108 subjects. licence ODC-By 1.0.",
  "identifier": "https://physionet.org/content/capslpdb/",
- "license": "PhysioNet open",
+ "license": "https://opendatacommons.org/licenses/by/1-0/",
  "sdPublisher": {
   "@type": "Organization",
   "name": "MoveAtlas"
@@ -89,7 +89,7 @@
 | **Taxonomy cells** | D6 (RBD); M5 chin, M6 |
 | **Subjects** | 108 |
 | **Status** | harmonized (2026-08-24) |
-| **License** | PhysioNet open |
+| **License** | ODC-By 1.0 (Open Data Commons Attribution License v1.0, stated on the PhysioNet page, read 2026-09-16) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 
@@ -103,7 +103,7 @@ records, meta = ds.get_data()
 
 ## License and access
 
-- **License**: PhysioNet open
+- **License**: ODC-By 1.0 (Open Data Commons Attribution License v1.0, stated on the PhysioNet page, read 2026-09-16)
 - **Redistribution**: yes
 - **Access route**: direct_download (fetch_p2_lot.py --only cap_sleep --cap-subset rbd,n)
 - **Source**: <https://physionet.org/content/capslpdb/>
@@ -141,6 +141,6 @@ The dataset's card, factual lines; the full card with its verification dates, do
 - **population**: 108 polysomnographies incl. 22 RBD, other sleep disorders, controls
 - **n_subjects**: 108
 - **signal**: full PSG: EEG, chin EMG, ECG, EOG (EDF + annotations)
-- **license**: PhysioNet open; redistribution: yes
+- **license**: ODC-By 1.0 (Open Data Commons Attribution License v1.0, stated on the PhysioNet page, read 2026-09-16); redistribution: yes
 - **access**: direct_download (fetch_p2_lot.py --only cap_sleep --cap-subset rbd,n)
 - **link**: https://physionet.org/content/capslpdb/

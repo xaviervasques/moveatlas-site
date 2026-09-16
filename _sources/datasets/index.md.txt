@@ -168,7 +168,6 @@ stroke_gait_vancriekinge
 syrip
 tim_tremor
 toronto_neuroface
-visionmd
 amass
 motion_x
 ntu_rgbd

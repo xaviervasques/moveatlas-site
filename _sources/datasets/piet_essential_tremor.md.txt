@@ -15,8 +15,8 @@
  },
  "keywords": [
   "bio",
-  "A2 Myoclonus",
-  "M5 EMG"
+  "A1 Tremor",
+  "M8 Imaging"
  ],
  "url": "https://doi.org/10.57760/sciencedb.28935",
  "isAccessibleForFree": false,
@@ -31,11 +31,11 @@
 
 <span class="ma-fam ma-bio">bio</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-recipe">recipe</span>&nbsp; <code>piet_essential_tremor</code>
 
-<span class="ma-tag">Myoclonus</span><span class="ma-tag">EMG</span>
+<span class="ma-tag">Tremor</span><span class="ma-tag">Imaging</span>
 
 | | |
 |---|---|
-| **Taxonomy cells** | A2 context; M5 |
+| **Taxonomy cells** | A1 context; M8 |
 | **Subjects** | 45 |
 | **Status** | catalogued (2026-09-07) |
 | **License** | CC0 banner still displayed, but access WITHDRAWN (page 2026-09-07) |
@@ -61,4 +61,4 @@ ds.info   # recipe: get_data() explains the route
 
 The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- **MoveAtlas cells**: A2 context; M5
+- **MoveAtlas cells**: A1 context; M8

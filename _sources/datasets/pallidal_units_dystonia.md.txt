@@ -25,7 +25,21 @@
  "includedInDataCatalog": {
   "@type": "DataCatalog",
   "name": "MoveAtlas"
- }
+ },
+ "creator": [
+  {
+   "@type": "Person",
+   "name": "Kaymak, Ahmet"
+  },
+  {
+   "@type": "Person",
+   "name": "Romito, Luigi Michele"
+  },
+  {
+   "@type": "Person",
+   "name": "Mazzoni, Alberto"
+  }
+ ]
 }
 </script>
 ```
@@ -57,6 +71,29 @@ records, meta = ds.get_data()
 - **Redistribution**: yes
 - **Access route**: Zenodo direct download
 - **Source**: <https://zenodo.org/records/13269430>
+
+## Publications
+
+- Kaymak, Ahmet; Romito, Luigi Michele; Mazzoni, Alberto (2024). *Replication Data For: Spiking patterns in the globus pallidus highlight convergent neural dynamics across diverse genetic dystonia syndromes*. Zenodo. DOI: [10.5281/zenodo.13269430](https://doi.org/10.5281/zenodo.13269430)
+- Kaymak, Ahmet; Colucci, Fabiana; Ahmadipour, Mahboubeh; Andreasi, Nico Golfrè; Rinaldo, Sara; Israel, Zvi; Arkadir, David; Telese, Roberta; Levi, Vincenzo; Zorzi, Giovanna; Carpaneto, Jacopo; Carecchio, Miryam; Prokisch, Holger; Zech, Michael; Garavaglia, Barbara; Bergman, Hagai; Eleopra, Roberto; M (2025). *Spiking Patterns in the Globus Pallidus Highlight Convergent Neural Dynamics across Diverse Genetic Dystonia Syndromes*. Annals of Neurology. DOI: [10.1002/ana.27185](https://doi.org/10.1002/ana.27185)
+
+```bibtex
+@misc{pallidal_units_dystonia_data_2024,
+  title = {Replication Data For: Spiking patterns in the globus pallidus highlight convergent neural dynamics across diverse genetic dystonia syndromes},
+  author = {Kaymak, Ahmet and Romito, Luigi Michele and Mazzoni, Alberto},
+  year = {2024},
+  doi = {10.5281/zenodo.13269430},
+  howpublished = {Zenodo},
+  note = {dataset}
+}
+@article{pallidal_units_dystonia_paper_2025,
+  title = {Spiking Patterns in the Globus Pallidus Highlight Convergent Neural Dynamics across Diverse Genetic Dystonia Syndromes},
+  author = {Kaymak, Ahmet and Colucci, Fabiana and Ahmadipour, Mahboubeh and Andreasi, Nico Golfrè and Rinaldo, Sara and Israel, Zvi and Arkadir, David and Telese, Roberta and Levi, Vincenzo and Zorzi, Giovanna and Carpaneto, Jacopo and Carecchio, Miryam and Prokisch, Holger and Zech, Michael and Garavaglia, Barbara and Bergman, Hagai and Eleopra, Roberto and Mazzoni, Alberto and Romito, Luigi M.},
+  year = {2025},
+  doi = {10.1002/ana.27185},
+  journal = {Annals of Neurology}
+}
+```
 
 ## Data card
 

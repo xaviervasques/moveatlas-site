@@ -18,7 +18,7 @@
   "C1 Normal adult movement",
   "M2 Inertial (IMU)",
   "M3 Plantar force",
-  "M4 Silhouette",
+  "M5 EMG",
   "M6 EEG"
  ],
  "url": "https://physionet.org/content/multimodal-gait-dataset/1.0.0/",
@@ -34,11 +34,11 @@
 
 <span class="ma-fam ma-eeg">eeg</span>&nbsp; <span class="ma-badge ma-harmonized">harmonized</span>&nbsp; <span class="ma-badge ma-hosted">hosted</span>&nbsp; <code>physionet_multimodal_gait</code>
 
-<span class="ma-tag">Normal adult movement</span><span class="ma-tag">Inertial (IMU)</span><span class="ma-tag">Plantar force</span><span class="ma-tag">Silhouette</span><span class="ma-tag">EEG</span>
+<span class="ma-tag">Normal adult movement</span><span class="ma-tag">Inertial (IMU)</span><span class="ma-tag">Plantar force</span><span class="ma-tag">EMG</span><span class="ma-tag">EEG</span>
 
 | | |
 |---|---|
-| **Taxonomy cells** | C1; M2 M3 M4 M6 |
+| **Taxonomy cells** | C1; M2 M3 M5 M6 |
 | **Subjects** | 59 |
 | **Ages** | 24 +/- 5 y |
 | **Status** | acquired (2026-09-08) |
@@ -65,4 +65,4 @@ records, meta = ds.get_data()
 
 The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- **MoveAtlas cells**: C1; M2 M3 M4 M6
+- **MoveAtlas cells**: C1; M2 M3 M5 M6

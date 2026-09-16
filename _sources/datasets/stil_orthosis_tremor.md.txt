@@ -15,7 +15,7 @@
  },
  "keywords": [
   "imu",
-  "A2 Myoclonus",
+  "A1 Tremor",
   "M2 Inertial (IMU)"
  ],
  "url": "https://doi.org/10.17026/LS/WV4ASD",
@@ -31,11 +31,11 @@
 
 <span class="ma-fam ma-imu">imu</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-recipe">recipe</span>&nbsp; <code>stil_orthosis_tremor</code>
 
-<span class="ma-tag">Myoclonus</span><span class="ma-tag">Inertial (IMU)</span>
+<span class="ma-tag">Tremor</span><span class="ma-tag">Inertial (IMU)</span>
 
 | | |
 |---|---|
-| **Taxonomy cells** | A2; M2 |
+| **Taxonomy cells** | A1 (essential tremor); M2 |
 | **Subjects** | 24 |
 | **Status** | catalogued (2026-09-04) |
 | **License** | gated: DANS registration/request |
@@ -61,4 +61,4 @@ ds.info   # recipe: get_data() explains the route
 
 The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- **MoveAtlas cells**: A2; M2
+- **MoveAtlas cells**: A1 (essential tremor); M2

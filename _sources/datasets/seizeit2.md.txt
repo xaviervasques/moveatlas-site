@@ -148,3 +148,4 @@ The dataset's card, factual lines; the full card with its verification dates, do
 - **link**: https://openneuro.org/datasets/ds005873
 - **citation**: doi 10.1038/s41597-025-05580-x
 - **ingestion**: build_canonical_eeg.py --only seizeit2 (BIDS-EDF builder, C-EEG-7 EAR_L/EAR_R bipolar encoding; seizure labels for evaluation only, never pretraining)
+- **known issues**: a screen on 2026-09-16 found 168 of 2,850 EEG records outside 0.5-250 µV, 4 of them flat, and 10 flat deltoid-EMG records; the values are kept as recorded

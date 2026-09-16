@@ -15,8 +15,8 @@
  },
  "keywords": [
   "auxdata",
-  "A1 Tremor",
-  "M8 Imaging"
+  "A4 Dystonia",
+  "M11 Voice / writing"
  ],
  "url": "https://zenodo.org/records/16874898",
  "isAccessibleForFree": false,
@@ -31,11 +31,11 @@
 
 <span class="ma-fam ma-auxdata">auxdata</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-recipe">recipe</span>&nbsp; <code>svd_spasmodic_dysphonia</code>
 
-<span class="ma-tag">Tremor</span><span class="ma-tag">Imaging</span>
+<span class="ma-tag">Dystonia</span><span class="ma-tag">Voice / writing</span>
 
 | | |
 |---|---|
-| **Taxonomy cells** | A1 laryngeal; M8 |
+| **Taxonomy cells** | A4 (laryngeal dystonia); M11 |
 | **Subjects** | see subset |
 | **Status** | acquired (2026-09-05) |
 | **License** | CC BY 4.0 (Zenodo 16874898), free direct download |
@@ -61,4 +61,4 @@ ds.info   # recipe: get_data() explains the route
 
 The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- **MoveAtlas cells**: A1 laryngeal; M8
+- **MoveAtlas cells**: A4 (laryngeal dystonia); M11

@@ -624,7 +624,6 @@
 <li class="toctree-l1"><a class="reference internal" href="syrip.html">SyRIP (synthetic + real infant pose)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tim_tremor.html">TIM-TREMOR (multi-etiology tremor video+depth)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="toronto_neuroface.html">Toronto NeuroFace (orofacial)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="visionmd.html">VisionMD (TOOL, not a dataset)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="amass.html">AMASS (healthy mocap base)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="motion_x.html">Motion-X++ (healthy motion base)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ntu_rgbd.html">NTU RGB+D 120 (3D skeletons)</a></li>
@@ -698,9 +697,9 @@
  "@context": "https://schema.org",
  "@type": "Dataset",
  "name": "PADS: Parkinson's Disease Smartwatch dataset (PhysioNet)",
- "description": "PADS: Parkinson's Disease Smartwatch dataset (PhysioNet). MoveAtlas imu family. 469 subjects. licence PhysioNet open.",
- "identifier": "https://physionet.org/content/pads/",
- "license": "PhysioNet open",
+ "description": "PADS: Parkinson's Disease Smartwatch dataset (PhysioNet). MoveAtlas imu family. 469 subjects. licence CC BY-NC-SA 4.0.",
+ "identifier": "https://physionet.org/content/parkinsons-disease-smartwatch/1.0.0/",
+ "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
  "sdPublisher": {
   "@type": "Organization",
   "name": "MoveAtlas"
@@ -712,7 +711,7 @@
   "D3 Pyramidal syndromes",
   "M2 Inertial (IMU)"
  ],
- "url": "https://physionet.org/content/pads/",
+ "url": "https://physionet.org/content/parkinsons-disease-smartwatch/1.0.0/",
  "isAccessibleForFree": true,
  "measurementTechnique": "imu",
  "includedInDataCatalog": {
@@ -739,7 +738,7 @@
 <td><p>harmonized (2026-08-25)</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>License</strong></p></td>
-<td><p>PhysioNet open</p></td>
+<td><p>CC BY-NC-SA 4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0, stated on the PhysioNet page, read 2026-09-16)</p></td>
 </tr>
 </tbody>
 </table>
@@ -756,10 +755,10 @@
 <section id="license-and-access">
 <h2>License and access<a class="headerlink" href="#license-and-access" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>License</strong>: PhysioNet open</p></li>
-<li><p><strong>Redistribution</strong>: yes</p></li>
+<li><p><strong>License</strong>: CC BY-NC-SA 4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0, stated on the PhysioNet page, read 2026-09-16)</p></li>
+<li><p><strong>Redistribution</strong>: yes (non-commercial, share-alike: the copy carries CC BY-NC-SA 4.0)</p></li>
 <li><p><strong>Access route</strong>: downloaded (12,689 files, SHA256-verified mirror)</p></li>
-<li><p><strong>Source</strong>: <a class="reference external" href="https://physionet.org/content/pads/">https://physionet.org/content/pads/</a></p></li>
+<li><p><strong>Source</strong>: <a class="reference external" href="https://physionet.org/content/parkinsons-disease-smartwatch/1.0.0/">https://physionet.org/content/parkinsons-disease-smartwatch/1.0.0/</a></p></li>
 </ul>
 </section>
 <section id="publications">
@@ -787,7 +786,7 @@
 <li><p><strong>population</strong>: 469 subjects: 276 PD, 79 healthy, 60 other movement disorders, 28 essential tremor, 15 atypical parkinsonism, 11 MS; NMS questionnaires</p></li>
 <li><p><strong>n_subjects</strong>: 469</p></li>
 <li><p><strong>signal</strong>: 2 Apple Watch (both wrists), 100 Hz, 11-task battery (Relaxed, StretchHold, LiftHold, HoldWeight, PointFinger, DrinkGlas, CrossArms, TouchIndex, TouchNose, Entrainment…), ~20.5 s each; channels+units self-described per observation (acc g, gyro rad/s)</p></li>
-<li><p><strong>license</strong>: PhysioNet open; redistribution: yes</p></li>
+<li><p><strong>license</strong>: CC BY-NC-SA 4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0, stated on the PhysioNet page, read 2026-09-16); redistribution: yes (non-commercial, share-alike: the copy carries CC BY-NC-SA 4.0)</p></li>
 <li><p><strong>access</strong>: downloaded (12,689 files, SHA256-verified mirror)</p></li>
 <li><p><strong>link</strong>: https://physionet.org/content/pads/</p></li>
 <li><p><strong>ingestion</strong>: ingest_pads.py -&gt; canonical_imu.pkl (one record per wrist, no cross-device resampling) + pads_subject_table.csv + audit. MEASURED CAVEAT: CoreMotion userAcceleration = gravity REMOVED at source (median |acc| ~0.004 g at rest); flagged as acc_content=linear_no_gravity</p></li>

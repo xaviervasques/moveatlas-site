@@ -16,9 +16,9 @@
  "keywords": [
   "emg",
   "B2 Bradykinesia",
-  "M2 Inertial (IMU)",
+  "M1 Pose / video",
   "M3 Plantar force",
-  "M4 Silhouette"
+  "M5 EMG"
  ],
  "url": "https://doi.org/10.1038/s41597-025-06209-9",
  "isAccessibleForFree": false,
@@ -33,11 +33,11 @@
 
 <span class="ma-fam ma-emg">emg</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-recipe">recipe</span>&nbsp; <code>nordic_walking_pd</code>
 
-<span class="ma-tag">Bradykinesia</span><span class="ma-tag">Inertial (IMU)</span><span class="ma-tag">Plantar force</span><span class="ma-tag">Silhouette</span>
+<span class="ma-tag">Bradykinesia</span><span class="ma-tag">Pose / video</span><span class="ma-tag">Plantar force</span><span class="ma-tag">EMG</span>
 
 | | |
 |---|---|
-| **Taxonomy cells** | B2; M2 M3 M4 |
+| **Taxonomy cells** | B2; M1 M3 M5 |
 | **Subjects** | 24 |
 | **Ages** | H&Y 1-3 |
 | **Status** | catalogued (2026-09-05) |
@@ -64,4 +64,4 @@ ds.info   # recipe: get_data() explains the route
 
 The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- **MoveAtlas cells**: B2; M2 M3 M4
+- **MoveAtlas cells**: B2; M1 M3 M5

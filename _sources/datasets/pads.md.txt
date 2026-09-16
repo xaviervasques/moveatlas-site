@@ -6,9 +6,9 @@
  "@context": "https://schema.org",
  "@type": "Dataset",
  "name": "PADS: Parkinson's Disease Smartwatch dataset (PhysioNet)",
- "description": "PADS: Parkinson's Disease Smartwatch dataset (PhysioNet). MoveAtlas imu family. 469 subjects. licence PhysioNet open.",
- "identifier": "https://physionet.org/content/pads/",
- "license": "PhysioNet open",
+ "description": "PADS: Parkinson's Disease Smartwatch dataset (PhysioNet). MoveAtlas imu family. 469 subjects. licence CC BY-NC-SA 4.0.",
+ "identifier": "https://physionet.org/content/parkinsons-disease-smartwatch/1.0.0/",
+ "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
  "sdPublisher": {
   "@type": "Organization",
   "name": "MoveAtlas"
@@ -20,7 +20,7 @@
   "D3 Pyramidal syndromes",
   "M2 Inertial (IMU)"
  ],
- "url": "https://physionet.org/content/pads/",
+ "url": "https://physionet.org/content/parkinsons-disease-smartwatch/1.0.0/",
  "isAccessibleForFree": true,
  "measurementTechnique": "imu",
  "includedInDataCatalog": {
@@ -40,7 +40,7 @@
 | **Taxonomy cells** | A1, B2, D3; M2 |
 | **Subjects** | 469 |
 | **Status** | harmonized (2026-08-25) |
-| **License** | PhysioNet open |
+| **License** | CC BY-NC-SA 4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0, stated on the PhysioNet page, read 2026-09-16) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 
@@ -54,10 +54,10 @@ records, meta = ds.get_data()
 
 ## License and access
 
-- **License**: PhysioNet open
-- **Redistribution**: yes
+- **License**: CC BY-NC-SA 4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0, stated on the PhysioNet page, read 2026-09-16)
+- **Redistribution**: yes (non-commercial, share-alike: the copy carries CC BY-NC-SA 4.0)
 - **Access route**: downloaded (12,689 files, SHA256-verified mirror)
-- **Source**: <https://physionet.org/content/pads/>
+- **Source**: <https://physionet.org/content/parkinsons-disease-smartwatch/1.0.0/>
 
 ## Publications
 
@@ -83,7 +83,7 @@ The dataset's card, factual lines; the full card with its verification dates, do
 - **population**: 469 subjects: 276 PD, 79 healthy, 60 other movement disorders, 28 essential tremor, 15 atypical parkinsonism, 11 MS; NMS questionnaires
 - **n_subjects**: 469
 - **signal**: 2 Apple Watch (both wrists), 100 Hz, 11-task battery (Relaxed, StretchHold, LiftHold, HoldWeight, PointFinger, DrinkGlas, CrossArms, TouchIndex, TouchNose, Entrainment...), ~20.5 s each; channels+units self-described per observation (acc g, gyro rad/s)
-- **license**: PhysioNet open; redistribution: yes
+- **license**: CC BY-NC-SA 4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0, stated on the PhysioNet page, read 2026-09-16); redistribution: yes (non-commercial, share-alike: the copy carries CC BY-NC-SA 4.0)
 - **access**: downloaded (12,689 files, SHA256-verified mirror)
 - **link**: https://physionet.org/content/pads/
 - **ingestion**: ingest_pads.py -> canonical_imu.pkl (one record per wrist, no cross-device resampling) + pads_subject_table.csv + audit. MEASURED CAVEAT: CoreMotion userAcceleration = gravity REMOVED at source (median \|acc\| ~0.004 g at rest); flagged as acc_content=linear_no_gravity

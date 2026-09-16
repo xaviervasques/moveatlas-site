@@ -15,7 +15,7 @@
  },
  "keywords": [
   "imu",
-  "A2 Myoclonus",
+  "A1 Tremor",
   "M2 Inertial (IMU)"
  ],
  "url": "https://doi.org/10.17632/fd6sdp6t7x.1",
@@ -31,11 +31,11 @@
 
 <span class="ma-fam ma-imu">imu</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-recipe">recipe</span>&nbsp; <code>mendeley_et_accel</code>
 
-<span class="ma-tag">Myoclonus</span><span class="ma-tag">Inertial (IMU)</span>
+<span class="ma-tag">Tremor</span><span class="ma-tag">Inertial (IMU)</span>
 
 | | |
 |---|---|
-| **Taxonomy cells** | A2; M2 |
+| **Taxonomy cells** | A1 (essential tremor); M2 |
 | **Status** | catalogued (2026-09-04) |
 | **License** | CC BY 4.0 (record, re-verify at fetch) |
 
@@ -60,4 +60,4 @@ ds.info   # recipe: get_data() explains the route
 
 The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- **MoveAtlas cells**: A2; M2
+- **MoveAtlas cells**: A1 (essential tremor); M2

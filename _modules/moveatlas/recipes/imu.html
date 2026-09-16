@@ -202,6 +202,13 @@
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
 <li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../troubleshooting.html">
+    Troubleshooting
+  </a>
+</li>
+
+
+<li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../../../auto_examples/index.html">
     Examples
   </a>
@@ -366,6 +373,13 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../troubleshooting.html">
+    Troubleshooting
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../auto_examples/index.html">
     Examples
   </a>
@@ -524,8 +538,9 @@
 <span class="sd">    channel with no finite sample anywhere is an ABSENT sensor, masked</span>
 <span class="sd">    off and zeroed; a location left with no valid channel is dropped; a</span>
 <span class="sd">    channel that drops out for a stretch stays present, its non-finite</span>
-<span class="sd">    samples zeroed and the record gains sample_valid (T, L). The signal</span>
-<span class="sd">    is therefore finite and nothing is inferred."""</span>
+<span class="sd">    samples zeroed and the record gains sample_valid (T, L). A channel</span>
+<span class="sd">    whose finite samples are all exactly zero is absent as well</span>
+<span class="sd">    (2026-09-17). The signal is therefore finite and nothing is inferred."""</span>
     <span class="n">active</span> <span class="o">=</span> <span class="p">[</span><span class="n">l</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">LOCATIONS</span> <span class="k">if</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">loc_data</span><span class="p">]</span>
     <span class="n">T</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">loc_data</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span><span class="o">.</span><span class="n">values</span><span class="p">())))</span>
     <span class="n">sig</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">T</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">active</span><span class="p">),</span> <span class="mi">9</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
@@ -537,6 +552,8 @@
 
     <span class="n">finite</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">sig</span><span class="p">)</span>
     <span class="n">dead</span> <span class="o">=</span> <span class="n">cmask</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">finite</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="c1"># a channel of exact zeros throughout is an absent sensor too (2026-09-17)</span>
+    <span class="n">dead</span> <span class="o">|=</span> <span class="n">cmask</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">finite</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">sig</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">dead</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
         <span class="n">cmask</span> <span class="o">=</span> <span class="n">cmask</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">dead</span>
     <span class="n">keep</span> <span class="o">=</span> <span class="p">[</span><span class="n">li</span> <span class="k">for</span> <span class="n">li</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">active</span><span class="p">))</span> <span class="k">if</span> <span class="n">cmask</span><span class="p">[</span><span class="n">li</span><span class="p">]</span><span class="o">.</span><span class="n">any</span><span class="p">()]</span>

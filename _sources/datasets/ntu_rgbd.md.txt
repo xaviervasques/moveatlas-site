@@ -70,3 +70,9 @@ ds.info   # recipe: get_data() explains the route
   journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence}
 }
 ```
+
+## Data card
+
+The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
+
+- **known issues**: a screen on 2026-09-16 found 17,073 of 113,945 skeleton records outside the thigh-to-torso length band used for the other pose sources; the Kinect joint definitions differ from those sources

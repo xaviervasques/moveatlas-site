@@ -565,7 +565,7 @@
 <span class="sd">        dataset, what its published record lists (nothing is downloaded</span>
 <span class="sd">        to list). Many hosted records hold tables, archives or documents</span>
 <span class="sd">        rather than canonical records; this is how you see them."""</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">access_case</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"barrier"</span><span class="p">,</span> <span class="s2">"local_only"</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">access_case</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"barrier"</span><span class="p">,</span> <span class="s2">"local_only"</span><span class="p">,</span> <span class="s2">"tool"</span><span class="p">):</span>
             <span class="k">return</span> <span class="p">[]</span>
         <span class="n">store</span> <span class="o">=</span> <span class="n">open_store</span><span class="p">()</span>
         <span class="n">base</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s2">"path"</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"</span><span class="se">\\</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"/"</span><span class="p">)</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span>
@@ -664,7 +664,7 @@
 <span class="sd">        computed once; () for barrier / local_only ids and when nothing</span>
 <span class="sd">        is ingested."""</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_modalities</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">access_case</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"barrier"</span><span class="p">,</span> <span class="s2">"local_only"</span><span class="p">):</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">access_case</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"barrier"</span><span class="p">,</span> <span class="s2">"local_only"</span><span class="p">,</span> <span class="s2">"tool"</span><span class="p">):</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_modalities</span> <span class="o">=</span> <span class="p">()</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">try</span><span class="p">:</span>
@@ -713,6 +713,11 @@
                 <span class="sa">f</span><span class="s2">"'</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">code</span><span class="si">}</span><span class="s2">' is a documented access barrier, not a "</span>
                 <span class="sa">f</span><span class="s2">"download. Route on record: </span><span class="si">{</span><span class="n">i</span><span class="p">[</span><span class="s1">'access'</span><span class="p">]</span><span class="si">}</span><span class="s2">. Status: "</span>
                 <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">i</span><span class="p">[</span><span class="s1">'status'</span><span class="p">]</span><span class="si">}</span><span class="s2">. Card: </span><span class="si">{</span><span class="n">i</span><span class="p">[</span><span class="s1">'path'</span><span class="p">]</span><span class="si">}</span><span class="s2">/datacard.md"</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">access_case</span> <span class="o">==</span> <span class="s2">"tool"</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">AccessError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"'</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">code</span><span class="si">}</span><span class="s2">' is software catalogued for reference, not a "</span>
+                <span class="sa">f</span><span class="s2">"dataset: nothing downloads. Code: </span><span class="si">{</span><span class="n">i</span><span class="p">[</span><span class="s1">'link'</span><span class="p">]</span><span class="si">}</span><span class="s2">. "</span>
+                <span class="sa">f</span><span class="s2">"Card: </span><span class="si">{</span><span class="n">i</span><span class="p">[</span><span class="s1">'path'</span><span class="p">]</span><span class="si">}</span><span class="s2">/datacard.md"</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">access_case</span> <span class="o">==</span> <span class="s2">"local_only"</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">AccessError</span><span class="p">(</span>
                 <span class="sa">f</span><span class="s2">"'</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">code</span><span class="si">}</span><span class="s2">' is private-tier data; point a dedicated "</span>

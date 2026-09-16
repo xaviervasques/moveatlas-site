@@ -24,7 +24,57 @@
  "includedInDataCatalog": {
   "@type": "DataCatalog",
   "name": "MoveAtlas"
- }
+ },
+ "creator": [
+  {
+   "@type": "Person",
+   "name": "Niemelä, Valter"
+  },
+  {
+   "@type": "Person",
+   "name": "Salih, Ammar"
+  },
+  {
+   "@type": "Person",
+   "name": "Solea, Daniela"
+  },
+  {
+   "@type": "Person",
+   "name": "Lindvall, Björn"
+  },
+  {
+   "@type": "Person",
+   "name": "Weinberg, Jan"
+  },
+  {
+   "@type": "Person",
+   "name": "Miltenberger, Gabriel"
+  },
+  {
+   "@type": "Person",
+   "name": "Granberg, Tobias"
+  },
+  {
+   "@type": "Person",
+   "name": "Tzovla, Aikaterini"
+  },
+  {
+   "@type": "Person",
+   "name": "Nordin, Love"
+  },
+  {
+   "@type": "Person",
+   "name": "Danfors, Torsten"
+  },
+  {
+   "@type": "Person",
+   "name": "Savitcheva, Irina"
+  },
+  {
+   "@type": "Person",
+   "name": "Dahl, Niklas"
+  }
+ ]
 }
 </script>
 ```
@@ -56,6 +106,33 @@ records, meta = ds.get_data()
 - **Redistribution**: yes
 - **Access route**: Dryad direct download
 - **Source**: <https://doi.org/10.5061/dryad.7h44j0zr9>
+
+## Publications
+
+- Niemelä, Valter; Salih, Ammar; Solea, Daniela; Lindvall, Björn; Weinberg, Jan; Miltenberger, Gabriel; Granberg, Tobias; Tzovla, Aikaterini; Nordin, Love; Danfors, Torsten; Savitcheva, Irina; Dahl, Niklas; Paucar, Martin (2021). *Phenotypic variability in chorea-acanthocytosis associated with novel VPS13A mutations*. Dryad. DOI: [10.5061/dryad.7h44j0zr9](https://doi.org/10.5061/dryad.7h44j0zr9)
+- Niemelä, Valter; Salih, Ammar; Solea, Daniela; Lindvall, Björn; Weinberg, Jan; Miltenberger, Gabriel; Granberg, Tobias; Tzovla, Aikaterini; Nordin, Love; Danfors, Torsten; Savitcheva, Irina; Dahl, Niklas; Paucar, Martin (2020). *Phenotypic variability in chorea-acanthocytosis associated with novel
+            <i>VPS13A</i>
+            mutations*. Neurology Genetics. DOI: [10.1212/nxg.0000000000000426](https://doi.org/10.1212/nxg.0000000000000426)
+
+```bibtex
+@misc{chorea_acanthocytosis_mri_data_2021,
+  title = {Phenotypic variability in chorea-acanthocytosis associated with novel VPS13A mutations},
+  author = {Niemelä, Valter and Salih, Ammar and Solea, Daniela and Lindvall, Björn and Weinberg, Jan and Miltenberger, Gabriel and Granberg, Tobias and Tzovla, Aikaterini and Nordin, Love and Danfors, Torsten and Savitcheva, Irina and Dahl, Niklas and Paucar, Martin},
+  year = {2021},
+  doi = {10.5061/dryad.7h44j0zr9},
+  howpublished = {Dryad},
+  note = {dataset}
+}
+@article{chorea_acanthocytosis_mri_paper_2020,
+  title = {Phenotypic variability in chorea-acanthocytosis associated with novel
+            <i>VPS13A</i>
+            mutations},
+  author = {Niemelä, Valter and Salih, Ammar and Solea, Daniela and Lindvall, Björn and Weinberg, Jan and Miltenberger, Gabriel and Granberg, Tobias and Tzovla, Aikaterini and Nordin, Love and Danfors, Torsten and Savitcheva, Irina and Dahl, Niklas and Paucar, Martin},
+  year = {2020},
+  doi = {10.1212/nxg.0000000000000426},
+  journal = {Neurology Genetics}
+}
+```
 
 ## Data card
 

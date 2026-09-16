@@ -15,6 +15,8 @@
  },
  "keywords": [
   "pose",
+  "D3 Pyramidal syndromes",
+  "M1 Pose / video",
   "M3 Plantar force"
  ],
  "url": "https://doi.org/10.6084/m9.figshare.4877432",
@@ -30,11 +32,11 @@
 
 <span class="ma-fam ma-pose">pose</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-recipe">recipe</span>&nbsp; <code>leuven_cp_gait</code>
 
-<span class="ma-tag">Plantar force</span>
+<span class="ma-tag">Pyramidal syndromes</span><span class="ma-tag">Pose / video</span><span class="ma-tag">Plantar force</span>
 
 | | |
 |---|---|
-| **Taxonomy cells** | D CP; M3 |
+| **Taxonomy cells** | D3 (cerebral palsy); M1 M3 |
 | **Status** | acquired (2026-09-06) |
 | **License** | open on figshare (licence on record, verify at fetch) |
 
@@ -59,4 +61,4 @@ ds.info   # recipe: get_data() explains the route
 
 The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- **MoveAtlas cells**: D CP; M3
+- **MoveAtlas cells**: D3 (cerebral palsy); M1 M3

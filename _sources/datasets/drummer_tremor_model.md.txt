@@ -15,10 +15,10 @@
  },
  "keywords": [
   "imu",
-  "A2 Myoclonus",
-  "C2 Infant development",
+  "A1 Tremor",
+  "C1 Normal adult movement",
   "M2 Inertial (IMU)",
-  "M4 Silhouette"
+  "M5 EMG"
  ],
  "url": "https://doi.org/10.57745/thhwp2",
  "isAccessibleForFree": true,
@@ -33,11 +33,11 @@
 
 <span class="ma-fam ma-imu">imu</span>&nbsp; <span class="ma-badge ma-harmonized">harmonized</span>&nbsp; <span class="ma-badge ma-hosted">hosted</span>&nbsp; <code>drummer_tremor_model</code>
 
-<span class="ma-tag">Myoclonus</span><span class="ma-tag">Infant development</span><span class="ma-tag">Inertial (IMU)</span><span class="ma-tag">Silhouette</span>
+<span class="ma-tag">Tremor</span><span class="ma-tag">Normal adult movement</span><span class="ma-tag">Inertial (IMU)</span><span class="ma-tag">EMG</span>
 
 | | |
 |---|---|
-| **Taxonomy cells** | A2 context; C2; M2 M4 |
+| **Taxonomy cells** | A1 context (physiological tremor); C1; M2 M5 |
 | **Subjects** | 18 |
 | **Status** | acquired (2026-09-05) |
 | **License** | etalab 2.0 (VERIFIED at fetch 2026-09-05 from the dataset version) |
@@ -63,4 +63,4 @@ records, meta = ds.get_data()
 
 The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- **MoveAtlas cells**: A2 context; C2; M2 M4
+- **MoveAtlas cells**: A1 context (physiological tremor); C1; M2 M5

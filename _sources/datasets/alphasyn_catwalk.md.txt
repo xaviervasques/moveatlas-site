@@ -53,6 +53,20 @@ records, meta = ds.get_data()
 - **Access route**: article supplementary files (10.1016/j.dib.2017.12.067)
 - **Source**: <https://pmc.ncbi.nlm.nih.gov/articles/PMC5988224/>
 
+## Publications
+
+- Timotius, Ivanna K.; Canneva, Fabio; Minakaki, Georgia; Pasluosta, Cristian; Moceri, Sandra; Casadei, Nicolas; Riess, Olaf; Winkler, Jürgen; Klucken, Jochen; von Hörsten, Stephan; Eskofier, Bjoern (2018). *Dynamic footprints of α-synucleinopathic mice recorded by CatWalk gait analysis*. Data in Brief. DOI: [10.1016/j.dib.2017.12.067](https://doi.org/10.1016/j.dib.2017.12.067)
+
+```bibtex
+@article{alphasyn_catwalk_paper_2018,
+  title = {Dynamic footprints of α-synucleinopathic mice recorded by CatWalk gait analysis},
+  author = {Timotius, Ivanna K. and Canneva, Fabio and Minakaki, Georgia and Pasluosta, Cristian and Moceri, Sandra and Casadei, Nicolas and Riess, Olaf and Winkler, Jürgen and Klucken, Jochen and von Hörsten, Stephan and Eskofier, Bjoern},
+  year = {2018},
+  doi = {10.1016/j.dib.2017.12.067},
+  journal = {Data in Brief}
+}
+```
+
 ## Data card
 
 The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.

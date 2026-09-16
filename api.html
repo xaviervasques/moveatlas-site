@@ -554,8 +554,9 @@ MoveAtlas records, shipped with the package
 <dl class="py function">
 <dt class="sig sig-object py" id="moveatlas.registry.access_case">
 <span class="sig-prename descclassname"><span class="pre">moveatlas.registry.</span></span><span class="sig-name descname"><span class="pre">access_case</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/registry.html#access_case"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.registry.access_case" title="Link to this definition">#</a></dt>
-<dd><p>Classify a registry row into the four access cases.</p>
+<dd><p>Classify a registry row into the access cases.</p>
 <ul class="simple">
+<li><p>tool: software catalogued for reference, not a dataset (TOOLS).</p></li>
 <li><p>hosted: redistribution allowed, our record store serves it.</p></li>
 <li><p>local_only: private-tier data on disk (empty since 2026-09-01: the
 CODY derived release went public on Zenodo and the cody ids
@@ -568,9 +569,11 @@ the atlas).</p></li>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="moveatlas.registry.list_datasets">
-<span class="sig-prename descclassname"><span class="pre">moveatlas.registry.</span></span><span class="sig-name descname"><span class="pre">list_datasets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">family</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">case</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/registry.html#list_datasets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.registry.list_datasets" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">moveatlas.registry.</span></span><span class="sig-name descname"><span class="pre">list_datasets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">family</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">case</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_tools</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/moveatlas/registry.html#list_datasets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#moveatlas.registry.list_datasets" title="Link to this definition">#</a></dt>
 <dd><p>Return registry rows (dicts), optionally filtered by family or
-access case. Each row gains an ‘access_case’ key.</p>
+access case. Each row gains an ‘access_case’ key. Rows describing
+software rather than data (access case “tool”) are left out unless
+include_tools is true or case=”tool” is asked.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -894,8 +897,9 @@ all. Three validity rules hold for every source (2026-08-23): a
 channel with no finite sample anywhere is an ABSENT sensor, masked
 off and zeroed; a location left with no valid channel is dropped; a
 channel that drops out for a stretch stays present, its non-finite
-samples zeroed and the record gains sample_valid (T, L). The signal
-is therefore finite and nothing is inferred.</p>
+samples zeroed and the record gains sample_valid (T, L). A channel
+whose finite samples are all exactly zero is absent as well
+(2026-09-17). The signal is therefore finite and nothing is inferred.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -914,7 +918,7 @@ path.</p>
 <section id="module-moveatlas.cli">
 <span id="command-line"></span><h2>Command line<a class="headerlink" href="#module-moveatlas.cli" title="Link to this heading">#</a></h2>
 <p>The <cite>moveatlas</cite> command line: the same verbs as the library.</p>
-<p>moveatlas list [–family imu] [–case hosted|recipe|barrier]
+<p>moveatlas list [–family imu] [–case hosted|recipe|barrier|tool]
 moveatlas info &lt;id&gt;
 moveatlas fetch &lt;id&gt;
 moveatlas ingest &lt;id&gt;

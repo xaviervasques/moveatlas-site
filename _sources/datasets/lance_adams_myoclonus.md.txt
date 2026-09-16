@@ -25,7 +25,29 @@
  "includedInDataCatalog": {
   "@type": "DataCatalog",
   "name": "MoveAtlas"
- }
+ },
+ "creator": [
+  {
+   "@type": "Person",
+   "name": "Vellieux, Geoffroy"
+  },
+  {
+   "@type": "Person",
+   "name": "Apartis, Emmanuelle"
+  },
+  {
+   "@type": "Person",
+   "name": "Degos, Vincent"
+  },
+  {
+   "@type": "Person",
+   "name": "Fossati, Philippe"
+  },
+  {
+   "@type": "Person",
+   "name": "Navarro, Vincent"
+  }
+ ]
 }
 </script>
 ```
@@ -57,6 +79,29 @@ records, meta = ds.get_data()
 - **Redistribution**: yes
 - **Access route**: Zenodo direct download
 - **Source**: <https://zenodo.org/records/7620808>
+
+## Publications
+
+- Vellieux, Geoffroy; Apartis, Emmanuelle; Degos, Vincent; Fossati, Philippe; Navarro, Vincent (2023). *Effectiveness of electroconvulsive therapy in Lance-Adams syndrome*. Zenodo. DOI: [10.5281/zenodo.7620808](https://doi.org/10.5281/zenodo.7620808)
+- Vellieux, Geoffroy; Apartis, Emmanuelle; Degos, Vincent; Fossati, Philippe; Navarro, Vincent (2023). *Effectiveness of electroconvulsive therapy in Lance-Adams syndrome*. Brain Stimulation. DOI: [10.1016/j.brs.2023.03.004](https://doi.org/10.1016/j.brs.2023.03.004)
+
+```bibtex
+@misc{lance_adams_myoclonus_data_2023,
+  title = {Effectiveness of electroconvulsive therapy in Lance-Adams syndrome},
+  author = {Vellieux, Geoffroy and Apartis, Emmanuelle and Degos, Vincent and Fossati, Philippe and Navarro, Vincent},
+  year = {2023},
+  doi = {10.5281/zenodo.7620808},
+  howpublished = {Zenodo},
+  note = {dataset}
+}
+@article{lance_adams_myoclonus_paper_2023,
+  title = {Effectiveness of electroconvulsive therapy in Lance-Adams syndrome},
+  author = {Vellieux, Geoffroy and Apartis, Emmanuelle and Degos, Vincent and Fossati, Philippe and Navarro, Vincent},
+  year = {2023},
+  doi = {10.1016/j.brs.2023.03.004},
+  journal = {Brain Stimulation}
+}
+```
 
 ## Data card
 

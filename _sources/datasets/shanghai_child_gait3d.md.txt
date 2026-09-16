@@ -15,7 +15,8 @@
  },
  "keywords": [
   "pose",
-  "C1 Normal adult movement"
+  "C2 Infant development",
+  "M1 Pose / video"
  ],
  "url": "https://doi.org/10.57760/sciencedb.40305",
  "isAccessibleForFree": false,
@@ -30,11 +31,11 @@
 
 <span class="ma-fam ma-pose">pose</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-recipe">recipe</span>&nbsp; <code>shanghai_child_gait3d</code>
 
-<span class="ma-tag">Normal adult movement</span>
+<span class="ma-tag">Infant development</span><span class="ma-tag">Pose / video</span>
 
 | | |
 |---|---|
-| **Taxonomy cells** | C1; D |
+| **Taxonomy cells** | C2 (typically developing children, 3-13 years); M1 |
 | **Subjects** | 431 |
 | **Ages** | 3-13 y |
 | **Status** | catalogued (2026-09-05) |
@@ -61,4 +62,4 @@ ds.info   # recipe: get_data() explains the route
 
 The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- **MoveAtlas cells**: C1; D
+- **MoveAtlas cells**: C2 (typically developing children, 3-13 years); M1

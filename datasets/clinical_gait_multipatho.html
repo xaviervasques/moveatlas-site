@@ -624,7 +624,6 @@
 <li class="toctree-l1"><a class="reference internal" href="syrip.html">SyRIP (synthetic + real infant pose)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tim_tremor.html">TIM-TREMOR (multi-etiology tremor video+depth)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="toronto_neuroface.html">Toronto NeuroFace (orofacial)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="visionmd.html">VisionMD (TOOL, not a dataset)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="amass.html">AMASS (healthy mocap base)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="motion_x.html">Motion-X++ (healthy motion base)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ntu_rgbd.html">NTU RGB+D 120 (3D skeletons)</a></li>
@@ -836,6 +835,7 @@
 <li><p><strong>access</strong>: downloaded</p></li>
 <li><p><strong>link</strong>: https://doi.org/10.6084/m9.figshare.28806086</p></li>
 <li><p><strong>ingestion</strong>: build_canonical_imu.py (clinical_gait mapping)</p></li>
+<li><p><strong>known issues</strong>: magnetometer values are normalized to the local field, not in uT (declared in mag_unit from 2026-09-17); subject RIL_12’s head sensor is written as zeros in five trials and is treated as absent in records built from 2026-09-17</p></li>
 </ul>
 </section>
 </section>

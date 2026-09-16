@@ -15,8 +15,7 @@
  },
  "keywords": [
   "imu",
-  "A2 Myoclonus",
-  "B1 Rigidity",
+  "A1 Tremor",
   "M2 Inertial (IMU)"
  ],
  "url": "https://osf.io/mp5ha/",
@@ -32,11 +31,11 @@
 
 <span class="ma-fam ma-imu">imu</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-recipe">recipe</span>&nbsp; <code>osf_tremor_amplitude</code>
 
-<span class="ma-tag">Myoclonus</span><span class="ma-tag">Rigidity</span><span class="ma-tag">Inertial (IMU)</span>
+<span class="ma-tag">Tremor</span><span class="ma-tag">Inertial (IMU)</span>
 
 | | |
 |---|---|
-| **Taxonomy cells** | A2; B1 context; M2 |
+| **Taxonomy cells** | A1; M2 |
 | **Status** | acquired (2026-09-05) |
 | **License** | CC BY-NC-SA 4.0 (VERIFIED 2026-09-05 from the fetched license.txt; NC-SA - licence-matrix decision needed before public release) |
 
@@ -61,4 +60,4 @@ ds.info   # recipe: get_data() explains the route
 
 The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- **MoveAtlas cells**: A2; B1 context; M2
+- **MoveAtlas cells**: A1; M2

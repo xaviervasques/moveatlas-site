@@ -15,8 +15,8 @@
  },
  "keywords": [
   "auxdata",
-  "A1 Tremor",
-  "M8 Imaging"
+  "A4 Dystonia",
+  "M11 Voice / writing"
  ],
  "url": "https://www.pentaxmedical.com/",
  "isAccessibleForFree": false,
@@ -31,11 +31,11 @@
 
 <span class="ma-fam ma-auxdata">auxdata</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-barrier">barrier</span>&nbsp; <code>meei_voice_db</code>
 
-<span class="ma-tag">Tremor</span><span class="ma-tag">Imaging</span>
+<span class="ma-tag">Dystonia</span><span class="ma-tag">Voice / writing</span>
 
 | | |
 |---|---|
-| **Taxonomy cells** | A1 laryngeal context; M8 |
+| **Taxonomy cells** | A4 context (laryngeal disorders); M11 |
 | **Subjects** | ~700 |
 | **Status** | documented access barrier (2026-09-05) |
 | **License** | COMMERCIAL: paid purchase licence from PENTAX Medical |
@@ -61,4 +61,4 @@ ds.info   # barrier: get_data() explains the route
 
 The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- **MoveAtlas cells**: A1 laryngeal context; M8
+- **MoveAtlas cells**: A4 context (laryngeal disorders); M11

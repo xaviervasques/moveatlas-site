@@ -24,7 +24,13 @@
  "includedInDataCatalog": {
   "@type": "DataCatalog",
   "name": "MoveAtlas"
- }
+ },
+ "creator": [
+  {
+   "@type": "Person",
+   "name": "Segado, Melanie"
+  }
+ ]
 }
 </script>
 ```
@@ -60,7 +66,26 @@ records, meta = ds.get_data()
 
 ## Publications
 
--  (). **. .
+- Segado, Melanie (2023). *Update: Predicting clinical assessments of infants’ risk of neuromotor disease from 2-dimensional videos*. OSF. DOI: [10.17605/osf.io/bwgek](https://doi.org/10.17605/osf.io/bwgek)
+- Segado, Melanie; Prosser, Laura A; Duncan, Andrea F; Johnson, Michelle J; Kording, Konrad P (2026). *A preregistered, open pipeline for early cerebral palsy risk assessment from infant videos*. GigaScience. DOI: [10.1093/gigascience/giag003](https://doi.org/10.1093/gigascience/giag003)
+
+```bibtex
+@misc{chop_gma_features_data_2023,
+  title = {Update: Predicting clinical assessments of infants’ risk of neuromotor disease from 2-dimensional videos},
+  author = {Segado, Melanie},
+  year = {2023},
+  doi = {10.17605/osf.io/bwgek},
+  howpublished = {OSF},
+  note = {dataset}
+}
+@article{chop_gma_features_paper_2026,
+  title = {A preregistered, open pipeline for early cerebral palsy risk assessment from infant videos},
+  author = {Segado, Melanie and Prosser, Laura A and Duncan, Andrea F and Johnson, Michelle J and Kording, Konrad P},
+  year = {2026},
+  doi = {10.1093/gigascience/giag003},
+  journal = {GigaScience}
+}
+```
 
 ## Data card
 

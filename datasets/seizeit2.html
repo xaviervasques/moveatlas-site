@@ -624,7 +624,6 @@
 <li class="toctree-l1"><a class="reference internal" href="syrip.html">SyRIP (synthetic + real infant pose)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tim_tremor.html">TIM-TREMOR (multi-etiology tremor video+depth)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="toronto_neuroface.html">Toronto NeuroFace (orofacial)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="visionmd.html">VisionMD (TOOL, not a dataset)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="amass.html">AMASS (healthy mocap base)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="motion_x.html">Motion-X++ (healthy motion base)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ntu_rgbd.html">NTU RGB+D 120 (3D skeletons)</a></li>
@@ -852,6 +851,7 @@
 <li><p><strong>link</strong>: https://openneuro.org/datasets/ds005873</p></li>
 <li><p><strong>citation</strong>: doi 10.1038/s41597-025-05580-x</p></li>
 <li><p><strong>ingestion</strong>: build_canonical_eeg.py –only seizeit2 (BIDS-EDF builder, C-EEG-7 EAR_L/EAR_R bipolar encoding; seizure labels for evaluation only, never pretraining)</p></li>
+<li><p><strong>known issues</strong>: a screen on 2026-09-16 found 168 of 2,850 EEG records outside 0.5-250 µV, 4 of them flat, and 10 flat deltoid-EMG records; the values are kept as recorded</p></li>
 </ul>
 </section>
 </section>

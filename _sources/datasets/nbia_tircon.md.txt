@@ -15,7 +15,7 @@
  },
  "keywords": [
   "auxdata",
-  "A1 Tremor",
+  "A4 Dystonia",
   "M9 Genetics"
  ],
  "url": "https://clinicaltrials.gov/study/NCT05522374",
@@ -31,11 +31,11 @@
 
 <span class="ma-fam ma-auxdata">auxdata</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-barrier">barrier</span>&nbsp; <code>nbia_tircon</code>
 
-<span class="ma-tag">Tremor</span><span class="ma-tag">Genetics</span>
+<span class="ma-tag">Dystonia</span><span class="ma-tag">Genetics</span>
 
 | | |
 |---|---|
-| **Taxonomy cells** | A1 genetic context; M9 |
+| **Taxonomy cells** | A4 genetic context; M9 |
 | **Subjects** | 700+ |
 | **Status** | documented access barrier (2026-09-05) |
 | **License** | researcher application to the registry (contact at LMU); clinical/natural-history scales, no signal |
@@ -61,4 +61,4 @@ ds.info   # barrier: get_data() explains the route
 
 The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- **MoveAtlas cells**: A1 genetic context; M9
+- **MoveAtlas cells**: A4 genetic context; M9

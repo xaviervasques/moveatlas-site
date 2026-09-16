@@ -18,8 +18,8 @@
   "B1 Rigidity",
   "B5 Freezing of gait",
   "A1 Tremor",
-  "A2 Myoclonus",
   "A3 Tics",
+  "A4 Dystonia",
   "M7 LFP / ECoG"
  ],
  "url": "https://dabi.loni.usc.edu/projects/F3RE38A785JW",
@@ -35,11 +35,11 @@
 
 <span class="ma-fam ma-eeg">eeg</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-recipe">recipe</span>&nbsp; <code>dabi_movement_ephys</code>
 
-<span class="ma-tag">Rigidity</span><span class="ma-tag">Freezing of gait</span><span class="ma-tag">Tremor</span><span class="ma-tag">Myoclonus</span><span class="ma-tag">Tics</span><span class="ma-tag">LFP / ECoG</span>
+<span class="ma-tag">Rigidity</span><span class="ma-tag">Freezing of gait</span><span class="ma-tag">Tremor</span><span class="ma-tag">Tics</span><span class="ma-tag">Dystonia</span><span class="ma-tag">LFP / ECoG</span>
 
 | | |
 |---|---|
-| **Taxonomy cells** | B1-B5 A1 A2 A3 pediatric; M7 |
+| **Taxonomy cells** | B1-B5 A1 A3 A4 context (paediatric archive); M7 |
 | **Status** | catalogued (2026-09-05) |
 | **License** | free DABI account + institutional agreement per project; two projects carry a PUBLIC file tier (UAB ERNA 155 MB, UMinn coordinated-reset ET 9.5 GB) |
 
@@ -64,4 +64,4 @@ ds.info   # recipe: get_data() explains the route
 
 The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- **MoveAtlas cells**: B1-B5 A1 A2 A3 pediatric; M7
+- **MoveAtlas cells**: B1-B5 A1 A3 A4 context (paediatric archive); M7

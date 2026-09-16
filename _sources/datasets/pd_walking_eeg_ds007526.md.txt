@@ -74,14 +74,14 @@ records, meta = ds.get_data()
 
 ## Publications
 
-- Zoya Katzir; Daniel Vered; Inbal Maidan (inbalm@tlvmc.gov.il) (2026). *PD-EEG: Resting-State & Walking EEG in Parkinson's Disease*. OpenNeuro. DOI: [10.18112/openneuro.ds007526.v1.0.0](https://doi.org/10.18112/openneuro.ds007526.v1.0.0)
+- Zoya Katzir; Daniel Vered; Inbal Maidan (inbalm@tlvmc.gov.il) (2026). *PD-EEG: Resting-State & Walking EEG in Parkinson's Disease*. OpenNeuro. DOI: [10.18112/openneuro.ds007526.v1.0.2](https://doi.org/10.18112/openneuro.ds007526.v1.0.2)
 
 ```bibtex
 @misc{pd_walking_eeg_ds007526_data_2026,
   title = {PD-EEG: Resting-State & Walking EEG in Parkinson's Disease},
   author = {Zoya Katzir and Daniel Vered and Inbal Maidan (inbalm@tlvmc.gov.il)},
   year = {2026},
-  doi = {10.18112/openneuro.ds007526.v1.0.0},
+  doi = {10.18112/openneuro.ds007526.v1.0.2},
   howpublished = {OpenNeuro},
   note = {dataset}
 }
@@ -100,3 +100,4 @@ The dataset's card, factual lines; the full card with its verification dates, do
 - **license**: CC0 (OpenNeuro); redistribution: yes
 - **access**: tool: aws s3 sync --no-sign-request s3://openneuro.org/ds007526
 - **link**: https://openneuro.org/datasets/ds007526
+- **known issues**: the stored amplitudes are about 1000 times larger than scalp EEG although the source declares µV; every record carries the flag and nothing is rescaled

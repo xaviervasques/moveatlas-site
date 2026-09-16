@@ -16,8 +16,9 @@
  "keywords": [
   "eeg",
   "B1 Rigidity",
-  "M7 LFP / ECoG",
-  "M4 Silhouette"
+  "B2 Bradykinesia",
+  "M1 Pose / video",
+  "M7 LFP / ECoG"
  ],
  "url": "https://doi.org/10.5061/dryad.2jm63xsq2",
  "isAccessibleForFree": false,
@@ -32,11 +33,11 @@
 
 <span class="ma-fam ma-eeg">eeg</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-recipe">recipe</span>&nbsp; <code>dryad_stn_kinematics</code>
 
-<span class="ma-tag">Rigidity</span><span class="ma-tag">LFP / ECoG</span><span class="ma-tag">Silhouette</span>
+<span class="ma-tag">Rigidity</span><span class="ma-tag">Bradykinesia</span><span class="ma-tag">Pose / video</span><span class="ma-tag">LFP / ECoG</span>
 
 | | |
 |---|---|
-| **Taxonomy cells** | B1; M7 M4 |
+| **Taxonomy cells** | B1-B2; M1 M7 |
 | **Status** | blocked at the host for scripted clients (2026-09-07) |
 | **License** | CC0-1.0 (Dryad API license field, verified 2026-09-07) |
 
@@ -61,4 +62,4 @@ ds.info   # recipe: get_data() explains the route
 
 The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- **MoveAtlas cells**: B1; M7 M4
+- **MoveAtlas cells**: B1-B2; M1 M7

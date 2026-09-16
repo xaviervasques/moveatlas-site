@@ -15,7 +15,7 @@
  },
  "keywords": [
   "eeg",
-  "A2 Myoclonus",
+  "A1 Tremor",
   "M7 LFP / ECoG"
  ],
  "url": "https://doi.org/10.5061/dryad.cjsxksngp",
@@ -31,11 +31,11 @@
 
 <span class="ma-fam ma-eeg">eeg</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-recipe">recipe</span>&nbsp; <code>dryad_vim_et_intraop</code>
 
-<span class="ma-tag">Myoclonus</span><span class="ma-tag">LFP / ECoG</span>
+<span class="ma-tag">Tremor</span><span class="ma-tag">LFP / ECoG</span>
 
 | | |
 |---|---|
-| **Taxonomy cells** | A2; M7 |
+| **Taxonomy cells** | A1 (essential tremor); M7 |
 | **Status** | catalogued (2026-09-05) |
 | **License** | CC0 (Dryad, re-verify at fetch) |
 
@@ -60,4 +60,4 @@ ds.info   # recipe: get_data() explains the route
 
 The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- **MoveAtlas cells**: A2; M7
+- **MoveAtlas cells**: A1 (essential tremor); M7

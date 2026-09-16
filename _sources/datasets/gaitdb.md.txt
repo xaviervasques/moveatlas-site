@@ -6,9 +6,9 @@
  "@context": "https://schema.org",
  "@type": "Dataset",
  "name": "PhysioNet gait in aging and disease",
- "description": "PhysioNet gait in aging and disease. MoveAtlas imu family. 15 subjects. licence PhysioNet open.",
+ "description": "PhysioNet gait in aging and disease. MoveAtlas imu family. 15 subjects. licence ODC-By 1.0.",
  "identifier": "https://physionet.org/content/gaitdb/",
- "license": "PhysioNet open",
+ "license": "https://opendatacommons.org/licenses/by/1-0/",
  "sdPublisher": {
   "@type": "Organization",
   "name": "MoveAtlas"
@@ -66,7 +66,7 @@
 | **Taxonomy cells** | B2, B3, C3; M2 (derived) |
 | **Subjects** | 15 |
 | **Status** | acquired |
-| **License** | PhysioNet open |
+| **License** | ODC-By 1.0 (Open Data Commons Attribution License v1.0, stated on the PhysioNet page, read 2026-09-16) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 
@@ -80,7 +80,7 @@ records, meta = ds.get_data()
 
 ## License and access
 
-- **License**: PhysioNet open
+- **License**: ODC-By 1.0 (Open Data Commons Attribution License v1.0, stated on the PhysioNet page, read 2026-09-16)
 - **Redistribution**: yes
 - **Access route**: downloaded
 - **Source**: <https://physionet.org/content/gaitdb/>
@@ -118,6 +118,6 @@ The dataset's card, factual lines; the full card with its verification dates, do
 - **population**: 5 young + 5 old + 5 PD
 - **n_subjects**: 15
 - **signal**: stride-interval series (derived, not raw signal)
-- **license**: PhysioNet open; redistribution: yes
+- **license**: ODC-By 1.0 (Open Data Commons Attribution License v1.0, stated on the PhysioNet page, read 2026-09-16); redistribution: yes
 - **access**: downloaded
 - **link**: https://physionet.org/content/gaitdb/

@@ -16,7 +16,7 @@
  "keywords": [
   "auxdata",
   "A1 Tremor",
-  "A4 Dystonia",
+  "A3 Tics",
   "A8 Ballismus",
   "M9 Genetics"
  ],
@@ -33,11 +33,11 @@
 
 <span class="ma-fam ma-auxdata">auxdata</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-recipe">recipe</span>&nbsp; <code>dbsmatchmaker</code>
 
-<span class="ma-tag">Tremor</span><span class="ma-tag">Dystonia</span><span class="ma-tag">Ballismus</span><span class="ma-tag">Genetics</span>
+<span class="ma-tag">Tremor</span><span class="ma-tag">Tics</span><span class="ma-tag">Ballismus</span><span class="ma-tag">Genetics</span>
 
 | | |
 |---|---|
-| **Taxonomy cells** | A1 A4-A8 genetic context; M9 |
+| **Taxonomy cells** | A1 A3-A8 genetic context; M9 |
 | **Subjects** | 158 cases |
 | **Status** | catalogued (2026-09-05) |
 | **License** | no data distribution: a matching platform, deliberately minimal and non-identifiable (first-year report: Mov Disord 2026, 10.1002/mds.70180) |

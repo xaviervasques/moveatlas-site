@@ -15,9 +15,8 @@
  },
  "keywords": [
   "auxdata",
-  "B1 Rigidity",
   "B2 Bradykinesia",
-  "M8 Imaging"
+  "M11 Voice / writing"
  ],
  "url": "https://wwwp.fc.unesp.br/~papa/pub/datasets/Handpd/",
  "isAccessibleForFree": false,
@@ -32,11 +31,11 @@
 
 <span class="ma-fam ma-auxdata">auxdata</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-recipe">recipe</span>&nbsp; <code>newhandpd</code>
 
-<span class="ma-tag">Rigidity</span><span class="ma-tag">Bradykinesia</span><span class="ma-tag">Imaging</span>
+<span class="ma-tag">Bradykinesia</span><span class="ma-tag">Voice / writing</span>
 
 | | |
 |---|---|
-| **Taxonomy cells** | B1 B2; M8 |
+| **Taxonomy cells** | B2 proxy (handwriting); M11 |
 | **Subjects** | 92 |
 | **Status** | catalogued (2026-09-05) |
 | **License** | open direct download, NO formal licence stated on the page (cite Pereira et al.) - the no-licence trap, adjudicate before redistribution |
@@ -62,4 +61,4 @@ ds.info   # recipe: get_data() explains the route
 
 The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- **MoveAtlas cells**: B1 B2; M8
+- **MoveAtlas cells**: B2 proxy (handwriting); M11

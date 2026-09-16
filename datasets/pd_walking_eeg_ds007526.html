@@ -624,7 +624,6 @@
 <li class="toctree-l1"><a class="reference internal" href="syrip.html">SyRIP (synthetic + real infant pose)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tim_tremor.html">TIM-TREMOR (multi-etiology tremor video+depth)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="toronto_neuroface.html">Toronto NeuroFace (orofacial)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="visionmd.html">VisionMD (TOOL, not a dataset)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="amass.html">AMASS (healthy mocap base)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="motion_x.html">Motion-X++ (healthy motion base)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ntu_rgbd.html">NTU RGB+D 120 (3D skeletons)</a></li>
@@ -778,13 +777,13 @@
 <section id="publications">
 <h2>Publications<a class="headerlink" href="#publications" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Zoya Katzir; Daniel Vered; Inbal Maidan (inbalm&#64;tlvmc.gov.il) (2026). <em>PD-EEG: Resting-State &amp; Walking EEG in Parkinson’s Disease</em>. OpenNeuro. DOI: <a class="reference external" href="https://doi.org/10.18112/openneuro.ds007526.v1.0.0">10.18112/openneuro.ds007526.v1.0.0</a></p></li>
+<li><p>Zoya Katzir; Daniel Vered; Inbal Maidan (inbalm&#64;tlvmc.gov.il) (2026). <em>PD-EEG: Resting-State &amp; Walking EEG in Parkinson’s Disease</em>. OpenNeuro. DOI: <a class="reference external" href="https://doi.org/10.18112/openneuro.ds007526.v1.0.2">10.18112/openneuro.ds007526.v1.0.2</a></p></li>
 </ul>
 <div class="highlight-bibtex notranslate"><div class="highlight"><pre><span></span><span class="nc">@misc</span><span class="p">{</span><span class="nl">pd_walking_eeg_ds007526_data_2026</span><span class="p">,</span>
 <span class="w">  </span><span class="na">title</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{PD-EEG: Resting-State &amp; Walking EEG in Parkinson's Disease}</span><span class="p">,</span>
 <span class="w">  </span><span class="na">author</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Zoya Katzir and Daniel Vered and Inbal Maidan (inbalm@tlvmc.gov.il)}</span><span class="p">,</span>
 <span class="w">  </span><span class="na">year</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{2026}</span><span class="p">,</span>
-<span class="w">  </span><span class="na">doi</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{10.18112/openneuro.ds007526.v1.0.0}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">doi</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{10.18112/openneuro.ds007526.v1.0.2}</span><span class="p">,</span>
 <span class="w">  </span><span class="na">howpublished</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{OpenNeuro}</span><span class="p">,</span>
 <span class="w">  </span><span class="na">note</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{dataset}</span>
 <span class="p">}</span>
@@ -804,6 +803,7 @@
 <li><p><strong>license</strong>: CC0 (OpenNeuro); redistribution: yes</p></li>
 <li><p><strong>access</strong>: tool: aws s3 sync –no-sign-request s3://openneuro.org/ds007526</p></li>
 <li><p><strong>link</strong>: https://openneuro.org/datasets/ds007526</p></li>
+<li><p><strong>known issues</strong>: the stored amplitudes are about 1000 times larger than scalp EEG although the source declares µV; every record carries the flag and nothing is rescaled</p></li>
 </ul>
 </section>
 </section>

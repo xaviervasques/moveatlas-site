@@ -17,7 +17,7 @@
   "video",
   "A3 Tics",
   "M1 Pose / video",
-  "M8 Imaging"
+  "M11 Voice / writing"
  ],
  "url": "https://doi.org/10.17632/kswgcms346.1",
  "isAccessibleForFree": false,
@@ -32,11 +32,11 @@
 
 <span class="ma-fam ma-video">video</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-recipe">recipe</span>&nbsp; <code>mindts_tourette</code>
 
-<span class="ma-tag">Tics</span><span class="ma-tag">Pose / video</span><span class="ma-tag">Imaging</span>
+<span class="ma-tag">Tics</span><span class="ma-tag">Pose / video</span><span class="ma-tag">Voice / writing</span>
 
 | | |
 |---|---|
-| **Taxonomy cells** | A3; M1 M8 |
+| **Taxonomy cells** | A3; M1 M11 |
 | **Subjects** | 60 |
 | **Ages** | 6-12 y |
 | **Status** | catalogued (2026-09-04) |
@@ -63,4 +63,4 @@ ds.info   # recipe: get_data() explains the route
 
 The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- **MoveAtlas cells**: A3; M1 M8
+- **MoveAtlas cells**: A3; M1 M11

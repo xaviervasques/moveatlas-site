@@ -15,8 +15,8 @@
  },
  "keywords": [
   "bio",
-  "A1 Tremor",
-  "M5 EMG"
+  "A4 Dystonia",
+  "M8 Imaging"
  ],
  "url": "https://openneuro.org/datasets/ds008174",
  "isAccessibleForFree": false,
@@ -31,11 +31,11 @@
 
 <span class="ma-fam ma-bio">bio</span>&nbsp; <span class="ma-badge ma-catalogued">catalogued</span>&nbsp; <span class="ma-badge ma-recipe">recipe</span>&nbsp; <code>openneuro_cd_ctbs_174</code>
 
-<span class="ma-tag">Tremor</span><span class="ma-tag">EMG</span>
+<span class="ma-tag">Dystonia</span><span class="ma-tag">Imaging</span>
 
 | | |
 |---|---|
-| **Taxonomy cells** | A1; M5 |
+| **Taxonomy cells** | A4 (cervical dystonia); M8 |
 | **Subjects** | 13 |
 | **Status** | catalogued (2026-09-05) |
 | **License** | OpenNeuro (verify on record) |
@@ -61,4 +61,4 @@ ds.info   # recipe: get_data() explains the route
 
 The dataset's card, factual lines; the full card with its verification dates, download journal and processing notes is in the repository.
 
-- **MoveAtlas cells**: A1; M5
+- **MoveAtlas cells**: A4 (cervical dystonia); M8

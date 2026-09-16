@@ -8,7 +8,7 @@
  "name": "Human Phenotype Ontology (movement pivot)",
  "description": "Human Phenotype Ontology (movement pivot). MoveAtlas ontology family. licence HPO free-use with attribution.",
  "identifier": "https://hpo.jax.org/",
- "license": "HPO free-use with attribution (widely mirrored)",
+ "license": "HPO free-use with attribution (hpo.jax.org/license, read 2026-09-16: cite the HPO, show the file version when displayed,",
  "sdPublisher": {
   "@type": "Organization",
   "name": "MoveAtlas"
@@ -38,7 +38,7 @@
 | **Taxonomy cells** | semantic pivot for stage C; M9, M12 |
 | **Subjects** | n/a |
 | **Status** | acquired (2026-08-22) |
-| **License** | HPO free-use with attribution (widely mirrored) |
+| **License** | HPO free-use with attribution (hpo.jax.org/license, read 2026-09-16: cite the HPO, show the file version when displayed, do not alter the content) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 
@@ -52,7 +52,7 @@ records, meta = ds.get_data()
 
 ## License and access
 
-- **License**: HPO free-use with attribution (widely mirrored)
+- **License**: HPO free-use with attribution (hpo.jax.org/license, read 2026-09-16: cite the HPO, show the file version when displayed, do not alter the content)
 - **Redistribution**: yes
 - **Access route**: refresh lane in fetch_p2_lot.py
 - **Source**: <https://hpo.jax.org/>
@@ -81,7 +81,7 @@ The dataset's card, factual lines; the full card with its verification dates, do
 - **population**: knowledge base: 19,034 active terms; movement subtree HP:0100022 = 197 terms, 68 inside the 13 MoveAtlas anchor subtrees
 - **n_subjects**: n/a
 - **signal**: hp.obo (10 MB) + genes_to_phenotype.txt (19.7 MB) + phenotype.hpoa.gz + phenotype_to_genes.txt.gz; release hp/2025-01-16
-- **license**: HPO free-use with attribution (widely mirrored); redistribution: yes
+- **license**: HPO free-use with attribution (hpo.jax.org/license, read 2026-09-16: cite the HPO, show the file version when displayed, do not alter the content); redistribution: yes
 - **access**: refresh lane in fetch_p2_lot.py
 - **link**: https://hpo.jax.org/
 - **ingestion**: build_hpo_movement_map.py -> docs/hpo_movement_terms.csv (id, name, depth, parents, MoveAtlas cells)
