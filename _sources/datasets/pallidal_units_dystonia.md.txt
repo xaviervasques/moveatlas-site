@@ -54,6 +54,7 @@
 | **Subjects** | unknown (per-unit CSV) |
 | **Status** | acquired (2026-09-01) |
 | **License** | CC BY 4.0 (verified on page 2026-09-01) |
+| **MoveAtlas record** | [10.5281/zenodo.22313518](https://doi.org/10.5281/zenodo.22313518) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 

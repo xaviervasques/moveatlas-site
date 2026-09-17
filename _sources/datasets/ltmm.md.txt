@@ -70,6 +70,7 @@
 | **Ages** | 65-87 y (mean 78.4) |
 | **Status** | harmonized (2026-08-25) |
 | **License** | ODC-By 1.0 |
+| **MoveAtlas record** | [10.5281/zenodo.22659396](https://doi.org/10.5281/zenodo.22659396) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 

@@ -66,6 +66,7 @@
 | **Subjects** | 53 |
 | **Status** | harmonized (2026-08-22) |
 | **License** | CC BY 4.0 (every VIDIMU version on Zenodo, read through DataCite 2026-09-16) |
+| **MoveAtlas record** | [10.5281/zenodo.22313495](https://doi.org/10.5281/zenodo.22313495) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 

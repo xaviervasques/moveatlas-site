@@ -40,6 +40,7 @@
 | **Subjects** | 11 |
 | **Status** | acquired (2026-09-07) |
 | **License** | CC BY 4.0 (verified at fetch 2026-09-07: DataCite + record page) |
+| **MoveAtlas record** | [10.5281/zenodo.22663103](https://doi.org/10.5281/zenodo.22663103) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 

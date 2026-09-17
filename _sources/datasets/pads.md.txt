@@ -41,6 +41,7 @@
 | **Subjects** | 469 |
 | **Status** | harmonized (2026-08-25) |
 | **License** | CC BY-NC-SA 4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0, stated on the PhysioNet page, read 2026-09-16) |
+| **MoveAtlas record** | [10.5281/zenodo.22310664](https://doi.org/10.5281/zenodo.22310664) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 

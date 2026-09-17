@@ -40,6 +40,7 @@
 | **Subjects** | 12 |
 | **Status** | catalogued (2026-09-01) |
 | **License** | derived data CC BY 4.0 (CODY Zenodo deposit, 2026-09-01); raw source private (in-house). |
+| **MoveAtlas record** | [10.5281/zenodo.22313507](https://doi.org/10.5281/zenodo.22313507) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 

@@ -89,6 +89,7 @@
 | **Subjects** | cohort table |
 | **Status** | acquired (2026-09-01) |
 | **License** | CC0 (Dryad, API-verified 2026-09-01) |
+| **MoveAtlas record** | [10.5281/zenodo.22313543](https://doi.org/10.5281/zenodo.22313543) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 

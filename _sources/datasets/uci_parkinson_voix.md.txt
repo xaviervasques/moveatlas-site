@@ -45,6 +45,7 @@
 | **Subjects** | 31 (195 recordings) |
 | **Status** | acquired |
 | **License** | CC BY 4.0 (stated on the UCI repository page, read 2026-09-16) |
+| **MoveAtlas record** | [10.5281/zenodo.22300217](https://doi.org/10.5281/zenodo.22300217) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 

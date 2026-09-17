@@ -59,6 +59,7 @@
 | **Ages** | 20-59 y (35.4 +/- 12.8) |
 | **Status** | catalogued (2026-08-28) |
 | **License** | CC BY 4.0 (figshare item metadata, verified 2026-08-22) |
+| **MoveAtlas record** | [10.5281/zenodo.22310188](https://doi.org/10.5281/zenodo.22310188) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 

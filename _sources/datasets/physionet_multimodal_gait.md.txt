@@ -43,6 +43,7 @@
 | **Ages** | 24 +/- 5 y |
 | **Status** | acquired (2026-09-08) |
 | **License** | CC BY 4.0 (page-verified at fetch 2026-09-07; open access) |
+| **MoveAtlas record** | [10.5281/zenodo.22663176](https://doi.org/10.5281/zenodo.22663176) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 

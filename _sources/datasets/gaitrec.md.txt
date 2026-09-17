@@ -65,6 +65,7 @@
 | **Subjects** | 2,295 |
 | **Status** | harmonized (2026-08-27) |
 | **License** | CC0 (all 23 figshare collection items, verified 2026-08-22) |
+| **MoveAtlas record** | [10.5281/zenodo.22313441](https://doi.org/10.5281/zenodo.22313441) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 

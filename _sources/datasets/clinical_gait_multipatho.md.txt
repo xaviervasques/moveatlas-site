@@ -77,6 +77,7 @@
 | **Subjects** | unresolved from zip (needs extraction count) |
 | **Status** | harmonized |
 | **License** | CC BY 4.0 (figshare item licence, read via api.figshare.com 2026-08-23) |
+| **MoveAtlas record** | [10.5281/zenodo.22806989](https://doi.org/10.5281/zenodo.22806989) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 

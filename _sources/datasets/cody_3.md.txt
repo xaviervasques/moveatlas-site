@@ -41,6 +41,7 @@
 | **Subjects** | 59 |
 | **Status** | harmonized (2026-09-01) |
 | **License** | derived data CC BY 4.0 (CODY Zenodo deposit, 2026-09-01); raw source private (in-house). (2) segmentation renders where the patient remains visible NEVER; (3) segmentation-only files (pure contours/masks, no identifiable imagery) publishable, as are keypoints and labels |
+| **MoveAtlas record** | [10.5281/zenodo.22791880](https://doi.org/10.5281/zenodo.22791880) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 

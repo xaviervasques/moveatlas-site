@@ -61,6 +61,7 @@
 | **Subjects** | 149 |
 | **Status** | harmonized (2026-08-22) |
 | **License** | CC0 (OpenNeuro) |
+| **MoveAtlas record** | [10.5281/zenodo.22308281](https://doi.org/10.5281/zenodo.22308281) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 

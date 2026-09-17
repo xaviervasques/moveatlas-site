@@ -53,6 +53,7 @@
 | **Subjects** | 31 |
 | **Status** | harmonized (2026-08-22) |
 | **License** | ODC-By 1.0 |
+| **MoveAtlas record** | [10.5281/zenodo.22310311](https://doi.org/10.5281/zenodo.22310311) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 

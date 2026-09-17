@@ -69,6 +69,7 @@
 | **Subjects** | 78 |
 | **Status** | acquired (2026-08-22) |
 | **License** | CC0 (Dryad) |
+| **MoveAtlas record** | [10.5281/zenodo.22300223](https://doi.org/10.5281/zenodo.22300223) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 

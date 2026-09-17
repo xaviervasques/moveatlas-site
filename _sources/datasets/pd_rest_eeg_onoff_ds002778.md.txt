@@ -39,6 +39,7 @@
 | **Subjects** | ~32 |
 | **Status** | harmonized (2026-09-01) |
 | **License** | CC0 (OpenNeuro standard, mirror-verified 2026-09-01; curators request a courtesy note pre-publication, non-binding) |
+| **MoveAtlas record** | [10.5281/zenodo.22313545](https://doi.org/10.5281/zenodo.22313545) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 

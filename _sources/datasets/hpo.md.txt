@@ -39,6 +39,7 @@
 | **Subjects** | n/a |
 | **Status** | acquired (2026-08-22) |
 | **License** | HPO free-use with attribution (hpo.jax.org/license, read 2026-09-16: cite the HPO, show the file version when displayed, do not alter the content) |
+| **MoveAtlas record** | [10.5281/zenodo.22313503](https://doi.org/10.5281/zenodo.22313503) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 

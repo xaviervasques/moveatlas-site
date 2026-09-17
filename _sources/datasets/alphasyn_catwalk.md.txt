@@ -35,6 +35,7 @@
 | **Subjects** | 33 |
 | **Status** | catalogued (2026-09-02) |
 | **License** | CC BY (open-access article statement, verified on PMC) |
+| **MoveAtlas record** | [10.5281/zenodo.22313570](https://doi.org/10.5281/zenodo.22313570) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 

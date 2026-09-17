@@ -42,6 +42,7 @@
 | **Subjects** | 25 |
 | **Status** | harmonized (2026-09-01) |
 | **License** | derived data CC BY 4.0 (CODY Zenodo deposit, 2026-09-01); raw source private (in-house). CONTROL raw videos are publishable; PATIENT raw videos are NOT, ever |
+| **MoveAtlas record** | [10.5281/zenodo.22313505](https://doi.org/10.5281/zenodo.22313505) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 

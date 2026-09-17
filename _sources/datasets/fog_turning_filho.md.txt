@@ -46,6 +46,7 @@
 | **Subjects** | 50 |
 | **Status** | harmonized |
 | **License** | CC BY 4.0 (figshare item 14984667; the API states CC BY 4.0; verified 2026-09-16; an earlier CC0 reading was wrong) |
+| **MoveAtlas record** | [10.5281/zenodo.22790322](https://doi.org/10.5281/zenodo.22790322) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 

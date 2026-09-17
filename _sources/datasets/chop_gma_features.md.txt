@@ -46,6 +46,7 @@
 | **Ages** | 10-20 weeks post-term |
 | **Status** | acquired (2026-08-22) |
 | **License** | CC0 1.0 (OSF node license, verified 2026-08-22) |
+| **MoveAtlas record** | [10.5281/zenodo.22313491](https://doi.org/10.5281/zenodo.22313491) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 

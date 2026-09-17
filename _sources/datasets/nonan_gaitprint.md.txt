@@ -90,6 +90,7 @@
 | **Ages** | 56+ y (64.7 +/- 7.5) |
 | **Status** | harmonized (2026-08-27) |
 | **License** | CC BY 4.0 (figshare item metadata, verified 2026-08-22) |
+| **MoveAtlas record** | [10.5281/zenodo.22310799](https://doi.org/10.5281/zenodo.22310799) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 

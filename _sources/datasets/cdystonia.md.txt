@@ -39,6 +39,7 @@
 | **Subjects** | 109 |
 | **Status** | acquired (2026-08-22) |
 | **License** | free (hbiostat teaching repo) |
+| **MoveAtlas record** | [10.5281/zenodo.22300081](https://doi.org/10.5281/zenodo.22300081) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 

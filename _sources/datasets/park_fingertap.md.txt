@@ -39,6 +39,7 @@
 | **Subjects** | unknown |
 | **Status** | acquired |
 | **License** | MIT (LICENSE file in the repo, read 2026-08-28) |
+| **MoveAtlas record** | [10.5281/zenodo.22313481](https://doi.org/10.5281/zenodo.22313481) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 

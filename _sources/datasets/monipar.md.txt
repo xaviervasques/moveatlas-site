@@ -74,6 +74,7 @@
 | **Subjects** | 28 |
 | **Status** | harmonized |
 | **License** | CC BY 4.0 (stated on the source Zenodo record, read through DataCite 2026-09-16) |
+| **MoveAtlas record** | [10.5281/zenodo.22806980](https://doi.org/10.5281/zenodo.22806980) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 

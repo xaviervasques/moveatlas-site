@@ -68,6 +68,7 @@
 | **Subjects** | 64 |
 | **Status** | harmonized |
 | **License** | ODC-By 1.0 (Open Data Commons Attribution License v1.0, stated on the PhysioNet page, read 2026-09-16) |
+| **MoveAtlas record** | [10.5281/zenodo.22806862](https://doi.org/10.5281/zenodo.22806862) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 

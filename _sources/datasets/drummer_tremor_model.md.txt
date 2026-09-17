@@ -41,6 +41,7 @@
 | **Subjects** | 18 |
 | **Status** | acquired (2026-09-05) |
 | **License** | etalab 2.0 (VERIFIED at fetch 2026-09-05 from the dataset version) |
+| **MoveAtlas record** | [10.5281/zenodo.22358617](https://doi.org/10.5281/zenodo.22358617) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 

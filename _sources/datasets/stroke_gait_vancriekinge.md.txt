@@ -68,6 +68,7 @@
 | **Ages** | 19-85 y |
 | **Status** | harmonized (2026-08-28) |
 | **License** | CC0 (all 13 figshare collection items, verified 2026-08-22) |
+| **MoveAtlas record** | [10.5281/zenodo.22313489](https://doi.org/10.5281/zenodo.22313489) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 

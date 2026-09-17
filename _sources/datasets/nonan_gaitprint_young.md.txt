@@ -87,6 +87,7 @@
 | **Ages** | young adults (exact range: read the descriptor at ingestion) |
 | **Status** | harmonized (2026-08-28) |
 | **License** | CC0 (verified per article on the figshare API, 2026-08-28) |
+| **MoveAtlas record** | [10.5281/zenodo.22312827](https://doi.org/10.5281/zenodo.22312827) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 

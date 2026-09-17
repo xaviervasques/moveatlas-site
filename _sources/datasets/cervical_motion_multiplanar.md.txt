@@ -63,6 +63,7 @@
 | **Ages** | 38 +/- 13 y |
 | **Status** | harmonized (2026-08-22) |
 | **License** | CC BY 4.0. DISCREPANCY the CC BY-NC-ND we had recorded is the licence of the Scientific Data ARTICLE (Nature says "This article is licensed under CC BY-NC-ND"), not of the deposited data. Two different objects, one of which we mislabelled |
+| **MoveAtlas record** | [10.5281/zenodo.22310376](https://doi.org/10.5281/zenodo.22310376) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 

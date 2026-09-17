@@ -90,6 +90,7 @@
 | **Subjects** | 151 |
 | **Status** | harmonized (2026-08-22) |
 | **License** | CC BY 4.0 (ORA record licence, verified 2026-08-23) |
+| **MoveAtlas record** | [10.5281/zenodo.22662984](https://doi.org/10.5281/zenodo.22662984) |
 
 Cell codes are defined on the {doc}`taxonomy page </taxonomy>`.
 
