@@ -116,7 +116,7 @@ records, meta = ds.get_data()
 ```bibtex
 @misc{nonan_gaitprint_data_2025,
   title = {NONAN GaitPrint: An IMU gait database of healthy older adults},
-  author = {Wiles, Tyler and Kim, Seung Kyeom and Mangalam, Madhur and Sommerfeld, Joel H. and Brink, Kolby and Grunkemeyer, Alli and manifrenti, marilena kalaitzi and Charles, Anaelle and Shakerian, Narges and Haghighatnejad, Mehrnoush and Mastorakis, Spyridon and Stergiou, Nick and Likens, Aaron},
+  author = {Wiles, Tyler and Kim, Seung Kyeom and Mangalam, Madhur and Sommerfeld, Joel H. and Brink, Kolby and Grunkemeyer, Alli and Manifrenti, Marilena Kalaitzi and Charles, Anaelle and Shakerian, Narges and Haghighatnejad, Mehrnoush and Mastorakis, Spyridon and Stergiou, Nick and Likens, Aaron},
   year = {2025},
   doi = {10.6084/m9.figshare.27815034},
   howpublished = {figshare},

@@ -94,7 +94,7 @@ records, meta = ds.get_data()
 
 ```bibtex
 @misc{ilg_ataxia_tables_data_2021,
-  title = {Towards ecologically valid biomarkers:real-life gait assessment in cerebellar ataxia},
+  title = {Towards ecologically valid biomarkers: real-life gait assessment in cerebellar ataxia},
   author = {Ilg, Winfried and Seemann, Jens and Giese, Martin and Traschuetz, Andreas and Schoels, Ludger and Timmann, Dagmar and Synofzik, Matthis},
   year = {2021},
   doi = {10.5061/dryad.4tmpg4f62},

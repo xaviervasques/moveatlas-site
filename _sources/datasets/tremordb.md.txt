@@ -88,7 +88,7 @@ records, meta = ds.get_data()
 ```bibtex
 @misc{tremordb_data_2001,
   title = {Effect of Deep Brain Stimulation on Parkinsonian Tremor},
-  author = {Beutera, Anne and Titcombe, Michèle S. and Richera, François and Gross, Christian and Guehl, Dominique},
+  author = {Beuter, Anne and Titcombe, Michèle S. and Richer, François and Gross, Christian and Guehl, Dominique},
   year = {2001},
   doi = {10.13026/c2d097},
   howpublished = {physionet.org},

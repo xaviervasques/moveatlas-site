@@ -83,7 +83,7 @@ records, meta = ds.get_data()
 ```bibtex
 @misc{alameda_tremor_data_2024,
   title = {Parkinson's Disease Tremor Dataset - ALAMEDA},
-  author = {Giannakopoulou, Konstantina-Maria and National and Kapodistrian University of Athens and Stefanis, leonidas and Papagiannakis, Nikolaos},
+  author = {Giannakopoulou, Konstantina-Maria and Stefanis, Leonidas and Papagiannakis, Nikolaos},
   year = {2024},
   doi = {10.5281/zenodo.10782573},
   howpublished = {Zenodo},
