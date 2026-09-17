@@ -84,4 +84,5 @@ The dataset's card, factual lines; the full card with its verification dates, do
 - **license**: HPO free-use with attribution (hpo.jax.org/license, read 2026-09-16: cite the HPO, show the file version when displayed, do not alter the content); redistribution: yes
 - **access**: refresh lane in fetch_p2_lot.py
 - **link**: https://hpo.jax.org/
-- **ingestion**: build_hpo_movement_map.py -> docs/hpo_movement_terms.csv (id, name, depth, parents, MoveAtlas cells)
+- **citation**: This service uses the Human Phenotype Ontology (release 2025-01-16). Find out more at https://hpo.jax.org/; cite Gargano et al., Nucleic Acids Research 2024, doi 10.1093/nar/gkad1005
+- **ingestion**: build_hpo_movement_map.py -> docs/hpo_movement_terms.csv (id, name, depth, parents, MoveAtlas cells, HPO release); the HPO files are redistributed unmodified and the subset keeps ids, names and parents as released
